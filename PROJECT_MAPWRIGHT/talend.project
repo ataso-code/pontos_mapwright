@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Project xmi:id="_QrlL0cFqEfG2T4qGvYgAAA" label="PROJECT_MAPWRIGHT" language="java" technicalLabel="PROJECT_MAPWRIGHT" author="_QrlL0sFqEfG2T4qGvYgAAA" productVersion="Talend Real-time Big Data Platform-8.0.1.20260619_1127-patch" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/ataso-code/pontos_mapwright.git&quot;,&quot;settings&quot;:&quot;000&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DQ" itemsRelationVersion="1.3">
+    <migrationTask xmi:id="_QskDQMFqEfG2T4qGvYgAAA" id="org.talend.repository.model.migration.CheckProductVersionMigrationTask" breaks="7.1.0" version="7.1.1"/>
+  </TalendProperties:Project>
+  <TalendProperties:User xmi:id="_QrlL0sFqEfG2T4qGvYgAAA" login="cihan.ataso@bitechnology.com" firstName="cihan" lastName="ataşo" type="DQ" additionnalData="{}"/>
+  <TalendProperties:User xmi:id="_SU8WUMFqEfG2T4qGvYgAAA" login="mapwright@komtas.com" firstName="mapwright" lastName="mapwright" type="DQ" additionnalData="{}"/>
+</xmi:XMI>
