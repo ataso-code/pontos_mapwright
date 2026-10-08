@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_GDeD4ML6EfGRB8-8_sKJtQ" confirmationNeeded="false" hide="false" name="Default">
+  <contextParameter xmi:id="_GDeD4cL6EfGRB8-8_sKJtQ" comment="" name="KRONOS_GYTCMN_Server" prompt="KRONOS_GYTCMN_Server?" promptNeeded="false" repositoryContextId="" type="id_String" value="kronos"/>
+  <contextParameter xmi:id="_GDeD4sL6EfGRB8-8_sKJtQ" comment="" name="KRONOS_GYTCMN_Password" prompt="KRONOS_GYTCMN_Password?" promptNeeded="false" repositoryContextId="" type="id_Password" value="enc:system.encryption.key.v1:n2fvmX6NvsDuYI97SJ3DBLkLOdVfLAcr8r1M3j002mWJ7xb83Q=="/>
+  <contextParameter xmi:id="_GDeD48L6EfGRB8-8_sKJtQ" comment="" name="KRONOS_GYTCMN_Port" prompt="KRONOS_GYTCMN_Port?" promptNeeded="false" repositoryContextId="" type="id_String" value="1521"/>
+  <contextParameter xmi:id="_GDeD5ML6EfGRB8-8_sKJtQ" comment="" name="KRONOS_GYTCMN_Schema" prompt="KRONOS_GYTCMN_Schema?" promptNeeded="false" repositoryContextId="" type="id_String" value="DGYTCMN"/>
+  <contextParameter xmi:id="_GDeD5cL6EfGRB8-8_sKJtQ" comment="" name="KRONOS_GYTCMN_Login" prompt="KRONOS_GYTCMN_Login?" promptNeeded="false" repositoryContextId="" type="id_String" value="MAPWRIGHT"/>
+  <contextParameter xmi:id="_GDeD5sL6EfGRB8-8_sKJtQ" comment="" name="KRONOS_GYTCMN_ServiceName" prompt="KRONOS_GYTCMN_ServiceName?" promptNeeded="false" repositoryContextId="" type="id_String" value="orcl"/>
+  <contextParameter xmi:id="_GDeD58L6EfGRB8-8_sKJtQ" comment="" name="KRONOS_GYTCMN_AdditionalParams" prompt="KRONOS_GYTCMN_AdditionalParams?" promptNeeded="false" repositoryContextId="" type="id_String" value=""/>
+</talendfile:ContextType>

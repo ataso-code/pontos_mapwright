@@ -1,0 +1,1619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:DatabaseConnection xmi:id="_ViZVYMMNEfGRB8-8_sKJtQ" dataPackage="_ViZVYcMNEfGRB8-8_sKJtQ _Vm5a4MMNEfGRB8-8_sKJtQ _VvkOsMMNEfGRB8-8_sKJtQ _V2fWEcMNEfGRB8-8_sKJtQ _WBuVsMMNEfGRB8-8_sKJtQ _WD-YccMNEfGRB8-8_sKJtQ _WGSFkMMNEfGRB8-8_sKJtQ _WJBQgMMNEfGRB8-8_sKJtQ _WLsxEMMNEfGRB8-8_sKJtQ _WO9gcMMNEfGRB8-8_sKJtQ _WSyQgMMNEfGRB8-8_sKJtQ _WabwocMNEfGRB8-8_sKJtQ _WdcBUcMNEfGRB8-8_sKJtQ _WgKlMMMNEfGRB8-8_sKJtQ _WjRjkMMNEfGRB8-8_sKJtQ _WmSbUMMNEfGRB8-8_sKJtQ _Wpe5QcMNEfGRB8-8_sKJtQ _WxFWEMMNEfGRB8-8_sKJtQ _W0OJocMNEfGRB8-8_sKJtQ _W7jgsMMNEfGRB8-8_sKJtQ _W_TYQcMNEfGRB8-8_sKJtQ _XGdwMMMNEfGRB8-8_sKJtQ _XR5kIMMNEfGRB8-8_sKJtQ _XUeXAMMNEfGRB8-8_sKJtQ _XXHbUcMNEfGRB8-8_sKJtQ _XZrAEcMNEfGRB8-8_sKJtQ _XkuZgMMNEfGRB8-8_sKJtQ _Xra3YMMNEfGRB8-8_sKJtQ _XtqTEMMNEfGRB8-8_sKJtQ _Xv7j8cMNEfGRB8-8_sKJtQ _Xy6mgMMNEfGRB8-8_sKJtQ _X1kR4MMNEfGRB8-8_sKJtQ _X4BwAMMNEfGRB8-8_sKJtQ _X60lUMMNEfGRB8-8_sKJtQ _X9LVwMMNEfGRB8-8_sKJtQ _YAHVAcMNEfGRB8-8_sKJtQ _YCtWAMMNEfGRB8-8_sKJtQ _YFqjYMMNEfGRB8-8_sKJtQ _YITAocMNEfGRB8-8_sKJtQ _YLcbQcMNEfGRB8-8_sKJtQ _YPDv8MMNEfGRB8-8_sKJtQ _YSOYsMMNEfGRB8-8_sKJtQ _YVHUoMMNEfGRB8-8_sKJtQ _YYO6EMMNEfGRB8-8_sKJtQ _YcNbIMMNEfGRB8-8_sKJtQ _YjZoQMMNEfGRB8-8_sKJtQ _Ymy6gMMNEfGRB8-8_sKJtQ _Yp21kMMNEfGRB8-8_sKJtQ _YtQH0MMNEfGRB8-8_sKJtQ _Yw4DkMMNEfGRB8-8_sKJtQ _Y5SYsMMNEfGRB8-8_sKJtQ _ZBEbsMMNEfGRB8-8_sKJtQ _ZEyeEMMNEfGRB8-8_sKJtQ _ZNCbIMMNEfGRB8-8_sKJtQ _ZWU6AMMNEfGRB8-8_sKJtQ _ZZimEMMNEfGRB8-8_sKJtQ _ZcU0UMMNEfGRB8-8_sKJtQ _ZfxJ4MMNEfGRB8-8_sKJtQ _Zij_MMMNEfGRB8-8_sKJtQ _ZlleAcMNEfGRB8-8_sKJtQ _ZpMLocMNEfGRB8-8_sKJtQ _Z1mP8MMNEfGRB8-8_sKJtQ _Z38ZUMMNEfGRB8-8_sKJtQ _Z68qAMMNEfGRB8-8_sKJtQ _Z9irAcMNEfGRB8-8_sKJtQ _aIunUMMNEfGRB8-8_sKJtQ _aQbKwcMNEfGRB8-8_sKJtQ _aXSnwMMNEfGRB8-8_sKJtQ _aZ9hQcMNEfGRB8-8_sKJtQ _al4dYMMNEfGRB8-8_sKJtQ _apWoIMMNEfGRB8-8_sKJtQ _axB9cMMNEfGRB8-8_sKJtQ _a4vH8MMNEfGRB8-8_sKJtQ _a73UcMMNEfGRB8-8_sKJtQ _bDu3AMMNEfGRB8-8_sKJtQ _bMPSwMMNEfGRB8-8_sKJtQ _bUBVwcMNEfGRB8-8_sKJtQ _bcDQYMMNEfGRB8-8_sKJtQ _bjZ1kMMNEfGRB8-8_sKJtQ _br97sMMNEfGRB8-8_sKJtQ _b0wrUMMNEfGRB8-8_sKJtQ _cBwlgMMNEfGRB8-8_sKJtQ _cMBUwMMNEfGRB8-8_sKJtQ _cYMIgMMNEfGRB8-8_sKJtQ _cirhQMMNEfGRB8-8_sKJtQ" DatabaseType="Oracle with service name" URL="jdbc:oracle:thin:@//kronos:1521/orcl" Port="1521" Username="DW_SKEY" Password="" ServerName="kronos" DatasourceName="" FileFieldName="" DbmsId="oracle_id" ProductId="ORACLE" DBRootPath="" UiSchema="DW_SKEY" supportNLS="false"/>
+  <TalendMetadata:GenericPackage xmi:id="_ViZVYcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ViZVYsMNEfGRB8-8_sKJtQ" name="SKEY_AGENT" id="_ViXgMMMNEfGRB8-8_sKJtQ" label="SKEY_AGENT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ViZVY8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ViZVZMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_VjEDwMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_VjEDwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_VkN6UMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_VkN6UcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_VltIEMMNEfGRB8-8_sKJtQ" name="AGENT_ID" label="AGENT_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_VltIEcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_VmgZUMMNEfGRB8-8_sKJtQ" name="AGENT_NK" label="AGENT_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_VmgZUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Vm5a4MMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Vm5a4cMNEfGRB8-8_sKJtQ" name="SKEY_AIRCRAFT" id="_Vm4z0MMNEfGRB8-8_sKJtQ" label="SKEY_AIRCRAFT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vm5a4sMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Vm5a48MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_VnmlgMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_VnmlgcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Vn6ukMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Vn6ukcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_VugewMMNEfGRB8-8_sKJtQ" name="AC_ID" label="AC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_VugewcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_VvQFoMMNEfGRB8-8_sKJtQ" name="AC_NK" label="AC_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_VvQFocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_VvkOsMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_VvkOscMNEfGRB8-8_sKJtQ" name="SKEY_AIRCRAFT_TYPE" id="_VvjnoMMNEfGRB8-8_sKJtQ" label="SKEY_AIRCRAFT_TYPE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_VvkOssMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_VvkOs8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_V0iOQMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_V0iOQcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_V1LHcMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_V1LHccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_V1f3kMMNEfGRB8-8_sKJtQ" name="AC_TYPE_ID" label="AC_TYPE_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_V1f3kcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_V10AoMMNEfGRB8-8_sKJtQ" name="AC_TYPE_NK" label="AC_TYPE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_V10AocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_V2fWEcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_V2fWEsMNEfGRB8-8_sKJtQ" name="SKEY_AIRPORT" id="_V2fWEMMNEfGRB8-8_sKJtQ" label="SKEY_AIRPORT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_V2fWE8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_V2fWFMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_V2yRAMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_V2yRAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_V7qxAMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_V7qxAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_V8eCQMMNEfGRB8-8_sKJtQ" name="PORT_ID" label="PORT_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_V8eCQcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_V8wWIMMNEfGRB8-8_sKJtQ" name="PORT_NK" label="PORT_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_V8wWIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_WBuVsMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WBuVscMNEfGRB8-8_sKJtQ" name="SKEY_BAG" id="_WBtuoMMNEfGRB8-8_sKJtQ" label="SKEY_BAG" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WBuVssMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WBuVs8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WCUyoMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_WCUyocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WCntkMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WCntkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WC4zUMMNEfGRB8-8_sKJtQ" name="BAG_ID" label="BAG_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WC4zUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WDpBQMMNEfGRB8-8_sKJtQ" name="BAG_NK" label="BAG_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_WDpBQcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_WD-YccMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WD-YcsMNEfGRB8-8_sKJtQ" name="SKEY_BAG_COUPON_REL" id="_WD-YcMMNEfGRB8-8_sKJtQ" label="SKEY_BAG_COUPON_REL" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WD-Yc8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WD-YdMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WEjAMMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_WEjAMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WE4-cMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WE4-ccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WFMgcMMNEfGRB8-8_sKJtQ" name="BAG_CPN_REL_ID" label="BAG_CPN_REL_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WFMgccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WF9VcMMNEfGRB8-8_sKJtQ" name="BAG_CPN_REL_NK" label="BAG_CPN_REL_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_WF9VccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_WGSFkMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WGSFkcMNEfGRB8-8_sKJtQ" name="SKEY_BAG_EVENT" id="_WGRegMMNEfGRB8-8_sKJtQ" label="SKEY_BAG_EVENT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WGSFksMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WGSFk8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WG6-wMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_WG6-wcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WHQ9AMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WHQ9AcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WH8ScMMNEfGRB8-8_sKJtQ" name="BAG_EVENT_ID" label="BAG_EVENT_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WH8SccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WIS3wMMNEfGRB8-8_sKJtQ" name="BAG_EVENT_NK" label="BAG_EVENT_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_WIS3wcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_WJBQgMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WJBQgcMNEfGRB8-8_sKJtQ" name="SKEY_BOARDING_PASS_EVENT" id="_WJApcMMNEfGRB8-8_sKJtQ" label="SKEY_BOARDING_PASS_EVENT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WJBQgsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WJBQg8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WJa5IMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_WJa5IcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WKLuIMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WKLuIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WKlWwMMNEfGRB8-8_sKJtQ" name="BP_EVENT_ID" label="BP_EVENT_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WKlWwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WLTvgMMNEfGRB8-8_sKJtQ" name="BP_EVENT_NK" label="BP_EVENT_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_WLTvgcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_WLsxEMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WLsxEcMNEfGRB8-8_sKJtQ" name="SKEY_BUNDLE_PRODUCT" id="_WLsKAMMNEfGRB8-8_sKJtQ" label="SKEY_BUNDLE_PRODUCT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WLsxEsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WLsxE8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WMe0MMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_WMe0McMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WM5q8MMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WM5q8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WNuKUMMNEfGRB8-8_sKJtQ" name="BNDL_PRDCT_ID" label="BNDL_PRDCT_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WNuKUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WOKPMMMNEfGRB8-8_sKJtQ" name="BNDL_PRDCT_NK" label="BNDL_PRDCT_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_WOKPMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_WO9gcMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WO9gccMNEfGRB8-8_sKJtQ" name="SKEY_CAMPAIGN" id="_WO85YMMNEfGRB8-8_sKJtQ" label="SKEY_CAMPAIGN" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WO9gcsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WO9gc8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WPZlUMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_WPZlUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WQMPgMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WQM2kMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WSCCkMMNEfGRB8-8_sKJtQ" name="CMP_ID" label="CMP_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WSCCkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WSadEMMNEfGRB8-8_sKJtQ" name="CMP_NK" label="CMP_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_WSadEcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_WSyQgMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WSyQgcMNEfGRB8-8_sKJtQ" name="SKEY_CHANNEL" id="_WSxCYMMNEfGRB8-8_sKJtQ" label="SKEY_CHANNEL" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WSyQgsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WSyQg8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WYPYQMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_WYPYQcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WY5fkMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WY5fkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WZShIMMNEfGRB8-8_sKJtQ" name="CHN_ID" label="CHN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WZShIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WaD9MMMNEfGRB8-8_sKJtQ" name="CHN_NK" label="CHN_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_WaD9McMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_WabwocMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WabwosMNEfGRB8-8_sKJtQ" name="SKEY_CITY" id="_WabwoMMNEfGRB8-8_sKJtQ" label="SKEY_CITY" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Wabwo8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WabwpMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WbL-kMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_WbL-kcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WbkZEMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WbkZEcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WcRjsMMNEfGRB8-8_sKJtQ" name="CITY_ID" label="CITY_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WcRjscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WcrzYMMNEfGRB8-8_sKJtQ" name="CITY_NK" label="CITY_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_WcrzYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_WdcBUcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WdcBUsMNEfGRB8-8_sKJtQ" name="SKEY_CODESHARE" id="_WdcBUMMNEfGRB8-8_sKJtQ" label="SKEY_CODESHARE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WdcBU8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WdcBVMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Wd1C4MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_Wd1C4cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WejboMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WejbocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_We9rUMMNEfGRB8-8_sKJtQ" name="CODESHARE_ID" label="CODESHARE_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_We9rUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WfvHYMMNEfGRB8-8_sKJtQ" name="CODESHARE_NK" label="CODESHARE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_WfvHYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_WgKlMMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WgKlMcMNEfGRB8-8_sKJtQ" name="SKEY_CODESHARE_FLIGHT" id="_WgJ-IMMNEfGRB8-8_sKJtQ" label="SKEY_CODESHARE_FLIGHT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WgKlMsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WgKlM8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Wg5lAMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_Wg5lAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WhRYcMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WhRYccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WiEpsMMNEfGRB8-8_sKJtQ" name="CODESHARE_FLT_ID" label="CODESHARE_FLT_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WiEpscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WifgcMMNEfGRB8-8_sKJtQ" name="CODESHARE_FLT_NK" label="CODESHARE_FLT_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_WifgccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_WjRjkMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WjRjkcMNEfGRB8-8_sKJtQ" name="SKEY_COUNTRY" id="_WjQ8gMMNEfGRB8-8_sKJtQ" label="SKEY_COUNTRY" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WjRjksMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WjRjk8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WjtocMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_WjtoccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WkfrkMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WkfrkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Wk7wcMMNEfGRB8-8_sKJtQ" name="COUNTRY_ID" label="COUNTRY_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Wk7wccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Wlz6MMMNEfGRB8-8_sKJtQ" name="COUNTRY_NK" label="COUNTRY_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_Wlz6McMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_WmSbUMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WmSbUcMNEfGRB8-8_sKJtQ" name="SKEY_COUPON" id="_WmR0QMMNEfGRB8-8_sKJtQ" label="SKEY_COUPON" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WmSbUsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WmSbU8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WnEecMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_WnEeccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WneuIMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WneuIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WoW34MMNEfGRB8-8_sKJtQ" name="CPN_ID" label="CPN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WoW34cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WpAYIMMNEfGRB8-8_sKJtQ" name="CPN_NK" label="CPN_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_WpAYIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Wpe5QcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Wpe5QsMNEfGRB8-8_sKJtQ" name="SKEY_CREW_ABSENCE" id="_Wpe5QMMNEfGRB8-8_sKJtQ" label="SKEY_CREW_ABSENCE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Wpe5Q8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WpfgUMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WqYRIMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_WqYRIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Wq2yQMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Wq2yQcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Wvv5UMMNEfGRB8-8_sKJtQ" name="CREW_ABSENCE_ID" label="CREW_ABSENCE_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Wvv5UcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WwrtcMMNEfGRB8-8_sKJtQ" name="CREW_ABSENCE_NK" label="CREW_ABSENCE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_WwrtccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_WxFWEMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WxFWEcMNEfGRB8-8_sKJtQ" name="SKEY_CREW_PAIRING" id="_WxEvAMMNEfGRB8-8_sKJtQ" label="SKEY_CREW_PAIRING" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WxFWEsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WxFWE8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Wx-t8MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_Wx-t8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Wyo1QMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Wyo1QcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_WzE6IMMNEfGRB8-8_sKJtQ" name="CREW_PAIRING_ID" label="CREW_PAIRING_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_WzE6IcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Wzz58MMNEfGRB8-8_sKJtQ" name="CREW_PAIRING_NK" label="CREW_PAIRING_NK" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Wzz58cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_W0OJocMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_W0OJosMNEfGRB8-8_sKJtQ" name="SKEY_CREW_POSITION" id="_W0OJoMMNEfGRB8-8_sKJtQ" label="SKEY_CREW_POSITION" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_W0OJo8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_W0OJpMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_W5Js8MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_W5Js8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_W5-zYMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_W5-zYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_W6ZqIMMNEfGRB8-8_sKJtQ" name="CREW_POSITION_ID" label="CREW_POSITION_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_W6ZqIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_W7IC4MMNEfGRB8-8_sKJtQ" name="CREW_POSITION_NK" label="CREW_POSITION_NK" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_W7IC4cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_W7jgsMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_W7jgscMNEfGRB8-8_sKJtQ" name="SKEY_CREW_POSITION_GRADE" id="_W7i5oMMNEfGRB8-8_sKJtQ" label="SKEY_CREW_POSITION_GRADE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_W7jgssMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_W7jgs8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_W8SggMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_W8THkMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_W8wakMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_W8wakcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_W-h8MMMNEfGRB8-8_sKJtQ" name="CREW_POSITION_GRADE_ID" label="CREW_POSITION_GRADE_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_W-h8McMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_W-6WsMMNEfGRB8-8_sKJtQ" name="CREW_POSITION_GRADE_NK" label="CREW_POSITION_GRADE_NK" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_W-6WscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_W_TYQcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_W_TYQsMNEfGRB8-8_sKJtQ" name="SKEY_CRS_USER" id="_W_TYQMMNEfGRB8-8_sKJtQ" label="SKEY_CRS_USER" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_W_TYQ8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_W_TYRMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XEXecMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_XEXeccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XE-icMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XE-iccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XFYLEMMNEfGRB8-8_sKJtQ" name="CRS_USER_ID" label="CRS_USER_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XFYLEcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XGF8wMMNEfGRB8-8_sKJtQ" name="CRS_USER_NK" label="CRS_USER_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_XGF8wcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_XGdwMMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_XGdwMcMNEfGRB8-8_sKJtQ" name="SKEY_CURRENCY" id="_XGdJIMMNEfGRB8-8_sKJtQ" label="SKEY_CURRENCY" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XGdwMsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XGdwM8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XLJb4MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_XLJb4cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XMAXgMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XMAXgcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XManMMMNEfGRB8-8_sKJtQ" name="CURR_ID" label="CURR_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XManMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XRG58MMNEfGRB8-8_sKJtQ" name="CURR_NK" label="CURR_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_XRG58cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_XR5kIMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_XR5kIcMNEfGRB8-8_sKJtQ" name="SKEY_DEVICE" id="_XR49EMMNEfGRB8-8_sKJtQ" label="SKEY_DEVICE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XR5kIsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XR5kI8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XSRXkMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_XSRXkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XTGeAMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XTGeAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XTffkMMNEfGRB8-8_sKJtQ" name="DEVICE_ID" label="DEVICE_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XTffkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XUHKoMMNEfGRB8-8_sKJtQ" name="DEVICE_NK" label="DEVICE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_XUHKocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_XUeXAMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_XUeXAcMNEfGRB8-8_sKJtQ" name="SKEY_DISTRICT" id="_XUdv8MMNEfGRB8-8_sKJtQ" label="SKEY_DISTRICT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XUeXAsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XUeXA8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XVIeUMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_XVIeUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XVgRwMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XVgRwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XWIj4MMNEfGRB8-8_sKJtQ" name="DISTRICT_ID" label="DISTRICT_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XWIj4cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XWfwQMMNEfGRB8-8_sKJtQ" name="DISTRICT_NK" label="DISTRICT_NK" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XWfwQcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_XXHbUcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_XXHbUsMNEfGRB8-8_sKJtQ" name="SKEY_DUTY" id="_XXHbUMMNEfGRB8-8_sKJtQ" label="SKEY_DUTY" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XXHbU8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XXHbVMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XXcygMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_XXcygcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XXwUgMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XXwUgcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XYjlwMMNEfGRB8-8_sKJtQ" name="DUTY_ID" label="DUTY_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XYjlwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XY7ZMMMNEfGRB8-8_sKJtQ" name="DUTY_NK" label="DUTY_NK" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XY8AQMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_XZrAEcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_XZrAEsMNEfGRB8-8_sKJtQ" name="SKEY_EARNING_RULE" id="_XZrAEMMNEfGRB8-8_sKJtQ" label="SKEY_EARNING_RULE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XZrAE8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XZrAFMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XaAXQMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_XaAXQcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Xe6scMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Xe6sccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XfvL0MMNEfGRB8-8_sKJtQ" name="EARNING_RULE_ID" label="EARNING_RULE_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XfvL0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XgFxIMMNEfGRB8-8_sKJtQ" name="EARNING_RULE_NK" label="EARNING_RULE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_XgFxIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_XkuZgMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_XkuZgcMNEfGRB8-8_sKJtQ" name="SKEY_EMPLOYEE" id="_XktycMMNEfGRB8-8_sKJtQ" label="SKEY_EMPLOYEE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XkuZgsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XkuZg8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XlcLMMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_XlcLMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XltQ8MMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XltQ8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XmAL4MMNEfGRB8-8_sKJtQ" name="EMPLOYEE_ID" label="EMPLOYEE_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XmAL4cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Xqvh8MMNEfGRB8-8_sKJtQ" name="EMPLOYEE_NK" label="EMPLOYEE_NK" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Xqvh8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Xra3YMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Xra3YcMNEfGRB8-8_sKJtQ" name="SKEY_ENROLLMENT_SOURCE" id="_XraQUMMNEfGRB8-8_sKJtQ" label="SKEY_ENROLLMENT_SOURCE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Xra3YsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Xra3Y8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Xrw1oMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_Xrw1ocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XsXSkMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XsXSkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XssCsMMNEfGRB8-8_sKJtQ" name="ENROLLMENT_SRC_ID" label="ENROLLMENT_SRC_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XssCscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Xs-9oMMNEfGRB8-8_sKJtQ" name="ENROLLMENT_SRC_NK" label="ENROLLMENT_SRC_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_Xs-9ocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_XtqTEMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_XtqTEcMNEfGRB8-8_sKJtQ" name="SKEY_EVENT" id="_XtpsAMMNEfGRB8-8_sKJtQ" label="SKEY_EVENT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XtqTEsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XtqTE8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Xt9OAMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_Xt9OAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XujD4MMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XujD4cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Xu3M8MMNEfGRB8-8_sKJtQ" name="SEAT_EVENT_ID" label="SEAT_EVENT_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Xu3M8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XvL9EMMNEfGRB8-8_sKJtQ" name="SEAT_EVENT_NK" label="SEAT_EVENT_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_XvL9EcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Xv7j8cMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Xv7j8sMNEfGRB8-8_sKJtQ" name="SKEY_FARE_BASIS" id="_Xv7j8MMNEfGRB8-8_sKJtQ" label="SKEY_FARE_BASIS" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Xv7j88MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Xv7j9MMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XwSwUMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_XwSwUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Xw3YEMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Xw3YEcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XxPykMMNEfGRB8-8_sKJtQ" name="FARE_BASIS_ID" label="FARE_BASIS_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_XxPykcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_XyjaIMMNEfGRB8-8_sKJtQ" name="FARE_BASIS_NK" label="FARE_BASIS_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_XyjaIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Xy6mgMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Xy6mgcMNEfGRB8-8_sKJtQ" name="SKEY_FARE_GROUP" id="_Xy5_cMMNEfGRB8-8_sKJtQ" label="SKEY_FARE_GROUP" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Xy6mgsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Xy6mg8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Xzi4oMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_Xzi4ocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Xz6FAMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Xz6FAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X0lacMMNEfGRB8-8_sKJtQ" name="FARE_GRP_ID" label="FARE_GRP_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_X0laccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X06xoMMNEfGRB8-8_sKJtQ" name="FARE_GRP_NK" label="FARE_GRP_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_X06xocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_X1kR4MMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_X1kR4cMNEfGRB8-8_sKJtQ" name="SKEY_FF" id="_X1jq0MMNEfGRB8-8_sKJtQ" label="SKEY_FF" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X1kR4sMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_X1kR48MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X18sYMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_X18sYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X2p3AMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_X2p3AcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X2_1QMMNEfGRB8-8_sKJtQ" name="FF_ID" label="FF_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_X2_1QcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X3qjoMMNEfGRB8-8_sKJtQ" name="FF_NK" label="FF_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_X3qjocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_X4BwAMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_X4BwAcMNEfGRB8-8_sKJtQ" name="SKEY_FF_ACCOUNT" id="_X4BI8MMNEfGRB8-8_sKJtQ" label="SKEY_FF_ACCOUNT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X4BwAsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_X4BwA8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X4r3UMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_X4r3UcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X5ER0MMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_X5ER0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X5yqkMMNEfGRB8-8_sKJtQ" name="FF_ACC_ID" label="FF_ACC_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_X5yqkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X6KeAMMNEfGRB8-8_sKJtQ" name="FF_ACC_NK" label="FF_ACC_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_X6KeAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_X60lUMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_X60lUcMNEfGRB8-8_sKJtQ" name="SKEY_FF_ADDRESS" id="_X6z-QMMNEfGRB8-8_sKJtQ" label="SKEY_FF_ADDRESS" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X60lUsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_X60lU8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X7LKoMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_X7LKocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X7y1sMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_X7y1scMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X8JbAMMNEfGRB8-8_sKJtQ" name="FF_ADDRESS_ID" label="FF_ADDRESS_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_X8JbAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X8yUMMMNEfGRB8-8_sKJtQ" name="FF_ADDRESS_NK" label="FF_ADDRESS_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_X8y7QMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_X9LVwMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_X9LVwcMNEfGRB8-8_sKJtQ" name="SKEY_FF_REL_ROLE" id="_X9KusMMNEfGRB8-8_sKJtQ" label="SKEY_FF_REL_ROLE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X9LVwsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_X9LVw8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X91dEMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_X91dEcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X-PFsMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_X-PFscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X-_6sMMNEfGRB8-8_sKJtQ" name="FF_REL_ROLE_ID" label="FF_REL_ROLE_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_X-_6scMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_X_YVMMMNEfGRB8-8_sKJtQ" name="FF_REL_ROLE_NK" label="FF_REL_ROLE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_X_YVMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_YAHVAcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_YAHVAsMNEfGRB8-8_sKJtQ" name="SKEY_FLEET_QUALIFICATION" id="_YAHVAMMNEfGRB8-8_sKJtQ" label="SKEY_FLEET_QUALIFICATION" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YAHVA8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YAHVBMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YAfvgMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_YAfvgcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YBNhMMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YBNhMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YBnJ0MMNEfGRB8-8_sKJtQ" name="FLEET_QUAL_ID" label="FLEET_QUAL_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YBnJ0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YCUUcMMNEfGRB8-8_sKJtQ" name="FLEET_QUAL_NK" label="FLEET_QUAL_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_YCUUccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_YCtWAMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_YCtWAcMNEfGRB8-8_sKJtQ" name="SKEY_FLEET_TYPE" id="_YCsu8MMNEfGRB8-8_sKJtQ" label="SKEY_FLEET_TYPE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YCtWAsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YCtWA8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YDbuwMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_YDbuwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YD0wUMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YD0wUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YEjJEMMNEfGRB8-8_sKJtQ" name="FLEET_TYPE_ID" label="FLEET_TYPE_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YEjJEcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YE68gMMNEfGRB8-8_sKJtQ" name="FLEET_TYPE_NK" label="FLEET_TYPE_NK" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YE68gcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_YFqjYMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_YFqjYcMNEfGRB8-8_sKJtQ" name="SKEY_FLIGHT" id="_YFp8UMMNEfGRB8-8_sKJtQ" label="SKEY_FLIGHT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YFqjYsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YFqjY8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YGCW0MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_YGCW0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YGuTUMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YGuTUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YHHU4MMNEfGRB8-8_sKJtQ" name="FLT_ID" label="FLT_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YHHU4cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YH2UsMMNEfGRB8-8_sKJtQ" name="FLT_NK" label="FLT_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_YH2UscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_YITAocMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_YITAosMNEfGRB8-8_sKJtQ" name="SKEY_LEG" id="_YITAoMMNEfGRB8-8_sKJtQ" label="SKEY_LEG" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YITAo8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YITApMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YJFq0MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_YJFq0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YJiWwMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YJiWwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YKTLwMMNEfGRB8-8_sKJtQ" name="LEG_ID" label="LEG_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YKTLwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YKs0YMMNEfGRB8-8_sKJtQ" name="LEG_NK" label="LEG_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_YKs0YcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_YLcbQcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_YLcbQsMNEfGRB8-8_sKJtQ" name="SKEY_LEG_SEG" id="_YLcbQMMNEfGRB8-8_sKJtQ" label="SKEY_LEG_SEG" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YLcbQ8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YLcbRMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YL2q8MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_YL2q8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YMm44MMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YMm44cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YNBvoMMNEfGRB8-8_sKJtQ" name="LEG_SEG_ID" label="LEG_SEG_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YNBvocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YOqHUMMNEfGRB8-8_sKJtQ" name="LEG_SEG_NK" label="LEG_SEG_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_YOqHUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_YPDv8MMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_YPDv8cMNEfGRB8-8_sKJtQ" name="SKEY_LOAD_CYCLE" id="_YPDI4MMNEfGRB8-8_sKJtQ" label="SKEY_LOAD_CYCLE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YPDv8sMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YPDv88MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YP1MAMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_YP1MAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YQO0oMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YQO0ocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YQ_CkMMNEfGRB8-8_sKJtQ" name="LOAD_CYCLE_ID" label="LOAD_CYCLE_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YQ_CkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YRZ5UMMNEfGRB8-8_sKJtQ" name="LOAD_CYCLE_NK" label="LOAD_CYCLE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_YRZ5UcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_YSOYsMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_YSOYscMNEfGRB8-8_sKJtQ" name="SKEY_LOAD_ITEM" id="_YSNxoMMNEfGRB8-8_sKJtQ" label="SKEY_LOAD_ITEM" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YSOYssMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YSOYs8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YSrrsMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_YSrrscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YTb5oMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YTb5ocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YT3-gMMNEfGRB8-8_sKJtQ" name="LOAD_ITEM_ID" label="LOAD_ITEM_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YT3-gcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YUrPwMMNEfGRB8-8_sKJtQ" name="LOAD_ITEM_NK" label="LOAD_ITEM_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_YUrPwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_YVHUoMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_YVHUocMNEfGRB8-8_sKJtQ" name="SKEY_NOTIFICATION_EVENT" id="_YVGtkMMNEfGRB8-8_sKJtQ" label="SKEY_NOTIFICATION_EVENT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YVHUosMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YVHUo8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YV5XwMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_YV5XwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YWU1kMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YWU1kcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YXDOUMMNEfGRB8-8_sKJtQ" name="NTF_EVENT_ID" label="NTF_EVENT_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YXDOUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YXeFEMMNEfGRB8-8_sKJtQ" name="NTF_EVENT_NK" label="NTF_EVENT_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_YXeFEcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_YYO6EMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_YYO6EcMNEfGRB8-8_sKJtQ" name="SKEY_ONBOARD_SALE" id="_YYOTAMMNEfGRB8-8_sKJtQ" label="SKEY_ONBOARD_SALE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YYO6EsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YYO6E8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YYoisMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_YYoiscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YZxLIMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YZxLIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Yaj1UMMNEfGRB8-8_sKJtQ" name="SALE_ID" label="SALE_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Yaj1UcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YbqBgMMNEfGRB8-8_sKJtQ" name="SALE_NK" label="SALE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_YbqBgcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_YcNbIMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_YcNbIcMNEfGRB8-8_sKJtQ" name="SKEY_ONBOARD_SALE_LINE" id="_YcM0EMMNEfGRB8-8_sKJtQ" label="SKEY_ONBOARD_SALE_LINE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YcNbIsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YcNbI8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YhF7IMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_YhF7IcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YhwpgMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YhwpgcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YiMHUMMNEfGRB8-8_sKJtQ" name="SALE_LINE_ID" label="SALE_LINE_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YiMHUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Yi-xgMMNEfGRB8-8_sKJtQ" name="SALE_LINE_NK" label="SALE_LINE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_Yi-xgcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_YjZoQMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_YjZoQcMNEfGRB8-8_sKJtQ" name="SKEY_ONBOARD_SALE_PAYMENT" id="_YjZBMMMNEfGRB8-8_sKJtQ" label="SKEY_ONBOARD_SALE_PAYMENT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YjZoQsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YjZoQ8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YkM5gMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_YkM5gcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Yko-YMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Yko-YcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Yler4MMNEfGRB8-8_sKJtQ" name="SALE_PAYMNET_ID" label="SALE_PAYMNET_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Yler4cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Yl90EMMNEfGRB8-8_sKJtQ" name="SALE_PAYMNET_NK" label="SALE_PAYMNET_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_Yl90EcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Ymy6gMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Ymy6gcMNEfGRB8-8_sKJtQ" name="SKEY_OPERATION_TYPE" id="_YmyTcMMNEfGRB8-8_sKJtQ" label="SKEY_OPERATION_TYPE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Ymy6gsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Ymy6g8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YnPmcMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_YnPmccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YoDewMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YoDewcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YogxwMMNEfGRB8-8_sKJtQ" name="OPERATION_TYPE_ID" label="OPERATION_TYPE_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YogxwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YpY7gMMNEfGRB8-8_sKJtQ" name="OPERATION_TYPE_NK" label="OPERATION_TYPE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_YpY7gcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Yp21kMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Yp21kcMNEfGRB8-8_sKJtQ" name="SKEY_PAIRING" id="_Yp2OgMMNEfGRB8-8_sKJtQ" label="SKEY_PAIRING" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Yp21ksMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Yp21k8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Yqqt4MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_Yqqt4cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YrKdIMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YrKdIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Yr-VcMMNEfGRB8-8_sKJtQ" name="PAIRING_ID" label="PAIRING_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Yr-VccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YsbBYMMNEfGRB8-8_sKJtQ" name="PAIRING_NK" label="PAIRING_NK" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YsbBYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_YtQH0MMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_YtQH0cMNEfGRB8-8_sKJtQ" name="SKEY_PAX_APIS" id="_YtPgwMMNEfGRB8-8_sKJtQ" label="SKEY_PAX_APIS" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YtQH0sMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YtQH08MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Ytuo8MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_Ytuo8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Yuk9gMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Yuk9gcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YvGh8MMNEfGRB8-8_sKJtQ" name="APIS_PAX_ID" label="APIS_PAX_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YvGh8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YwDkMMMNEfGRB8-8_sKJtQ" name="APIS_PAX_NK" label="APIS_PAX_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_YwDkMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Yw4DkMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Yw4DkcMNEfGRB8-8_sKJtQ" name="SKEY_PENALTY" id="_Yw21cMMNEfGRB8-8_sKJtQ" label="SKEY_PENALTY" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Yw4DksMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Yw4Dk8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YxXLwMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_YxXLwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_YyKdAMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_YyKdAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Y3m9sMMNEfGRB8-8_sKJtQ" name="PENALTY_ID" label="PENALTY_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Y3m9scMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Y4hjsMMNEfGRB8-8_sKJtQ" name="PENALTY_NK" label="PENALTY_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_Y4hjscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Y5SYsMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Y5SYscMNEfGRB8-8_sKJtQ" name="SKEY_PENALTY_EVENT" id="_Y5RKkMMNEfGRB8-8_sKJtQ" label="SKEY_PENALTY_EVENT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Y5SYssMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Y5SYs8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Y5wSwMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_Y5wSwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Y6ggsMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Y6ggscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Y66wYMMNEfGRB8-8_sKJtQ" name="PENALTY_EVENT_ID" label="PENALTY_EVENT_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Y66wYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZACg8MMNEfGRB8-8_sKJtQ" name="PENALTY_EVENT_NK" label="PENALTY_EVENT_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_ZACg8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_ZBEbsMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ZBEbscMNEfGRB8-8_sKJtQ" name="SKEY_PENALTY_RULE" id="_ZBD0oMMNEfGRB8-8_sKJtQ" label="SKEY_PENALTY_RULE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZBEbssMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZBEbs8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZB6wQMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_ZB6wQcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZCfYAMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZCfYAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZDjH8MMNEfGRB8-8_sKJtQ" name="PENALTY_RULE_ID" label="PENALTY_RULE_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZDjH8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZEQ5oMMNEfGRB8-8_sKJtQ" name="PENALTY_RULE_NK" label="PENALTY_RULE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_ZEQ5ocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_ZEyeEMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ZEyeEcMNEfGRB8-8_sKJtQ" name="SKEY_PNR" id="_ZEx3AMMNEfGRB8-8_sKJtQ" label="SKEY_PNR" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZEyeEsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZEyeE8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZFqn0MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_ZFqn0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZGGssMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZGGsscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZLGhcMMNEfGRB8-8_sKJtQ" name="PNR_ID" label="PNR_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZLGhccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZMOi0MMNEfGRB8-8_sKJtQ" name="PNR_NK" label="PNR_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_ZMOi0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_ZNCbIMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ZNCbIcMNEfGRB8-8_sKJtQ" name="SKEY_PNR_CHANGE" id="_ZNB0EMMNEfGRB8-8_sKJtQ" label="SKEY_PNR_CHANGE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZNCbIsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZNCbI8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZTvgEMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_ZTvgEcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZUixUMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZUixUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZVArYMMNEfGRB8-8_sKJtQ" name="PNR_CHANGE_ID" label="PNR_CHANGE_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZVArYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZV2Y4MMNEfGRB8-8_sKJtQ" name="PNR_CHANGE_NK" label="PNR_CHANGE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_ZV2Y4cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_ZWU6AMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ZWU6AcMNEfGRB8-8_sKJtQ" name="SKEY_PNR_GROUP_REQUEST" id="_ZWUS8MMNEfGRB8-8_sKJtQ" label="SKEY_PNR_GROUP_REQUEST" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZWU6AsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZWU6A8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZXGWEMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_ZXGWEcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZXglwMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZXglwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZYSB0MMNEfGRB8-8_sKJtQ" name="PNR_GRP_REQUEST_ID" label="PNR_GRP_REQUEST_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZYSB0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZYvU0MMNEfGRB8-8_sKJtQ" name="PNR_GRP_REQUEST_NK" label="PNR_GRP_REQUEST_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_ZYvU0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_ZZimEMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ZZimEcMNEfGRB8-8_sKJtQ" name="SKEY_PNR_LEG" id="_ZZh_AMMNEfGRB8-8_sKJtQ" label="SKEY_PNR_LEG" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZZimEsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZZimE8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZZ_SAMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_ZZ_SAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZazxYMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZazxYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZbNaAMMNEfGRB8-8_sKJtQ" name="PNR_LEG_ID" label="PNR_LEG_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZbNaAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Zb7ywMMNEfGRB8-8_sKJtQ" name="PNR_LEG_NK" label="PNR_LEG_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_Zb7ywcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_ZcU0UMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ZcU0UcMNEfGRB8-8_sKJtQ" name="SKEY_PNR_ORDER_LINE" id="_ZcUNQMMNEfGRB8-8_sKJtQ" label="SKEY_PNR_ORDER_LINE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZcU0UsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZcU0U8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZdHegMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_ZdHegcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZdkKcMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZdkKccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZeZ38MMNEfGRB8-8_sKJtQ" name="PNR_ORD_LINE_ID" label="PNR_ORD_LINE_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZeZ38cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Ze5AIMMNEfGRB8-8_sKJtQ" name="PNR_ORD_LINE_NK" label="PNR_ORD_LINE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_Ze5AIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_ZfxJ4MMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ZfxJ4cMNEfGRB8-8_sKJtQ" name="SKEY_PNR_PAX" id="_Zfwi0MMNEfGRB8-8_sKJtQ" label="SKEY_PNR_PAX" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZfxJ4sMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZfxJ48MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZgKygMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_ZgKygcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Zg8OkMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Zg8OkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZhXFUMMNEfGRB8-8_sKJtQ" name="PNR_PAX_ID" label="PNR_PAX_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZhXFUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZiGsMMMNEfGRB8-8_sKJtQ" name="PNR_PAX_NK" label="PNR_PAX_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_ZiGsMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Zij_MMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Zij_McMNEfGRB8-8_sKJtQ" name="SKEY_POS_TERMINAL" id="_ZijYIMMNEfGRB8-8_sKJtQ" label="SKEY_POS_TERMINAL" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Zij_MsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Zij_M8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZjU0MMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_ZjU0McMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Zjt1wMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Zjt1wcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZkcOgMMNEfGRB8-8_sKJtQ" name="POS_TERMINAL_ID" label="POS_TERMINAL_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZkcOgcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Zk2eMMMNEfGRB8-8_sKJtQ" name="POS_TERMINAL_NK" label="POS_TERMINAL_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_Zk2eMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_ZlleAcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ZlleAsMNEfGRB8-8_sKJtQ" name="SKEY_PREFERENCE_TYPE" id="_ZlleAMMNEfGRB8-8_sKJtQ" label="SKEY_PREFERENCE_TYPE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZlleA8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZlleBMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZmAUwMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_ZmAUwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Zm0NEMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Zm0NEcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZoBG8MMNEfGRB8-8_sKJtQ" name="PREFERENCE_TYPE_ID" label="PREFERENCE_TYPE_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZoBG8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZockwMMNEfGRB8-8_sKJtQ" name="PREFERENCE_TYPE_NK" label="PREFERENCE_TYPE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_ZockwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_ZpMLocMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ZpMLosMNEfGRB8-8_sKJtQ" name="SKEY_PREORDER" id="_ZpMLoMMNEfGRB8-8_sKJtQ" label="SKEY_PREORDER" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZpMLo8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ZpMLpMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZpkmIMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_ZpkmIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Zu_RoMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Zu_RocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Zv2NQMMNEfGRB8-8_sKJtQ" name="PREORDER_ID" label="PREORDER_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Zv2NQcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ZwLkcMMNEfGRB8-8_sKJtQ" name="PREORDER_NK" label="PREORDER_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_ZwLkccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Z1mP8MMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Z1mP8cMNEfGRB8-8_sKJtQ" name="SKEY_PRODUCT" id="_Z1lo4MMNEfGRB8-8_sKJtQ" label="SKEY_PRODUCT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z1mP8sMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Z1mP88MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z2JpkMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_Z2JpkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z2hdAMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Z2hdAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z21mEMMNEfGRB8-8_sKJtQ" name="PRDCT_ID" label="PRDCT_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Z21mEcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z3jXwMMNEfGRB8-8_sKJtQ" name="PRDCT_NK" label="PRDCT_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_Z3jXwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Z38ZUMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Z38ZUcMNEfGRB8-8_sKJtQ" name="SKEY_PRODUCT_CATEGORY" id="_Z37yQMMNEfGRB8-8_sKJtQ" label="SKEY_PRODUCT_CATEGORY" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z38ZUsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Z38ZU8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z4oV0MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_Z4oV0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z5BXYMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Z5BXYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z512wMMNEfGRB8-8_sKJtQ" name="PRDCT_CATEGORY_ID" label="PRDCT_CATEGORY_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Z512wcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z6PfYMMNEfGRB8-8_sKJtQ" name="PRDCT_CATEGORY_NK" label="PRDCT_CATEGORY_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_Z6PfYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Z68qAMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Z68qAcMNEfGRB8-8_sKJtQ" name="SKEY_PROGRAM_PARTNER" id="_Z68C8MMNEfGRB8-8_sKJtQ" label="SKEY_PROGRAM_PARTNER" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z68qAsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Z68qA8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z7WSoMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_Z7WSocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z8AZ8MMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Z8AZ8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z8ydEMMNEfGRB8-8_sKJtQ" name="LYL_PROGRAM_PARTNER_ID" label="LYL_PROGRAM_PARTNER_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Z8ydEcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z9NT0MMNEfGRB8-8_sKJtQ" name="LYL_PROGRAM_PARTNER_NK" label="LYL_PROGRAM_PARTNER_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_Z9NT0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_Z9irAcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_Z9irAsMNEfGRB8-8_sKJtQ" name="SKEY_PROGRAM_PARTNER_CATEGORY" id="_Z9irAMMNEfGRB8-8_sKJtQ" label="SKEY_PROGRAM_PARTNER_CATEGORY" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Z9irA8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_Z9irBMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aCYuwMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_aCYuwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aC6TMMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_aC6TMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aDRfkMMNEfGRB8-8_sKJtQ" name="LYL_PROGRAM_PARTNER_CATEGORY_ID" label="LYL_PROGRAM_PARTNER_CATEGORY_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_aDRfkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aDnd0MMNEfGRB8-8_sKJtQ" name="LYL_PROGRAM_PARTNER_CATEGORY_NK" label="LYL_PROGRAM_PARTNER_CATEGORY_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_aDnd0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_aIunUMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_aIunUcMNEfGRB8-8_sKJtQ" name="SKEY_REGION" id="_aIuAQMMNEfGRB8-8_sKJtQ" label="SKEY_REGION" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aIunUsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_aIunU8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aJO9oMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_aJO9ocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aJkU0MMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_aJkU0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aJ2BoMMNEfGRB8-8_sKJtQ" name="REGION_ID" label="REGION_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_aJ2BocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aP4_QMMNEfGRB8-8_sKJtQ" name="REGION_NK" label="REGION_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_aP4_QcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_aQbKwcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_aQbKwsMNEfGRB8-8_sKJtQ" name="SKEY_REPORTING_GROUP" id="_aQbKwMMNEfGRB8-8_sKJtQ" label="SKEY_REPORTING_GROUP" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aQbKw8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_aQbKxMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aQ0MUMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_aQ0MUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aRLYsMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_aRLYscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aWf9kMMNEfGRB8-8_sKJtQ" name="REPORTING_GRP_ID" label="REPORTING_GRP_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_aWf9kcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aW9QkMMNEfGRB8-8_sKJtQ" name="REPORTING_GRP_NK" label="REPORTING_GRP_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_aW9QkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_aXSnwMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_aXSnwcMNEfGRB8-8_sKJtQ" name="SKEY_ROUTE" id="_aXSAsMMNEfGRB8-8_sKJtQ" label="SKEY_ROUTE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aXSnwsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_aXSnw8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aXk7oMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_aXk7ocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aYapIMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_aYapIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aY1f4MMNEfGRB8-8_sKJtQ" name="ROUTE_ID" label="ROUTE_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_aY1f4cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aZkfsMMNEfGRB8-8_sKJtQ" name="ROUTE_NK" label="ROUTE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_aZkfscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_aZ9hQcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_aZ9hQsMNEfGRB8-8_sKJtQ" name="SKEY_RULE" id="_aZ9hQMMNEfGRB8-8_sKJtQ" label="SKEY_RULE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aZ9hQ8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_aZ9hRMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ae6SsMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_ae6SscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_af0RoMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_af0RocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_agOhUMMNEfGRB8-8_sKJtQ" name="RULE_ID" label="RULE_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_agOhUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_alNvAMMNEfGRB8-8_sKJtQ" name="RULE_NK" label="RULE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_alNvAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_al4dYMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_al4dYcMNEfGRB8-8_sKJtQ" name="SKEY_SEAT_CHANGE_EVENT" id="_al32UMMNEfGRB8-8_sKJtQ" label="SKEY_SEAT_CHANGE_EVENT" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_al4dYsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_al4dY8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_amPCsMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_amPCscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_anEJIMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_anEJIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aoLjcMMNEfGRB8-8_sKJtQ" name="SEAT_CHANGE_EVENT_ID" label="SEAT_CHANGE_EVENT_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_aoLjccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_aooPYMMNEfGRB8-8_sKJtQ" name="SEAT_CHANGE_EVENT_NK" label="SEAT_CHANGE_EVENT_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_aooPYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_apWoIMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_apWoIcMNEfGRB8-8_sKJtQ" name="SKEY_SEAT_ON_LEG" id="_apWBEMMNEfGRB8-8_sKJtQ" label="SKEY_SEAT_ON_LEG" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_apWoIsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_apWoI8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_apsmYMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_aptNcMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_auu3YMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_auu3YcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_avwyIMMNEfGRB8-8_sKJtQ" name="SEAT_ON_LEG_ID" label="SEAT_ON_LEG_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_avwyIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_awkDYMMNEfGRB8-8_sKJtQ" name="SEAT_ON_LEG_NK" label="SEAT_ON_LEG_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_awkDYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_axB9cMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_axB9ccMNEfGRB8-8_sKJtQ" name="SKEY_SEG" id="_axBWYMMNEfGRB8-8_sKJtQ" label="SKEY_SEG" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_axB9csMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_axB9c8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_a10W0MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_a10W0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_a2u80MMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_a2u80cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_a3bgYMMNEfGRB8-8_sKJtQ" name="SEG_ID" label="SEG_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_a3bgYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_a37PoMMNEfGRB8-8_sKJtQ" name="SEG_NK" label="SEG_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_a37PocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_a4vH8MMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_a4vH8cMNEfGRB8-8_sKJtQ" name="SKEY_SURVEY" id="_a4ug4MMNEfGRB8-8_sKJtQ" label="SKEY_SURVEY" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_a4vH8sMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_a4vH88MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_a5IwkMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_a5IwkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_a59P8MMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_a59P8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_a6jF0MMNEfGRB8-8_sKJtQ" name="SURVEY_ID" label="SURVEY_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_a6jF0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_a7C1EMMNEfGRB8-8_sKJtQ" name="SURVEY_NK" label="SURVEY_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_a7C1EcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_a73UcMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_a73UccMNEfGRB8-8_sKJtQ" name="SKEY_SURVEY_QUESTION" id="_a72tYMMNEfGRB8-8_sKJtQ" label="SKEY_SURVEY_QUESTION" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_a73UcsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_a73Uc8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_a8VOgMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_a8VOgcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bBgCYMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bBgCYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bCgvAMMNEfGRB8-8_sKJtQ" name="SURVEY_QST_ID" label="SURVEY_QST_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bCgvAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bDPu0MMNEfGRB8-8_sKJtQ" name="SURVEY_QST_NK" label="SURVEY_QST_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_bDPu0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_bDu3AMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_bDu3AcMNEfGRB8-8_sKJtQ" name="SKEY_SURVEY_RESPONSE" id="_bDto4MMNEfGRB8-8_sKJtQ" label="SKEY_SURVEY_RESPONSE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bDu3AsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bDu3A8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bJAYkMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_bJAYkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bJ7loMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bJ7locMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bK0WcMMNEfGRB8-8_sKJtQ" name="SURVEY_RSP_ID" label="SURVEY_RSP_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bK0WccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bLXJAMMNEfGRB8-8_sKJtQ" name="SURVEY_RSP_NK" label="SURVEY_RSP_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_bLXJAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_bMPSwMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_bMPSwcMNEfGRB8-8_sKJtQ" name="SKEY_TARIFF" id="_bMOEoMMNEfGRB8-8_sKJtQ" label="SKEY_TARIFF" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bMPSwsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bMPSw8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bMr-sMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_bMr-scMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bRxTAMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bRxTAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bSwxgMMNEfGRB8-8_sKJtQ" name="TARIFF_ID" label="TARIFF_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bSwxgcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bTiNkMMNEfGRB8-8_sKJtQ" name="TARIFF_NK" label="TARIFF_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_bTiNkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_bUBVwcMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_bUBVwsMNEfGRB8-8_sKJtQ" name="SKEY_TARIFF_FARE" id="_bUBVwMMNEfGRB8-8_sKJtQ" label="SKEY_TARIFF_FARE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bUBVw8MNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bUBVxMMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bU2cMMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_bU2cMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bVU9UMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bVU9UcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_babfwMMNEfGRB8-8_sKJtQ" name="TARIFF_FARE_ID" label="TARIFF_FARE_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_babfwcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bbTCcMMNEfGRB8-8_sKJtQ" name="TARIFF_FARE_NK" label="TARIFF_FARE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_bbTCccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_bcDQYMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_bcDQYcMNEfGRB8-8_sKJtQ" name="SKEY_TICKET" id="_bcCCQMMNEfGRB8-8_sKJtQ" label="SKEY_TICKET" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bcDQYsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bcDQY8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bceHIMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_bceHIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bdQKQMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bdQKQcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bds2MMMNEfGRB8-8_sKJtQ" name="TKT_ID" label="TKT_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bds2McMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_biZI8MMNEfGRB8-8_sKJtQ" name="TKT_NK" label="TKT_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_biZI8cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_bjZ1kMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_bjZ1kcMNEfGRB8-8_sKJtQ" name="SKEY_TOUR_OPERATOR" id="_bjZOgMMNEfGRB8-8_sKJtQ" label="SKEY_TOUR_OPERATOR" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bjZ1ksMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bjZ1k8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bkR_UMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_bkR_UcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bkyVoMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bkyVocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bpmkMMMNEfGRB8-8_sKJtQ" name="TOUR_OPERATOR_ID" label="TOUR_OPERATOR_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bpmkMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bqnQ0MMNEfGRB8-8_sKJtQ" name="TOUR_OPERATOR_NK" label="TOUR_OPERATOR_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_bqnQ0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_br97sMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_br97scMNEfGRB8-8_sKJtQ" name="SKEY_TRN" id="_br9UoMMNEfGRB8-8_sKJtQ" label="SKEY_TRN" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_br97ssMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_br97s8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bs698MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_bs698cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_byZ64MMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_byZ64cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bzKv4MMNEfGRB8-8_sKJtQ" name="LYL_TRN_ID" label="LYL_TRN_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_bzLW8MMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_bzuwkMMNEfGRB8-8_sKJtQ" name="LYL_TRN_NK" label="LYL_TRN_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_bzuwkcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_b0wrUMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_b0wrUcMNEfGRB8-8_sKJtQ" name="SKEY_TRN_CLASS" id="_b0vdMMMNEfGRB8-8_sKJtQ" label="SKEY_TRN_CLASS" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_b0wrUsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_b0wrU8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_b6GeUMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_b6GeUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_b7JnMMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_b7JnMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_b7wrMMMNEfGRB8-8_sKJtQ" name="LYL_TRN_CLASS_ID" label="LYL_TRN_CLASS_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_b7wrMcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_b87I0MMNEfGRB8-8_sKJtQ" name="LYL_TRN_CLASS_NK" label="LYL_TRN_CLASS_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_b87I0cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_cBwlgMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_cBwlgcMNEfGRB8-8_sKJtQ" name="SKEY_TRN_EARNING_RULE" id="_cBv-cMMNEfGRB8-8_sKJtQ" label="SKEY_TRN_EARNING_RULE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cBwlgsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_cBwlg8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cC51AMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_cC51AcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cD_aIMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_cD_aIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cFIpoMMNEfGRB8-8_sKJtQ" name="LYL_TRN_EARNING_RULE_ID" label="LYL_TRN_EARNING_RULE_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_cFIpocMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cKj8MMMNEfGRB8-8_sKJtQ" name="LYL_TRN_EARNING_RULE_NK" label="LYL_TRN_EARNING_RULE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_cKj8McMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_cMBUwMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_cMBUwcMNEfGRB8-8_sKJtQ" name="SKEY_TRN_TYPE" id="_cMAGoMMNEfGRB8-8_sKJtQ" label="SKEY_TRN_TYPE" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cMBUwsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_cMBUw8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cOA40MMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_cOA40cMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cPuJAMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_cPuJAcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cVKpsMMNEfGRB8-8_sKJtQ" name="LYL_TRN_TYPE_ID" label="LYL_TRN_TYPE_ID" length="15" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_cVKpscMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cWxzQMMNEfGRB8-8_sKJtQ" name="LYL_TRN_TYPE_NK" label="LYL_TRN_TYPE_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_cWxzQcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_cYMIgMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_cYMIgcMNEfGRB8-8_sKJtQ" name="SKEY_TYPE_RATING" id="_cYK6YMMNEfGRB8-8_sKJtQ" label="SKEY_TYPE_RATING" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cYMIgsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_cYMIg8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cZjacMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_cZjaccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_caz-sMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_caz-scMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cgtyYMMNEfGRB8-8_sKJtQ" name="TYPE_RATING_ID" label="TYPE_RATING_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_cgtyYcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_chywcMMNEfGRB8-8_sKJtQ" name="TYPE_RATING_NK" label="TYPE_RATING_NK" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_chywccMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+  <TalendMetadata:GenericPackage xmi:id="_cirhQMMNEfGRB8-8_sKJtQ" dataManager="_ViZVYMMNEfGRB8-8_sKJtQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_cirhQcMNEfGRB8-8_sKJtQ" name="SKEY_XBAG_ORDER_REQUEST" id="_ciqTIMMNEfGRB8-8_sKJtQ" label="SKEY_XBAG_ORDER_REQUEST" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cirhQsMNEfGRB8-8_sKJtQ" name="SYS_SRC_ID" label="SYS_SRC_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_cirhQ8MNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cjbIIMMNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
+        <initialValue xmi:id="_cjbIIcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ckA-AMMNEfGRB8-8_sKJtQ" name="INSERT_RUN_ID" label="INSERT_RUN_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_ckA-AcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cpn2wMMNEfGRB8-8_sKJtQ" name="XBAG_REQUEST_ID" label="XBAG_REQUEST_ID" length="10" sourceType="NUMBER" talendType="id_BigDecimal">
+        <initialValue xmi:id="_cpn2wcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cqKpUMMNEfGRB8-8_sKJtQ" name="XBAG_REQUEST_NK" label="XBAG_REQUEST_NK" length="100" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_cqKpUcMNEfGRB8-8_sKJtQ" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>
