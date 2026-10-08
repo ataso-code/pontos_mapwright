@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
-  <TalendMetadata:DatabaseConnection xmi:id="_i1ne8MMNEfGRB8-8_sKJtQ" dataPackage="_i1ne8cMNEfGRB8-8_sKJtQ _jIbGMcMNEfGRB8-8_sKJtQ _jpRwgcMNEfGRB8-8_sKJtQ _kF0ikcMNEfGRB8-8_sKJtQ _kJ1f4MMNEfGRB8-8_sKJtQ _kYvekMMNEfGRB8-8_sKJtQ _kw6uAMMNEfGRB8-8_sKJtQ _lGGT0MMNEfGRB8-8_sKJtQ _lJx58cMNEfGRB8-8_sKJtQ _laZI0MMNEfGRB8-8_sKJtQ _lpkNQMMNEfGRB8-8_sKJtQ _mi9TYcMNEfGRB8-8_sKJtQ _oHqnYMMNEfGRB8-8_sKJtQ _oQJ1AMMNEfGRB8-8_sKJtQ _oWXxwMMNEfGRB8-8_sKJtQ _ogk2oMMNEfGRB8-8_sKJtQ _ouDR8MMNEfGRB8-8_sKJtQ _o6WBgMMNEfGRB8-8_sKJtQ _qPP-8MMNEfGRB8-8_sKJtQ _qrsDUMMNEfGRB8-8_sKJtQ _rCuDQMMNEfGRB8-8_sKJtQ _rLsZEMMNEfGRB8-8_sKJtQ _rS_68MMNEfGRB8-8_sKJtQ _renVEMMNEfGRB8-8_sKJtQ _rnOegMMNEfGRB8-8_sKJtQ _r0rEoMMNEfGRB8-8_sKJtQ" DatabaseType="Oracle with service name" URL="jdbc:oracle:thin:@//kronos:1521/orcl" Port="1521" Username="DW_CDL" Password="" ServerName="kronos" DatasourceName="" FileFieldName="" DbmsId="oracle_id" ProductId="ORACLE" DBRootPath="" UiSchema="DW_CDL" supportNLS="false"/>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore">
+  <TalendMetadata:DatabaseConnection xmi:id="_i1ne8MMNEfGRB8-8_sKJtQ" name="KRONOS_DW_CDL" id="_i1m34cMNEfGRB8-8_sKJtQ" label="KRONOS_DW_CDL" dataPackage="_i1ne8cMNEfGRB8-8_sKJtQ _jIbGMcMNEfGRB8-8_sKJtQ _jpRwgcMNEfGRB8-8_sKJtQ _kF0ikcMNEfGRB8-8_sKJtQ _kJ1f4MMNEfGRB8-8_sKJtQ _kYvekMMNEfGRB8-8_sKJtQ _kw6uAMMNEfGRB8-8_sKJtQ _lGGT0MMNEfGRB8-8_sKJtQ _lJx58cMNEfGRB8-8_sKJtQ _laZI0MMNEfGRB8-8_sKJtQ _lpkNQMMNEfGRB8-8_sKJtQ _mi9TYcMNEfGRB8-8_sKJtQ _oHqnYMMNEfGRB8-8_sKJtQ _oQJ1AMMNEfGRB8-8_sKJtQ _oWXxwMMNEfGRB8-8_sKJtQ _ogk2oMMNEfGRB8-8_sKJtQ _ouDR8MMNEfGRB8-8_sKJtQ _o6WBgMMNEfGRB8-8_sKJtQ _qPP-8MMNEfGRB8-8_sKJtQ _qrsDUMMNEfGRB8-8_sKJtQ _rCuDQMMNEfGRB8-8_sKJtQ _rLsZEMMNEfGRB8-8_sKJtQ _rS_68MMNEfGRB8-8_sKJtQ _renVEMMNEfGRB8-8_sKJtQ _rnOegMMNEfGRB8-8_sKJtQ _r0rEoMMNEfGRB8-8_sKJtQ _DpkZZMNfEfGhspdFQc-jog" DatabaseType="Oracle with service name" DriverClass="oracle.jdbc.OracleDriver" URL="jdbc:oracle:thin:@(description=(address=(protocol=tcp)(host=kronos)(port=1521))(connect_data=(service_name=orcl)))" dbVersionString="ORACLE_18" Port="1521" Username="MAPWRIGHT" Password="enc:system.encryption.key.v1:424YJXXwTMPXTjEvUUaF3EFatJpWmW2Z5YBqIv6SSEMF4fRUlg==" ServerName="kronos" DatasourceName="" FileFieldName="" SID="orcl" SqlSynthax="" StringQuote="" NullChar="" DbmsId="oracle_id" ProductId="ORACLE" DBRootPath="" StandardSQL="true" SQLMode="false" UiSchema="DW_CDL" supportNLS="true">
+    <taggedValue xmi:id="_7LINcMNeEfGhspdFQc-jog" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_DtoaAMNfEfGhspdFQc-jog" tag="DB ProductName" value=""/>
+    <taggedValue xmi:id="_DtoaAcNfEfGhspdFQc-jog" tag="DB ProductVersion" value=""/>
+    <parameters xmi:id="_7GioYMNeEfGhspdFQc-jog" key="CONN_PARA_KEY_MAPRDB_TABLE_NS_MAPPING" value=""/>
+    <parameters xmi:id="_8WrakMNeEfGhspdFQc-jog" key="CONN_PARA_KEY_USERNAME" value="MAPWRIGHT"/>
+  </TalendMetadata:DatabaseConnection>
   <TalendMetadata:GenericPackage xmi:id="_i1ne8cMNEfGRB8-8_sKJtQ" dataManager="_i1ne8MMNEfGRB8-8_sKJtQ">
     <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_i1ne8sMNEfGRB8-8_sKJtQ" name="CDL_D_COUPON" id="_i1m34MMNEfGRB8-8_sKJtQ" label="CDL_D_COUPON" tableType="TABLE">
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_i1ne88MNEfGRB8-8_sKJtQ" name="INSERT_DTTM" label="INSERT_DTTM" precision="6" sourceType="TIMESTAMP" talendType="id_Date">
@@ -1995,4 +2001,5 @@
       </feature>
     </ownedElement>
   </TalendMetadata:GenericPackage>
+  <orgomg.cwm.resource.relational:Schema xmi:id="_DpkZZMNfEfGhspdFQc-jog" name="DW_CDL" dataManager="_i1ne8MMNEfGRB8-8_sKJtQ"/>
 </xmi:XMI>

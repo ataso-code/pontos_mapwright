@@ -1,1 +1,24 @@
-[ ]
+[ {
+  "baseItem" : {
+    "id" : "_Q1Ba8MNHEfGjyrc8T88oBQ",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_6V-v8cMjEfGuM7c_OEd9ZA",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
+    "id" : "_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_FDL_LYL_TRN_CLASS_LRY",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_FzId0cMmEfGuM7c_OEd9ZA - LND_FF_COMPANY_ACT_CLASSIFICATIONS",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_FzId0cMmEfGuM7c_OEd9ZA - LND_MAN_TRN_CLASS",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
+} ]

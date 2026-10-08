@@ -110,6 +110,12 @@
   }, {
     "id" : "org.talend.lite.di.wsdl.feature.feature.group"
   }, {
+    "id" : "org.talend.lite.dq.components.spark.feature.feature.group"
+  }, {
+    "id" : "org.talend.lite.dq.components.sparkstr.feature.feature.group"
+  }, {
+    "id" : "org.talend.lite.dq.feature.feature.group"
+  }, {
     "id" : "org.talend.lite.esb.ai.feature.feature.group"
   }, {
     "id" : "org.talend.lite.esb.apidesigner.feature.feature.group"
@@ -117,6 +123,12 @@
     "id" : "org.talend.lite.metadata.bridge.feature.feature.group"
   }, {
     "id" : "org.talend.lite.tdm.core.feature.feature.group"
+  }, {
+    "id" : "org.talend.lite.tdm.spark.feature.feature.group"
+  }, {
+    "id" : "org.talend.studio.components.bd.bigtable.feature.feature.group"
+  }, {
+    "id" : "org.talend.studio.components.bd.documentDB.feature.feature.group"
   }, {
     "id" : "org.talend.studio.components.di.cyberark.feature.feature.group"
   }, {
@@ -129,6 +141,8 @@
     "id" : "org.talend.studio.components.tck.claude.feature.feature.group"
   }, {
     "id" : "org.talend.studio.components.tck.cyberarkrest.connector.feature.feature.group"
+  }, {
+    "id" : "org.talend.studio.components.tck.dataqualityRule.feature.feature.group"
   }, {
     "id" : "org.talend.studio.components.tck.dsql4json.feature.feature.group"
   }, {
@@ -143,6 +157,8 @@
     "id" : "org.talend.studio.components.tck.hadoopcluster.feature.feature.group"
   }, {
     "id" : "org.talend.studio.components.tck.httpclient.connector.feature.feature.group"
+  }, {
+    "id" : "org.talend.studio.components.tck.jasper.feature.feature.group"
   }, {
     "id" : "org.talend.studio.components.tck.jira.feature.feature.group"
   }, {
@@ -175,6 +191,8 @@
     "id" : "org.talend.studio.components.tck.sap.odata.feature.feature.group"
   }, {
     "id" : "org.talend.studio.components.tck.semanticMatch.feature.feature.group"
+  }, {
+    "id" : "org.talend.studio.components.tck.sharepoint.feature.feature.group"
   }, {
     "id" : "org.talend.studio.components.tck.solr.feature.feature.group"
   }, {
