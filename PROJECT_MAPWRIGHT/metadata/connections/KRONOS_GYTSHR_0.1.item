@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
-  <TalendMetadata:DatabaseConnection xmi:id="_DioJUMKuEfGino-ctUL65Q" dataPackage="_DioJUcKuEfGino-ctUL65Q _EfZ6oMKuEfGino-ctUL65Q _I21N4MKuEfGino-ctUL65Q _LTTQUMKuEfGino-ctUL65Q _Mo-p0MKuEfGino-ctUL65Q _NsqUYMKuEfGino-ctUL65Q _O3H8YMKuEfGino-ctUL65Q _Rd6YcMKuEfGino-ctUL65Q _TzAnkMKuEfGino-ctUL65Q _VkVbQMKuEfGino-ctUL65Q _W0hQwMKuEfGino-ctUL65Q _Z19BcMKuEfGino-ctUL65Q _bkSLgMKuEfGino-ctUL65Q _ceaRcMKuEfGino-ctUL65Q _fTLfIMKuEfGino-ctUL65Q _gsHA8MKuEfGino-ctUL65Q _iEIj0MKuEfGino-ctUL65Q _pb2YQMKuEfGino-ctUL65Q _qv1IoMKuEfGino-ctUL65Q _rfGCYMKuEfGino-ctUL65Q _sj6VYMKuEfGino-ctUL65Q _t0i20MKuEfGino-ctUL65Q _vYUWsMKuEfGino-ctUL65Q _wob6wMKuEfGino-ctUL65Q _xX7eAMKuEfGino-ctUL65Q" DatabaseType="Oracle with service name" URL="jdbc:oracle:thin:@//kronos:1521/orcl" Port="1521" Username="DGYTSHR" Password="" ServerName="kronos" DatasourceName="" FileFieldName="" DbmsId="oracle_id" ProductId="ORACLE" DBRootPath="" UiSchema="DGYTSHR" supportNLS="false"/>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore">
+  <TalendMetadata:DatabaseConnection xmi:id="_DioJUMKuEfGino-ctUL65Q" name="KRONOS_GYTSHR" id="_DdcHUMKuEfGino-ctUL65Q" label="KRONOS_GYTSHR" dataPackage="_DioJUcKuEfGino-ctUL65Q _EfZ6oMKuEfGino-ctUL65Q _I21N4MKuEfGino-ctUL65Q _LTTQUMKuEfGino-ctUL65Q _Mo-p0MKuEfGino-ctUL65Q _NsqUYMKuEfGino-ctUL65Q _O3H8YMKuEfGino-ctUL65Q _Rd6YcMKuEfGino-ctUL65Q _TzAnkMKuEfGino-ctUL65Q _VkVbQMKuEfGino-ctUL65Q _W0hQwMKuEfGino-ctUL65Q _Z19BcMKuEfGino-ctUL65Q _bkSLgMKuEfGino-ctUL65Q _ceaRcMKuEfGino-ctUL65Q _fTLfIMKuEfGino-ctUL65Q _gsHA8MKuEfGino-ctUL65Q _iEIj0MKuEfGino-ctUL65Q _pb2YQMKuEfGino-ctUL65Q _qv1IoMKuEfGino-ctUL65Q _rfGCYMKuEfGino-ctUL65Q _sj6VYMKuEfGino-ctUL65Q _t0i20MKuEfGino-ctUL65Q _vYUWsMKuEfGino-ctUL65Q _wob6wMKuEfGino-ctUL65Q _xX7eAMKuEfGino-ctUL65Q _iRZB1MNgEfGTmqRnaE6Ahw" DatabaseType="Oracle with service name" DriverClass="oracle.jdbc.OracleDriver" URL="jdbc:oracle:thin:@(description=(address=(protocol=tcp)(host=kronos)(port=1521))(connect_data=(service_name=orcl)))" dbVersionString="ORACLE_18" Port="1521" Username="MAPWRIGHT" Password="enc:system.encryption.key.v1:BanNTJFchQpl/Rn49F/QkDq4utBy1v9bCFU7/gk2jZArRPMFFw==" ServerName="kronos" DatasourceName="" FileFieldName="" SID="orcl" SqlSynthax="" StringQuote="" NullChar="" DbmsId="oracle_id" ProductId="ORACLE" DBRootPath="" StandardSQL="true" SQLMode="false" UiSchema="DGYTSHR" supportNLS="true">
+    <taggedValue xmi:id="_fYQ4kMNgEfGTmqRnaE6Ahw" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_iRo5cMNgEfGTmqRnaE6Ahw" tag="DB ProductName" value=""/>
+    <taggedValue xmi:id="_iRo5ccNgEfGTmqRnaE6Ahw" tag="DB ProductVersion" value=""/>
+    <parameters xmi:id="_fVobUMNgEfGTmqRnaE6Ahw" key="CONN_PARA_KEY_MAPRDB_TABLE_NS_MAPPING" value=""/>
+    <parameters xmi:id="_gVNB8MNgEfGTmqRnaE6Ahw" key="CONN_PARA_KEY_USERNAME" value="MAPWRIGHT"/>
+  </TalendMetadata:DatabaseConnection>
   <TalendMetadata:GenericPackage xmi:id="_DioJUcKuEfGino-ctUL65Q" dataManager="_DioJUMKuEfGino-ctUL65Q">
     <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_DioJUsKuEfGino-ctUL65Q" name="SNP_CHECK_TAB" id="_DdXO0MKuEfGino-ctUL65Q" label="SNP_CHECK_TAB" tableType="TABLE">
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_DioJU8KuEfGino-ctUL65Q" name="CATALOG_NAME" label="CATALOG_NAME" length="100" sourceType="VARCHAR2" talendType="id_String">
@@ -1784,4 +1790,5 @@
       </feature>
     </ownedElement>
   </TalendMetadata:GenericPackage>
+  <orgomg.cwm.resource.relational:Schema xmi:id="_iRZB1MNgEfGTmqRnaE6Ahw" name="DGYTSHR" dataManager="_DioJUMKuEfGino-ctUL65Q"/>
 </xmi:XMI>
