@@ -175,15 +175,30 @@
     "version" : "7.4.1",
     "status" : "ok"
   }, {
+    "id" : "org.talend.camel.designer.migration.UpdateBeansDefaultLibrariesMigrationTask.8.0.1-R2026-09",
+    "breaks" : "7.3.0",
+    "version" : "7.4.1",
+    "status" : "noimpact"
+  }, {
     "id" : "org.talend.camel.designer.migration.UpdateBeansLibrariesMigrationTask.8.0.1-R2026-04",
     "breaks" : "7.3.0",
     "version" : "7.3.1",
     "status" : "ok"
   }, {
+    "id" : "org.talend.camel.designer.migration.UpdateBeansLibrariesMigrationTask.8.0.1-R2026-09",
+    "breaks" : "7.3.0",
+    "version" : "7.3.1",
+    "status" : "noimpact"
+  }, {
     "id" : "org.talend.camel.designer.migration.UpdateBeansPackageReplaceMigrationTask.8.0.1-R2025-01",
     "breaks" : "7.3.0",
     "version" : "7.4.1",
     "status" : "ok"
+  }, {
+    "id" : "org.talend.camel.designer.migration.UpdateBeansPackageReplaceMigrationTask.8.0.1-R2025-09",
+    "breaks" : "7.3.0",
+    "version" : "7.4.1",
+    "status" : "noimpact"
   }, {
     "id" : "org.talend.camel.designer.migration.UpdateBuildTypeForSpringBootMSMigrationTask",
     "breaks" : "7.3.1",
@@ -214,6 +229,11 @@
     "breaks" : "7.3.0",
     "version" : "7.4.1",
     "status" : "ok"
+  }, {
+    "id" : "org.talend.camel.designer.migration.UpdateRoutinesLibrariesMigrationTask.8.0.1-R2026-09",
+    "breaks" : "7.3.0",
+    "version" : "7.4.1",
+    "status" : "noimpact"
   }, {
     "id" : "org.talend.camel.designer.migration.UpdatecJMSMigrationTask",
     "breaks" : "5.1.1",
@@ -530,6 +550,11 @@
     "version" : "7.2.0",
     "status" : "ok"
   }, {
+    "id" : "org.talend.designer.maven.migration.tasks.CorrectBuildTypeForApiFirstJobMigrationTask",
+    "breaks" : "8.0.1",
+    "version" : "8.0.1",
+    "status" : "noimpact"
+  }, {
     "id" : "org.talend.designer.maven.ui.ConfigMavenRepositoryRemove",
     "breaks" : "6.0.1",
     "version" : "6.0.2",
@@ -564,6 +589,11 @@
     "breaks" : "8.0.1",
     "version" : "8.0.1",
     "status" : "ok"
+  }, {
+    "id" : "org.talend.designer.spark.repository.migration.KafkaInputAvroToKafkaInputMigrationTask",
+    "breaks" : "8.0.1",
+    "version" : "8.0.1",
+    "status" : "noimpact"
   }, {
     "id" : "org.talend.designer.spark.repository.migration.KafkaInputSchemaMigrationTask",
     "breaks" : "7.3.1",
@@ -1214,6 +1244,16 @@
     "breaks" : "8.0.0",
     "version" : "8.0.1",
     "status" : "ok"
+  }, {
+    "id" : "org.talend.repository.model.migration.Adlsgen2MetadataSASEncryptMigrationTask",
+    "breaks" : "8.0.1",
+    "version" : "8.0.1",
+    "status" : "noimpact"
+  }, {
+    "id" : "org.talend.repository.model.migration.Adlsgen2SASEncryptMigrationTask",
+    "breaks" : "8.0.1",
+    "version" : "8.0.1",
+    "status" : "noimpact"
   }, {
     "id" : "org.talend.repository.model.migration.ApplySecurityAfterAdvancedKafkaProperties",
     "breaks" : "8.0.0",
@@ -1882,7 +1922,7 @@
     "id" : "org.talend.repository.model.migration.FixProjectResourceLink",
     "breaks" : "5.1.1",
     "version" : "5.1.2",
-    "status" : "ok"
+    "status" : "noimpact"
   }, {
     "id" : "org.talend.repository.model.migration.FixUnevenItemContextParametersMigrationTask",
     "breaks" : "6.1.0",
@@ -2137,6 +2177,11 @@
     "breaks" : "5.1.1",
     "version" : "5.1.2",
     "status" : "ok"
+  }, {
+    "id" : "org.talend.repository.model.migration.RenameAmazonMysqlMigrationTask",
+    "breaks" : "8.0.1",
+    "version" : "8.0.1",
+    "status" : "noimpact"
   }, {
     "id" : "org.talend.repository.model.migration.RenameConnectionName4tSQSOutput",
     "breaks" : "7.3.0",
@@ -2447,6 +2492,11 @@
     "breaks" : "7.3.0",
     "version" : "7.3.1",
     "status" : "ok"
+  }, {
+    "id" : "org.talend.repository.model.migration.SAPReceiverKeyPrefixQuoteMigrationTask",
+    "breaks" : "8.0.1",
+    "version" : "8.0.1",
+    "status" : "noimpact"
   }, {
     "id" : "org.talend.repository.model.migration.SQS2TCKMigrationTask",
     "breaks" : "8.0.1",
@@ -2974,6 +3024,16 @@
     "breaks" : "7.1.0",
     "version" : "7.3.0",
     "status" : "ok"
+  }, {
+    "id" : "org.talend.sdk.component.studio.metadata.migration.SplunkChangeTokenTypeToPasswordMigration",
+    "breaks" : "8.0.1",
+    "version" : "8.0.1",
+    "status" : "noimpact"
+  }, {
+    "id" : "org.talend.sdk.component.studio.metadata.migration.SplunkMetadataEncryptTokenMigration",
+    "breaks" : "8.0.1",
+    "version" : "8.0.1",
+    "status" : "noimpact"
   }, {
     "id" : "org.talend.sdk.component.studio.metadata.migration.UpdateEncryptTckMetadataMigrationTask",
     "breaks" : "8.0.0",
