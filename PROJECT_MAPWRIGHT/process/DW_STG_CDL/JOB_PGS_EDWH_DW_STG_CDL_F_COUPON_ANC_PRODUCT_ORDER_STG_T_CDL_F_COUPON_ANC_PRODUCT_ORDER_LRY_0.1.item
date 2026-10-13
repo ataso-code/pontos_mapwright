@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
-  <context confirmationNeeded="false" name="Default"/>
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_FROM_ETL_DATE" promptNeeded="false" type="id_String"/>
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
   <parameters/>
   <node componentName="tELTOracleInput" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
@@ -175,7 +178,7 @@
         <DBMapperTableEntries name="ORD_LINE_TEXT" expression="T1.ORD_LINE_TEXT"/>
         <DBMapperTableEntries name="BAG_WEIGHT_KG" expression="CASE WHEN T5.PRDCT_CATEGORY_CODE = 'BAG' THEN 0 ELSE NULL END"/>
         <DBMapperTableEntries name="SEAT_POSITION_CODE" expression="CASE WHEN T5.PRDCT_CATEGORY_CODE = 'SEAT' THEN T1.ORD_LINE_TEXT ELSE '-999' END"/>
-        <FilterEntries name="where" expression="T1.PAYMENT_CPN_ID > 0 AND CASE WHEN T5.PRDCT_CATEGORY_CODE IN ('BAG', 'SEAT', 'OTH', 'EQP') THEN 1 WHEN T4.PRDCT_CODE = 'WPAY' THEN 1 ELSE 0 END = 1" filterKind="WHERE_CLAUSE"/>
+        <FilterEntries name="where" expression="(T1.PAYMENT_CPN_ID > 0 AND CASE WHEN T5.PRDCT_CATEGORY_CODE IN ('BAG', 'SEAT', 'OTH', 'EQP') THEN 1 WHEN T4.PRDCT_CODE = 'WPAY' THEN 1 ELSE 0 END = 1) AND (T1.ORD_LINE_DT IN (SELECT DISTINCT ORD_LINE_DT FROM DW_FDL.FDL_RES_PNR_ORDER_LINE WHERE FDL_RES_PNR_ORDER_LINE.UPDATE_DTTM BETWEEN TO_DATE('&quot; + context.VAR_FROM_ETL_DATE + &quot;', 'DD.MM.YYYY') + 1 AND (TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') + 2) - INTERVAL '1' SECOND))" filterKind="WHERE_CLAUSE"/>
       </OutputTables>
     </nodeData>
   </node>
