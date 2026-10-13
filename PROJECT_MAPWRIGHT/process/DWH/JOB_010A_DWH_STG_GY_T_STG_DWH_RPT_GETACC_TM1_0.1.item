@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_DWH_RPT_GETACC_TM1&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_OMS_USP_GETACC"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_OMS_USP_GETACC&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_OMS_USP_GETACC"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_OMS_USP_GETACC" name="table1">
+      <column key="false" length="10" name="ACCOUNTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MARKETACCOUNTNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="60" name="ACCOUNTNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="18" name="CASHBALANCE" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CUSTOMERID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="201" name="CUSTOMERNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CONTACTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CUSTOMERNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ACCOUNTGROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="BRANCHCODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="BRANCH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="BANK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="BANKBRANCHCODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="BANKBRANCH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="83" name="ACCOUNTSPECIES" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="BASECURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="ACCOUNTTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="EXECTYPE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="IBAN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="18" name="UNREALIZEDPROFITLOSS" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ACCOUNTVALUE" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="TRADINGMARGIN" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="60" name="MARKETMAKERACCOUNTID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MARGINCALCULATIONTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="ACCOUNTSTATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="USEDMARGIN" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DAYPL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ISNOTACCEPTINGSWAPPROFIT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISPRIVATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISCFDTRADABLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISRECONCILED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CONTRACTVERSION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STATEMENTREQUESTTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="SMSREQUESTTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISACTION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="INFO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="DEMOMARKETACCOUNTNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISONLYPOSITIONCLOSE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATEDATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="4000" name="AUTOSTOPTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTALPOSITIONLIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="WITHHOLDINGTAXISNOTAPPLIED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_OMS_USP_GETACC"/>
+    <metadata connector="TABLE" label="T_STG_DWH_RPT_GETACC_TM1" name="T_STG_DWH_RPT_GETACC_TM1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ACCOUNTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MARKETACCOUNTNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="60" name="ACCOUNTNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="18" name="CASHBALANCE" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CUSTOMERID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="201" name="CUSTOMERNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CONTACTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CUSTOMERNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ACCOUNTGROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="BRANCHCODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="BRANCH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="BANK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="BANKBRANCHCODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="BANKBRANCH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="83" name="ACCOUNTSPECIES" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="BASECURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="ACCOUNTTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="EXECTYPE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="IBAN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="18" name="UNREALIZEDPROFITLOSS" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ACCOUNTVALUE" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="TRADINGMARGIN" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="60" name="MARKETMAKERACCOUNTID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MARGINCALCULATIONTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="ACCOUNTSTATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="USEDMARGIN" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DAYPL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ISNOTACCEPTINGSWAPPROFIT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISPRIVATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISCFDTRADABLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISRECONCILED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CONTRACTVERSION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STATEMENTREQUESTTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="SMSREQUESTTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISACTION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="INFO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="DEMOMARKETACCOUNTNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISONLYPOSITIONCLOSE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATEDATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="4000" name="AUTOSTOPTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTALPOSITIONLIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="WITHHOLDINGTAXISNOTAPPLIED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSOPR.T_OMS_USP_GETACC" tableName="DGYTODSOPR.T_OMS_USP_GETACC" joinType="NO_JOIN" alias="T_OMS_USP_GETACC">
+        <DBMapperTableEntries name="ACCOUNTID"/>
+        <DBMapperTableEntries name="MARKETACCOUNTNO"/>
+        <DBMapperTableEntries name="ACCOUNTNAME"/>
+        <DBMapperTableEntries name="CASHBALANCE"/>
+        <DBMapperTableEntries name="CUSTOMERID"/>
+        <DBMapperTableEntries name="CUSTOMERNAME"/>
+        <DBMapperTableEntries name="CONTACTID"/>
+        <DBMapperTableEntries name="CUSTOMERNO"/>
+        <DBMapperTableEntries name="ACCOUNTGROUP"/>
+        <DBMapperTableEntries name="BRANCHCODE"/>
+        <DBMapperTableEntries name="BRANCH"/>
+        <DBMapperTableEntries name="BANK"/>
+        <DBMapperTableEntries name="BANKBRANCHCODE"/>
+        <DBMapperTableEntries name="BANKBRANCH"/>
+        <DBMapperTableEntries name="ACCOUNTSPECIES"/>
+        <DBMapperTableEntries name="BASECURRENCY"/>
+        <DBMapperTableEntries name="ACCOUNTTYPE"/>
+        <DBMapperTableEntries name="EXECTYPE"/>
+        <DBMapperTableEntries name="IBAN"/>
+        <DBMapperTableEntries name="UNREALIZEDPROFITLOSS"/>
+        <DBMapperTableEntries name="ACCOUNTVALUE"/>
+        <DBMapperTableEntries name="TRADINGMARGIN"/>
+        <DBMapperTableEntries name="MARKETMAKERACCOUNTID"/>
+        <DBMapperTableEntries name="MARGINCALCULATIONTYPE"/>
+        <DBMapperTableEntries name="ACCOUNTSTATUS"/>
+        <DBMapperTableEntries name="USEDMARGIN"/>
+        <DBMapperTableEntries name="DAYPL"/>
+        <DBMapperTableEntries name="ISNOTACCEPTINGSWAPPROFIT"/>
+        <DBMapperTableEntries name="ISPRIVATE"/>
+        <DBMapperTableEntries name="ISCFDTRADABLE"/>
+        <DBMapperTableEntries name="ISRECONCILED"/>
+        <DBMapperTableEntries name="CONTRACTVERSION"/>
+        <DBMapperTableEntries name="STATEMENTREQUESTTYPE"/>
+        <DBMapperTableEntries name="SMSREQUESTTYPE"/>
+        <DBMapperTableEntries name="ISACTION"/>
+        <DBMapperTableEntries name="INFO"/>
+        <DBMapperTableEntries name="DEMOMARKETACCOUNTNO"/>
+        <DBMapperTableEntries name="ISONLYPOSITIONCLOSE"/>
+        <DBMapperTableEntries name="CREATEDATE"/>
+        <DBMapperTableEntries name="AUTOSTOPTYPE"/>
+        <DBMapperTableEntries name="TOTALPOSITIONLIMIT"/>
+        <DBMapperTableEntries name="WITHHOLDINGTAXISNOTAPPLIED"/>
+      </InputTables>
+      <OutputTables name="T_STG_DWH_RPT_GETACC_TM1" tableName="T_STG_DWH_RPT_GETACC_TM1">
+        <DBMapperTableEntries name="ETL_DATE" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="'OMS'"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="ACCOUNTID" expression="T_OMS_USP_GETACC.ACCOUNTID"/>
+        <DBMapperTableEntries name="MARKETACCOUNTNO" expression="T_OMS_USP_GETACC.MARKETACCOUNTNO"/>
+        <DBMapperTableEntries name="ACCOUNTNAME" expression="T_OMS_USP_GETACC.ACCOUNTNAME"/>
+        <DBMapperTableEntries name="CASHBALANCE" expression="T_OMS_USP_GETACC.CASHBALANCE"/>
+        <DBMapperTableEntries name="CUSTOMERID" expression="T_OMS_USP_GETACC.CUSTOMERID"/>
+        <DBMapperTableEntries name="CUSTOMERNAME" expression="T_OMS_USP_GETACC.CUSTOMERNAME"/>
+        <DBMapperTableEntries name="CONTACTID" expression="T_OMS_USP_GETACC.CONTACTID"/>
+        <DBMapperTableEntries name="CUSTOMERNO" expression="NVL(T_OMS_USP_GETACC.CUSTOMERNO, '?')"/>
+        <DBMapperTableEntries name="ACCOUNTGROUP" expression="T_OMS_USP_GETACC.ACCOUNTGROUP"/>
+        <DBMapperTableEntries name="BRANCHCODE" expression="NVL(T_OMS_USP_GETACC.BRANCHCODE, '?')"/>
+        <DBMapperTableEntries name="BRANCH" expression="NVL(T_OMS_USP_GETACC.BRANCH, '?')"/>
+        <DBMapperTableEntries name="BANK" expression="NVL(T_OMS_USP_GETACC.BANK, '?')"/>
+        <DBMapperTableEntries name="BANKBRANCHCODE" expression="NVL(T_OMS_USP_GETACC.BANKBRANCHCODE, '?')"/>
+        <DBMapperTableEntries name="BANKBRANCH" expression="NVL(T_OMS_USP_GETACC.BANKBRANCH, '?')"/>
+        <DBMapperTableEntries name="ACCOUNTSPECIES" expression="T_OMS_USP_GETACC.ACCOUNTSPECIES"/>
+        <DBMapperTableEntries name="BASECURRENCY" expression="T_OMS_USP_GETACC.BASECURRENCY"/>
+        <DBMapperTableEntries name="ACCOUNTTYPE" expression="T_OMS_USP_GETACC.ACCOUNTTYPE"/>
+        <DBMapperTableEntries name="EXECTYPE" expression="T_OMS_USP_GETACC.EXECTYPE"/>
+        <DBMapperTableEntries name="IBAN" expression="NVL(T_OMS_USP_GETACC.IBAN, '?')"/>
+        <DBMapperTableEntries name="UNREALIZEDPROFITLOSS" expression="T_OMS_USP_GETACC.UNREALIZEDPROFITLOSS"/>
+        <DBMapperTableEntries name="ACCOUNTVALUE" expression="T_OMS_USP_GETACC.ACCOUNTVALUE"/>
+        <DBMapperTableEntries name="TRADINGMARGIN" expression="T_OMS_USP_GETACC.TRADINGMARGIN"/>
+        <DBMapperTableEntries name="MARKETMAKERACCOUNTID" expression="NVL(T_OMS_USP_GETACC.MARKETMAKERACCOUNTID, '?')"/>
+        <DBMapperTableEntries name="MARGINCALCULATIONTYPE" expression="T_OMS_USP_GETACC.MARGINCALCULATIONTYPE"/>
+        <DBMapperTableEntries name="ACCOUNTSTATUS" expression="T_OMS_USP_GETACC.ACCOUNTSTATUS"/>
+        <DBMapperTableEntries name="USEDMARGIN" expression="T_OMS_USP_GETACC.USEDMARGIN"/>
+        <DBMapperTableEntries name="DAYPL" expression="T_OMS_USP_GETACC.DAYPL"/>
+        <DBMapperTableEntries name="ISNOTACCEPTINGSWAPPROFIT" expression="T_OMS_USP_GETACC.ISNOTACCEPTINGSWAPPROFIT"/>
+        <DBMapperTableEntries name="ISPRIVATE" expression="T_OMS_USP_GETACC.ISPRIVATE"/>
+        <DBMapperTableEntries name="ISCFDTRADABLE" expression="T_OMS_USP_GETACC.ISCFDTRADABLE"/>
+        <DBMapperTableEntries name="ISRECONCILED" expression="T_OMS_USP_GETACC.ISRECONCILED"/>
+        <DBMapperTableEntries name="CONTRACTVERSION" expression="NVL(T_OMS_USP_GETACC.CONTRACTVERSION, '?')"/>
+        <DBMapperTableEntries name="STATEMENTREQUESTTYPE" expression="T_OMS_USP_GETACC.STATEMENTREQUESTTYPE"/>
+        <DBMapperTableEntries name="SMSREQUESTTYPE" expression="T_OMS_USP_GETACC.SMSREQUESTTYPE"/>
+        <DBMapperTableEntries name="ISACTION" expression="T_OMS_USP_GETACC.ISACTION"/>
+        <DBMapperTableEntries name="INFO" expression="NVL(T_OMS_USP_GETACC.INFO, '?')"/>
+        <DBMapperTableEntries name="DEMOMARKETACCOUNTNO" expression="NVL(T_OMS_USP_GETACC.DEMOMARKETACCOUNTNO, '?')"/>
+        <DBMapperTableEntries name="ISONLYPOSITIONCLOSE" expression="T_OMS_USP_GETACC.ISONLYPOSITIONCLOSE"/>
+        <DBMapperTableEntries name="CREATEDATE" expression="T_OMS_USP_GETACC.CREATEDATE"/>
+        <DBMapperTableEntries name="AUTOSTOPTYPE" expression="T_OMS_USP_GETACC.AUTOSTOPTYPE"/>
+        <DBMapperTableEntries name="TOTALPOSITIONLIMIT" expression="T_OMS_USP_GETACC.TOTALPOSITIONLIMIT"/>
+        <DBMapperTableEntries name="WITHHOLDINGTAXISNOTAPPLIED" expression="T_OMS_USP_GETACC.WITHHOLDINGTAXISNOTAPPLIED"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_DWH_RPT_GETACC_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_DWH_RPT_GETACC_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_DWH_RPT_GETACC_TM1"/>
+    <metadata connector="TABLE" label="T_STG_DWH_RPT_GETACC_TM1" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ACCOUNTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MARKETACCOUNTNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="60" name="ACCOUNTNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="18" name="CASHBALANCE" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CUSTOMERID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="201" name="CUSTOMERNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CONTACTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CUSTOMERNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ACCOUNTGROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="BRANCHCODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="BRANCH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="BANK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="BANKBRANCHCODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="BANKBRANCH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="83" name="ACCOUNTSPECIES" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="BASECURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="ACCOUNTTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="EXECTYPE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="IBAN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="18" name="UNREALIZEDPROFITLOSS" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ACCOUNTVALUE" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="TRADINGMARGIN" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="60" name="MARKETMAKERACCOUNTID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MARGINCALCULATIONTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="ACCOUNTSTATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="USEDMARGIN" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DAYPL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ISNOTACCEPTINGSWAPPROFIT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISPRIVATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISCFDTRADABLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISRECONCILED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CONTRACTVERSION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STATEMENTREQUESTTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="SMSREQUESTTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISACTION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="INFO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="DEMOMARKETACCOUNTNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ISONLYPOSITIONCLOSE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATEDATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="4000" name="AUTOSTOPTYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTALPOSITIONLIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="WITHHOLDINGTAXISNOTAPPLIED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_OMS_USP_GETACC" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_DWH_RPT_GETACC_TM1" lineStyle="9" mergeOrder="0" metaname="T_STG_DWH_RPT_GETACC_TM1" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
