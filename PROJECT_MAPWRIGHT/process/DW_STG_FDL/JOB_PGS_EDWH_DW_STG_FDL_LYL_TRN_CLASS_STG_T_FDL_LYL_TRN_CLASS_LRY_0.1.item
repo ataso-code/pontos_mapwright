@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:TalendDBMap_1="http://www.talend.org/unitemap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" hide="false" name="Default">
-    <contextParameter name="VAR_ETL_DATE" prompt="VAR_ETL_DATE?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="01.01.2026" internalId="_ywe1AMNhEfGSFcfHNc1ARg"/>
+    <contextParameter name="VAR_ETL_DATE" prompt="VAR_ETL_DATE?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="01.01.2026" internalId="_Vjx_UMQnEfG-xosAv91D_g"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" value="" show="false"/>
@@ -29,7 +27,7 @@
     <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
     <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" value="false" show="false"/>
     <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" value="false" show="false"/>
-    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="&quot;/tmp/mapwright-talend-mapwright/run-7f09d632-b079-4cca-904d-5050408c1985/workspace/in.csv&quot;" show="false"/>
+    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="&quot;/tmp/mapwright-talend-mapwright/server/workspace/in.csv&quot;" show="false"/>
     <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;" show="false"/>
     <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" value="false" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" value="ISO-8859-15" show="false"/>
@@ -46,7 +44,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:S6dhDVh+cqIL0kHF35Vw8EcfL8+I35IROfl8SjhF" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:Uba7yTd5NlbKExJbbhk+e8nZ4qA2+yXY/EZerKOo" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -61,7 +59,7 @@
     <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
     <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false" show="false"/>
     <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false" show="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;/tmp/mapwright-talend-mapwright/run-7f09d632-b079-4cca-904d-5050408c1985/workspace/.metadata&quot;" show="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;/tmp/mapwright-talend-mapwright/server/workspace/.metadata&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" value="&quot;stats_file.txt&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" value="&quot;logs_file.txt&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" value="&quot;meter_file.txt&quot;" show="false"/>
@@ -81,7 +79,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:uN7GkpEESwo9t7hDFi2PyNTXWt2MvlgaJacNl511" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:G6cD4fPCxYp/oHhCfLxfDMXk8jxBO+5Th17f6xvO" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -101,7 +99,7 @@
     <elementParameter field="TEXT" name="FOOTER_CODE" value="" show="false"/>
     <elementParameter field="TEXT" name="FOOTER_IMPORT" value="" show="false"/>
   </parameters>
-  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="80" posY="40">
+  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
     <elementParameter field="TEXT" name="COMPONENT_NAME" value="tPrejob" show="false"/>
     <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
@@ -113,10 +111,10 @@
     <elementParameter field="TEXT" name="HELP" value="org.talend.help.tPrejob" show="false"/>
     <elementParameter field="DIRECTORY" name="IREPORT_PATH" value="" show="false"/>
     <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="/tmp/mapwright-talend-mapwright/configuration/lib/java" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="PREJOB"/>
+    <elementParameter field="TEXT" name="LABEL" value="PRE_TRUNCATE_TARGET"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tOracleRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="40">
+  <node componentName="tOracleRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1" show="false"/>
     <elementParameter field="TEXT" name="COMPONENT_NAME" value="tOracleRow" show="false"/>
     <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
@@ -133,16 +131,16 @@
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
     <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_18"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_23"/>
     <elementParameter field="TEXT" name="RAC_URL" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;kronos&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;1521&quot;"/>
     <elementParameter field="TEXT" name="DBNAME" value="&quot;orcl&quot;"/>
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;DW_STG&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="TYPE" value="Oracle" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;MAPWRIGHT&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:3H143BCKYT1ECRYKSX+xYUezb6TOmU7EYn2MW2SijDtxOol1Mq4I"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:BOo2E84q2cerzpQDLfII21imw4v7jhJmHRKVYSYr"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -163,8 +161,8 @@
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
-    <elementParameter field="CHECK" name="SUPPORT_NLS" value="true"/>
-    <elementParameter field="TEXT" name="LABEL" value="TRUNCATE_TARGET"/>
+    <elementParameter field="CHECK" name="SUPPORT_NLS" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="SQL_TRUNCATE_TARGET"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBRow_1"/>
     <metadata connector="REJECT" name="REJECT">
@@ -172,7 +170,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="80" posY="200">
+  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1" show="false"/>
     <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleInput" show="false"/>
     <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
@@ -188,6 +186,7 @@
     <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;LND_FF_COMPANY_ACT_CLASSIFICATIONS&quot;"/>
     <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
+    <elementParameter field="TEXT" name="LABEL" value="SRC_LND_FF_COMPANY_ACT_CLASSIFICATIONS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="TABLE" label="DW_LND.LND_FF_COMPANY_ACT_CLASSIFICATIONS" name="table1">
       <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
@@ -213,7 +212,7 @@
       <column key="false" length="10" name="COMPANY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="400" posY="200">
+  <node componentName="tELTOracleMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1" show="false"/>
     <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleMap" show="false"/>
     <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
@@ -237,17 +236,18 @@
     <elementParameter field="TEXT" name="HOST" value="&quot;kronos&quot;" show="false"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;1521&quot;" show="false"/>
     <elementParameter field="TEXT" name="DBNAME" value="&quot;orcl&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;DW_STG&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:eHxMDYjiUOhJrcydOG/WVSoTE9eUlvpNm86tqHq6" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;MAPWRIGHT&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:GqIxmUVCfvLAV8mry6lf8POlCbmjLAXhFjg/CMIC" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id" show="false"/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_xG0vkMNhEfGSFcfHNc1ARg-tELTOracleMap_1-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_VKNowMQnEfG-xosAv91D_g-tELTOracleMap_1-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DRY_RUN" value="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;" show="false"/>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false" show="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="MAP_LND_FF_COMPANY_ACT_CLASSIFICATIONS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="TABLE" label="STG_T_FDL_LYL_TRN_CLASS_LRY" name="U_1">
       <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
@@ -259,7 +259,7 @@
       <column key="false" length="10" name="LYL_TRN_CLASS_CTGRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendDBMap:DBMapData">
-      <InputTables name="DW_LND.LND_FF_COMPANY_ACT_CLASSIFICATIONS" tableName="DW_LND.LND_FF_COMPANY_ACT_CLASSIFICATIONS" joinType="NO_JOIN" alias="A">
+      <InputTables name="DW_LND.LND_FF_COMPANY_ACT_CLASSIFICATIONS" tableName="DW_LND.LND_FF_COMPANY_ACT_CLASSIFICATIONS" joinType="NO_JOIN" alias="LND_FF_COMPANY_ACT_CLASSIFICATIONS">
         <DBMapperTableEntries name="LANDING_DT"/>
         <DBMapperTableEntries name="SYS_SRC_ID"/>
         <DBMapperTableEntries name="INSERT_DTTM"/>
@@ -283,18 +283,18 @@
         <DBMapperTableEntries name="COMPANY"/>
       </InputTables>
       <OutputTables name="U_1" tableName="STG_T_FDL_LYL_TRN_CLASS_LRY">
-        <DBMapperTableEntries name="SYS_SRC_ID" expression="A.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="LND_FF_COMPANY_ACT_CLASSIFICATIONS.SYS_SRC_ID"/>
         <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
         <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
-        <DBMapperTableEntries name="LYL_TRN_CLASS_CODE" expression="A.CODE||A.COMPANY"/>
-        <DBMapperTableEntries name="LYL_TRN_CLASS_NAME" expression="A.NAME"/>
-        <DBMapperTableEntries name="LYL_PROGRAM_PARTNER_CODE" expression="A.COMPANY"/>
+        <DBMapperTableEntries name="LYL_TRN_CLASS_CODE" expression="LND_FF_COMPANY_ACT_CLASSIFICATIONS.CODE || LND_FF_COMPANY_ACT_CLASSIFICATIONS.COMPANY"/>
+        <DBMapperTableEntries name="LYL_TRN_CLASS_NAME" expression="LND_FF_COMPANY_ACT_CLASSIFICATIONS.NAME"/>
+        <DBMapperTableEntries name="LYL_PROGRAM_PARTNER_CODE" expression="LND_FF_COMPANY_ACT_CLASSIFICATIONS.COMPANY"/>
         <DBMapperTableEntries name="LYL_TRN_CLASS_CTGRY_ID" expression="1"/>
-        <FilterEntries name="where" expression="A.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;','DD.MM.YYYY')" filterKind="WHERE_FILTER"/>
+        <FilterEntries name="where" expression="LND_FF_COMPANY_ACT_CLASSIFICATIONS.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_FILTER"/>
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="80" posY="400">
+  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2" show="false"/>
     <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleInput" show="false"/>
     <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
@@ -310,6 +310,7 @@
     <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;LND_MAN_TRN_CLASS&quot;"/>
     <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
+    <elementParameter field="TEXT" name="LABEL" value="SRC_LND_MAN_TRN_CLASS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="TABLE" label="DW_LND.LND_MAN_TRN_CLASS" name="table1">
       <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
@@ -322,7 +323,7 @@
       <column key="false" length="10" name="LYL_TRN_CLASS_CTGRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="400" posY="400">
+  <node componentName="tELTOracleMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2" show="false"/>
     <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleMap" show="false"/>
     <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
@@ -346,17 +347,18 @@
     <elementParameter field="TEXT" name="HOST" value="&quot;kronos&quot;" show="false"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;1521&quot;" show="false"/>
     <elementParameter field="TEXT" name="DBNAME" value="&quot;orcl&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;DW_STG&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:qqTVEMB3dzvL3FQEgrEiwy+RdB9J4Dd6WhsX5KAF" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;MAPWRIGHT&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:0lVOjiyJjZf8Y21v77Rl4pxmmRMDcYySXSJIPPQ0" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id" show="false"/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_xG0vkMNhEfGSFcfHNc1ARg-tELTOracleMap_2-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_VKNowMQnEfG-xosAv91D_g-tELTOracleMap_2-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DRY_RUN" value="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;" show="false"/>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false" show="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="MAP_LND_MAN_TRN_CLASS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="TABLE" label="STG_T_FDL_LYL_TRN_CLASS_LRY" name="U_2">
       <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
@@ -368,7 +370,7 @@
       <column key="false" length="10" name="LYL_TRN_CLASS_CTGRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendDBMap:DBMapData">
-      <InputTables name="DW_LND.LND_MAN_TRN_CLASS" tableName="DW_LND.LND_MAN_TRN_CLASS" joinType="NO_JOIN" alias="B">
+      <InputTables name="DW_LND.LND_MAN_TRN_CLASS" tableName="DW_LND.LND_MAN_TRN_CLASS" joinType="NO_JOIN" alias="LND_MAN_TRN_CLASS">
         <DBMapperTableEntries name="LANDING_DT"/>
         <DBMapperTableEntries name="SYS_SRC_ID"/>
         <DBMapperTableEntries name="INSERT_DTTM"/>
@@ -379,17 +381,17 @@
         <DBMapperTableEntries name="LYL_TRN_CLASS_CTGRY_ID"/>
       </InputTables>
       <OutputTables name="U_2" tableName="STG_T_FDL_LYL_TRN_CLASS_LRY">
-        <DBMapperTableEntries name="SYS_SRC_ID" expression="B.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="LND_MAN_TRN_CLASS.SYS_SRC_ID"/>
         <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
         <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
-        <DBMapperTableEntries name="LYL_TRN_CLASS_CODE" expression="B.LYL_TRN_CLASS_CODE"/>
-        <DBMapperTableEntries name="LYL_TRN_CLASS_NAME" expression="B.LYL_TRN_CLASS_NAME"/>
-        <DBMapperTableEntries name="LYL_PROGRAM_PARTNER_CODE" expression="B.LYL_PROGRAM_PARTNER_CODE"/>
-        <DBMapperTableEntries name="LYL_TRN_CLASS_CTGRY_ID" expression="B.LYL_TRN_CLASS_CTGRY_ID"/>
+        <DBMapperTableEntries name="LYL_TRN_CLASS_CODE" expression="LND_MAN_TRN_CLASS.LYL_TRN_CLASS_CODE"/>
+        <DBMapperTableEntries name="LYL_TRN_CLASS_NAME" expression="LND_MAN_TRN_CLASS.LYL_TRN_CLASS_NAME"/>
+        <DBMapperTableEntries name="LYL_PROGRAM_PARTNER_CODE" expression="LND_MAN_TRN_CLASS.LYL_PROGRAM_PARTNER_CODE"/>
+        <DBMapperTableEntries name="LYL_TRN_CLASS_CTGRY_ID" expression="LND_MAN_TRN_CLASS.LYL_TRN_CLASS_CTGRY_ID"/>
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleUniteMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="720" posY="300">
+  <node componentName="tELTOracleUniteMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="240">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleUniteMap_1" show="false"/>
     <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleUniteMap" show="false"/>
     <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
@@ -412,11 +414,12 @@
     <elementParameter field="TEXT" name="PORT" value="&quot;1521&quot;" show="false"/>
     <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:cQdFCXIknR5RkYmlxvcJYMIZuaecBINPcfSOd0Ku" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ZjrCsxBoKLYzaPEdWtkD4nDT2aPSCJL1zrWK/zR9" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id" show="false"/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_xG0vkMNhEfGSFcfHNc1ARg-tELTOracleUniteMap_1-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_VKNowMQnEfG-xosAv91D_g-tELTOracleUniteMap_1-PREVIEW.bmp"/>
+    <elementParameter field="TEXT" name="LABEL" value="UN_STG_T_FDL_LYL_TRN_CLASS_LRY"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="TABLE" label="STG_T_FDL_LYL_TRN_CLASS_LRY" name="U_ALL">
       <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
@@ -457,7 +460,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="880" posY="300">
+  <node componentName="tELTOracleMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="240">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_3" show="false"/>
     <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleMap" show="false"/>
     <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
@@ -476,22 +479,23 @@
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA" show="false"/>
     <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_18"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_23"/>
     <elementParameter field="TEXT" name="RAC_URL" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;kronos&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;1521&quot;"/>
     <elementParameter field="TEXT" name="DBNAME" value="&quot;orcl&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;MAPWRIGHT&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:IkRMhxSKHHow6grCpOjbAtkBEq032Q66I4TkDvhe1SoLggwkTF7Y"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:SZLvXVu7teJuE1YximF90BPqom3T204kemMJmhT0"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_xG0vkMNhEfGSFcfHNc1ARg-tELTOracleMap_3-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_VKNowMQnEfG-xosAv91D_g-tELTOracleMap_3-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DRY_RUN" value="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="MAP_STG_T_FDL_LYL_TRN_CLASS_LRY"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="TABLE" label="STG_T_FDL_LYL_TRN_CLASS_LRY" name="STG_T_FDL_LYL_TRN_CLASS_LRY">
       <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
@@ -523,7 +527,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1200" posY="300">
+  <node componentName="tELTOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="960" posY="240">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1" show="false"/>
     <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleOutput" show="false"/>
     <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
@@ -589,6 +593,7 @@
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="TGT_STG_T_FDL_LYL_TRN_CLASS_LRY"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="TABLE" label="STG_T_FDL_LYL_TRN_CLASS_LRY" name="tELTOracleOutput_1">
       <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
@@ -624,17 +629,11 @@
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
   </subjob>
 </talendfile:ProcessType>

@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_FF_MEMBER"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_FF_MEMBER&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_FF_MEMBER"/>
+    <metadata connector="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBER" name="table1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="true" length="10" name="FF_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FF_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="TITLE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="MIDDLE_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="SURNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="GENDER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="BIRTH_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="PHONE_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="MEMBERSHIP_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="MEMBERSHIP_START_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="PREFERRED_SEAT_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="PREFERRED_MEAL_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="COMM_LANG_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="UPGRADE_SRC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="NATIONALITY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CNSNT_FOR_MAIL_FFP_DEPT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CNSNT_FOR_MAIL_PARTNER_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CNSNT_FOR_EMAIL_FFP_DEPT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CNSNT_FOR_EMAIL_PARTNER_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CNSNT_FOR_ESTATEMENT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CNSNT_FOR_SMS_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CNSNT_FOR_PHONE_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CNSNT_FOR_FAX_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CNSNT_FOR_TRANSFER_INFO_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CNSNT_FOR_POSTAL_STTMNT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CNSNT_FOR_OWN_AIRLNE_SBSCR_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="100" name="PLACE_OF_BIRTH_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="MARITAL_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="MEMBER_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MERNIS_CLUB_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="ENROLLMENT_SRC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="SRC_INSERT_USER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SRC_INSERT_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="SRC_LAST_UPDATE_USER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SRC_LAST_UPDATE_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_FDL_LYL_FF_MEMBER"/>
+    <metadata connector="TABLE" label="STG_T_CDL_F_FF_STATUS_LRY" name="STG_T_CDL_F_FF_STATUS_LRY">
+      <column key="false" length="-1" name="SNAPSHOT_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FF_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="MEMBERSHIP_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PROGRAM_ACTIVENESS_STATUS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FLIGHT_ACTIVENESS_STATUS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="REDEMPTION_ACTIVENESS_STATUS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EARNING_ACTIVENESS_STATUS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="NEW_FF_MEMBER_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_TRN_DT_IN_365_DAYS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_FLT_TRN_DT_IN_365_DAYS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_FDL.FDL_LYL_FF_MEMBER" tableName="DW_FDL.FDL_LYL_FF_MEMBER" joinType="NO_JOIN" alias="MBB">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="FF_ID"/>
+        <DBMapperTableEntries name="FF_NO"/>
+        <DBMapperTableEntries name="TITLE_CODE"/>
+        <DBMapperTableEntries name="NAME"/>
+        <DBMapperTableEntries name="MIDDLE_NAME"/>
+        <DBMapperTableEntries name="SURNAME"/>
+        <DBMapperTableEntries name="GENDER_CODE"/>
+        <DBMapperTableEntries name="BIRTH_DTTM"/>
+        <DBMapperTableEntries name="PHONE_NUM"/>
+        <DBMapperTableEntries name="MEMBERSHIP_STATUS_CODE"/>
+        <DBMapperTableEntries name="MEMBERSHIP_START_DT"/>
+        <DBMapperTableEntries name="PREFERRED_SEAT_TYPE_CODE"/>
+        <DBMapperTableEntries name="PREFERRED_MEAL_TYPE_CODE"/>
+        <DBMapperTableEntries name="COMM_LANG_CODE"/>
+        <DBMapperTableEntries name="UPGRADE_SRC_CODE"/>
+        <DBMapperTableEntries name="NATIONALITY_CODE"/>
+        <DBMapperTableEntries name="CNSNT_FOR_MAIL_FFP_DEPT_FLAG"/>
+        <DBMapperTableEntries name="CNSNT_FOR_MAIL_PARTNER_FLAG"/>
+        <DBMapperTableEntries name="CNSNT_FOR_EMAIL_FFP_DEPT_FLAG"/>
+        <DBMapperTableEntries name="CNSNT_FOR_EMAIL_PARTNER_FLAG"/>
+        <DBMapperTableEntries name="CNSNT_FOR_ESTATEMENT_FLAG"/>
+        <DBMapperTableEntries name="CNSNT_FOR_SMS_FLAG"/>
+        <DBMapperTableEntries name="CNSNT_FOR_PHONE_FLAG"/>
+        <DBMapperTableEntries name="CNSNT_FOR_FAX_FLAG"/>
+        <DBMapperTableEntries name="CNSNT_FOR_TRANSFER_INFO_FLAG"/>
+        <DBMapperTableEntries name="CNSNT_FOR_POSTAL_STTMNT_FLAG"/>
+        <DBMapperTableEntries name="CNSNT_FOR_OWN_AIRLNE_SBSCR_FLAG"/>
+        <DBMapperTableEntries name="PLACE_OF_BIRTH_TEXT"/>
+        <DBMapperTableEntries name="MARITAL_STATUS_CODE"/>
+        <DBMapperTableEntries name="MEMBER_TYPE_CODE"/>
+        <DBMapperTableEntries name="MERNIS_CLUB_STATUS_CODE"/>
+        <DBMapperTableEntries name="ENROLLMENT_SRC_CODE"/>
+        <DBMapperTableEntries name="SRC_INSERT_USER_CODE"/>
+        <DBMapperTableEntries name="SRC_INSERT_DTTM"/>
+        <DBMapperTableEntries name="SRC_LAST_UPDATE_USER_CODE"/>
+        <DBMapperTableEntries name="SRC_LAST_UPDATE_DTTM"/>
+      </InputTables>
+      <InputTables name="TRN1" tableName="TRN1" joinType="LEFT_OUTER_JOIN" alias="TRN1">
+        <DBMapperTableEntries name="FF_ID" expression="MBB.FF_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="PROGRAM_ACTIVENESS_STATUS_ID"/>
+        <DBMapperTableEntries name="FLIGHT_ACTIVENESS_STATUS_ID"/>
+        <DBMapperTableEntries name="REDEMPTION_ACTIVENESS_STATUS_ID"/>
+        <DBMapperTableEntries name="EARNING_ACTIVENESS_STATUS_ID"/>
+        <DBMapperTableEntries name="LAST_TRN_DT_IN_365_DAYS"/>
+        <DBMapperTableEntries name="LAST_FLT_TRN_DT_IN_365_DAYS"/>
+      </InputTables>
+      <InputTables name="DW_FDL.FDL_LYL_FF_MEMBER_HST" tableName="DW_FDL.FDL_LYL_FF_MEMBER_HST" joinType="INNER_JOIN" alias="MBB_HST">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="VALID_FROM_DT"/>
+        <DBMapperTableEntries name="VALID_TO_DT"/>
+        <DBMapperTableEntries name="CURRENT_FLAG"/>
+        <DBMapperTableEntries name="FF_ID" expression="MBB.FF_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="MEMBERSHIP_STATUS_CODE"/>
+      </InputTables>
+      <InputTables name="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS" tableName="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS" joinType="INNER_JOIN" alias="ST">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="MEMBERSHIP_STATUS_CODE" expression="MBB_HST.MEMBERSHIP_STATUS_CODE" join="true" operator="="/>
+        <DBMapperTableEntries name="MEMBERSHIP_STATUS_NAME"/>
+        <DBMapperTableEntries name="MEMBERSHIP_STATUS_CTGRY_ID"/>
+      </InputTables>
+      <InputTables name="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY" tableName="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY" joinType="INNER_JOIN" alias="STC">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="MEMBERSHIP_STATUS_CTGRY_ID" expression="ST.MEMBERSHIP_STATUS_CTGRY_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="MEMBERSHIP_STATUS_CTGRY_NAME"/>
+      </InputTables>
+      <OutputTables name="STG_T_CDL_F_FF_STATUS_LRY" tableName="STG_T_CDL_F_FF_STATUS_LRY">
+        <DBMapperTableEntries name="SNAPSHOT_DT" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="FF_ID" expression="MBB.FF_ID"/>
+        <DBMapperTableEntries name="MEMBERSHIP_STATUS_CODE" expression="MBB_HST.MEMBERSHIP_STATUS_CODE"/>
+        <DBMapperTableEntries name="PROGRAM_ACTIVENESS_STATUS_ID" expression="NVL(TRN1.PROGRAM_ACTIVENESS_STATUS_ID, 2)"/>
+        <DBMapperTableEntries name="FLIGHT_ACTIVENESS_STATUS_ID" expression="NVL(TRN1.FLIGHT_ACTIVENESS_STATUS_ID, 2)"/>
+        <DBMapperTableEntries name="REDEMPTION_ACTIVENESS_STATUS_ID" expression="NVL(TRN1.REDEMPTION_ACTIVENESS_STATUS_ID, 2)"/>
+        <DBMapperTableEntries name="EARNING_ACTIVENESS_STATUS_ID" expression="NVL(TRN1.EARNING_ACTIVENESS_STATUS_ID, 2)"/>
+        <DBMapperTableEntries name="NEW_FF_MEMBER_FLAG" expression="CASE WHEN TRUNC(MBB.MEMBERSHIP_START_DT, 'MM') = TRUNC(TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY'), 'MM') THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="LAST_TRN_DT_IN_365_DAYS" expression="NVL(TRN1.LAST_TRN_DT_IN_365_DAYS, TO_DATE('01.01.1900', 'DD.MM.YYYY'))"/>
+        <DBMapperTableEntries name="LAST_FLT_TRN_DT_IN_365_DAYS" expression="NVL(TRN1.LAST_FLT_TRN_DT_IN_365_DAYS, TO_DATE('01.01.1900', 'DD.MM.YYYY'))"/>
+        <FilterEntries name="where" expression="(TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') BETWEEN MBB_HST.VALID_FROM_DT AND MBB_HST.VALID_TO_DT) AND (STC.MEMBERSHIP_STATUS_CTGRY_NAME = 'Open' AND (CASE WHEN MBB.MEMBERSHIP_START_DT > TO_DATE('24.07.2018', 'DD.MM.YYYY') AND MBB.MEMBERSHIP_STATUS_CODE IN ('WA') THEN 1 ELSE 0 END) = 0 AND MBB.MEMBERSHIP_START_DT &lt;= LAST_DAY(TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')))" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_6"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_TRN"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_TRN&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_TRN"/>
+    <metadata connector="TABLE" label="DW_FDL.FDL_LYL_TRN" name="table1">
+      <column key="false" length="-1" name="LYL_TRN_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="true" length="10" name="LYL_TRN_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LYL_TRN_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LYL_TRN_TYPE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LYL_TRN_CLASS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FF_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="250" name="LYL_TRN_DEFINITION_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="LYL_TRN_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="18" name="POINTS_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="LYL_TRN_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACC_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="2000" name="LYL_TRN_EXPLANATION_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="LYL_PROGRAM_PARTNER_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PNR_LEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="PROCESS_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SRC_INSERT_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="SRC_LAST_UPDATE_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="DELETED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_TRN1"/>
+    <metadata connector="TABLE" label="TRN1" name="TRN1">
+      <column key="false" length="10" name="FF_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PROGRAM_ACTIVENESS_STATUS_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FLIGHT_ACTIVENESS_STATUS_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="REDEMPTION_ACTIVENESS_STATUS_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EARNING_ACTIVENESS_STATUS_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_TRN_DT_IN_365_DAYS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_FLT_TRN_DT_IN_365_DAYS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_FDL.FDL_LYL_TRN" tableName="DW_FDL.FDL_LYL_TRN" joinType="NO_JOIN" alias="TRN">
+        <DBMapperTableEntries name="LYL_TRN_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="LYL_TRN_ID"/>
+        <DBMapperTableEntries name="LYL_TRN_SEQ"/>
+        <DBMapperTableEntries name="LYL_TRN_TYPE_ID"/>
+        <DBMapperTableEntries name="LYL_TRN_CLASS_ID"/>
+        <DBMapperTableEntries name="FF_ID"/>
+        <DBMapperTableEntries name="LYL_TRN_DEFINITION_TEXT"/>
+        <DBMapperTableEntries name="LYL_TRN_DTTM"/>
+        <DBMapperTableEntries name="POINTS_AMT"/>
+        <DBMapperTableEntries name="LYL_TRN_STATUS_CODE"/>
+        <DBMapperTableEntries name="ACC_DTTM"/>
+        <DBMapperTableEntries name="LYL_TRN_EXPLANATION_TEXT"/>
+        <DBMapperTableEntries name="LYL_PROGRAM_PARTNER_ID"/>
+        <DBMapperTableEntries name="PNR_LEG_ID"/>
+        <DBMapperTableEntries name="PROCESS_STATUS_CODE"/>
+        <DBMapperTableEntries name="SRC_INSERT_DTTM"/>
+        <DBMapperTableEntries name="SRC_LAST_UPDATE_DTTM"/>
+        <DBMapperTableEntries name="DELETED_FLAG"/>
+      </InputTables>
+      <InputTables name="DW_FDL.FDL_LYL_TRN_TYPE" tableName="DW_FDL.FDL_LYL_TRN_TYPE" joinType="INNER_JOIN" alias="TRN_T">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="LYL_TRN_TYPE_ID" expression="TRN.LYL_TRN_TYPE_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="LYL_TRN_TYPE_CODE"/>
+        <DBMapperTableEntries name="LYL_TRN_TYPE_DESC_TEXT"/>
+        <DBMapperTableEntries name="LYL_TRN_CLASS_CTGRY_ID"/>
+      </InputTables>
+      <InputTables name="DW_FDL.FDL_LYL_TRN_CLASS" tableName="DW_FDL.FDL_LYL_TRN_CLASS" joinType="INNER_JOIN" alias="TRN_C">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="LYL_TRN_CLASS_ID" expression="TRN.LYL_TRN_CLASS_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="LYL_TRN_CLASS_CODE"/>
+        <DBMapperTableEntries name="LYL_TRN_CLASS_NAME"/>
+        <DBMapperTableEntries name="LYL_PROGRAM_PARTNER_ID"/>
+        <DBMapperTableEntries name="LYL_TRN_CLASS_CTGRY_ID"/>
+      </InputTables>
+      <InputTables name="DW_FDL.FDL_LYL_TRN_REDEMPTION" tableName="DW_FDL.FDL_LYL_TRN_REDEMPTION" joinType="LEFT_OUTER_JOIN" alias="TRN_RDMP">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="LYL_TRN_ID" expression="TRN.LYL_TRN_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="AWARD_CODE"/>
+        <DBMapperTableEntries name="AWARD_CLAIM_DTTM"/>
+        <DBMapperTableEntries name="AWARD_USAGE_TYPE_CODE"/>
+        <DBMapperTableEntries name="REDEPOSITED_POINTS_AMT"/>
+      </InputTables>
+      <OutputTables name="TRN1" tableName="TRN1">
+        <DBMapperTableEntries name="FF_ID" expression="TRN.FF_ID"/>
+        <DBMapperTableEntries name="PROGRAM_ACTIVENESS_STATUS_ID" expression="1"/>
+        <DBMapperTableEntries name="FLIGHT_ACTIVENESS_STATUS_ID" expression="MIN(CASE WHEN TRN_T.LYL_TRN_TYPE_CODE = 'F' THEN 1 ELSE 2 END)"/>
+        <DBMapperTableEntries name="REDEMPTION_ACTIVENESS_STATUS_ID" expression="MIN(CASE WHEN NVL(TRN_RDMP.AWARD_CODE, -1) = 'PGS001' THEN 1 ELSE 2 END)"/>
+        <DBMapperTableEntries name="EARNING_ACTIVENESS_STATUS_ID" expression="MIN(CASE WHEN TRN_T.LYL_TRN_TYPE_CODE IN ('F', 'P') THEN 1 ELSE 2 END)"/>
+        <DBMapperTableEntries name="LAST_TRN_DT_IN_365_DAYS" expression="MAX(LYL_TRN_DT)"/>
+        <DBMapperTableEntries name="LAST_FLT_TRN_DT_IN_365_DAYS" expression="MAX(CASE WHEN TRN_T.LYL_TRN_TYPE_CODE = 'F' THEN LYL_TRN_DT END)"/>
+        <FilterEntries name="where" expression="(TRN_T.LYL_TRN_TYPE_CODE IN ('F', 'P') OR TRN_C.LYL_TRN_CLASS_CODE = 'GAME_1' OR NVL(TRN_RDMP.AWARD_CODE, -1) = 'PGS001') AND TRN.LYL_TRN_DT BETWEEN TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') - 365 AND TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') AND TRN.DELETED_FLAG = 0" filterKind="WHERE_CLAUSE"/>
+        <FilterEntries name="other" expression="GROUP BY TRN.FF_ID" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_7"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_TRN_TYPE"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_TRN_TYPE&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_TRN_TYPE"/>
+    <metadata connector="TABLE" label="DW_FDL.FDL_LYL_TRN_TYPE" name="table1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="true" length="10" name="LYL_TRN_TYPE_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="LYL_TRN_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="LYL_TRN_TYPE_DESC_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="LYL_TRN_CLASS_CTGRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_8"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_TRN_CLASS"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_TRN_CLASS&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_TRN_CLASS"/>
+    <metadata connector="TABLE" label="DW_FDL.FDL_LYL_TRN_CLASS" name="table1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="true" length="10" name="LYL_TRN_CLASS_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LYL_TRN_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="LYL_TRN_CLASS_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="LYL_PROGRAM_PARTNER_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LYL_TRN_CLASS_CTGRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_9"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_TRN_REDEMPTION"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_TRN_REDEMPTION&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_TRN_REDEMPTION"/>
+    <metadata connector="TABLE" label="DW_FDL.FDL_LYL_TRN_REDEMPTION" name="table1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="true" length="10" name="LYL_TRN_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="AWARD_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="AWARD_CLAIM_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="AWARD_USAGE_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="18" name="REDEPOSITED_POINTS_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_FF_MEMBER_HST"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_FF_MEMBER_HST&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_FF_MEMBER_HST"/>
+    <metadata connector="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBER_HST" name="table1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="true" length="-1" name="VALID_FROM_DT" nullable="false" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="VALID_TO_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="CURRENT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="true" length="10" name="FF_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="MEMBERSHIP_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_4"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_FF_MEMBERSHIP_STATUS"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_FF_MEMBERSHIP_STATUS&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_FF_MEMBERSHIP_STATUS"/>
+    <metadata connector="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS" name="table1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="true" length="5" name="MEMBERSHIP_STATUS_CODE" nullable="false" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="MEMBERSHIP_STATUS_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="MEMBERSHIP_STATUS_CTGRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_5"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY"/>
+    <metadata connector="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY" name="table1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="true" length="10" name="MEMBERSHIP_STATUS_CTGRY_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="MEMBERSHIP_STATUS_CTGRY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_CDL_F_FF_STATUS_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_CDL_F_FF_STATUS_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_CDL_F_FF_STATUS_LRY"/>
+    <metadata connector="TABLE" label="STG_T_CDL_F_FF_STATUS_LRY" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="SNAPSHOT_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FF_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="MEMBERSHIP_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PROGRAM_ACTIVENESS_STATUS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FLIGHT_ACTIVENESS_STATUS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="REDEMPTION_ACTIVENESS_STATUS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EARNING_ACTIVENESS_STATUS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="NEW_FF_MEMBER_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_TRN_DT_IN_365_DAYS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_FLT_TRN_DT_IN_365_DAYS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBER" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_6" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN_TYPE" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_7" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN_CLASS" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_8" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN_REDEMPTION" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_9" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="TRN1" lineStyle="22" mergeOrder="0" metaname="TRN1" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBER_HST" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_3" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_4" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_5" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_CDL_F_FF_STATUS_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_CDL_F_FF_STATUS_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

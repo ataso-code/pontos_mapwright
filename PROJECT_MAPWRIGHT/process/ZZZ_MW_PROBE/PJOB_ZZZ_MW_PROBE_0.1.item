@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tRunJob" posX="64" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tRunJob_1"/>
+    <elementParameter name="PROCESS" value="JOB_PGS_EDWH_DW_STG_FDL_LYL_TRN_CLASS_STG_T_FDL_LYL_TRN_CLASS_LRY"/>
+    <elementParameter name="PROCESS:PROCESS_TYPE_PROCESS" value="JOB_PGS_EDWH_DW_STG_FDL_LYL_TRN_CLASS_STG_T_FDL_LYL_TRN_CLASS_LRY"/>
+    <elementParameter name="PROCESS:PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter name="PROCESS:PROCESS_TYPE_CONTEXT" value="Default"/>
+    <elementParameter name="TRANSMIT_WHOLE_CONTEXT" value="true"/>
+    <elementParameter name="DIE_ON_CHILD_ERROR" value="true"/>
+  </node>
+</talendfile:ProcessType>
