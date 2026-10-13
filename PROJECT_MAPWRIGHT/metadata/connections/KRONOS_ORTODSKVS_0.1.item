@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:DatabaseConnection xmi:id="_UFAFYMdiEfGy28EcxkB-Aw" dataPackage="_UFAscMdiEfGy28EcxkB-Aw" DatabaseType="Oracle with service name" URL="jdbc:oracle:thin:@//kronos:1521/orcl" Port="1521" Username="DORTODSKVS" Password="" ServerName="kronos" DatasourceName="" FileFieldName="" DbmsId="oracle_id" ProductId="ORACLE" DBRootPath="" UiSchema="DORTODSKVS" supportNLS="false"/>
+  <TalendMetadata:GenericPackage xmi:id="_UFAscMdiEfGy28EcxkB-Aw" dataManager="_UFAFYMdiEfGy28EcxkB-Aw">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_UFAsccdiEfGy28EcxkB-Aw" name="V_TDM_MANUEL_FILE_LOG" id="_T-X48MdiEfGy28EcxkB-Aw" label="V_TDM_MANUEL_FILE_LOG" tableType="TABLE">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_UFAscsdiEfGy28EcxkB-Aw" name="COL" label="COL" length="4000" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_UFBTgMdiEfGy28EcxkB-Aw" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_UHOS8MdiEfGy28EcxkB-Aw" name="LATEST_FILE_ID_1" label="LATEST_FILE_ID_1" length="4000" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_UHOS8cdiEfGy28EcxkB-Aw" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_UNTFwMdiEfGy28EcxkB-Aw" name="LATEST_LOAD_DATE_1" label="LATEST_LOAD_DATE_1" length="4000" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_UNTFwcdiEfGy28EcxkB-Aw" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_US3iQMdiEfGy28EcxkB-Aw" name="LOAD_DATE" label="LOAD_DATE" length="4000" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_US3iQcdiEfGy28EcxkB-Aw" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_UYm94MdiEfGy28EcxkB-Aw" name="LOAD_DATE_1" label="LOAD_DATE_1" length="4000" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_UYm94cdiEfGy28EcxkB-Aw" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_UeEFoMdiEfGy28EcxkB-Aw" name="MANUAL_FILE_ID" label="MANUAL_FILE_ID" length="4000" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_UeEFocdiEfGy28EcxkB-Aw" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_UjdjAMdiEfGy28EcxkB-Aw" name="MANUAL_FILE_ID_1" label="MANUAL_FILE_ID_1" length="4000" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_UjdjAcdiEfGy28EcxkB-Aw" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Uo1LMMdiEfGy28EcxkB-Aw" name="MANUAL_FILE_NAME" label="MANUAL_FILE_NAME" length="4000" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_Uo1LMcdiEfGy28EcxkB-Aw" body=""/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_UuV9UMdiEfGy28EcxkB-Aw" name="STATUS_CODE" label="STATUS_CODE" length="4000" sourceType="VARCHAR2" talendType="id_String">
+        <initialValue xmi:id="_UuV9UcdiEfGy28EcxkB-Aw" body=""/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>
