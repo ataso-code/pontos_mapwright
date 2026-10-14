@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTDWH.T_DWH_RPT_BONUS_DATA_MONTHLY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_DWH_RPT_BNS_DTA_MNTL_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_DWH_RPT_BNS_DTA_MNTL_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_DWH_RPT_BNS_DTA_MNTL_TM1"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_DWH_RPT_BNS_DTA_MNTL_TM1" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="38" name="YEAR" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MONTH" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EMP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GTP_USER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DUTY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DUTY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="DAYS_ON_DUTY" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="DAYS_ON_LEAVE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SELECTED_DUTY" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_OPT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BORROW_DIV_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_TREASURE_OPT_PROFIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FX_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_FO_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_OPT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_BORROW_DIV_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_TREASURE_OPT_PROFIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_FX_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_FO_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISSION_REFUND_EQ" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISSION_REFUND_VIOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISSION_REFUND_INT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTOMER_SATISFACTION_EQ" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTOMER_SATISFACTION_VIOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTOMER_SATISFACTION_INT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STAFF_ERROR_EQ" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STAFF_ERROR_VIOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STAFF_ERROR_INT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEDUCTIBLE_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_REVENUE_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OPENED_ACCOUNT_CNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IS_SINGLE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TEAM2_CNT_OF_TL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_STG_DWH_RPT_BNS_DTA_MNTL_TM1"/>
+    <metadata connector="TABLE" label="T_DWH_RPT_BONUS_DATA_MONTHLY" name="T_DWH_RPT_BONUS_DATA_MONTHLY">
+      <column key="false" length="4000" name="BORROW_DIV_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="COMMISSION_REFUND_EQ" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="COMMISSION_REFUND_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="COMMISSION_REFUND_VIOP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="CUSTOMER_SATISFACTION_EQ" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="CUSTOMER_SATISFACTION_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="CUSTOMER_SATISFACTION_VIOP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="DAYS_ON_DUTY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="DAYS_ON_LEAVE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="DEDUCTIBLE_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="DUTY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="DUTY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="EMP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="EQ_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="ETL_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="FX_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="GTP_USER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="GY_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_BORROW_DIV_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_FX_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_INT_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_INT_FO_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_TOTAL_TREASURE_OPT_PROFIT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_VIOP_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_VIOP_OPT_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="INSERT_TIMESTAMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="INT_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="INT_FO_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IS_SELECTED_DUTY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IS_SINGLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MONTH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="OPENED_ACCOUNT_CNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STAFF_ERROR_EQ" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STAFF_ERROR_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STAFF_ERROR_VIOP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="TEAM2_CNT_OF_TL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="TOTAL_REVENUE_GRS_TARGET" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="TOTAL_TREASURE_OPT_PROFIT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="VIOP_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="VIOP_OPT_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="YEAR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTSTG.T_STG_DWH_RPT_BNS_DTA_MNTL_TM1" tableName="DGYTSTG.T_STG_DWH_RPT_BNS_DTA_MNTL_TM1" joinType="NO_JOIN" alias="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="YEAR"/>
+        <DBMapperTableEntries name="MONTH"/>
+        <DBMapperTableEntries name="GY_DIV_CODE"/>
+        <DBMapperTableEntries name="GY_PF_CODE"/>
+        <DBMapperTableEntries name="EMP_NAME"/>
+        <DBMapperTableEntries name="GTP_USER_CODE"/>
+        <DBMapperTableEntries name="DUTY_CODE"/>
+        <DBMapperTableEntries name="DUTY_NAME"/>
+        <DBMapperTableEntries name="DAYS_ON_DUTY"/>
+        <DBMapperTableEntries name="DAYS_ON_LEAVE"/>
+        <DBMapperTableEntries name="IS_SELECTED_DUTY"/>
+        <DBMapperTableEntries name="EQ_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="VIOP_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="VIOP_OPT_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="BORROW_DIV_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="TOTAL_TREASURE_OPT_PROFIT"/>
+        <DBMapperTableEntries name="FX_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="INT_EQ_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="INT_FO_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="TOTAL_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_EQ_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_VIOP_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_VIOP_OPT_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_BORROW_DIV_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_TOTAL_TREASURE_OPT_PROFIT"/>
+        <DBMapperTableEntries name="IND_FX_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_INT_EQ_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_INT_FO_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_TOTAL_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="COMMISSION_REFUND_EQ"/>
+        <DBMapperTableEntries name="COMMISSION_REFUND_VIOP"/>
+        <DBMapperTableEntries name="COMMISSION_REFUND_INT"/>
+        <DBMapperTableEntries name="CUSTOMER_SATISFACTION_EQ"/>
+        <DBMapperTableEntries name="CUSTOMER_SATISFACTION_VIOP"/>
+        <DBMapperTableEntries name="CUSTOMER_SATISFACTION_INT"/>
+        <DBMapperTableEntries name="STAFF_ERROR_EQ"/>
+        <DBMapperTableEntries name="STAFF_ERROR_VIOP"/>
+        <DBMapperTableEntries name="STAFF_ERROR_INT"/>
+        <DBMapperTableEntries name="DEDUCTIBLE_AMOUNT"/>
+        <DBMapperTableEntries name="TOTAL_REVENUE_GRS_TARGET"/>
+        <DBMapperTableEntries name="OPENED_ACCOUNT_CNT"/>
+        <DBMapperTableEntries name="IS_SINGLE"/>
+        <DBMapperTableEntries name="TEAM2_CNT_OF_TL"/>
+      </InputTables>
+      <OutputTables name="T_DWH_RPT_BONUS_DATA_MONTHLY" tableName="T_DWH_RPT_BONUS_DATA_MONTHLY">
+        <DBMapperTableEntries name="BORROW_DIV_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.BORROW_DIV_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="COMMISSION_REFUND_EQ" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.COMMISSION_REFUND_EQ"/>
+        <DBMapperTableEntries name="COMMISSION_REFUND_INT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.COMMISSION_REFUND_INT"/>
+        <DBMapperTableEntries name="COMMISSION_REFUND_VIOP" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.COMMISSION_REFUND_VIOP"/>
+        <DBMapperTableEntries name="CUSTOMER_SATISFACTION_EQ" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.CUSTOMER_SATISFACTION_EQ"/>
+        <DBMapperTableEntries name="CUSTOMER_SATISFACTION_INT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.CUSTOMER_SATISFACTION_INT"/>
+        <DBMapperTableEntries name="CUSTOMER_SATISFACTION_VIOP" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.CUSTOMER_SATISFACTION_VIOP"/>
+        <DBMapperTableEntries name="DAYS_ON_DUTY" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.DAYS_ON_DUTY"/>
+        <DBMapperTableEntries name="DAYS_ON_LEAVE" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.DAYS_ON_LEAVE"/>
+        <DBMapperTableEntries name="DEDUCTIBLE_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.DEDUCTIBLE_AMOUNT"/>
+        <DBMapperTableEntries name="DUTY_CODE" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.DUTY_CODE"/>
+        <DBMapperTableEntries name="DUTY_NAME" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.DUTY_NAME"/>
+        <DBMapperTableEntries name="EMP_NAME" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.EMP_NAME"/>
+        <DBMapperTableEntries name="EQ_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.EQ_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="ETL_DATE" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="FX_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.FX_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="GTP_USER_CODE" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.GTP_USER_CODE"/>
+        <DBMapperTableEntries name="GY_DIV_CODE" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.GY_DIV_CODE"/>
+        <DBMapperTableEntries name="GY_PF_CODE" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.GY_PF_CODE"/>
+        <DBMapperTableEntries name="IND_BORROW_DIV_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.IND_BORROW_DIV_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_EQ_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.IND_EQ_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_FX_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.IND_FX_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_INT_EQ_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.IND_INT_EQ_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_INT_FO_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.IND_INT_FO_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_TOTAL_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.IND_TOTAL_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_TOTAL_TREASURE_OPT_PROFIT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.IND_TOTAL_TREASURE_OPT_PROFIT"/>
+        <DBMapperTableEntries name="IND_VIOP_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.IND_VIOP_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_VIOP_OPT_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.IND_VIOP_OPT_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INT_EQ_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.INT_EQ_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="INT_FO_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.INT_FO_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IS_SELECTED_DUTY" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.IS_SELECTED_DUTY"/>
+        <DBMapperTableEntries name="IS_SINGLE" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.IS_SINGLE"/>
+        <DBMapperTableEntries name="MONTH" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.MONTH"/>
+        <DBMapperTableEntries name="OPENED_ACCOUNT_CNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.OPENED_ACCOUNT_CNT"/>
+        <DBMapperTableEntries name="STAFF_ERROR_EQ" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.STAFF_ERROR_EQ"/>
+        <DBMapperTableEntries name="STAFF_ERROR_INT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.STAFF_ERROR_INT"/>
+        <DBMapperTableEntries name="STAFF_ERROR_VIOP" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.STAFF_ERROR_VIOP"/>
+        <DBMapperTableEntries name="TEAM2_CNT_OF_TL" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.TEAM2_CNT_OF_TL"/>
+        <DBMapperTableEntries name="TOTAL_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.TOTAL_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="TOTAL_REVENUE_GRS_TARGET" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.TOTAL_REVENUE_GRS_TARGET"/>
+        <DBMapperTableEntries name="TOTAL_TREASURE_OPT_PROFIT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.TOTAL_TREASURE_OPT_PROFIT"/>
+        <DBMapperTableEntries name="VIOP_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.VIOP_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="VIOP_OPT_GROSS_COMM_AMOUNT" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.VIOP_OPT_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="YEAR" expression="T_STG_DWH_RPT_BNS_DTA_MNTL_TM1.YEAR"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ - T_DWH_RPT_BONUS_DATA_MONTHLY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_DWH_RPT_BONUS_DATA_MONTHLY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTDWH&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_DWH_RPT_BONUS_DATA_MONTHLY"/>
+    <metadata connector="TABLE" label="T_DWH_RPT_BONUS_DATA_MONTHLY" name="tELTOracleOutput_1">
+      <column key="false" length="4000" name="BORROW_DIV_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="COMMISSION_REFUND_EQ" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="COMMISSION_REFUND_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="COMMISSION_REFUND_VIOP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="CUSTOMER_SATISFACTION_EQ" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="CUSTOMER_SATISFACTION_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="CUSTOMER_SATISFACTION_VIOP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="DAYS_ON_DUTY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="DAYS_ON_LEAVE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="DEDUCTIBLE_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="DUTY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="DUTY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="EMP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="EQ_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="ETL_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="FX_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="GTP_USER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="GY_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_BORROW_DIV_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_FX_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_INT_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_INT_FO_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_TOTAL_TREASURE_OPT_PROFIT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_VIOP_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IND_VIOP_OPT_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="INSERT_TIMESTAMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="INT_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="INT_FO_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IS_SELECTED_DUTY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="IS_SINGLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MONTH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="OPENED_ACCOUNT_CNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STAFF_ERROR_EQ" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STAFF_ERROR_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STAFF_ERROR_VIOP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="TEAM2_CNT_OF_TL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="TOTAL_REVENUE_GRS_TARGET" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="TOTAL_TREASURE_OPT_PROFIT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="VIOP_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="VIOP_OPT_GROSS_COMM_AMOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="YEAR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_DWH_RPT_BNS_DTA_MNTL_TM1" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_DWH_RPT_BONUS_DATA_MONTHLY" lineStyle="9" mergeOrder="0" metaname="T_DWH_RPT_BONUS_DATA_MONTHLY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
