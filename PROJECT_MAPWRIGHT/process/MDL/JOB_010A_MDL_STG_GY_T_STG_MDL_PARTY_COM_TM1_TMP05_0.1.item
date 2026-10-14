@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_MDL_PARTY_COM_TM1_TMP05&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_MDL_PARTY_COM_TM1_TMP04"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_MDL_PARTY_COM_TM1_TMP04&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_MDL_PARTY_COM_TM1_TMP04"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_MDL_PARTY_COM_TM1_TMP04" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CONTACT_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GTP_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="FULL_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MARS_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="BUSINESSTEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="200" name="MOBILETEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="BUSINESSEMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="PERSONALEMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="EMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MAX_RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_ACALLD_L2"/>
+    <metadata connector="TABLE" label="EXP_ACALLD_L2" name="EXP_ACALLD_L2">
+      <column key="false" length="255" name="TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CONTACT_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GTP_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="FULL_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MARS_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="BUSINESSTEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MOBILETEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="BUSINESSEMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="PERSONALEMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="EMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MAX_RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTSTG.T_STG_MDL_PARTY_COM_TM1_TMP04" tableName="DGYTSTG.T_STG_MDL_PARTY_COM_TM1_TMP04" joinType="NO_JOIN" alias="T_STG_MDL_PARTY_COM_TM1_TMP04">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="TP"/>
+        <DBMapperTableEntries name="CONTACT_PARTY_ID"/>
+        <DBMapperTableEntries name="GTP_NUMBER"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="FULL_NAME"/>
+        <DBMapperTableEntries name="MARS_PARTY_ID"/>
+        <DBMapperTableEntries name="ADDRESS"/>
+        <DBMapperTableEntries name="TEL"/>
+        <DBMapperTableEntries name="BUSINESSTEL"/>
+        <DBMapperTableEntries name="MOBILETEL"/>
+        <DBMapperTableEntries name="BUSINESSEMAIL"/>
+        <DBMapperTableEntries name="PERSONALEMAIL"/>
+        <DBMapperTableEntries name="EMAIL"/>
+        <DBMapperTableEntries name="MAX_RN"/>
+        <DBMapperTableEntries name="RN"/>
+      </InputTables>
+      <OutputTables name="EXP_ACALLD_L2" tableName="EXP_ACALLD_L2">
+        <DBMapperTableEntries name="TP" expression="T_STG_MDL_PARTY_COM_TM1_TMP04.TP"/>
+        <DBMapperTableEntries name="CONTACT_PARTY_ID" expression="T_STG_MDL_PARTY_COM_TM1_TMP04.CONTACT_PARTY_ID"/>
+        <DBMapperTableEntries name="GTP_NUMBER" expression="T_STG_MDL_PARTY_COM_TM1_TMP04.GTP_NUMBER"/>
+        <DBMapperTableEntries name="CREATED" expression="T_STG_MDL_PARTY_COM_TM1_TMP04.CREATED"/>
+        <DBMapperTableEntries name="FULL_NAME" expression="T_STG_MDL_PARTY_COM_TM1_TMP04.FULL_NAME"/>
+        <DBMapperTableEntries name="MARS_PARTY_ID" expression="T_STG_MDL_PARTY_COM_TM1_TMP04.MARS_PARTY_ID"/>
+        <DBMapperTableEntries name="ADDRESS" expression="T_STG_MDL_PARTY_COM_TM1_TMP04.ADDRESS"/>
+        <DBMapperTableEntries name="TEL" expression="REPLACE(REPLACE(REPLACE(REPLACE(T_STG_MDL_PARTY_COM_TM1_TMP04.TEL, '+', ''), '-', ''), '(', ''), ')', '')"/>
+        <DBMapperTableEntries name="BUSINESSTEL" expression="REPLACE(REPLACE(REPLACE(REPLACE(T_STG_MDL_PARTY_COM_TM1_TMP04.BUSINESSTEL, '+', ''), '-', ''), '(', ''), ')', '')"/>
+        <DBMapperTableEntries name="MOBILETEL" expression="REPLACE(REPLACE(REPLACE(REPLACE(T_STG_MDL_PARTY_COM_TM1_TMP04.MOBILETEL, '+', ''), '-', ''), '(', ''), ')', '')"/>
+        <DBMapperTableEntries name="BUSINESSEMAIL" expression="T_STG_MDL_PARTY_COM_TM1_TMP04.BUSINESSEMAIL"/>
+        <DBMapperTableEntries name="PERSONALEMAIL" expression="T_STG_MDL_PARTY_COM_TM1_TMP04.PERSONALEMAIL"/>
+        <DBMapperTableEntries name="EMAIL" expression="T_STG_MDL_PARTY_COM_TM1_TMP04.EMAIL"/>
+        <DBMapperTableEntries name="MAX_RN" expression="T_STG_MDL_PARTY_COM_TM1_TMP04.MAX_RN"/>
+        <DBMapperTableEntries name="RN" expression="T_STG_MDL_PARTY_COM_TM1_TMP04.RN"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_ACALLD_L2"/>
+    <metadata connector="TABLE" label="T_STG_MDL_PARTY_COM_TM1_TMP05" name="T_STG_MDL_PARTY_COM_TM1_TMP05">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CONTACT_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GTP_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="FULL_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MARS_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="BUSINESSTEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="201" name="MOBILETEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="BUSINESSEMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="PERSONALEMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="EMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MAX_RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_ACALLD_L2" tableName="EXP_ACALLD_L2" joinType="NO_JOIN" alias="EXP_ACALLD_L2">
+        <DBMapperTableEntries name="TP"/>
+        <DBMapperTableEntries name="CONTACT_PARTY_ID"/>
+        <DBMapperTableEntries name="GTP_NUMBER"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="FULL_NAME"/>
+        <DBMapperTableEntries name="MARS_PARTY_ID"/>
+        <DBMapperTableEntries name="ADDRESS"/>
+        <DBMapperTableEntries name="TEL"/>
+        <DBMapperTableEntries name="BUSINESSTEL"/>
+        <DBMapperTableEntries name="MOBILETEL"/>
+        <DBMapperTableEntries name="BUSINESSEMAIL"/>
+        <DBMapperTableEntries name="PERSONALEMAIL"/>
+        <DBMapperTableEntries name="EMAIL"/>
+        <DBMapperTableEntries name="MAX_RN"/>
+        <DBMapperTableEntries name="RN"/>
+      </InputTables>
+      <OutputTables name="T_STG_MDL_PARTY_COM_TM1_TMP05" tableName="T_STG_MDL_PARTY_COM_TM1_TMP05">
+        <DBMapperTableEntries name="ETL_DATE" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="'GTP'"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="TP" expression="EXP_ACALLD_L2.TP"/>
+        <DBMapperTableEntries name="CONTACT_PARTY_ID" expression="EXP_ACALLD_L2.CONTACT_PARTY_ID"/>
+        <DBMapperTableEntries name="GTP_NUMBER" expression="EXP_ACALLD_L2.GTP_NUMBER"/>
+        <DBMapperTableEntries name="CREATED" expression="EXP_ACALLD_L2.CREATED"/>
+        <DBMapperTableEntries name="FULL_NAME" expression="EXP_ACALLD_L2.FULL_NAME"/>
+        <DBMapperTableEntries name="MARS_PARTY_ID" expression="EXP_ACALLD_L2.MARS_PARTY_ID"/>
+        <DBMapperTableEntries name="ADDRESS" expression="EXP_ACALLD_L2.ADDRESS"/>
+        <DBMapperTableEntries name="TEL" expression="CASE WHEN SUBSTR(EXP_ACALLD_L2.TEL, 1, 1) = '0' THEN '9' || EXP_ACALLD_L2.TEL ELSE EXP_ACALLD_L2.TEL END"/>
+        <DBMapperTableEntries name="BUSINESSTEL" expression="CASE WHEN SUBSTR(EXP_ACALLD_L2.BUSINESSTEL, 1, 1) = '0' THEN '9' || EXP_ACALLD_L2.BUSINESSTEL ELSE EXP_ACALLD_L2.BUSINESSTEL END"/>
+        <DBMapperTableEntries name="MOBILETEL" expression="CASE WHEN SUBSTR(EXP_ACALLD_L2.MOBILETEL, 1, 1) = '0' THEN '9' || EXP_ACALLD_L2.MOBILETEL ELSE EXP_ACALLD_L2.MOBILETEL END"/>
+        <DBMapperTableEntries name="BUSINESSEMAIL" expression="EXP_ACALLD_L2.BUSINESSEMAIL"/>
+        <DBMapperTableEntries name="PERSONALEMAIL" expression="EXP_ACALLD_L2.PERSONALEMAIL"/>
+        <DBMapperTableEntries name="EMAIL" expression="EXP_ACALLD_L2.EMAIL"/>
+        <DBMapperTableEntries name="MAX_RN" expression="EXP_ACALLD_L2.MAX_RN"/>
+        <DBMapperTableEntries name="RN" expression="EXP_ACALLD_L2.RN"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_MDL_PARTY_COM_TM1_TMP05"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_MDL_PARTY_COM_TM1_TMP05&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_MDL_PARTY_COM_TM1_TMP05"/>
+    <metadata connector="TABLE" label="T_STG_MDL_PARTY_COM_TM1_TMP05" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CONTACT_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GTP_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="FULL_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MARS_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="BUSINESSTEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="201" name="MOBILETEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="BUSINESSEMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="PERSONALEMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="EMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MAX_RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_MDL_PARTY_COM_TM1_TMP04" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_ACALLD_L2" lineStyle="22" mergeOrder="0" metaname="EXP_ACALLD_L2" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_MDL_PARTY_COM_TM1_TMP05" lineStyle="9" mergeOrder="0" metaname="T_STG_MDL_PARTY_COM_TM1_TMP05" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
