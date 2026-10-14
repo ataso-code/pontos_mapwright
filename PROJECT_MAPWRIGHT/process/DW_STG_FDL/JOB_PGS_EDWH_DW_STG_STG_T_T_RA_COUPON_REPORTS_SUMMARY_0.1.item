@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_T_RA_COUPON_REPORTS_SUMMARY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_4"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_RAR_T_RA_COUPON_REPORTS_SUMMARY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_RAR_T_RA_COUPON_REPORTS_SUMMARY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY"/>
+    <metadata connector="TABLE" label="DW_LND.LND_RAR_T_RA_COUPON_REPORTS_SUMMARY" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="6" name="SOURCE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PNR_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="13" name="TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="OPS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOR" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="3" name="RCAT" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="OPER_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="PAYMENT_CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INSURANCE_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SUPPLEMENTARY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="QC_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PS_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FUEL_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_INSURANCE_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_SUPPLEMENTARY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_QC_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_CE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_TF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_PS_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MCO_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SSR_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="TKT_TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_GROUP" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="CANCEL_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE_BASIS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="REZ_CLASS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="ITEM_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="CI_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="DSCNT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TRN_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="ERROR_STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="PAX_GENDER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="PAX_TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="141" name="PAX_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="13" name="PARENT_TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="PNR_GROUP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="PNR_COMPANY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PNR_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="PNR_COUNTRY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="200" name="TAX_OFFICE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="AS_OF_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="FIRST_TKT_NO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="TKT_CODE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FIRST_REP_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_INTERNATIONAL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="VAT_DIVISOR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="REP_CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_FUEL_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_INSURANCE_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_SUPPLEMENTARY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_QC_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_CE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_TF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_PS_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="XBAG_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_XBAG_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_XBAG_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SALES_REF_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="REFUND_REF_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="EARNED_REF_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="EUR_PARITY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="QP_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_QP_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_QP_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="QI_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_QI_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_QI_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="RULE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="BUNDLE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2"/>
+    <metadata connector="TABLE" label="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2" name="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="6" name="SOURCE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PNR_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="13" name="TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4000" name="CPN_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="OPS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOR" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="3" name="RCAT" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_ISN_CHAR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="REP_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="OPER_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="AS_OF_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="3" name="PAYMENT_CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INSURANCE_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SUPPLEMENTARY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="QC_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PS_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="XBAG_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="QP_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="QI_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FUEL_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_INSURANCE_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_SUPPLEMENTARY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_QC_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_CE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_TF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_PS_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_XBAG_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_QP_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_QI_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="REP_CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_FUEL_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_INSURANCE_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_SUPPLEMENTARY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_QC_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_CE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_TF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_PS_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_XBAG_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_QP_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_QI_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MCO_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SSR_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="TKT_TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_GROUP" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="CANCEL_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE_BASIS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="REZ_CLASS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="ITEM_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="CI_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="DSCNT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TRN_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="ERROR_STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="PAX_GENDER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="PAX_TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="141" name="PAX_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="13" name="PARENT_TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="PNR_GROUP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="PNR_COMPANY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PNR_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="PNR_COUNTRY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="200" name="TAX_OFFICE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FIRST_TKT_NO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="TKT_CODE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FIRST_REP_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_INTERNATIONAL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="VAT_DIVISOR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="RULE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="BUNDLE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_RAR_T_RA_COUPON_REPORTS_SUMMARY" tableName="DW_LND.LND_RAR_T_RA_COUPON_REPORTS_SUMMARY" joinType="NO_JOIN" alias="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="SOURCE"/>
+        <DBMapperTableEntries name="PNR_NO"/>
+        <DBMapperTableEntries name="TKT_NO"/>
+        <DBMapperTableEntries name="CPN_NO"/>
+        <DBMapperTableEntries name="CPN_STATUS"/>
+        <DBMapperTableEntries name="OPS_CODE"/>
+        <DBMapperTableEntries name="DOS"/>
+        <DBMapperTableEntries name="DOR"/>
+        <DBMapperTableEntries name="RCAT"/>
+        <DBMapperTableEntries name="REP_ISN"/>
+        <DBMapperTableEntries name="SEG_ISN"/>
+        <DBMapperTableEntries name="LEG_ISN"/>
+        <DBMapperTableEntries name="OPER_TYPE"/>
+        <DBMapperTableEntries name="PAYMENT_CURRENCY"/>
+        <DBMapperTableEntries name="FARE"/>
+        <DBMapperTableEntries name="TAX"/>
+        <DBMapperTableEntries name="FUEL_SURCHARGE"/>
+        <DBMapperTableEntries name="INSURANCE_SURCHARGE"/>
+        <DBMapperTableEntries name="SERVICE_FEE"/>
+        <DBMapperTableEntries name="DISCOUNT"/>
+        <DBMapperTableEntries name="COMMISSION"/>
+        <DBMapperTableEntries name="SUPPLEMENTARY"/>
+        <DBMapperTableEntries name="PENALTY"/>
+        <DBMapperTableEntries name="QC_AMOUNT"/>
+        <DBMapperTableEntries name="CE_AMOUNT"/>
+        <DBMapperTableEntries name="TF_AMOUNT"/>
+        <DBMapperTableEntries name="PS_AMOUNT"/>
+        <DBMapperTableEntries name="FF_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_FARE"/>
+        <DBMapperTableEntries name="LOC_TAX"/>
+        <DBMapperTableEntries name="LOC_FUEL_SURCHARGE"/>
+        <DBMapperTableEntries name="LOC_INSURANCE_SURCHARGE"/>
+        <DBMapperTableEntries name="LOC_SERVICE_FEE"/>
+        <DBMapperTableEntries name="LOC_DISCOUNT"/>
+        <DBMapperTableEntries name="LOC_COMMISSION"/>
+        <DBMapperTableEntries name="LOC_SUPPLEMENTARY"/>
+        <DBMapperTableEntries name="LOC_PENALTY"/>
+        <DBMapperTableEntries name="LOC_QC_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_CE_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_TF_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_PS_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_FF_AMOUNT"/>
+        <DBMapperTableEntries name="MCO_TYPE"/>
+        <DBMapperTableEntries name="SSR_GROUP"/>
+        <DBMapperTableEntries name="TKT_TYPE"/>
+        <DBMapperTableEntries name="IS_GROUP"/>
+        <DBMapperTableEntries name="CANCEL_TYPE"/>
+        <DBMapperTableEntries name="FARE_BASIS"/>
+        <DBMapperTableEntries name="REZ_CLASS"/>
+        <DBMapperTableEntries name="ITEM_COUNT"/>
+        <DBMapperTableEntries name="CI_SEQ"/>
+        <DBMapperTableEntries name="DSCNT_CODE"/>
+        <DBMapperTableEntries name="TRN_ISN"/>
+        <DBMapperTableEntries name="ERROR_STATUS"/>
+        <DBMapperTableEntries name="PAX_GENDER"/>
+        <DBMapperTableEntries name="PAX_TYPE"/>
+        <DBMapperTableEntries name="PAX_NAME"/>
+        <DBMapperTableEntries name="PARENT_TKT_NO"/>
+        <DBMapperTableEntries name="PNR_GROUP_NAME"/>
+        <DBMapperTableEntries name="PNR_COMPANY_NAME"/>
+        <DBMapperTableEntries name="PNR_ISN"/>
+        <DBMapperTableEntries name="PNR_COUNTRY"/>
+        <DBMapperTableEntries name="TAX_OFFICE"/>
+        <DBMapperTableEntries name="AS_OF_DATE"/>
+        <DBMapperTableEntries name="FIRST_TKT_NO"/>
+        <DBMapperTableEntries name="TKT_CODE"/>
+        <DBMapperTableEntries name="FIRST_REP_ISN"/>
+        <DBMapperTableEntries name="IS_INTERNATIONAL"/>
+        <DBMapperTableEntries name="VAT_DIVISOR"/>
+        <DBMapperTableEntries name="REP_CURRENCY"/>
+        <DBMapperTableEntries name="REP_FARE"/>
+        <DBMapperTableEntries name="REP_TAX"/>
+        <DBMapperTableEntries name="REP_FUEL_SURCHARGE"/>
+        <DBMapperTableEntries name="REP_INSURANCE_SURCHARGE"/>
+        <DBMapperTableEntries name="REP_SERVICE_FEE"/>
+        <DBMapperTableEntries name="REP_DISCOUNT"/>
+        <DBMapperTableEntries name="REP_COMMISSION"/>
+        <DBMapperTableEntries name="REP_SUPPLEMENTARY"/>
+        <DBMapperTableEntries name="REP_PENALTY"/>
+        <DBMapperTableEntries name="REP_QC_AMOUNT"/>
+        <DBMapperTableEntries name="REP_CE_AMOUNT"/>
+        <DBMapperTableEntries name="REP_TF_AMOUNT"/>
+        <DBMapperTableEntries name="REP_PS_AMOUNT"/>
+        <DBMapperTableEntries name="REP_FF_AMOUNT"/>
+        <DBMapperTableEntries name="XBAG_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_XBAG_AMOUNT"/>
+        <DBMapperTableEntries name="REP_XBAG_AMOUNT"/>
+        <DBMapperTableEntries name="SALES_REF_NO"/>
+        <DBMapperTableEntries name="REFUND_REF_NO"/>
+        <DBMapperTableEntries name="EARNED_REF_NO"/>
+        <DBMapperTableEntries name="EUR_PARITY"/>
+        <DBMapperTableEntries name="QP_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_QP_AMOUNT"/>
+        <DBMapperTableEntries name="REP_QP_AMOUNT"/>
+        <DBMapperTableEntries name="QI_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_QI_AMOUNT"/>
+        <DBMapperTableEntries name="REP_QI_AMOUNT"/>
+        <DBMapperTableEntries name="RULE_ID"/>
+        <DBMapperTableEntries name="BUNDLE_TYPE"/>
+      </InputTables>
+      <OutputTables name="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2" tableName="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="SOURCE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.SOURCE"/>
+        <DBMapperTableEntries name="PNR_NO" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.PNR_NO"/>
+        <DBMapperTableEntries name="TKT_NO" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.TKT_NO"/>
+        <DBMapperTableEntries name="CPN_NO" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.CPN_NO"/>
+        <DBMapperTableEntries name="CPN_STATUS" expression="TRIM(LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.CPN_STATUS)"/>
+        <DBMapperTableEntries name="OPS_CODE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.OPS_CODE"/>
+        <DBMapperTableEntries name="DOS" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.DOS"/>
+        <DBMapperTableEntries name="DOR" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.DOR"/>
+        <DBMapperTableEntries name="RCAT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.RCAT"/>
+        <DBMapperTableEntries name="REP_ISN_CHAR" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_ISN"/>
+        <DBMapperTableEntries name="REP_ISN" expression="CASE WHEN SUBSTR(LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_ISN, 1, 3) = 'PAX' THEN TO_NUMBER(SUBSTR(LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_ISN, 4)) WHEN SUBSTR(LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_ISN, 1, 2) = 'RA' THEN TO_NUMBER(SUBSTR(LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_ISN, 3)) WHEN SUBSTR(LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_ISN, 1, 3) = 'INT' THEN TO_NUMBER(SUBSTR(LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_ISN, 4)) ELSE -1 END"/>
+        <DBMapperTableEntries name="SEG_ISN" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.SEG_ISN"/>
+        <DBMapperTableEntries name="LEG_ISN" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LEG_ISN"/>
+        <DBMapperTableEntries name="OPER_TYPE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.OPER_TYPE"/>
+        <DBMapperTableEntries name="AS_OF_DATE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.AS_OF_DATE"/>
+        <DBMapperTableEntries name="PAYMENT_CURRENCY" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.PAYMENT_CURRENCY"/>
+        <DBMapperTableEntries name="FARE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.FARE"/>
+        <DBMapperTableEntries name="TAX" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.TAX"/>
+        <DBMapperTableEntries name="FUEL_SURCHARGE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.FUEL_SURCHARGE"/>
+        <DBMapperTableEntries name="INSURANCE_SURCHARGE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.INSURANCE_SURCHARGE"/>
+        <DBMapperTableEntries name="SERVICE_FEE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.SERVICE_FEE"/>
+        <DBMapperTableEntries name="DISCOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.DISCOUNT"/>
+        <DBMapperTableEntries name="COMMISSION" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.COMMISSION"/>
+        <DBMapperTableEntries name="SUPPLEMENTARY" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.SUPPLEMENTARY"/>
+        <DBMapperTableEntries name="PENALTY" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.PENALTY"/>
+        <DBMapperTableEntries name="QC_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.QC_AMOUNT"/>
+        <DBMapperTableEntries name="CE_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.CE_AMOUNT"/>
+        <DBMapperTableEntries name="TF_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.TF_AMOUNT"/>
+        <DBMapperTableEntries name="PS_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.PS_AMOUNT"/>
+        <DBMapperTableEntries name="FF_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.FF_AMOUNT"/>
+        <DBMapperTableEntries name="XBAG_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.XBAG_AMOUNT"/>
+        <DBMapperTableEntries name="QP_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.QP_AMOUNT"/>
+        <DBMapperTableEntries name="QI_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.QI_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_FARE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_FARE"/>
+        <DBMapperTableEntries name="LOC_TAX" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_TAX"/>
+        <DBMapperTableEntries name="LOC_FUEL_SURCHARGE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_FUEL_SURCHARGE"/>
+        <DBMapperTableEntries name="LOC_INSURANCE_SURCHARGE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_INSURANCE_SURCHARGE"/>
+        <DBMapperTableEntries name="LOC_SERVICE_FEE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_SERVICE_FEE"/>
+        <DBMapperTableEntries name="LOC_DISCOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_DISCOUNT"/>
+        <DBMapperTableEntries name="LOC_COMMISSION" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_COMMISSION"/>
+        <DBMapperTableEntries name="LOC_SUPPLEMENTARY" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_SUPPLEMENTARY"/>
+        <DBMapperTableEntries name="LOC_PENALTY" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_PENALTY"/>
+        <DBMapperTableEntries name="LOC_QC_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_QC_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_CE_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_CE_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_TF_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_TF_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_PS_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_PS_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_FF_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_FF_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_XBAG_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_XBAG_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_QP_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_QP_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_QI_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LOC_QI_AMOUNT"/>
+        <DBMapperTableEntries name="REP_CURRENCY" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_CURRENCY"/>
+        <DBMapperTableEntries name="REP_FARE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_FARE"/>
+        <DBMapperTableEntries name="REP_TAX" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_TAX"/>
+        <DBMapperTableEntries name="REP_FUEL_SURCHARGE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_FUEL_SURCHARGE"/>
+        <DBMapperTableEntries name="REP_INSURANCE_SURCHARGE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_INSURANCE_SURCHARGE"/>
+        <DBMapperTableEntries name="REP_SERVICE_FEE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_SERVICE_FEE"/>
+        <DBMapperTableEntries name="REP_DISCOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_DISCOUNT"/>
+        <DBMapperTableEntries name="REP_COMMISSION" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_COMMISSION"/>
+        <DBMapperTableEntries name="REP_SUPPLEMENTARY" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_SUPPLEMENTARY"/>
+        <DBMapperTableEntries name="REP_PENALTY" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_PENALTY"/>
+        <DBMapperTableEntries name="REP_QC_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_QC_AMOUNT"/>
+        <DBMapperTableEntries name="REP_CE_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_CE_AMOUNT"/>
+        <DBMapperTableEntries name="REP_TF_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_TF_AMOUNT"/>
+        <DBMapperTableEntries name="REP_PS_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_PS_AMOUNT"/>
+        <DBMapperTableEntries name="REP_FF_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_FF_AMOUNT"/>
+        <DBMapperTableEntries name="REP_XBAG_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_XBAG_AMOUNT"/>
+        <DBMapperTableEntries name="REP_QP_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_QP_AMOUNT"/>
+        <DBMapperTableEntries name="REP_QI_AMOUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REP_QI_AMOUNT"/>
+        <DBMapperTableEntries name="MCO_TYPE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.MCO_TYPE"/>
+        <DBMapperTableEntries name="SSR_GROUP" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.SSR_GROUP"/>
+        <DBMapperTableEntries name="TKT_TYPE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.TKT_TYPE"/>
+        <DBMapperTableEntries name="IS_GROUP" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.IS_GROUP"/>
+        <DBMapperTableEntries name="CANCEL_TYPE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.CANCEL_TYPE"/>
+        <DBMapperTableEntries name="FARE_BASIS" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.FARE_BASIS"/>
+        <DBMapperTableEntries name="REZ_CLASS" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.REZ_CLASS"/>
+        <DBMapperTableEntries name="ITEM_COUNT" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.ITEM_COUNT"/>
+        <DBMapperTableEntries name="CI_SEQ" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.CI_SEQ"/>
+        <DBMapperTableEntries name="DSCNT_CODE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.DSCNT_CODE"/>
+        <DBMapperTableEntries name="TRN_ISN" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.TRN_ISN"/>
+        <DBMapperTableEntries name="ERROR_STATUS" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.ERROR_STATUS"/>
+        <DBMapperTableEntries name="PAX_GENDER" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.PAX_GENDER"/>
+        <DBMapperTableEntries name="PAX_TYPE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.PAX_TYPE"/>
+        <DBMapperTableEntries name="PAX_NAME" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.PAX_NAME"/>
+        <DBMapperTableEntries name="PARENT_TKT_NO" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.PARENT_TKT_NO"/>
+        <DBMapperTableEntries name="PNR_GROUP_NAME" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.PNR_GROUP_NAME"/>
+        <DBMapperTableEntries name="PNR_COMPANY_NAME" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.PNR_COMPANY_NAME"/>
+        <DBMapperTableEntries name="PNR_ISN" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.PNR_ISN"/>
+        <DBMapperTableEntries name="PNR_COUNTRY" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.PNR_COUNTRY"/>
+        <DBMapperTableEntries name="TAX_OFFICE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.TAX_OFFICE"/>
+        <DBMapperTableEntries name="FIRST_TKT_NO" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.FIRST_TKT_NO"/>
+        <DBMapperTableEntries name="TKT_CODE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.TKT_CODE"/>
+        <DBMapperTableEntries name="FIRST_REP_ISN" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.FIRST_REP_ISN"/>
+        <DBMapperTableEntries name="IS_INTERNATIONAL" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.IS_INTERNATIONAL"/>
+        <DBMapperTableEntries name="VAT_DIVISOR" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.VAT_DIVISOR"/>
+        <DBMapperTableEntries name="RULE_ID" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.RULE_ID"/>
+        <DBMapperTableEntries name="BUNDLE_TYPE" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.BUNDLE_TYPE"/>
+        <DBMapperTableEntries name="RN" expression="ROW_NUMBER() OVER (PARTITION BY LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.TKT_NO, LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.CPN_NO, LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LEG_ISN, LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.SEG_ISN, LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.OPS_CODE, LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.FARE ORDER BY LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.AS_OF_DATE DESC)"/>
+        <FilterEntries name="where" expression="LND_RAR_T_RA_COUPON_REPORTS_SUMMARY.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2"/>
+    <metadata connector="TABLE" label="STG_T_T_RA_COUPON_REPORTS_SUMMARY" name="STG_T_T_RA_COUPON_REPORTS_SUMMARY">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PNR_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="13" name="TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="OPS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOR" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="3" name="RCAT" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="REP_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="OPER_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MCO_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SSR_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="TKT_TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_GROUP" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="CANCEL_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE_BASIS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="REZ_CLASS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="ITEM_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CI_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="DSCNT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="TRN_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="ERROR_STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="PAX_GENDER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="PAX_TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="PAX_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="13" name="PARENT_TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="PNR_GROUP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="PNR_COMPANY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PNR_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="PNR_COUNTRY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="200" name="TAX_OFFICE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="AS_OF_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="13" name="FIRST_TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="TKT_CODE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FIRST_REP_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_INTERNATIONAL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="VAT_DIVISOR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="RULE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="BUNDLE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="3" name="DEP_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ARR_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="USER_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SR_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="SOURCE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="PAYMENT_CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INSURANCE_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SUPPLEMENTARY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="QC_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PS_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="XBAG_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FUEL_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_INSURANCE_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_SUPPLEMENTARY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_QC_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_CE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_TF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_PS_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_XBAG_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="REP_CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_FUEL_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_INSURANCE_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_SUPPLEMENTARY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_QC_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_CE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_TF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_PS_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_XBAG_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="QP_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_QP_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_QP_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="QI_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_QI_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_QI_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_ISN_CHAR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2" tableName="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2" joinType="NO_JOIN" alias="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="SOURCE"/>
+        <DBMapperTableEntries name="PNR_NO"/>
+        <DBMapperTableEntries name="TKT_NO"/>
+        <DBMapperTableEntries name="CPN_NO"/>
+        <DBMapperTableEntries name="CPN_STATUS"/>
+        <DBMapperTableEntries name="OPS_CODE"/>
+        <DBMapperTableEntries name="DOS"/>
+        <DBMapperTableEntries name="DOR"/>
+        <DBMapperTableEntries name="RCAT"/>
+        <DBMapperTableEntries name="REP_ISN_CHAR"/>
+        <DBMapperTableEntries name="REP_ISN"/>
+        <DBMapperTableEntries name="SEG_ISN"/>
+        <DBMapperTableEntries name="LEG_ISN"/>
+        <DBMapperTableEntries name="OPER_TYPE"/>
+        <DBMapperTableEntries name="AS_OF_DATE"/>
+        <DBMapperTableEntries name="PAYMENT_CURRENCY"/>
+        <DBMapperTableEntries name="FARE"/>
+        <DBMapperTableEntries name="TAX"/>
+        <DBMapperTableEntries name="FUEL_SURCHARGE"/>
+        <DBMapperTableEntries name="INSURANCE_SURCHARGE"/>
+        <DBMapperTableEntries name="SERVICE_FEE"/>
+        <DBMapperTableEntries name="DISCOUNT"/>
+        <DBMapperTableEntries name="COMMISSION"/>
+        <DBMapperTableEntries name="SUPPLEMENTARY"/>
+        <DBMapperTableEntries name="PENALTY"/>
+        <DBMapperTableEntries name="QC_AMOUNT"/>
+        <DBMapperTableEntries name="CE_AMOUNT"/>
+        <DBMapperTableEntries name="TF_AMOUNT"/>
+        <DBMapperTableEntries name="PS_AMOUNT"/>
+        <DBMapperTableEntries name="FF_AMOUNT"/>
+        <DBMapperTableEntries name="XBAG_AMOUNT"/>
+        <DBMapperTableEntries name="QP_AMOUNT"/>
+        <DBMapperTableEntries name="QI_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_FARE"/>
+        <DBMapperTableEntries name="LOC_TAX"/>
+        <DBMapperTableEntries name="LOC_FUEL_SURCHARGE"/>
+        <DBMapperTableEntries name="LOC_INSURANCE_SURCHARGE"/>
+        <DBMapperTableEntries name="LOC_SERVICE_FEE"/>
+        <DBMapperTableEntries name="LOC_DISCOUNT"/>
+        <DBMapperTableEntries name="LOC_COMMISSION"/>
+        <DBMapperTableEntries name="LOC_SUPPLEMENTARY"/>
+        <DBMapperTableEntries name="LOC_PENALTY"/>
+        <DBMapperTableEntries name="LOC_QC_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_CE_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_TF_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_PS_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_FF_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_XBAG_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_QP_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_QI_AMOUNT"/>
+        <DBMapperTableEntries name="REP_CURRENCY"/>
+        <DBMapperTableEntries name="REP_FARE"/>
+        <DBMapperTableEntries name="REP_TAX"/>
+        <DBMapperTableEntries name="REP_FUEL_SURCHARGE"/>
+        <DBMapperTableEntries name="REP_INSURANCE_SURCHARGE"/>
+        <DBMapperTableEntries name="REP_SERVICE_FEE"/>
+        <DBMapperTableEntries name="REP_DISCOUNT"/>
+        <DBMapperTableEntries name="REP_COMMISSION"/>
+        <DBMapperTableEntries name="REP_SUPPLEMENTARY"/>
+        <DBMapperTableEntries name="REP_PENALTY"/>
+        <DBMapperTableEntries name="REP_QC_AMOUNT"/>
+        <DBMapperTableEntries name="REP_CE_AMOUNT"/>
+        <DBMapperTableEntries name="REP_TF_AMOUNT"/>
+        <DBMapperTableEntries name="REP_PS_AMOUNT"/>
+        <DBMapperTableEntries name="REP_FF_AMOUNT"/>
+        <DBMapperTableEntries name="REP_XBAG_AMOUNT"/>
+        <DBMapperTableEntries name="REP_QP_AMOUNT"/>
+        <DBMapperTableEntries name="REP_QI_AMOUNT"/>
+        <DBMapperTableEntries name="MCO_TYPE"/>
+        <DBMapperTableEntries name="SSR_GROUP"/>
+        <DBMapperTableEntries name="TKT_TYPE"/>
+        <DBMapperTableEntries name="IS_GROUP"/>
+        <DBMapperTableEntries name="CANCEL_TYPE"/>
+        <DBMapperTableEntries name="FARE_BASIS"/>
+        <DBMapperTableEntries name="REZ_CLASS"/>
+        <DBMapperTableEntries name="ITEM_COUNT"/>
+        <DBMapperTableEntries name="CI_SEQ"/>
+        <DBMapperTableEntries name="DSCNT_CODE"/>
+        <DBMapperTableEntries name="TRN_ISN"/>
+        <DBMapperTableEntries name="ERROR_STATUS"/>
+        <DBMapperTableEntries name="PAX_GENDER"/>
+        <DBMapperTableEntries name="PAX_TYPE"/>
+        <DBMapperTableEntries name="PAX_NAME"/>
+        <DBMapperTableEntries name="PARENT_TKT_NO"/>
+        <DBMapperTableEntries name="PNR_GROUP_NAME"/>
+        <DBMapperTableEntries name="PNR_COMPANY_NAME"/>
+        <DBMapperTableEntries name="PNR_ISN"/>
+        <DBMapperTableEntries name="PNR_COUNTRY"/>
+        <DBMapperTableEntries name="TAX_OFFICE"/>
+        <DBMapperTableEntries name="FIRST_TKT_NO"/>
+        <DBMapperTableEntries name="TKT_CODE"/>
+        <DBMapperTableEntries name="FIRST_REP_ISN"/>
+        <DBMapperTableEntries name="IS_INTERNATIONAL"/>
+        <DBMapperTableEntries name="VAT_DIVISOR"/>
+        <DBMapperTableEntries name="RULE_ID"/>
+        <DBMapperTableEntries name="BUNDLE_TYPE"/>
+        <DBMapperTableEntries name="RN"/>
+      </InputTables>
+      <InputTables name="DW_LND.LND_RAR_T_LEG_REPORTS_SUMMARY" tableName="DW_LND.LND_RAR_T_LEG_REPORTS_SUMMARY" joinType="INNER_JOIN" alias="LND_RAR_T_LEG_REPORTS_SUMMARY">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="SEG_ISN" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.SEG_ISN" join="true" operator="="/>
+        <DBMapperTableEntries name="LEG_ISN" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LEG_ISN" join="true" operator="="/>
+        <DBMapperTableEntries name="LS_SEQ"/>
+        <DBMapperTableEntries name="AA_CODE"/>
+        <DBMapperTableEntries name="FLT_NO"/>
+        <DBMapperTableEntries name="DEP_PORT"/>
+        <DBMapperTableEntries name="ARR_PORT"/>
+        <DBMapperTableEntries name="SCH_DEP_DT"/>
+        <DBMapperTableEntries name="SEG_DEP_PORT"/>
+        <DBMapperTableEntries name="SEG_ARR_PORT"/>
+        <DBMapperTableEntries name="SEG_DEP_CITY"/>
+        <DBMapperTableEntries name="SEG_ARR_CITY"/>
+        <DBMapperTableEntries name="SEG_SCH_DEP_DT"/>
+        <DBMapperTableEntries name="SEG_DOMESTIC"/>
+        <DBMapperTableEntries name="SEG_AUTHORIZATION"/>
+        <DBMapperTableEntries name="CAPACITY"/>
+        <DBMapperTableEntries name="AC_NAME"/>
+        <DBMapperTableEntries name="REPORTING_GROUP_NAME"/>
+        <DBMapperTableEntries name="FLIGHT_GROUP_NAME"/>
+        <DBMapperTableEntries name="SERVICE_TYPE"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="AS_OF_DATE"/>
+      </InputTables>
+      <InputTables name="DW_LND.LND_RAR_T_USER_REPORTS_SUMMARY" tableName="DW_LND.LND_RAR_T_USER_REPORTS_SUMMARY" joinType="INNER_JOIN" alias="LND_RAR_T_USER_REPORTS_SUMMARY">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="REP_ISN" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_ISN_CHAR" join="true" operator="="/>
+        <DBMapperTableEntries name="REP_DATE"/>
+        <DBMapperTableEntries name="USER_ISN"/>
+        <DBMapperTableEntries name="FULL_NAME"/>
+        <DBMapperTableEntries name="USER_NAME"/>
+        <DBMapperTableEntries name="SR_ISN"/>
+        <DBMapperTableEntries name="SR_CODE"/>
+        <DBMapperTableEntries name="SR_TYPE"/>
+        <DBMapperTableEntries name="SR_NAME"/>
+        <DBMapperTableEntries name="LEGAL_NAME"/>
+        <DBMapperTableEntries name="CITY_CODE"/>
+        <DBMapperTableEntries name="COUNTRY_CODE"/>
+        <DBMapperTableEntries name="SR_GROUP1"/>
+        <DBMapperTableEntries name="SR_GROUP2"/>
+        <DBMapperTableEntries name="SR_GROUP3"/>
+        <DBMapperTableEntries name="SR_GROUP4"/>
+        <DBMapperTableEntries name="SR_GROUP5"/>
+        <DBMapperTableEntries name="SR_GROUP6"/>
+        <DBMapperTableEntries name="SR_GROUP7"/>
+        <DBMapperTableEntries name="GSA_SR_ISN"/>
+        <DBMapperTableEntries name="GSA_SR_NAME"/>
+        <DBMapperTableEntries name="BNK_CODE"/>
+        <DBMapperTableEntries name="BNK_NAME"/>
+        <DBMapperTableEntries name="BNK_BRANCH_CODE"/>
+        <DBMapperTableEntries name="BNK_BRANCH_NAME"/>
+        <DBMapperTableEntries name="BNK_ACCOUNT"/>
+        <DBMapperTableEntries name="SOURCE"/>
+        <DBMapperTableEntries name="REPORTED_BY"/>
+        <DBMapperTableEntries name="AS_OF_DATE"/>
+      </InputTables>
+      <OutputTables name="STG_T_T_RA_COUPON_REPORTS_SUMMARY" tableName="STG_T_T_RA_COUPON_REPORTS_SUMMARY">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="PNR_NO" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.PNR_NO, '-1')"/>
+        <DBMapperTableEntries name="TKT_NO" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.TKT_NO"/>
+        <DBMapperTableEntries name="CPN_NO" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.CPN_NO"/>
+        <DBMapperTableEntries name="CPN_STATUS" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.CPN_STATUS"/>
+        <DBMapperTableEntries name="OPS_CODE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.OPS_CODE"/>
+        <DBMapperTableEntries name="DOS" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.DOS"/>
+        <DBMapperTableEntries name="DOR" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.DOR"/>
+        <DBMapperTableEntries name="RCAT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.RCAT"/>
+        <DBMapperTableEntries name="REP_ISN" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_ISN"/>
+        <DBMapperTableEntries name="SEG_ISN" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.SEG_ISN"/>
+        <DBMapperTableEntries name="LEG_ISN" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LEG_ISN"/>
+        <DBMapperTableEntries name="OPER_TYPE" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.OPER_TYPE, '-1')"/>
+        <DBMapperTableEntries name="FARE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.FARE"/>
+        <DBMapperTableEntries name="MCO_TYPE" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.MCO_TYPE, '-1')"/>
+        <DBMapperTableEntries name="SSR_GROUP" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.SSR_GROUP, '-1')"/>
+        <DBMapperTableEntries name="TKT_TYPE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.TKT_TYPE"/>
+        <DBMapperTableEntries name="IS_GROUP" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.IS_GROUP"/>
+        <DBMapperTableEntries name="CANCEL_TYPE" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.CANCEL_TYPE, '-1')"/>
+        <DBMapperTableEntries name="FARE_BASIS" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.FARE_BASIS, '-1')"/>
+        <DBMapperTableEntries name="REZ_CLASS" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REZ_CLASS"/>
+        <DBMapperTableEntries name="ITEM_COUNT" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.ITEM_COUNT, -1)"/>
+        <DBMapperTableEntries name="CI_SEQ" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.CI_SEQ, -1)"/>
+        <DBMapperTableEntries name="DSCNT_CODE" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.DSCNT_CODE, '-1')"/>
+        <DBMapperTableEntries name="TRN_ISN" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.TRN_ISN, -1)"/>
+        <DBMapperTableEntries name="ERROR_STATUS" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.ERROR_STATUS, '-1')"/>
+        <DBMapperTableEntries name="PAX_GENDER" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.PAX_GENDER, '-1')"/>
+        <DBMapperTableEntries name="PAX_TYPE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.PAX_TYPE"/>
+        <DBMapperTableEntries name="PAX_NAME" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.PAX_NAME"/>
+        <DBMapperTableEntries name="PARENT_TKT_NO" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.PARENT_TKT_NO, -1)"/>
+        <DBMapperTableEntries name="PNR_GROUP_NAME" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.PNR_GROUP_NAME, '-1')"/>
+        <DBMapperTableEntries name="PNR_COMPANY_NAME" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.PNR_COMPANY_NAME, '-1')"/>
+        <DBMapperTableEntries name="PNR_ISN" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.PNR_ISN, -1)"/>
+        <DBMapperTableEntries name="PNR_COUNTRY" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.PNR_COUNTRY, '-1')"/>
+        <DBMapperTableEntries name="TAX_OFFICE" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.TAX_OFFICE, '-1')"/>
+        <DBMapperTableEntries name="AS_OF_DATE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.AS_OF_DATE"/>
+        <DBMapperTableEntries name="FIRST_TKT_NO" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.FIRST_TKT_NO"/>
+        <DBMapperTableEntries name="TKT_CODE" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.TKT_CODE, '-1')"/>
+        <DBMapperTableEntries name="FIRST_REP_ISN" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.FIRST_REP_ISN, '-1')"/>
+        <DBMapperTableEntries name="IS_INTERNATIONAL" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.IS_INTERNATIONAL"/>
+        <DBMapperTableEntries name="VAT_DIVISOR" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.VAT_DIVISOR"/>
+        <DBMapperTableEntries name="RULE_ID" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.RULE_ID, '-1')"/>
+        <DBMapperTableEntries name="BUNDLE_TYPE" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.BUNDLE_TYPE, '-1')"/>
+        <DBMapperTableEntries name="FLT_NO" expression="LND_RAR_T_LEG_REPORTS_SUMMARY.FLT_NO"/>
+        <DBMapperTableEntries name="SCH_DEP_DT" expression="LND_RAR_T_LEG_REPORTS_SUMMARY.SCH_DEP_DT"/>
+        <DBMapperTableEntries name="DEP_PORT" expression="LND_RAR_T_LEG_REPORTS_SUMMARY.DEP_PORT"/>
+        <DBMapperTableEntries name="ARR_PORT" expression="LND_RAR_T_LEG_REPORTS_SUMMARY.ARR_PORT"/>
+        <DBMapperTableEntries name="USER_ISN" expression="NVL(LND_RAR_T_USER_REPORTS_SUMMARY.USER_ISN, -1)"/>
+        <DBMapperTableEntries name="SR_ISN" expression="NVL(LND_RAR_T_USER_REPORTS_SUMMARY.SR_ISN, '-1')"/>
+        <DBMapperTableEntries name="SOURCE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.SOURCE"/>
+        <DBMapperTableEntries name="PAYMENT_CURRENCY" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.PAYMENT_CURRENCY, '-1')"/>
+        <DBMapperTableEntries name="TAX" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.TAX"/>
+        <DBMapperTableEntries name="FUEL_SURCHARGE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.FUEL_SURCHARGE"/>
+        <DBMapperTableEntries name="INSURANCE_SURCHARGE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.INSURANCE_SURCHARGE"/>
+        <DBMapperTableEntries name="SERVICE_FEE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.SERVICE_FEE"/>
+        <DBMapperTableEntries name="DISCOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.DISCOUNT"/>
+        <DBMapperTableEntries name="COMMISSION" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.COMMISSION"/>
+        <DBMapperTableEntries name="SUPPLEMENTARY" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.SUPPLEMENTARY"/>
+        <DBMapperTableEntries name="PENALTY" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.PENALTY"/>
+        <DBMapperTableEntries name="QC_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.QC_AMOUNT"/>
+        <DBMapperTableEntries name="CE_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.CE_AMOUNT"/>
+        <DBMapperTableEntries name="TF_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.TF_AMOUNT"/>
+        <DBMapperTableEntries name="PS_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.PS_AMOUNT"/>
+        <DBMapperTableEntries name="FF_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.FF_AMOUNT"/>
+        <DBMapperTableEntries name="XBAG_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.XBAG_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_FARE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_FARE"/>
+        <DBMapperTableEntries name="LOC_TAX" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_TAX"/>
+        <DBMapperTableEntries name="LOC_FUEL_SURCHARGE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_FUEL_SURCHARGE"/>
+        <DBMapperTableEntries name="LOC_INSURANCE_SURCHARGE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_INSURANCE_SURCHARGE"/>
+        <DBMapperTableEntries name="LOC_SERVICE_FEE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_SERVICE_FEE"/>
+        <DBMapperTableEntries name="LOC_DISCOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_DISCOUNT"/>
+        <DBMapperTableEntries name="LOC_COMMISSION" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_COMMISSION"/>
+        <DBMapperTableEntries name="LOC_SUPPLEMENTARY" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_SUPPLEMENTARY"/>
+        <DBMapperTableEntries name="LOC_PENALTY" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_PENALTY"/>
+        <DBMapperTableEntries name="LOC_QC_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_QC_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_CE_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_CE_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_TF_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_TF_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_PS_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_PS_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_FF_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_FF_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_XBAG_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_XBAG_AMOUNT"/>
+        <DBMapperTableEntries name="REP_CURRENCY" expression="NVL(EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_CURRENCY, '-1')"/>
+        <DBMapperTableEntries name="REP_FARE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_FARE"/>
+        <DBMapperTableEntries name="REP_TAX" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_TAX"/>
+        <DBMapperTableEntries name="REP_FUEL_SURCHARGE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_FUEL_SURCHARGE"/>
+        <DBMapperTableEntries name="REP_INSURANCE_SURCHARGE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_INSURANCE_SURCHARGE"/>
+        <DBMapperTableEntries name="REP_SERVICE_FEE" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_SERVICE_FEE"/>
+        <DBMapperTableEntries name="REP_DISCOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_DISCOUNT"/>
+        <DBMapperTableEntries name="REP_COMMISSION" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_COMMISSION"/>
+        <DBMapperTableEntries name="REP_SUPPLEMENTARY" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_SUPPLEMENTARY"/>
+        <DBMapperTableEntries name="REP_PENALTY" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_PENALTY"/>
+        <DBMapperTableEntries name="REP_QC_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_QC_AMOUNT"/>
+        <DBMapperTableEntries name="REP_CE_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_CE_AMOUNT"/>
+        <DBMapperTableEntries name="REP_TF_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_TF_AMOUNT"/>
+        <DBMapperTableEntries name="REP_PS_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_PS_AMOUNT"/>
+        <DBMapperTableEntries name="REP_FF_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_FF_AMOUNT"/>
+        <DBMapperTableEntries name="REP_XBAG_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_XBAG_AMOUNT"/>
+        <DBMapperTableEntries name="QP_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.QP_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_QP_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_QP_AMOUNT"/>
+        <DBMapperTableEntries name="REP_QP_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_QP_AMOUNT"/>
+        <DBMapperTableEntries name="QI_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.QI_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_QI_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.LOC_QI_AMOUNT"/>
+        <DBMapperTableEntries name="REP_QI_AMOUNT" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_QI_AMOUNT"/>
+        <DBMapperTableEntries name="REP_ISN_CHAR" expression="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.REP_ISN_CHAR"/>
+        <FilterEntries name="where" expression="(LND_RAR_T_USER_REPORTS_SUMMARY.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')) AND (LND_RAR_T_LEG_REPORTS_SUMMARY.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')) AND (EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2.RN = 1)" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_RAR_T_LEG_REPORTS_SUMMARY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_RAR_T_LEG_REPORTS_SUMMARY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_RAR_T_LEG_REPORTS_SUMMARY"/>
+    <metadata connector="TABLE" label="DW_LND.LND_RAR_T_LEG_REPORTS_SUMMARY" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="LS_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="AA_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="DEP_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ARR_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="3" name="SEG_DEP_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="SEG_ARR_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="SEG_DEP_CITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="SEG_ARR_CITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SEG_SCH_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="SEG_DOMESTIC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SEG_AUTHORIZATION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CAPACITY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="AC_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="REPORTING_GROUP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="FLIGHT_GROUP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SERVICE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="AS_OF_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_RAR_T_USER_REPORTS_SUMMARY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_RAR_T_USER_REPORTS_SUMMARY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_RAR_T_USER_REPORTS_SUMMARY"/>
+    <metadata connector="TABLE" label="DW_LND.LND_RAR_T_USER_REPORTS_SUMMARY" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="REP_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="FULL_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="USER_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SR_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="25" name="SR_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="SR_TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="60" name="SR_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="LEGAL_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="CITY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="COUNTRY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="SR_GROUP1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="SR_GROUP2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="SR_GROUP3" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="SR_GROUP4" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="SR_GROUP5" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="SR_GROUP6" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="SR_GROUP7" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="GSA_SR_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="60" name="GSA_SR_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="BNK_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="BNK_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="BNK_BRANCH_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="BNK_BRANCH_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="BNK_ACCOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="SOURCE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="REPORTED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="AS_OF_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_T_RA_COUPON_REPORTS_SUMMARY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_T_RA_COUPON_REPORTS_SUMMARY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_T_RA_COUPON_REPORTS_SUMMARY"/>
+    <metadata connector="TABLE" label="STG_T_T_RA_COUPON_REPORTS_SUMMARY" name="tELTOracleOutput_1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PNR_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="13" name="TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="OPS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOR" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="3" name="RCAT" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="REP_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="OPER_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MCO_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SSR_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="TKT_TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_GROUP" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="CANCEL_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE_BASIS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="REZ_CLASS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="ITEM_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CI_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="DSCNT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="TRN_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="ERROR_STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="PAX_GENDER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="PAX_TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="PAX_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="13" name="PARENT_TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="PNR_GROUP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="PNR_COMPANY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PNR_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="PNR_COUNTRY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="200" name="TAX_OFFICE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="AS_OF_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="13" name="FIRST_TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="TKT_CODE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FIRST_REP_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_INTERNATIONAL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="VAT_DIVISOR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="RULE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="BUNDLE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="3" name="DEP_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ARR_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="USER_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SR_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="SOURCE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="PAYMENT_CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INSURANCE_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SUPPLEMENTARY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="QC_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PS_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="XBAG_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FUEL_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_INSURANCE_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_SUPPLEMENTARY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_QC_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_CE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_TF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_PS_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_XBAG_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="REP_CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_FUEL_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_INSURANCE_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_SUPPLEMENTARY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_QC_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_CE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_TF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_PS_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_XBAG_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="QP_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_QP_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_QP_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="QI_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_QI_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_QI_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REP_ISN_CHAR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_RAR_T_RA_COUPON_REPORTS_SUMMARY" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_4" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2" lineStyle="22" mergeOrder="0" metaname="EXP_LND_RAR_T_RA_COUPON_REPORTS_SUMMARY2" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_RAR_T_LEG_REPORTS_SUMMARY" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_RAR_T_USER_REPORTS_SUMMARY" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_3" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_T_RA_COUPON_REPORTS_SUMMARY" lineStyle="9" mergeOrder="0" metaname="STG_T_T_RA_COUPON_REPORTS_SUMMARY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
