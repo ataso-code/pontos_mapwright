@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTDWH.T_DWH_ACCOUNT&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_DWH_ACCOUNT_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_DWH_ACCOUNT_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_DWH_ACCOUNT_TM1"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_DWH_ACCOUNT_TM1" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DATE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="REP_POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="NORMAL_BALANCE_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="NORMAL_BALANCE_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CREDIT_BALANCE_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CREDIT_BALANCE_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_BALANCE_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_BALANCE_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OVERALL_T0" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LC_CASH" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_CASH" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQUITY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FINC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="REPO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MUTUAL_FUNDS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OVERALL_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LC_CASH_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_CASH_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQUITY_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FINC_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="REPO_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MUTUAL_FUNDS_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MONEY_MARKET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LIQUID_MUTUAL_FUNDS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_MUTUAL_FUNDS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LIQUID_MUTUAL_FUNDS_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_MUTUAL_FUNDS_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEX" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEX_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEXCUSTODY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEXCUSTODY_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEPOSIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEPOSIT_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQUITY_SL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQUITY_SL_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OIP_COLL_PAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OIP_COLL_PAY_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BLOCKED_BALANCES" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="T0_CREDIT_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="T0_CREDIT_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FOREX_COLL_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FOREX_COLL_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FOREX_COLL_NET_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FOREX_COLL_NET_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OVERALL_T0_EURO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OVERALL_T0_EURO_AVG" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STIP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STIP_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_A" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_B_OTHER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_OB" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_PROTECTED" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_GUARANTEED" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_FREE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_B_LIQUID" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_ELMA" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_STOCK_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="GB_INVESTOR_SEGMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_SECURITIES_TL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_SECURITIES_FC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_REPO_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_NON_TERM_TL_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_NON_TERM_FC_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_TERM_TL_DEPOSIT_ACCOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_TERM_FC_DEPOSIT_ACCOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_TOTAL_INVESTABLE_ASSETS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_INVESTABLE_ASSETS_BKY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_INVESTABLE_ASSETS_BKY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_BKY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CURR_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="CURR_EXCHANGE_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_SYS_BLK" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_SYS_BLK_OC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_SYS_BLK_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_SYS_BLK_RSN_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="BIST_90_COLL_AMT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BIST_75_COLL_AMT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_STG_DWH_ACCOUNT_TM1"/>
+    <metadata connector="TABLE" label="T_DWH_ACCOUNT" name="T_DWH_ACCOUNT">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DATE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="REP_POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="NORMAL_BALANCE_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="NORMAL_BALANCE_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CREDIT_BALANCE_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CREDIT_BALANCE_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_BALANCE_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_BALANCE_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OVERALL_T0" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LC_CASH" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_CASH" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQUITY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FINC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="REPO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MUTUAL_FUNDS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OVERALL_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LC_CASH_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_CASH_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQUITY_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FINC_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="REPO_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MUTUAL_FUNDS_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MONEY_MARKET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LIQUID_MUTUAL_FUNDS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_MUTUAL_FUNDS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LIQUID_MUTUAL_FUNDS_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_MUTUAL_FUNDS_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEX" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEX_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEXCUSTODY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEXCUSTODY_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEPOSIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEPOSIT_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQUITY_SL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQUITY_SL_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OIP_COLL_PAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OIP_COLL_PAY_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BLOCKED_BALANCES" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="T0_CREDIT_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="T0_CREDIT_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FOREX_COLL_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FOREX_COLL_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FOREX_COLL_NET_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FOREX_COLL_NET_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OVERALL_T0_EURO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OVERALL_T0_EURO_AVG" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STIP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STIP_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_A" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_B_OTHER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_OB" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_PROTECTED" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_GUARANTEED" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_FREE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_B_LIQUID" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_ELMA" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_STOCK_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="GB_INVESTOR_SEGMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_SECURITIES_TL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_SECURITIES_FC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_REPO_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_NON_TERM_TL_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_NON_TERM_FC_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_TERM_TL_DEPOSIT_ACCOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_TERM_FC_DEPOSIT_ACCOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_TOTAL_INVESTABLE_ASSETS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_INVESTABLE_ASSETS_BKY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_INVESTABLE_ASSETS_BKY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_BKY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CURR_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="CURR_EXCHANGE_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_SYS_BLK" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_SYS_BLK_OC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_SYS_BLK_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_SYS_BLK_RSN_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="BIST_90_COLL_AMT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BIST_75_COLL_AMT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTSTG.T_STG_DWH_ACCOUNT_TM1" tableName="DGYTSTG.T_STG_DWH_ACCOUNT_TM1" joinType="NO_JOIN" alias="T_STG_DWH_ACCOUNT_TM1">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="DATE_ID"/>
+        <DBMapperTableEntries name="ACC_ID"/>
+        <DBMapperTableEntries name="GY_DIV_ID"/>
+        <DBMapperTableEntries name="REP_POS_ID"/>
+        <DBMapperTableEntries name="NORMAL_BALANCE_T1"/>
+        <DBMapperTableEntries name="NORMAL_BALANCE_T2"/>
+        <DBMapperTableEntries name="CREDIT_BALANCE_T1"/>
+        <DBMapperTableEntries name="CREDIT_BALANCE_T2"/>
+        <DBMapperTableEntries name="TOTAL_BALANCE_T1"/>
+        <DBMapperTableEntries name="TOTAL_BALANCE_T2"/>
+        <DBMapperTableEntries name="OVERALL_T0"/>
+        <DBMapperTableEntries name="LC_CASH"/>
+        <DBMapperTableEntries name="OTHER_CASH"/>
+        <DBMapperTableEntries name="EQUITY"/>
+        <DBMapperTableEntries name="FINC"/>
+        <DBMapperTableEntries name="REPO"/>
+        <DBMapperTableEntries name="MUTUAL_FUNDS"/>
+        <DBMapperTableEntries name="OVERALL_T2"/>
+        <DBMapperTableEntries name="LC_CASH_T2"/>
+        <DBMapperTableEntries name="OTHER_CASH_T2"/>
+        <DBMapperTableEntries name="EQUITY_T2"/>
+        <DBMapperTableEntries name="FINC_T2"/>
+        <DBMapperTableEntries name="REPO_T2"/>
+        <DBMapperTableEntries name="MUTUAL_FUNDS_T2"/>
+        <DBMapperTableEntries name="MONEY_MARKET"/>
+        <DBMapperTableEntries name="LIQUID_MUTUAL_FUNDS"/>
+        <DBMapperTableEntries name="OTHER_MUTUAL_FUNDS"/>
+        <DBMapperTableEntries name="LIQUID_MUTUAL_FUNDS_T2"/>
+        <DBMapperTableEntries name="OTHER_MUTUAL_FUNDS_T2"/>
+        <DBMapperTableEntries name="DEX"/>
+        <DBMapperTableEntries name="DEX_T2"/>
+        <DBMapperTableEntries name="DEXCUSTODY"/>
+        <DBMapperTableEntries name="DEXCUSTODY_T2"/>
+        <DBMapperTableEntries name="DEPOSIT"/>
+        <DBMapperTableEntries name="DEPOSIT_T2"/>
+        <DBMapperTableEntries name="EQUITY_SL"/>
+        <DBMapperTableEntries name="EQUITY_SL_T2"/>
+        <DBMapperTableEntries name="OIP_COLL_PAY"/>
+        <DBMapperTableEntries name="OIP_COLL_PAY_T2"/>
+        <DBMapperTableEntries name="BLOCKED_BALANCES"/>
+        <DBMapperTableEntries name="T0_CREDIT_T1"/>
+        <DBMapperTableEntries name="T0_CREDIT_T2"/>
+        <DBMapperTableEntries name="FOREX_COLL_T1"/>
+        <DBMapperTableEntries name="FOREX_COLL_T2"/>
+        <DBMapperTableEntries name="FOREX_COLL_NET_T1"/>
+        <DBMapperTableEntries name="FOREX_COLL_NET_T2"/>
+        <DBMapperTableEntries name="OVERALL_T0_EURO"/>
+        <DBMapperTableEntries name="OVERALL_T0_EURO_AVG"/>
+        <DBMapperTableEntries name="STIP"/>
+        <DBMapperTableEntries name="STIP_T2"/>
+        <DBMapperTableEntries name="GB_FUND_A"/>
+        <DBMapperTableEntries name="GB_FUND_B_OTHER"/>
+        <DBMapperTableEntries name="GB_FUND_OB"/>
+        <DBMapperTableEntries name="GB_FUND_PROTECTED"/>
+        <DBMapperTableEntries name="GB_FUND_GUARANTEED"/>
+        <DBMapperTableEntries name="GB_FUND_FREE"/>
+        <DBMapperTableEntries name="GB_FUND_B_LIQUID"/>
+        <DBMapperTableEntries name="GB_FUND_ELMA"/>
+        <DBMapperTableEntries name="GB_STOCK_BALANCE"/>
+        <DBMapperTableEntries name="GB_INVESTOR_SEGMENT"/>
+        <DBMapperTableEntries name="GB_SECURITIES_TL"/>
+        <DBMapperTableEntries name="GB_SECURITIES_FC"/>
+        <DBMapperTableEntries name="GB_REPO_BALANCE"/>
+        <DBMapperTableEntries name="GB_NON_TERM_TL_BALANCE"/>
+        <DBMapperTableEntries name="GB_NON_TERM_FC_BALANCE"/>
+        <DBMapperTableEntries name="GB_TERM_TL_DEPOSIT_ACCOUNT"/>
+        <DBMapperTableEntries name="GB_TERM_FC_DEPOSIT_ACCOUNT"/>
+        <DBMapperTableEntries name="GB_TOTAL_INVESTABLE_ASSETS"/>
+        <DBMapperTableEntries name="CUS_ID"/>
+        <DBMapperTableEntries name="DIV_ID"/>
+        <DBMapperTableEntries name="TOTAL_INVESTABLE_ASSETS_BKY"/>
+        <DBMapperTableEntries name="OTHER_INVESTABLE_ASSETS_BKY"/>
+        <DBMapperTableEntries name="TOTAL_BKY"/>
+        <DBMapperTableEntries name="GY_ACC_CURR_PROD_ID"/>
+        <DBMapperTableEntries name="CURR_EXCHANGE_RATE"/>
+        <DBMapperTableEntries name="GY_SYS_BLK"/>
+        <DBMapperTableEntries name="GY_SYS_BLK_OC"/>
+        <DBMapperTableEntries name="GY_SYS_BLK_DESC"/>
+        <DBMapperTableEntries name="GY_SYS_BLK_RSN_DESC"/>
+        <DBMapperTableEntries name="BIST_90_COLL_AMT"/>
+        <DBMapperTableEntries name="BIST_75_COLL_AMT"/>
+      </InputTables>
+      <OutputTables name="T_DWH_ACCOUNT" tableName="T_DWH_ACCOUNT">
+        <DBMapperTableEntries name="ETL_DATE" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="T_STG_DWH_ACCOUNT_TM1.DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="DATE_ID" expression="T_STG_DWH_ACCOUNT_TM1.DATE_ID"/>
+        <DBMapperTableEntries name="ACC_ID" expression="T_STG_DWH_ACCOUNT_TM1.ACC_ID"/>
+        <DBMapperTableEntries name="GY_DIV_ID" expression="T_STG_DWH_ACCOUNT_TM1.GY_DIV_ID"/>
+        <DBMapperTableEntries name="REP_POS_ID" expression="T_STG_DWH_ACCOUNT_TM1.REP_POS_ID"/>
+        <DBMapperTableEntries name="NORMAL_BALANCE_T1" expression="T_STG_DWH_ACCOUNT_TM1.NORMAL_BALANCE_T1"/>
+        <DBMapperTableEntries name="NORMAL_BALANCE_T2" expression="T_STG_DWH_ACCOUNT_TM1.NORMAL_BALANCE_T2"/>
+        <DBMapperTableEntries name="CREDIT_BALANCE_T1" expression="T_STG_DWH_ACCOUNT_TM1.CREDIT_BALANCE_T1"/>
+        <DBMapperTableEntries name="CREDIT_BALANCE_T2" expression="T_STG_DWH_ACCOUNT_TM1.CREDIT_BALANCE_T2"/>
+        <DBMapperTableEntries name="TOTAL_BALANCE_T1" expression="T_STG_DWH_ACCOUNT_TM1.TOTAL_BALANCE_T1"/>
+        <DBMapperTableEntries name="TOTAL_BALANCE_T2" expression="T_STG_DWH_ACCOUNT_TM1.TOTAL_BALANCE_T2"/>
+        <DBMapperTableEntries name="OVERALL_T0" expression="T_STG_DWH_ACCOUNT_TM1.OVERALL_T0"/>
+        <DBMapperTableEntries name="LC_CASH" expression="T_STG_DWH_ACCOUNT_TM1.LC_CASH"/>
+        <DBMapperTableEntries name="OTHER_CASH" expression="T_STG_DWH_ACCOUNT_TM1.OTHER_CASH"/>
+        <DBMapperTableEntries name="EQUITY" expression="T_STG_DWH_ACCOUNT_TM1.EQUITY"/>
+        <DBMapperTableEntries name="FINC" expression="T_STG_DWH_ACCOUNT_TM1.FINC"/>
+        <DBMapperTableEntries name="REPO" expression="T_STG_DWH_ACCOUNT_TM1.REPO"/>
+        <DBMapperTableEntries name="MUTUAL_FUNDS" expression="T_STG_DWH_ACCOUNT_TM1.MUTUAL_FUNDS"/>
+        <DBMapperTableEntries name="OVERALL_T2" expression="T_STG_DWH_ACCOUNT_TM1.OVERALL_T2"/>
+        <DBMapperTableEntries name="LC_CASH_T2" expression="T_STG_DWH_ACCOUNT_TM1.LC_CASH_T2"/>
+        <DBMapperTableEntries name="OTHER_CASH_T2" expression="T_STG_DWH_ACCOUNT_TM1.OTHER_CASH_T2"/>
+        <DBMapperTableEntries name="EQUITY_T2" expression="T_STG_DWH_ACCOUNT_TM1.EQUITY_T2"/>
+        <DBMapperTableEntries name="FINC_T2" expression="T_STG_DWH_ACCOUNT_TM1.FINC_T2"/>
+        <DBMapperTableEntries name="REPO_T2" expression="T_STG_DWH_ACCOUNT_TM1.REPO_T2"/>
+        <DBMapperTableEntries name="MUTUAL_FUNDS_T2" expression="T_STG_DWH_ACCOUNT_TM1.MUTUAL_FUNDS_T2"/>
+        <DBMapperTableEntries name="MONEY_MARKET" expression="T_STG_DWH_ACCOUNT_TM1.MONEY_MARKET"/>
+        <DBMapperTableEntries name="LIQUID_MUTUAL_FUNDS" expression="T_STG_DWH_ACCOUNT_TM1.LIQUID_MUTUAL_FUNDS"/>
+        <DBMapperTableEntries name="OTHER_MUTUAL_FUNDS" expression="T_STG_DWH_ACCOUNT_TM1.OTHER_MUTUAL_FUNDS"/>
+        <DBMapperTableEntries name="LIQUID_MUTUAL_FUNDS_T2" expression="T_STG_DWH_ACCOUNT_TM1.LIQUID_MUTUAL_FUNDS_T2"/>
+        <DBMapperTableEntries name="OTHER_MUTUAL_FUNDS_T2" expression="T_STG_DWH_ACCOUNT_TM1.OTHER_MUTUAL_FUNDS_T2"/>
+        <DBMapperTableEntries name="DEX" expression="T_STG_DWH_ACCOUNT_TM1.DEX"/>
+        <DBMapperTableEntries name="DEX_T2" expression="T_STG_DWH_ACCOUNT_TM1.DEX_T2"/>
+        <DBMapperTableEntries name="DEXCUSTODY" expression="T_STG_DWH_ACCOUNT_TM1.DEXCUSTODY"/>
+        <DBMapperTableEntries name="DEXCUSTODY_T2" expression="T_STG_DWH_ACCOUNT_TM1.DEXCUSTODY_T2"/>
+        <DBMapperTableEntries name="DEPOSIT" expression="T_STG_DWH_ACCOUNT_TM1.DEPOSIT"/>
+        <DBMapperTableEntries name="DEPOSIT_T2" expression="T_STG_DWH_ACCOUNT_TM1.DEPOSIT_T2"/>
+        <DBMapperTableEntries name="EQUITY_SL" expression="T_STG_DWH_ACCOUNT_TM1.EQUITY_SL"/>
+        <DBMapperTableEntries name="EQUITY_SL_T2" expression="T_STG_DWH_ACCOUNT_TM1.EQUITY_SL_T2"/>
+        <DBMapperTableEntries name="OIP_COLL_PAY" expression="T_STG_DWH_ACCOUNT_TM1.OIP_COLL_PAY"/>
+        <DBMapperTableEntries name="OIP_COLL_PAY_T2" expression="T_STG_DWH_ACCOUNT_TM1.OIP_COLL_PAY_T2"/>
+        <DBMapperTableEntries name="BLOCKED_BALANCES" expression="T_STG_DWH_ACCOUNT_TM1.BLOCKED_BALANCES"/>
+        <DBMapperTableEntries name="T0_CREDIT_T1" expression="T_STG_DWH_ACCOUNT_TM1.T0_CREDIT_T1"/>
+        <DBMapperTableEntries name="T0_CREDIT_T2" expression="T_STG_DWH_ACCOUNT_TM1.T0_CREDIT_T2"/>
+        <DBMapperTableEntries name="FOREX_COLL_T1" expression="T_STG_DWH_ACCOUNT_TM1.FOREX_COLL_T1"/>
+        <DBMapperTableEntries name="FOREX_COLL_T2" expression="T_STG_DWH_ACCOUNT_TM1.FOREX_COLL_T2"/>
+        <DBMapperTableEntries name="FOREX_COLL_NET_T1" expression="T_STG_DWH_ACCOUNT_TM1.FOREX_COLL_NET_T1"/>
+        <DBMapperTableEntries name="FOREX_COLL_NET_T2" expression="T_STG_DWH_ACCOUNT_TM1.FOREX_COLL_NET_T2"/>
+        <DBMapperTableEntries name="OVERALL_T0_EURO" expression="T_STG_DWH_ACCOUNT_TM1.OVERALL_T0_EURO"/>
+        <DBMapperTableEntries name="OVERALL_T0_EURO_AVG" expression="T_STG_DWH_ACCOUNT_TM1.OVERALL_T0_EURO_AVG"/>
+        <DBMapperTableEntries name="STIP" expression="T_STG_DWH_ACCOUNT_TM1.STIP"/>
+        <DBMapperTableEntries name="STIP_T2" expression="T_STG_DWH_ACCOUNT_TM1.STIP_T2"/>
+        <DBMapperTableEntries name="GB_FUND_A" expression="T_STG_DWH_ACCOUNT_TM1.GB_FUND_A"/>
+        <DBMapperTableEntries name="GB_FUND_B_OTHER" expression="T_STG_DWH_ACCOUNT_TM1.GB_FUND_B_OTHER"/>
+        <DBMapperTableEntries name="GB_FUND_OB" expression="T_STG_DWH_ACCOUNT_TM1.GB_FUND_OB"/>
+        <DBMapperTableEntries name="GB_FUND_PROTECTED" expression="T_STG_DWH_ACCOUNT_TM1.GB_FUND_PROTECTED"/>
+        <DBMapperTableEntries name="GB_FUND_GUARANTEED" expression="T_STG_DWH_ACCOUNT_TM1.GB_FUND_GUARANTEED"/>
+        <DBMapperTableEntries name="GB_FUND_FREE" expression="T_STG_DWH_ACCOUNT_TM1.GB_FUND_FREE"/>
+        <DBMapperTableEntries name="GB_FUND_B_LIQUID" expression="T_STG_DWH_ACCOUNT_TM1.GB_FUND_B_LIQUID"/>
+        <DBMapperTableEntries name="GB_FUND_ELMA" expression="T_STG_DWH_ACCOUNT_TM1.GB_FUND_ELMA"/>
+        <DBMapperTableEntries name="GB_STOCK_BALANCE" expression="T_STG_DWH_ACCOUNT_TM1.GB_STOCK_BALANCE"/>
+        <DBMapperTableEntries name="GB_INVESTOR_SEGMENT" expression="T_STG_DWH_ACCOUNT_TM1.GB_INVESTOR_SEGMENT"/>
+        <DBMapperTableEntries name="GB_SECURITIES_TL" expression="T_STG_DWH_ACCOUNT_TM1.GB_SECURITIES_TL"/>
+        <DBMapperTableEntries name="GB_SECURITIES_FC" expression="T_STG_DWH_ACCOUNT_TM1.GB_SECURITIES_FC"/>
+        <DBMapperTableEntries name="GB_REPO_BALANCE" expression="T_STG_DWH_ACCOUNT_TM1.GB_REPO_BALANCE"/>
+        <DBMapperTableEntries name="GB_NON_TERM_TL_BALANCE" expression="T_STG_DWH_ACCOUNT_TM1.GB_NON_TERM_TL_BALANCE"/>
+        <DBMapperTableEntries name="GB_NON_TERM_FC_BALANCE" expression="T_STG_DWH_ACCOUNT_TM1.GB_NON_TERM_FC_BALANCE"/>
+        <DBMapperTableEntries name="GB_TERM_TL_DEPOSIT_ACCOUNT" expression="T_STG_DWH_ACCOUNT_TM1.GB_TERM_TL_DEPOSIT_ACCOUNT"/>
+        <DBMapperTableEntries name="GB_TERM_FC_DEPOSIT_ACCOUNT" expression="T_STG_DWH_ACCOUNT_TM1.GB_TERM_FC_DEPOSIT_ACCOUNT"/>
+        <DBMapperTableEntries name="GB_TOTAL_INVESTABLE_ASSETS" expression="T_STG_DWH_ACCOUNT_TM1.GB_TOTAL_INVESTABLE_ASSETS"/>
+        <DBMapperTableEntries name="CUS_ID" expression="T_STG_DWH_ACCOUNT_TM1.CUS_ID"/>
+        <DBMapperTableEntries name="DIV_ID" expression="T_STG_DWH_ACCOUNT_TM1.DIV_ID"/>
+        <DBMapperTableEntries name="TOTAL_INVESTABLE_ASSETS_BKY" expression="T_STG_DWH_ACCOUNT_TM1.TOTAL_INVESTABLE_ASSETS_BKY"/>
+        <DBMapperTableEntries name="OTHER_INVESTABLE_ASSETS_BKY" expression="T_STG_DWH_ACCOUNT_TM1.OTHER_INVESTABLE_ASSETS_BKY"/>
+        <DBMapperTableEntries name="TOTAL_BKY" expression="T_STG_DWH_ACCOUNT_TM1.TOTAL_BKY"/>
+        <DBMapperTableEntries name="GY_ACC_CURR_PROD_ID" expression="T_STG_DWH_ACCOUNT_TM1.GY_ACC_CURR_PROD_ID"/>
+        <DBMapperTableEntries name="CURR_EXCHANGE_RATE" expression="T_STG_DWH_ACCOUNT_TM1.CURR_EXCHANGE_RATE"/>
+        <DBMapperTableEntries name="GY_SYS_BLK" expression="T_STG_DWH_ACCOUNT_TM1.GY_SYS_BLK"/>
+        <DBMapperTableEntries name="GY_SYS_BLK_OC" expression="T_STG_DWH_ACCOUNT_TM1.GY_SYS_BLK_OC"/>
+        <DBMapperTableEntries name="GY_SYS_BLK_DESC" expression="T_STG_DWH_ACCOUNT_TM1.GY_SYS_BLK_DESC"/>
+        <DBMapperTableEntries name="GY_SYS_BLK_RSN_DESC" expression="T_STG_DWH_ACCOUNT_TM1.GY_SYS_BLK_RSN_DESC"/>
+        <DBMapperTableEntries name="BIST_90_COLL_AMT" expression="T_STG_DWH_ACCOUNT_TM1.BIST_90_COLL_AMT"/>
+        <DBMapperTableEntries name="BIST_75_COLL_AMT" expression="T_STG_DWH_ACCOUNT_TM1.BIST_75_COLL_AMT"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ - T_DWH_ACCOUNT"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_DWH_ACCOUNT&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTDWH&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_DWH_ACCOUNT"/>
+    <metadata connector="TABLE" label="T_DWH_ACCOUNT" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DATE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="REP_POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="NORMAL_BALANCE_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="NORMAL_BALANCE_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CREDIT_BALANCE_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CREDIT_BALANCE_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_BALANCE_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_BALANCE_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OVERALL_T0" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LC_CASH" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_CASH" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQUITY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FINC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="REPO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MUTUAL_FUNDS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OVERALL_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LC_CASH_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_CASH_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQUITY_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FINC_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="REPO_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MUTUAL_FUNDS_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MONEY_MARKET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LIQUID_MUTUAL_FUNDS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_MUTUAL_FUNDS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LIQUID_MUTUAL_FUNDS_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_MUTUAL_FUNDS_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEX" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEX_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEXCUSTODY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEXCUSTODY_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEPOSIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEPOSIT_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQUITY_SL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQUITY_SL_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OIP_COLL_PAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OIP_COLL_PAY_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BLOCKED_BALANCES" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="T0_CREDIT_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="T0_CREDIT_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FOREX_COLL_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FOREX_COLL_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FOREX_COLL_NET_T1" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FOREX_COLL_NET_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OVERALL_T0_EURO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OVERALL_T0_EURO_AVG" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STIP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STIP_T2" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_A" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_B_OTHER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_OB" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_PROTECTED" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_GUARANTEED" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_FREE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_B_LIQUID" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_FUND_ELMA" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_STOCK_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="GB_INVESTOR_SEGMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_SECURITIES_TL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_SECURITIES_FC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_REPO_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_NON_TERM_TL_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_NON_TERM_FC_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_TERM_TL_DEPOSIT_ACCOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_TERM_FC_DEPOSIT_ACCOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GB_TOTAL_INVESTABLE_ASSETS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_INVESTABLE_ASSETS_BKY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_INVESTABLE_ASSETS_BKY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_BKY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CURR_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="CURR_EXCHANGE_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_SYS_BLK" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_SYS_BLK_OC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_SYS_BLK_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_SYS_BLK_RSN_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="BIST_90_COLL_AMT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BIST_75_COLL_AMT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_DWH_ACCOUNT_TM1" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_DWH_ACCOUNT" lineStyle="9" mergeOrder="0" metaname="T_DWH_ACCOUNT" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
