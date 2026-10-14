@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default"/>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_qBwFwcMeEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTDMT.T_FCT_DPM_ACTIVITY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_FCT_DPM_ACTIVITY_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_FCT_DPM_ACTIVITY_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_FCT_DPM_ACTIVITY_TM1"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_FCT_DPM_ACTIVITY_TM1" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSTANCE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCREEN_OPEN_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="SCRREN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="APPROVER_EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="APPROVE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="ACTIVITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="SCREEN_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="REQUEST_USER_FLAG" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="VENDOR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_IDEAL_STANDART" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_MATRIKS_GOLD" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_MATRIKS_PRIME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_MATRIKS_IQ" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_PUB_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_MIX_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_DEEP_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_PLUS_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_DEEP_PLUS_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_AKD" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_SYNC" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_MIX_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_DEEP_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_PLUS_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_DEEP_PLUS_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_AKD" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="PRECMNS_SIMPLE_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="PRECMNS_DEEP_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="BOND_SIMPLE_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="BOND_DEEP_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="BOND_PLUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_BORSA_ISTANBUL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_PARA_PIYASALARI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_DUNYA_ENDEKS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_CBOT_MINI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_CME_MINI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_NYMEX_MINI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_COMEX_MINI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_EUREX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_NYMEX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_CBOT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_CME" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_COMEX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_NYBOT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_LAST_RECORD" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_qBwFwcMeEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_STG_FCT_DPM_ACTIVITY_TM1"/>
+    <metadata connector="TABLE" label="T_FCT_DPM_ACTIVITY" name="T_FCT_DPM_ACTIVITY">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSTANCE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCREEN_OPEN_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="SCRREN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="APPROVER_EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="APPROVE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="ACTIVITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="SCREEN_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="REQUEST_USER_FLAG" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="VENDOR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_IDEAL_STANDART" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_MATRIKS_GOLD" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_MATRIKS_PRIME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_MATRIKS_IQ" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_PUB_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_MIX_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_DEEP_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_PLUS_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_DEEP_PLUS_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_AKD" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_SYNC" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_MIX_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_DEEP_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_PLUS_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_DEEP_PLUS_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_AKD" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="PRECMNS_SIMPLE_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="PRECMNS_DEEP_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="BOND_SIMPLE_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="BOND_DEEP_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="BOND_PLUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_BORSA_ISTANBUL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_PARA_PIYASALARI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_DUNYA_ENDEKS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_CBOT_MINI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_CME_MINI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_NYMEX_MINI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_COMEX_MINI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_EUREX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_NYMEX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_CBOT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_CME" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_COMEX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_NYBOT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_LAST_RECORD" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTSTG.T_STG_FCT_DPM_ACTIVITY_TM1" tableName="DGYTSTG.T_STG_FCT_DPM_ACTIVITY_TM1" joinType="NO_JOIN" alias="T_STG_FCT_DPM_ACTIVITY_TM1">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="INSTANCE_TIMESTAMP"/>
+        <DBMapperTableEntries name="SCREEN_OPEN_TIMESTAMP"/>
+        <DBMapperTableEntries name="CUS_ID"/>
+        <DBMapperTableEntries name="SCRREN_CODE"/>
+        <DBMapperTableEntries name="APPROVER_EMP_ID"/>
+        <DBMapperTableEntries name="APPROVE_TIMESTAMP"/>
+        <DBMapperTableEntries name="ACTIVITY"/>
+        <DBMapperTableEntries name="SCREEN_STATUS"/>
+        <DBMapperTableEntries name="REQUEST_USER_FLAG"/>
+        <DBMapperTableEntries name="DIV_ID"/>
+        <DBMapperTableEntries name="VENDOR"/>
+        <DBMapperTableEntries name="IS_IDEAL_STANDART"/>
+        <DBMapperTableEntries name="IS_MATRIKS_GOLD"/>
+        <DBMapperTableEntries name="IS_MATRIKS_PRIME"/>
+        <DBMapperTableEntries name="IS_MATRIKS_IQ"/>
+        <DBMapperTableEntries name="CUS_PUB_TP"/>
+        <DBMapperTableEntries name="EQ_MIX_MF"/>
+        <DBMapperTableEntries name="EQ_DEEP_MF"/>
+        <DBMapperTableEntries name="EQ_PLUS_MF"/>
+        <DBMapperTableEntries name="EQ_DEEP_PLUS_MF"/>
+        <DBMapperTableEntries name="EQ_AKD"/>
+        <DBMapperTableEntries name="EQ_SYNC"/>
+        <DBMapperTableEntries name="VIOP_MIX_MF"/>
+        <DBMapperTableEntries name="VIOP_DEEP_MF"/>
+        <DBMapperTableEntries name="VIOP_PLUS_MF"/>
+        <DBMapperTableEntries name="VIOP_DEEP_PLUS_MF"/>
+        <DBMapperTableEntries name="VIOP_AKD"/>
+        <DBMapperTableEntries name="PRECMNS_SIMPLE_MF"/>
+        <DBMapperTableEntries name="PRECMNS_DEEP_MF"/>
+        <DBMapperTableEntries name="BOND_SIMPLE_MF"/>
+        <DBMapperTableEntries name="BOND_DEEP_MF"/>
+        <DBMapperTableEntries name="BOND_PLUS"/>
+        <DBMapperTableEntries name="IS_BORSA_ISTANBUL"/>
+        <DBMapperTableEntries name="IS_PARA_PIYASALARI"/>
+        <DBMapperTableEntries name="IS_DUNYA_ENDEKS"/>
+        <DBMapperTableEntries name="IS_CBOT_MINI"/>
+        <DBMapperTableEntries name="IS_CME_MINI"/>
+        <DBMapperTableEntries name="IS_NYMEX_MINI"/>
+        <DBMapperTableEntries name="IS_COMEX_MINI"/>
+        <DBMapperTableEntries name="IS_EUREX"/>
+        <DBMapperTableEntries name="IS_NYMEX"/>
+        <DBMapperTableEntries name="IS_CBOT"/>
+        <DBMapperTableEntries name="IS_CME"/>
+        <DBMapperTableEntries name="IS_COMEX"/>
+        <DBMapperTableEntries name="IS_NYBOT"/>
+        <DBMapperTableEntries name="IS_LAST_RECORD"/>
+        <DBMapperTableEntries name="EMP_ID"/>
+      </InputTables>
+      <OutputTables name="T_FCT_DPM_ACTIVITY" tableName="T_FCT_DPM_ACTIVITY">
+        <DBMapperTableEntries name="ETL_DATE" expression="T_STG_FCT_DPM_ACTIVITY_TM1.ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="T_STG_FCT_DPM_ACTIVITY_TM1.DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="T_STG_FCT_DPM_ACTIVITY_TM1.INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="T_STG_FCT_DPM_ACTIVITY_TM1.INSERT_RUNID"/>
+        <DBMapperTableEntries name="INSTANCE_TIMESTAMP" expression="T_STG_FCT_DPM_ACTIVITY_TM1.INSTANCE_TIMESTAMP"/>
+        <DBMapperTableEntries name="SCREEN_OPEN_TIMESTAMP" expression="T_STG_FCT_DPM_ACTIVITY_TM1.SCREEN_OPEN_TIMESTAMP"/>
+        <DBMapperTableEntries name="CUS_ID" expression="T_STG_FCT_DPM_ACTIVITY_TM1.CUS_ID"/>
+        <DBMapperTableEntries name="SCRREN_CODE" expression="T_STG_FCT_DPM_ACTIVITY_TM1.SCRREN_CODE"/>
+        <DBMapperTableEntries name="APPROVER_EMP_ID" expression="T_STG_FCT_DPM_ACTIVITY_TM1.APPROVER_EMP_ID"/>
+        <DBMapperTableEntries name="APPROVE_TIMESTAMP" expression="T_STG_FCT_DPM_ACTIVITY_TM1.APPROVE_TIMESTAMP"/>
+        <DBMapperTableEntries name="ACTIVITY" expression="T_STG_FCT_DPM_ACTIVITY_TM1.ACTIVITY"/>
+        <DBMapperTableEntries name="SCREEN_STATUS" expression="T_STG_FCT_DPM_ACTIVITY_TM1.SCREEN_STATUS"/>
+        <DBMapperTableEntries name="REQUEST_USER_FLAG" expression="T_STG_FCT_DPM_ACTIVITY_TM1.REQUEST_USER_FLAG"/>
+        <DBMapperTableEntries name="DIV_ID" expression="T_STG_FCT_DPM_ACTIVITY_TM1.DIV_ID"/>
+        <DBMapperTableEntries name="VENDOR" expression="T_STG_FCT_DPM_ACTIVITY_TM1.VENDOR"/>
+        <DBMapperTableEntries name="IS_IDEAL_STANDART" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_IDEAL_STANDART"/>
+        <DBMapperTableEntries name="IS_MATRIKS_GOLD" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_MATRIKS_GOLD"/>
+        <DBMapperTableEntries name="IS_MATRIKS_PRIME" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_MATRIKS_PRIME"/>
+        <DBMapperTableEntries name="IS_MATRIKS_IQ" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_MATRIKS_IQ"/>
+        <DBMapperTableEntries name="CUS_PUB_TP" expression="T_STG_FCT_DPM_ACTIVITY_TM1.CUS_PUB_TP"/>
+        <DBMapperTableEntries name="EQ_MIX_MF" expression="T_STG_FCT_DPM_ACTIVITY_TM1.EQ_MIX_MF"/>
+        <DBMapperTableEntries name="EQ_DEEP_MF" expression="T_STG_FCT_DPM_ACTIVITY_TM1.EQ_DEEP_MF"/>
+        <DBMapperTableEntries name="EQ_PLUS_MF" expression="T_STG_FCT_DPM_ACTIVITY_TM1.EQ_PLUS_MF"/>
+        <DBMapperTableEntries name="EQ_DEEP_PLUS_MF" expression="T_STG_FCT_DPM_ACTIVITY_TM1.EQ_DEEP_PLUS_MF"/>
+        <DBMapperTableEntries name="EQ_AKD" expression="T_STG_FCT_DPM_ACTIVITY_TM1.EQ_AKD"/>
+        <DBMapperTableEntries name="EQ_SYNC" expression="T_STG_FCT_DPM_ACTIVITY_TM1.EQ_SYNC"/>
+        <DBMapperTableEntries name="VIOP_MIX_MF" expression="T_STG_FCT_DPM_ACTIVITY_TM1.VIOP_MIX_MF"/>
+        <DBMapperTableEntries name="VIOP_DEEP_MF" expression="T_STG_FCT_DPM_ACTIVITY_TM1.VIOP_DEEP_MF"/>
+        <DBMapperTableEntries name="VIOP_PLUS_MF" expression="T_STG_FCT_DPM_ACTIVITY_TM1.VIOP_PLUS_MF"/>
+        <DBMapperTableEntries name="VIOP_DEEP_PLUS_MF" expression="T_STG_FCT_DPM_ACTIVITY_TM1.VIOP_DEEP_PLUS_MF"/>
+        <DBMapperTableEntries name="VIOP_AKD" expression="T_STG_FCT_DPM_ACTIVITY_TM1.VIOP_AKD"/>
+        <DBMapperTableEntries name="PRECMNS_SIMPLE_MF" expression="T_STG_FCT_DPM_ACTIVITY_TM1.PRECMNS_SIMPLE_MF"/>
+        <DBMapperTableEntries name="PRECMNS_DEEP_MF" expression="T_STG_FCT_DPM_ACTIVITY_TM1.PRECMNS_DEEP_MF"/>
+        <DBMapperTableEntries name="BOND_SIMPLE_MF" expression="T_STG_FCT_DPM_ACTIVITY_TM1.BOND_SIMPLE_MF"/>
+        <DBMapperTableEntries name="BOND_DEEP_MF" expression="T_STG_FCT_DPM_ACTIVITY_TM1.BOND_DEEP_MF"/>
+        <DBMapperTableEntries name="BOND_PLUS" expression="T_STG_FCT_DPM_ACTIVITY_TM1.BOND_PLUS"/>
+        <DBMapperTableEntries name="IS_BORSA_ISTANBUL" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_BORSA_ISTANBUL"/>
+        <DBMapperTableEntries name="IS_PARA_PIYASALARI" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_PARA_PIYASALARI"/>
+        <DBMapperTableEntries name="IS_DUNYA_ENDEKS" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_DUNYA_ENDEKS"/>
+        <DBMapperTableEntries name="IS_CBOT_MINI" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_CBOT_MINI"/>
+        <DBMapperTableEntries name="IS_CME_MINI" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_CME_MINI"/>
+        <DBMapperTableEntries name="IS_NYMEX_MINI" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_NYMEX_MINI"/>
+        <DBMapperTableEntries name="IS_COMEX_MINI" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_COMEX_MINI"/>
+        <DBMapperTableEntries name="IS_EUREX" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_EUREX"/>
+        <DBMapperTableEntries name="IS_NYMEX" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_NYMEX"/>
+        <DBMapperTableEntries name="IS_CBOT" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_CBOT"/>
+        <DBMapperTableEntries name="IS_CME" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_CME"/>
+        <DBMapperTableEntries name="IS_COMEX" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_COMEX"/>
+        <DBMapperTableEntries name="IS_NYBOT" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_NYBOT"/>
+        <DBMapperTableEntries name="IS_LAST_RECORD" expression="T_STG_FCT_DPM_ACTIVITY_TM1.IS_LAST_RECORD"/>
+        <DBMapperTableEntries name="EMP_ID" expression="T_STG_FCT_DPM_ACTIVITY_TM1.EMP_ID"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_qBwFwcMeEfGuM7c_OEd9ZA - T_FCT_DPM_ACTIVITY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_FCT_DPM_ACTIVITY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTDMT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_qBwFwcMeEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_FCT_DPM_ACTIVITY"/>
+    <metadata connector="TABLE" label="T_FCT_DPM_ACTIVITY" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSTANCE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCREEN_OPEN_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="SCRREN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="APPROVER_EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="APPROVE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="ACTIVITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="SCREEN_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="REQUEST_USER_FLAG" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="VENDOR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_IDEAL_STANDART" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_MATRIKS_GOLD" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_MATRIKS_PRIME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_MATRIKS_IQ" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_PUB_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_MIX_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_DEEP_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_PLUS_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_DEEP_PLUS_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_AKD" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EQ_SYNC" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_MIX_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_DEEP_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_PLUS_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_DEEP_PLUS_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="VIOP_AKD" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="PRECMNS_SIMPLE_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="PRECMNS_DEEP_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="BOND_SIMPLE_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="BOND_DEEP_MF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="BOND_PLUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_BORSA_ISTANBUL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_PARA_PIYASALARI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_DUNYA_ENDEKS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_CBOT_MINI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_CME_MINI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_NYMEX_MINI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_COMEX_MINI" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_EUREX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_NYMEX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_CBOT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_CME" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_COMEX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_NYBOT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_LAST_RECORD" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_FCT_DPM_ACTIVITY_TM1" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_FCT_DPM_ACTIVITY" lineStyle="9" mergeOrder="0" metaname="T_FCT_DPM_ACTIVITY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
