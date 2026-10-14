@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default"/>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_MDL_PARTY_REL_TM18&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_5"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_OMS_ACC_AGENT"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_OMS_ACC_AGENT&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_OMS_ACC_AGENT"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_OMS_ACC_AGENT" name="table1">
+      <column key="false" length="10" name="ACCOUNTAGENTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ACCOUNTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="USERID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="STARTDATE" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISIONRATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="DBTIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-192" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_3"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_OMSRAW"/>
+    <metadata connector="TABLE" label="EXP_OMSRAW" name="EXP_OMSRAW">
+      <column key="false" length="10" name="ACCOUNTAGENTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ACCOUNTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="USERID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="AGENTCODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="200" name="AGENTNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="STARTDATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="38" name="ENDDATE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISIONRATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="DBTIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSOPR.T_OMS_ACC_AGENT" tableName="DGYTODSOPR.T_OMS_ACC_AGENT" joinType="NO_JOIN" alias="aa">
+        <DBMapperTableEntries name="ACCOUNTAGENTID"/>
+        <DBMapperTableEntries name="ACCOUNTID"/>
+        <DBMapperTableEntries name="USERID"/>
+        <DBMapperTableEntries name="STARTDATE"/>
+        <DBMapperTableEntries name="COMMISIONRATE"/>
+        <DBMapperTableEntries name="DBTIME"/>
+      </InputTables>
+      <InputTables name="DGYTODSOPR.T_OMS_USER" tableName="DGYTODSOPR.T_OMS_USER" joinType="LEFT_OUTER_JOIN" alias="u">
+        <DBMapperTableEntries name="PASSWORDEXPIREDATE"/>
+        <DBMapperTableEntries name="USERID" expression="aa.USERID" join="true" operator="="/>
+        <DBMapperTableEntries name="CONTACTID"/>
+        <DBMapperTableEntries name="USERNAME"/>
+        <DBMapperTableEntries name="PASSWORD"/>
+        <DBMapperTableEntries name="PASSWORDMUSTCHANGE"/>
+        <DBMapperTableEntries name="WRONGPASSWORDCOUNT"/>
+        <DBMapperTableEntries name="USER_LANGUAGE"/>
+        <DBMapperTableEntries name="CONNECTIONTYPE"/>
+        <DBMapperTableEntries name="DEPARTMENTID"/>
+        <DBMapperTableEntries name="BRANCHID"/>
+        <DBMapperTableEntries name="INSERTLEVEL"/>
+        <DBMapperTableEntries name="UPDATELEVEL"/>
+        <DBMapperTableEntries name="DELETELEVEL"/>
+        <DBMapperTableEntries name="USERGROUPID"/>
+        <DBMapperTableEntries name="ISMANAGMENTUSER"/>
+        <DBMapperTableEntries name="ISTRADINGUSER"/>
+        <DBMapperTableEntries name="ISEMPLOYEE"/>
+        <DBMapperTableEntries name="CONFIRMOTHERDEPARTMENT"/>
+        <DBMapperTableEntries name="ISACTIVE"/>
+        <DBMapperTableEntries name="ISNEVEREXPIRE"/>
+        <DBMapperTableEntries name="LASTLOGINDATE"/>
+        <DBMapperTableEntries name="UNIQUEKEY"/>
+        <DBMapperTableEntries name="ISPRIVATEUSER"/>
+        <DBMapperTableEntries name="CONFIRMORDERLEVEL"/>
+        <DBMapperTableEntries name="EXTERNALUSERNO"/>
+        <DBMapperTableEntries name="MULTISESSION"/>
+      </InputTables>
+      <InputTables name="DGYTODSOPR.T_OMS_CONTACT" tableName="DGYTODSOPR.T_OMS_CONTACT" joinType="LEFT_OUTER_JOIN" alias="c">
+        <DBMapperTableEntries name="CONTACTID" expression="u.CONTACTID" join="true" operator="="/>
+        <DBMapperTableEntries name="CONTACTREF"/>
+        <DBMapperTableEntries name="SEXTYPEID"/>
+        <DBMapperTableEntries name="CITIZEN"/>
+        <DBMapperTableEntries name="CITIZENNO"/>
+        <DBMapperTableEntries name="BIRTHPLACE"/>
+        <DBMapperTableEntries name="BIRTHDAY"/>
+        <DBMapperTableEntries name="TITLE1"/>
+        <DBMapperTableEntries name="TITLE2"/>
+        <DBMapperTableEntries name="TAXNO"/>
+        <DBMapperTableEntries name="TAXOFFICE"/>
+        <DBMapperTableEntries name="IDENTITYTYPEID"/>
+        <DBMapperTableEntries name="IDENTITYNO"/>
+        <DBMapperTableEntries name="REGISTEREDPLACE"/>
+        <DBMapperTableEntries name="DEFAULTADDRESSID"/>
+        <DBMapperTableEntries name="MOTHERNAME"/>
+        <DBMapperTableEntries name="FATHERNAME"/>
+        <DBMapperTableEntries name="CUSTOMERNO"/>
+        <DBMapperTableEntries name="LANGUAGE"/>
+        <DBMapperTableEntries name="REGISTERNO"/>
+        <DBMapperTableEntries name="ISACTIVE"/>
+        <DBMapperTableEntries name="FULLNAME"/>
+        <DBMapperTableEntries name="REGISTERDATE"/>
+        <DBMapperTableEntries name="JOBTYPEID"/>
+      </InputTables>
+      <OutputTables name="EXP_OMSRAW" tableName="EXP_OMSRAW">
+        <DBMapperTableEntries name="ACCOUNTAGENTID" expression="aa.ACCOUNTAGENTID"/>
+        <DBMapperTableEntries name="ACCOUNTID" expression="aa.ACCOUNTID"/>
+        <DBMapperTableEntries name="USERID" expression="aa.USERID"/>
+        <DBMapperTableEntries name="AGENTCODE" expression="u.USERNAME"/>
+        <DBMapperTableEntries name="AGENTNAME" expression="c.FULLNAME"/>
+        <DBMapperTableEntries name="STARTDATE" expression="TRUNC(aa.STARTDATE)"/>
+        <DBMapperTableEntries name="ENDDATE" expression="NVL(LEAD(aa.STARTDATE - 1) OVER (PARTITION BY aa.ACCOUNTID ORDER BY aa.ACCOUNTID, aa.STARTDATE), TO_DATE('9999-12-31', 'YYYY-MM-DD'))"/>
+        <DBMapperTableEntries name="COMMISIONRATE" expression="aa.COMMISIONRATE"/>
+        <DBMapperTableEntries name="DBTIME" expression="aa.DBTIME"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_6"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_OMS_USER"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_OMS_USER&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_OMS_USER"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_OMS_USER" name="table1">
+      <column key="false" length="-1" name="PASSWORDEXPIREDATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="USERID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CONTACTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="USERNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="PASSWORD" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="PASSWORDMUSTCHANGE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="WRONGPASSWORDCOUNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="USER_LANGUAGE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="CONNECTIONTYPE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="DEPARTMENTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="BRANCHID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="INSERTLEVEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="UPDATELEVEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="DELETELEVEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="USERGROUPID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="ISMANAGMENTUSER" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ISTRADINGUSER" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ISEMPLOYEE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CONFIRMOTHERDEPARTMENT" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ISACTIVE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ISNEVEREXPIRE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="LASTLOGINDATE" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="36" name="UNIQUEKEY" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ISPRIVATEUSER" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="CONFIRMORDERLEVEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="EXTERNALUSERNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="MULTISESSION" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_7"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_OMS_CONTACT"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_OMS_CONTACT&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_OMS_CONTACT"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_OMS_CONTACT" name="table1">
+      <column key="false" length="10" name="CONTACTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CONTACTREF" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="SEXTYPEID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="CITIZEN" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CITIZENNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="BIRTHPLACE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="BIRTHDAY" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="100" name="TITLE1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="TITLE2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TAXNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="TAXOFFICE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="IDENTITYTYPEID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="IDENTITYNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="REGISTEREDPLACE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DEFAULTADDRESSID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="MOTHERNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="FATHERNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CUSTOMERNO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="LANGUAGE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="REGISTERNO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="ISACTIVE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="200" name="FULLNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="REGISTERDATE" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="3" name="JOBTYPEID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_FINALX"/>
+    <metadata connector="TABLE" label="EXP_FINALX" name="EXP_FINALX">
+      <column key="false" length="4000" name="PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="RELATED_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="16" name="PARTY_REL_RSN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="16" name="PARTY_REL_ROLE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="START_DATE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_OMSRAW" tableName="EXP_OMSRAW" joinType="NO_JOIN" alias="EXP_OMSRAW">
+        <DBMapperTableEntries name="ACCOUNTAGENTID"/>
+        <DBMapperTableEntries name="ACCOUNTID"/>
+        <DBMapperTableEntries name="USERID"/>
+        <DBMapperTableEntries name="AGENTCODE"/>
+        <DBMapperTableEntries name="AGENTNAME"/>
+        <DBMapperTableEntries name="STARTDATE"/>
+        <DBMapperTableEntries name="ENDDATE"/>
+        <DBMapperTableEntries name="COMMISIONRATE"/>
+        <DBMapperTableEntries name="DBTIME"/>
+      </InputTables>
+      <InputTables name="EXP_ACC_CUS" tableName="EXP_ACC_CUS" joinType="INNER_JOIN" alias="EXP_ACC_CUS">
+        <DBMapperTableEntries name="OMS_ACCOUNTID" expression="EXP_OMSRAW.ACCOUNTID" join="true" operator="="/>
+        <DBMapperTableEntries name="GTP_CUSTOMER_ID"/>
+      </InputTables>
+      <InputTables name="EXP_OGP" tableName="EXP_OGP" joinType="INNER_JOIN" alias="EXP_OGP">
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="AGENTCODE" expression="EXP_OMSRAW.AGENTCODE" join="true" operator="="/>
+        <DBMapperTableEntries name="POSTN_ID"/>
+      </InputTables>
+      <OutputTables name="EXP_FINALX" tableName="EXP_FINALX">
+        <DBMapperTableEntries name="PARTY_ID" expression="EXP_ACC_CUS.GTP_CUSTOMER_ID || '~30007'"/>
+        <DBMapperTableEntries name="RELATED_PARTY_ID" expression="EXP_OGP.POSTN_ID || '~30014'"/>
+        <DBMapperTableEntries name="PARTY_REL_RSN_ID" expression="'OMSCUS2POS~40013'"/>
+        <DBMapperTableEntries name="PARTY_REL_ROLE_ID" expression="'OMSCUS2POS~40012'"/>
+        <DBMapperTableEntries name="START_DATE" expression="MIN(EXP_OMSRAW.STARTDATE)"/>
+        <FilterEntries name="where" expression="EXP_OGP.REPORT_DATE BETWEEN EXP_OMSRAW.STARTDATE AND EXP_OMSRAW.ENDDATE" filterKind="WHERE_CLAUSE"/>
+        <FilterEntries name="other" expression="GROUP BY EXP_ACC_CUS.GTP_CUSTOMER_ID, EXP_OGP.POSTN_ID" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_8"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_GTPFSI_ACCOUNT_OWNERSHIP"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_GTPFSI_ACCOUNT_OWNERSHIP&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_GTPFSI_ACCOUNT_OWNERSHIP"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_GTPFSI_ACCOUNT_OWNERSHIP" name="table1">
+      <column key="false" length="15" name="ACC_OWNERSHIP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ACCOUNT_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="CUSTOMER_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="DEFAULT_ACCOUNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="DEFAULT_CUSTOMER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_UPD" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="LAST_UPD_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-192" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_4"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_ACC_CUS"/>
+    <metadata connector="TABLE" label="EXP_ACC_CUS" name="EXP_ACC_CUS">
+      <column key="false" length="4000" name="OMS_ACCOUNTID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="GTP_CUSTOMER_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSOPR.T_GTPFSI_ACCOUNT_OWNERSHIP" tableName="DGYTODSOPR.T_GTPFSI_ACCOUNT_OWNERSHIP" joinType="NO_JOIN" alias="AO">
+        <DBMapperTableEntries name="ACC_OWNERSHIP_ID"/>
+        <DBMapperTableEntries name="ACCOUNT_ID"/>
+        <DBMapperTableEntries name="CUSTOMER_ID"/>
+        <DBMapperTableEntries name="DEFAULT_ACCOUNT"/>
+        <DBMapperTableEntries name="DEFAULT_CUSTOMER"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="LAST_UPD"/>
+        <DBMapperTableEntries name="LAST_UPD_BY"/>
+        <DBMapperTableEntries name="STATUS"/>
+      </InputTables>
+      <InputTables name="DGYTODSOPR.T_GTPFSI_ACCOUNTS" tableName="DGYTODSOPR.T_GTPFSI_ACCOUNTS" joinType="INNER_JOIN" alias="A">
+        <DBMapperTableEntries name="ACCOUNT_ID" expression="AO.ACCOUNT_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="ACCOUNT_EXT_ID"/>
+        <DBMapperTableEntries name="ACCOUNT_TYPE"/>
+        <DBMapperTableEntries name="ACCOUNT_USAGE_TYPE"/>
+        <DBMapperTableEntries name="DIV_ID"/>
+        <DBMapperTableEntries name="ACCOUNT_STATUS_ID"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="LAST_UPD"/>
+        <DBMapperTableEntries name="LAST_UPD_BY"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="DESCRIPTION"/>
+        <DBMapperTableEntries name="ACCOUNT_CURRENCY_ID"/>
+        <DBMapperTableEntries name="CLOSED"/>
+        <DBMapperTableEntries name="CLOSED_BY"/>
+        <DBMapperTableEntries name="IS_DIV_TRANSFER"/>
+        <DBMapperTableEntries name="IS_VIOP"/>
+      </InputTables>
+      <InputTables name="DGYTODSOPR.T_OMS_ACC" tableName="DGYTODSOPR.T_OMS_ACC" joinType="INNER_JOIN" alias="OACC">
+        <DBMapperTableEntries name="ACCOUNTID" expression="SUBSTR(A.ACCOUNT_EXT_ID, 1, INSTR(A.ACCOUNT_EXT_ID, '-') - 1)" join="true" operator="="/>
+        <DBMapperTableEntries name="CUSTOMERID"/>
+        <DBMapperTableEntries name="ACCOUNTGROUPID"/>
+        <DBMapperTableEntries name="MARKETACCOUNTNO"/>
+        <DBMapperTableEntries name="ACCOUNTNAME"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="BRANCHID"/>
+        <DBMapperTableEntries name="BANKBRANCHID"/>
+        <DBMapperTableEntries name="BASECURRENCYID"/>
+        <DBMapperTableEntries name="ACCOUNTTYPEID"/>
+        <DBMapperTableEntries name="EXECTYPE"/>
+        <DBMapperTableEntries name="CASHBALANCE"/>
+        <DBMapperTableEntries name="UNREALIZEDPROFITLOSS"/>
+        <DBMapperTableEntries name="ACCOUNTVALUE"/>
+        <DBMapperTableEntries name="TRADINGMARGIN"/>
+        <DBMapperTableEntries name="OPENPOSITIONAMOUNT"/>
+        <DBMapperTableEntries name="MARKETMAKERACCOUNTID"/>
+        <DBMapperTableEntries name="USEDMARGIN"/>
+        <DBMapperTableEntries name="DAYPL"/>
+        <DBMapperTableEntries name="ISMARGINCHECK"/>
+        <DBMapperTableEntries name="ISAUTOSTOP"/>
+        <DBMapperTableEntries name="ISNOTACCEPTINGSWAPPROFIT"/>
+        <DBMapperTableEntries name="STATEMENTREQUESTTYPEID"/>
+        <DBMapperTableEntries name="MARGINCALLRATIO"/>
+        <DBMapperTableEntries name="AUTOSTOPRATIO"/>
+        <DBMapperTableEntries name="MARGINRATIO"/>
+        <DBMapperTableEntries name="SMSREQUESTTYPEID"/>
+        <DBMapperTableEntries name="CREATEDATE"/>
+        <DBMapperTableEntries name="CONTRACTVERSION"/>
+        <DBMapperTableEntries name="CONTRACTDATE"/>
+        <DBMapperTableEntries name="ISACTIVE"/>
+        <DBMapperTableEntries name="ISCLOSED"/>
+        <DBMapperTableEntries name="IBAN"/>
+        <DBMapperTableEntries name="ACCOUNTCLASSTYPEID"/>
+        <DBMapperTableEntries name="CUSTODYMEMBERCODE"/>
+        <DBMapperTableEntries name="ACCOUNTCREATEREASON"/>
+        <DBMapperTableEntries name="ISPRIVATE"/>
+        <DBMapperTableEntries name="ACCOUNTSTATUSTYPEID"/>
+        <DBMapperTableEntries name="TRANSFERCODE"/>
+        <DBMapperTableEntries name="ISACTION"/>
+        <DBMapperTableEntries name="INFO"/>
+        <DBMapperTableEntries name="MARGINCALCULATIONTYPEID"/>
+        <DBMapperTableEntries name="AUTOSTOPVALUE"/>
+        <DBMapperTableEntries name="DEMOMARKETACCOUNTNO"/>
+        <DBMapperTableEntries name="ISCFDTRADABLE"/>
+        <DBMapperTableEntries name="ISRECONCILED"/>
+        <DBMapperTableEntries name="ISONLYPOSITIONCLOSE"/>
+        <DBMapperTableEntries name="XMLINFO"/>
+        <DBMapperTableEntries name="AUTOSTOPTYPE"/>
+        <DBMapperTableEntries name="TOTALPOSITIONLIMIT"/>
+        <DBMapperTableEntries name="WITHHOLDINGTAXISNOTAPPLIED"/>
+        <DBMapperTableEntries name="USEDPOSITIONLIMIT"/>
+      </InputTables>
+      <OutputTables name="EXP_ACC_CUS" tableName="EXP_ACC_CUS">
+        <DBMapperTableEntries name="OMS_ACCOUNTID" expression="SUBSTR(A.ACCOUNT_EXT_ID, 1, INSTR(A.ACCOUNT_EXT_ID, '-') - 1)"/>
+        <DBMapperTableEntries name="GTP_CUSTOMER_ID" expression="AO.CUSTOMER_ID"/>
+        <FilterEntries name="other" expression="GROUP BY SUBSTR(A.ACCOUNT_EXT_ID, 1, INSTR(A.ACCOUNT_EXT_ID, '-') - 1), AO.CUSTOMER_ID" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_9"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_GTPFSI_ACCOUNTS"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_GTPFSI_ACCOUNTS&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_GTPFSI_ACCOUNTS"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_GTPFSI_ACCOUNTS" name="table1">
+      <column key="false" length="15" name="ACCOUNT_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="ACCOUNT_EXT_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ACCOUNT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ACCOUNT_USAGE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ACCOUNT_STATUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_UPD" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="LAST_UPD_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="200" name="DESCRIPTION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ACCOUNT_CURRENCY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CLOSED" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CLOSED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_DIV_TRANSFER" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_VIOP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_10"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_OMS_ACC"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_OMS_ACC&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_OMS_ACC"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_OMS_ACC" name="table1">
+      <column key="false" length="10" name="ACCOUNTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CUSTOMERID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="ACCOUNTGROUPID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MARKETACCOUNTNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="ACCOUNTNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="STATUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="BRANCHID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="BANKBRANCHID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="BASECURRENCYID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="ACCOUNTTYPEID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="EXECTYPE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CASHBALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="UNREALIZEDPROFITLOSS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="ACCOUNTVALUE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TRADINGMARGIN" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OPENPOSITIONAMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MARKETMAKERACCOUNTID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="USEDMARGIN" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DAYPL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="ISMARGINCHECK" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ISAUTOSTOP" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ISNOTACCEPTINGSWAPPROFIT" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="STATEMENTREQUESTTYPEID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARGINCALLRATIO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="AUTOSTOPRATIO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARGINRATIO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="SMSREQUESTTYPEID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATEDATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="CONTRACTVERSION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CONTRACTDATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="ISACTIVE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ISCLOSED" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="IBAN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ACCOUNTCLASSTYPEID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="CUSTODYMEMBERCODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ACCOUNTCREATEREASON" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ISPRIVATE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ACCOUNTSTATUSTYPEID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="TRANSFERCODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ISACTION" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="INFO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="MARGINCALCULATIONTYPEID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="AUTOSTOPVALUE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DEMOMARKETACCOUNTNO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ISCFDTRADABLE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ISRECONCILED" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ISONLYPOSITIONCLOSE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="XMLINFO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="AUTOSTOPTYPE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTALPOSITIONLIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="WITHHOLDINGTAXISNOTAPPLIED" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="USEDPOSITIONLIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_11"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6OYVIcMNEfGRB8-8_sKJtQ - T_KVS_OMS_TO_GTP_POSITION"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_KVS_OMS_TO_GTP_POSITION&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSEXT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_KVS_OMS_TO_GTP_POSITION"/>
+    <metadata connector="TABLE" label="DGYTODSEXT.T_KVS_OMS_TO_GTP_POSITION" name="table1">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="AGENTCODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="POSTN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-192" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_5"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_OGP"/>
+    <metadata connector="TABLE" label="EXP_OGP" name="EXP_OGP">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="AGENTCODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="POSTN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSEXT.T_KVS_OMS_TO_GTP_POSITION" tableName="DGYTODSEXT.T_KVS_OMS_TO_GTP_POSITION" joinType="NO_JOIN" alias="KVS">
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="AGENTCODE"/>
+        <DBMapperTableEntries name="POSTN_ID"/>
+      </InputTables>
+      <InputTables name="EXP_LATEST_FILE" tableName="EXP_LATEST_FILE" joinType="INNER_JOIN" alias="EXP_LATEST_FILE">
+        <DBMapperTableEntries name="LATEST_REPORT_DATE" expression="KVS.REPORT_DATE" join="true" operator="="/>
+        <DBMapperTableEntries name="LATEST_FILE_ID" expression="KVS.MANUEL_FILE_ID" join="true" operator="="/>
+      </InputTables>
+      <InputTables name="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" tableName="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" joinType="INNER_JOIN" alias="MFL">
+        <DBMapperTableEntries name="COL"/>
+        <DBMapperTableEntries name="LATEST_FILE_ID_1"/>
+        <DBMapperTableEntries name="LATEST_LOAD_DATE_1"/>
+        <DBMapperTableEntries name="LOAD_DATE" expression="KVS.REPORT_DATE" join="true" operator="="/>
+        <DBMapperTableEntries name="LOAD_DATE_1"/>
+        <DBMapperTableEntries name="MANUAL_FILE_ID" expression="KVS.MANUEL_FILE_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="MANUAL_FILE_ID_1"/>
+        <DBMapperTableEntries name="MANUAL_FILE_NAME"/>
+        <DBMapperTableEntries name="STATUS_CODE"/>
+      </InputTables>
+      <OutputTables name="EXP_OGP" tableName="EXP_OGP">
+        <DBMapperTableEntries name="REPORT_DATE" expression="KVS.REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID" expression="KVS.MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="AGENTCODE" expression="KVS.AGENTCODE"/>
+        <DBMapperTableEntries name="POSTN_ID" expression="KVS.POSTN_ID"/>
+        <FilterEntries name="where" expression="(MFL.MANUAL_FILE_NAME = 'OMS_TO_GTP_POSITION') AND (MFL.STATUS_CODE = 'O')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-704" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_14"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6OYVIcMNEfGRB8-8_sKJtQ - T_KVS_OMS_TO_GTP_POSITION"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_KVS_OMS_TO_GTP_POSITION&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSEXT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_KVS_OMS_TO_GTP_POSITION"/>
+    <metadata connector="TABLE" label="DGYTODSEXT.T_KVS_OMS_TO_GTP_POSITION" name="table1">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="AGENTCODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="POSTN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-448" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_6"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_LATEST_FILE"/>
+    <metadata connector="TABLE" label="EXP_LATEST_FILE" name="EXP_LATEST_FILE">
+      <column key="false" length="-1" name="LATEST_REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="LATEST_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSEXT.T_KVS_OMS_TO_GTP_POSITION" tableName="DGYTODSEXT.T_KVS_OMS_TO_GTP_POSITION" joinType="NO_JOIN" alias="A1">
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="AGENTCODE"/>
+        <DBMapperTableEntries name="POSTN_ID"/>
+      </InputTables>
+      <InputTables name="EXP_LA" tableName="EXP_LA" joinType="INNER_JOIN" alias="EXP_LA">
+        <DBMapperTableEntries name="LATEST_REPORT_DATE" expression="A1.REPORT_DATE" join="true" operator="="/>
+      </InputTables>
+      <OutputTables name="EXP_LATEST_FILE" tableName="EXP_LATEST_FILE">
+        <DBMapperTableEntries name="LATEST_REPORT_DATE" expression="A1.REPORT_DATE"/>
+        <DBMapperTableEntries name="LATEST_FILE_ID" expression="MAX(A1.MANUEL_FILE_ID)"/>
+        <FilterEntries name="other" expression="GROUP BY A1.REPORT_DATE" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-960" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_16"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6OYVIcMNEfGRB8-8_sKJtQ - T_KVS_OMS_TO_GTP_POSITION"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_KVS_OMS_TO_GTP_POSITION&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSEXT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_KVS_OMS_TO_GTP_POSITION"/>
+    <metadata connector="TABLE" label="DGYTODSEXT.T_KVS_OMS_TO_GTP_POSITION" name="table1">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="AGENTCODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="POSTN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-704" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_7"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_LA"/>
+    <metadata connector="TABLE" label="EXP_LA" name="EXP_LA">
+      <column key="false" length="-1" name="LATEST_REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSEXT.T_KVS_OMS_TO_GTP_POSITION" tableName="DGYTODSEXT.T_KVS_OMS_TO_GTP_POSITION" joinType="NO_JOIN" alias="T_KVS_OMS_TO_GTP_POSITION">
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="AGENTCODE"/>
+        <DBMapperTableEntries name="POSTN_ID"/>
+      </InputTables>
+      <OutputTables name="EXP_LA" tableName="EXP_LA">
+        <DBMapperTableEntries name="LATEST_REPORT_DATE" expression="T_KVS_OMS_TO_GTP_POSITION.REPORT_DATE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_13"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_T-cKYMdiEfGy28EcxkB-Aw - V_TDM_MANUEL_FILE_LOG"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;V_TDM_MANUEL_FILE_LOG&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DORTODSKVS&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_V_TDM_MANUEL_FILE_LOG"/>
+    <metadata connector="TABLE" label="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" name="table1">
+      <column key="false" length="4000" name="COL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LATEST_FILE_ID_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LATEST_LOAD_DATE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LOAD_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LOAD_DATE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_ID_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_FINALX"/>
+    <metadata connector="TABLE" label="T_STG_MDL_PARTY_REL_TM18" name="T_STG_MDL_PARTY_REL_TM18">
+      <column key="false" length="-1" name="DWH_VALID_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DWH_VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="DWH_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="UPDATE_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="RELATED_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_REL_ROLE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_REL_RSN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="START_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_FINALX" tableName="EXP_FINALX" joinType="NO_JOIN" alias="EXP_FINALX">
+        <DBMapperTableEntries name="PARTY_ID"/>
+        <DBMapperTableEntries name="RELATED_PARTY_ID"/>
+        <DBMapperTableEntries name="PARTY_REL_RSN_ID"/>
+        <DBMapperTableEntries name="PARTY_REL_ROLE_ID"/>
+        <DBMapperTableEntries name="START_DATE"/>
+      </InputTables>
+      <OutputTables name="T_STG_MDL_PARTY_REL_TM18" tableName="T_STG_MDL_PARTY_REL_TM18">
+        <DBMapperTableEntries name="DWH_VALID_FROM" expression="TO_DATE('01.01.1900', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="DWH_VALID_UNTIL" expression="TO_DATE('99991231', 'YYYYMMDD')"/>
+        <DBMapperTableEntries name="DWH_STATUS" expression="'1'"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="'OMS'"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="UPDATE_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="UPDATE_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="PARTY_ID" expression="EXP_FINALX.PARTY_ID"/>
+        <DBMapperTableEntries name="RELATED_PARTY_ID" expression="EXP_FINALX.RELATED_PARTY_ID"/>
+        <DBMapperTableEntries name="PARTY_REL_ROLE_ID" expression="EXP_FINALX.PARTY_REL_ROLE_ID"/>
+        <DBMapperTableEntries name="PARTY_REL_RSN_ID" expression="EXP_FINALX.PARTY_REL_RSN_ID"/>
+        <DBMapperTableEntries name="START_DATE" expression="EXP_FINALX.START_DATE"/>
+        <DBMapperTableEntries name="END_DATE" expression="NVL(LEAD(EXP_FINALX.START_DATE) OVER (PARTITION BY EXP_FINALX.PARTY_ID ORDER BY EXP_FINALX.START_DATE) - 1, TO_DATE('99991231', 'YYYYMMDD'))"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_MDL_PARTY_REL_TM18"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_MDL_PARTY_REL_TM18&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_MDL_PARTY_REL_TM18"/>
+    <metadata connector="TABLE" label="T_STG_MDL_PARTY_REL_TM18" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="DWH_VALID_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DWH_VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="DWH_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="UPDATE_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="RELATED_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_REL_ROLE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_REL_RSN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="START_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_OMS_ACC_AGENT" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_5" target="tELTOracleMap_3"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_OMS_USER" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_6" target="tELTOracleMap_3"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_OMS_CONTACT" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_7" target="tELTOracleMap_3"/>
+  <connection connectorName="TABLE_REF" label="EXP_OMSRAW" lineStyle="22" mergeOrder="0" metaname="EXP_OMSRAW" outputId="0" source="tELTOracleMap_3" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_GTPFSI_ACCOUNT_OWNERSHIP" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_8" target="tELTOracleMap_4"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_GTPFSI_ACCOUNTS" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_9" target="tELTOracleMap_4"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_OMS_ACC" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_10" target="tELTOracleMap_4"/>
+  <connection connectorName="TABLE_REF" label="EXP_ACC_CUS" lineStyle="22" mergeOrder="0" metaname="EXP_ACC_CUS" outputId="0" source="tELTOracleMap_4" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DGYTODSEXT.T_KVS_OMS_TO_GTP_POSITION" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_11" target="tELTOracleMap_5"/>
+  <connection connectorName="TABLE" label="DGYTODSEXT.T_KVS_OMS_TO_GTP_POSITION" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_14" target="tELTOracleMap_6"/>
+  <connection connectorName="TABLE" label="DGYTODSEXT.T_KVS_OMS_TO_GTP_POSITION" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_16" target="tELTOracleMap_7"/>
+  <connection connectorName="TABLE_REF" label="EXP_LA" lineStyle="22" mergeOrder="0" metaname="EXP_LA" outputId="0" source="tELTOracleMap_7" target="tELTOracleMap_6"/>
+  <connection connectorName="TABLE_REF" label="EXP_LATEST_FILE" lineStyle="22" mergeOrder="0" metaname="EXP_LATEST_FILE" outputId="0" source="tELTOracleMap_6" target="tELTOracleMap_5"/>
+  <connection connectorName="TABLE" label="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_13" target="tELTOracleMap_5"/>
+  <connection connectorName="TABLE_REF" label="EXP_OGP" lineStyle="22" mergeOrder="0" metaname="EXP_OGP" outputId="0" source="tELTOracleMap_5" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_FINALX" lineStyle="22" mergeOrder="0" metaname="EXP_FINALX" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_MDL_PARTY_REL_TM18" lineStyle="9" mergeOrder="0" metaname="T_STG_MDL_PARTY_REL_TM18" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
