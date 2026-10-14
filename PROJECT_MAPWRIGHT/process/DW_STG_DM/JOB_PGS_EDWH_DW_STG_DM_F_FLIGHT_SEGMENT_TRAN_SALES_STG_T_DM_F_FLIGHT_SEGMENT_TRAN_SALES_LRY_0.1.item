@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default"/>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_02_MAIN"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_02_MAIN&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_02_MAIN"/>
+    <metadata connector="TABLE" label="DW_STG.STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_02_MAIN" name="table1">
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="TRN_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="CPN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="TRN_EFFECT_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FARE_BASIS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="RES_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="FLT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DEP_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ARR_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="IP_COUNTRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ROUTE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="REGION_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="RM_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OPERATION_TYPE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="OPERATION_TYPE_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="TRN_CHN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="GEO_DIRECTION_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="TRAN_PAX_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PAX_FLOWN_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PAX_PREDEP_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OPR_REV_GROSS_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OPR_REV_GROSS_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OPR_REV_NET_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OPR_REV_NET_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ANC_QC_GROSS_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ANC_QC_GROSS_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ANC_QC_NET_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ANC_QC_NET_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ANC_SF_GROSS_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ANC_SF_GROSS_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ANC_SF_NET_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ANC_SF_NET_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_02_MAIN"/>
+    <metadata connector="TABLE" label="STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_LRY" name="STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_LRY">
+      <column key="false" length="-1" name="TRN_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FARE_BASIS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="RES_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="FLT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DEP_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ARR_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="IP_COUNTRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ROUTE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="REGION_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="RM_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OPERATION_TYPE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="TRN_CHN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="GEO_DIRECTION_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PAX_TRAN_GEO_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_SEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_FARE_BASIS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="INB_RES_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="INB_FLT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="INB_FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_DEP_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_ARR_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="INB_CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_IP_COUNTRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_ROUTE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_REGION_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_RM_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_LEG_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_OPERATION_TYPE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_TRN_CHN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="INB_GEO_DIRECTION_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_SEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_FARE_BASIS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="OUTB_RES_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="OUTB_FLT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="OUTB_FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_DEP_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_ARR_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="OUTB_CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_IP_COUNTRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_ROUTE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_REGION_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_RM_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_LEG_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_OPERATION_TYPE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_TRN_CHN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="OUTB_GEO_DIRECTION_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="TRAN_PAX_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PAX_FLOWN_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PAX_PREDEP_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OPR_REV_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OPR_REV_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OPR_REV_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OPR_REV_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_OPR_REV_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_OPR_REV_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_OPR_REV_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_OPR_REV_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_OPR_REV_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_OPR_REV_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_OPR_REV_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_OPR_REV_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_QC_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_QC_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_QC_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_QC_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_QC_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_QC_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_QC_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_QC_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_QC_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_QC_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_QC_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_QC_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_SF_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_SF_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_SF_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_SF_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_SF_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_SF_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_SF_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_SF_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_SF_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_SF_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_SF_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_SF_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_STG.STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_02_MAIN" tableName="DW_STG.STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_02_MAIN" joinType="NO_JOIN" alias="M">
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="TRN_DT"/>
+        <DBMapperTableEntries name="CPN_ID"/>
+        <DBMapperTableEntries name="TRN_EFFECT_TYPE_CODE"/>
+        <DBMapperTableEntries name="SEG_ID"/>
+        <DBMapperTableEntries name="FARE_BASIS_ID"/>
+        <DBMapperTableEntries name="RES_CLASS_CODE"/>
+        <DBMapperTableEntries name="FLT_ID"/>
+        <DBMapperTableEntries name="FLT_CODE"/>
+        <DBMapperTableEntries name="FLT_NO"/>
+        <DBMapperTableEntries name="DEP_PORT_ID"/>
+        <DBMapperTableEntries name="ARR_PORT_ID"/>
+        <DBMapperTableEntries name="CARRIER_CODE"/>
+        <DBMapperTableEntries name="IP_COUNTRY_ID"/>
+        <DBMapperTableEntries name="ROUTE_ID"/>
+        <DBMapperTableEntries name="REGION_ID"/>
+        <DBMapperTableEntries name="RM_REPORTING_GRP_ID"/>
+        <DBMapperTableEntries name="LEG_REPORTING_GRP_ID"/>
+        <DBMapperTableEntries name="OPERATION_TYPE_ID"/>
+        <DBMapperTableEntries name="OPERATION_TYPE_NAME"/>
+        <DBMapperTableEntries name="TRN_CHN_ID"/>
+        <DBMapperTableEntries name="GEO_DIRECTION_TYPE_CODE"/>
+        <DBMapperTableEntries name="TRAN_PAX_CNT"/>
+        <DBMapperTableEntries name="PAX_FLOWN_CNT"/>
+        <DBMapperTableEntries name="PAX_PREDEP_CNT"/>
+        <DBMapperTableEntries name="OPR_REV_GROSS_AMT_LOC"/>
+        <DBMapperTableEntries name="OPR_REV_GROSS_AMT_EUR"/>
+        <DBMapperTableEntries name="OPR_REV_NET_AMT_LOC"/>
+        <DBMapperTableEntries name="OPR_REV_NET_AMT_EUR"/>
+        <DBMapperTableEntries name="ANC_QC_GROSS_AMT_LOC"/>
+        <DBMapperTableEntries name="ANC_QC_GROSS_AMT_EUR"/>
+        <DBMapperTableEntries name="ANC_QC_NET_AMT_LOC"/>
+        <DBMapperTableEntries name="ANC_QC_NET_AMT_EUR"/>
+        <DBMapperTableEntries name="ANC_SF_GROSS_AMT_LOC"/>
+        <DBMapperTableEntries name="ANC_SF_GROSS_AMT_EUR"/>
+        <DBMapperTableEntries name="ANC_SF_NET_AMT_LOC"/>
+        <DBMapperTableEntries name="ANC_SF_NET_AMT_EUR"/>
+      </InputTables>
+      <InputTables name="DW_STG.STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_03_INB_OUTB" tableName="DW_STG.STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_03_INB_OUTB" joinType="INNER_JOIN" alias="X">
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="CPN_ID" expression="M.CPN_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="TRN_DT" expression="M.TRN_DT" join="true" operator="="/>
+        <DBMapperTableEntries name="TRN_EFFECT_TYPE_CODE" expression="M.TRN_EFFECT_TYPE_CODE" join="true" operator="="/>
+        <DBMapperTableEntries name="INB_MATCH_FLAG"/>
+        <DBMapperTableEntries name="OUTB_MATCH_FLAG"/>
+        <DBMapperTableEntries name="INB_GEO_PART"/>
+        <DBMapperTableEntries name="OUTB_GEO_PART"/>
+        <DBMapperTableEntries name="INB_SEG_ID"/>
+        <DBMapperTableEntries name="INB_FARE_BASIS_ID"/>
+        <DBMapperTableEntries name="INB_RES_CLASS_CODE"/>
+        <DBMapperTableEntries name="INB_FLT_ID"/>
+        <DBMapperTableEntries name="INB_FLT_CODE"/>
+        <DBMapperTableEntries name="INB_FLT_NO"/>
+        <DBMapperTableEntries name="INB_DEP_PORT_ID"/>
+        <DBMapperTableEntries name="INB_ARR_PORT_ID"/>
+        <DBMapperTableEntries name="INB_CARRIER_CODE"/>
+        <DBMapperTableEntries name="INB_IP_COUNTRY_ID"/>
+        <DBMapperTableEntries name="INB_ROUTE_ID"/>
+        <DBMapperTableEntries name="INB_REGION_ID"/>
+        <DBMapperTableEntries name="INB_RM_REPORTING_GRP_ID"/>
+        <DBMapperTableEntries name="INB_LEG_REPORTING_GRP_ID"/>
+        <DBMapperTableEntries name="INB_OPERATION_TYPE_ID"/>
+        <DBMapperTableEntries name="INB_TRN_CHN_ID"/>
+        <DBMapperTableEntries name="INB_GEO_DIRECTION_TYPE_CODE"/>
+        <DBMapperTableEntries name="INB_OPR_REV_GROSS_AMT_LOC"/>
+        <DBMapperTableEntries name="INB_OPR_REV_GROSS_AMT_EUR"/>
+        <DBMapperTableEntries name="INB_OPR_REV_NET_AMT_LOC"/>
+        <DBMapperTableEntries name="INB_OPR_REV_NET_AMT_EUR"/>
+        <DBMapperTableEntries name="INB_ANC_QC_GROSS_AMT_LOC"/>
+        <DBMapperTableEntries name="INB_ANC_QC_GROSS_AMT_EUR"/>
+        <DBMapperTableEntries name="INB_ANC_QC_NET_AMT_LOC"/>
+        <DBMapperTableEntries name="INB_ANC_QC_NET_AMT_EUR"/>
+        <DBMapperTableEntries name="INB_ANC_SF_GROSS_AMT_LOC"/>
+        <DBMapperTableEntries name="INB_ANC_SF_GROSS_AMT_EUR"/>
+        <DBMapperTableEntries name="INB_ANC_SF_NET_AMT_LOC"/>
+        <DBMapperTableEntries name="INB_ANC_SF_NET_AMT_EUR"/>
+        <DBMapperTableEntries name="OUTB_SEG_ID"/>
+        <DBMapperTableEntries name="OUTB_FARE_BASIS_ID"/>
+        <DBMapperTableEntries name="OUTB_RES_CLASS_CODE"/>
+        <DBMapperTableEntries name="OUTB_FLT_ID"/>
+        <DBMapperTableEntries name="OUTB_FLT_CODE"/>
+        <DBMapperTableEntries name="OUTB_FLT_NO"/>
+        <DBMapperTableEntries name="OUTB_DEP_PORT_ID"/>
+        <DBMapperTableEntries name="OUTB_ARR_PORT_ID"/>
+        <DBMapperTableEntries name="OUTB_CARRIER_CODE"/>
+        <DBMapperTableEntries name="OUTB_IP_COUNTRY_ID"/>
+        <DBMapperTableEntries name="OUTB_ROUTE_ID"/>
+        <DBMapperTableEntries name="OUTB_REGION_ID"/>
+        <DBMapperTableEntries name="OUTB_RM_REPORTING_GRP_ID"/>
+        <DBMapperTableEntries name="OUTB_LEG_REPORTING_GRP_ID"/>
+        <DBMapperTableEntries name="OUTB_OPERATION_TYPE_ID"/>
+        <DBMapperTableEntries name="OUTB_TRN_CHN_ID"/>
+        <DBMapperTableEntries name="OUTB_GEO_DIRECTION_TYPE_CODE"/>
+        <DBMapperTableEntries name="OUTB_OPR_REV_GROSS_AMT_LOC"/>
+        <DBMapperTableEntries name="OUTB_OPR_REV_GROSS_AMT_EUR"/>
+        <DBMapperTableEntries name="OUTB_OPR_REV_NET_AMT_LOC"/>
+        <DBMapperTableEntries name="OUTB_OPR_REV_NET_AMT_EUR"/>
+        <DBMapperTableEntries name="OUTB_ANC_QC_GROSS_AMT_LOC"/>
+        <DBMapperTableEntries name="OUTB_ANC_QC_GROSS_AMT_EUR"/>
+        <DBMapperTableEntries name="OUTB_ANC_QC_NET_AMT_LOC"/>
+        <DBMapperTableEntries name="OUTB_ANC_QC_NET_AMT_EUR"/>
+        <DBMapperTableEntries name="OUTB_ANC_SF_GROSS_AMT_LOC"/>
+        <DBMapperTableEntries name="OUTB_ANC_SF_GROSS_AMT_EUR"/>
+        <DBMapperTableEntries name="OUTB_ANC_SF_NET_AMT_LOC"/>
+        <DBMapperTableEntries name="OUTB_ANC_SF_NET_AMT_EUR"/>
+      </InputTables>
+      <OutputTables name="STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_LRY" tableName="STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_LRY">
+        <DBMapperTableEntries name="TRN_DT" expression="M.TRN_DT"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="SEG_ID" expression="M.SEG_ID"/>
+        <DBMapperTableEntries name="FARE_BASIS_ID" expression="M.FARE_BASIS_ID"/>
+        <DBMapperTableEntries name="RES_CLASS_CODE" expression="M.RES_CLASS_CODE"/>
+        <DBMapperTableEntries name="FLT_ID" expression="M.FLT_ID"/>
+        <DBMapperTableEntries name="FLT_CODE" expression="M.FLT_CODE"/>
+        <DBMapperTableEntries name="FLT_NO" expression="M.FLT_NO"/>
+        <DBMapperTableEntries name="DEP_PORT_ID" expression="M.DEP_PORT_ID"/>
+        <DBMapperTableEntries name="ARR_PORT_ID" expression="M.ARR_PORT_ID"/>
+        <DBMapperTableEntries name="CARRIER_CODE" expression="M.CARRIER_CODE"/>
+        <DBMapperTableEntries name="IP_COUNTRY_ID" expression="M.IP_COUNTRY_ID"/>
+        <DBMapperTableEntries name="ROUTE_ID" expression="M.ROUTE_ID"/>
+        <DBMapperTableEntries name="REGION_ID" expression="M.REGION_ID"/>
+        <DBMapperTableEntries name="RM_REPORTING_GRP_ID" expression="M.RM_REPORTING_GRP_ID"/>
+        <DBMapperTableEntries name="LEG_REPORTING_GRP_ID" expression="M.LEG_REPORTING_GRP_ID"/>
+        <DBMapperTableEntries name="OPERATION_TYPE_ID" expression="M.OPERATION_TYPE_ID"/>
+        <DBMapperTableEntries name="TRN_CHN_ID" expression="M.TRN_CHN_ID"/>
+        <DBMapperTableEntries name="GEO_DIRECTION_TYPE_CODE" expression="M.GEO_DIRECTION_TYPE_CODE"/>
+        <DBMapperTableEntries name="PAX_TRAN_GEO_TYPE_CODE" expression="CASE WHEN X.INB_MATCH_FLAG = 1 AND X.OUTB_MATCH_FLAG = 0 THEN X.INB_GEO_PART || CASE WHEN UPPER(M.OPERATION_TYPE_NAME) = 'PEGASUS DOMESTIC' THEN 'DOM' ELSE 'INT' END WHEN X.INB_MATCH_FLAG = 0 AND X.OUTB_MATCH_FLAG = 1 THEN CASE WHEN UPPER(M.OPERATION_TYPE_NAME) = 'PEGASUS DOMESTIC' THEN 'DOM' ELSE 'INT' END || X.OUTB_GEO_PART WHEN X.INB_MATCH_FLAG = 1 AND X.OUTB_MATCH_FLAG = 1 THEN X.INB_GEO_PART || X.OUTB_GEO_PART ELSE NULL END"/>
+        <DBMapperTableEntries name="INB_SEG_ID" expression="X.INB_SEG_ID"/>
+        <DBMapperTableEntries name="INB_FARE_BASIS_ID" expression="X.INB_FARE_BASIS_ID"/>
+        <DBMapperTableEntries name="INB_RES_CLASS_CODE" expression="X.INB_RES_CLASS_CODE"/>
+        <DBMapperTableEntries name="INB_FLT_ID" expression="X.INB_FLT_ID"/>
+        <DBMapperTableEntries name="INB_FLT_CODE" expression="X.INB_FLT_CODE"/>
+        <DBMapperTableEntries name="INB_FLT_NO" expression="X.INB_FLT_NO"/>
+        <DBMapperTableEntries name="INB_DEP_PORT_ID" expression="X.INB_DEP_PORT_ID"/>
+        <DBMapperTableEntries name="INB_ARR_PORT_ID" expression="X.INB_ARR_PORT_ID"/>
+        <DBMapperTableEntries name="INB_CARRIER_CODE" expression="X.INB_CARRIER_CODE"/>
+        <DBMapperTableEntries name="INB_IP_COUNTRY_ID" expression="X.INB_IP_COUNTRY_ID"/>
+        <DBMapperTableEntries name="INB_ROUTE_ID" expression="X.INB_ROUTE_ID"/>
+        <DBMapperTableEntries name="INB_REGION_ID" expression="X.INB_REGION_ID"/>
+        <DBMapperTableEntries name="INB_RM_REPORTING_GRP_ID" expression="X.INB_RM_REPORTING_GRP_ID"/>
+        <DBMapperTableEntries name="INB_LEG_REPORTING_GRP_ID" expression="X.INB_LEG_REPORTING_GRP_ID"/>
+        <DBMapperTableEntries name="INB_OPERATION_TYPE_ID" expression="X.INB_OPERATION_TYPE_ID"/>
+        <DBMapperTableEntries name="INB_TRN_CHN_ID" expression="X.INB_TRN_CHN_ID"/>
+        <DBMapperTableEntries name="INB_GEO_DIRECTION_TYPE_CODE" expression="X.INB_GEO_DIRECTION_TYPE_CODE"/>
+        <DBMapperTableEntries name="OUTB_SEG_ID" expression="X.OUTB_SEG_ID"/>
+        <DBMapperTableEntries name="OUTB_FARE_BASIS_ID" expression="X.OUTB_FARE_BASIS_ID"/>
+        <DBMapperTableEntries name="OUTB_RES_CLASS_CODE" expression="X.OUTB_RES_CLASS_CODE"/>
+        <DBMapperTableEntries name="OUTB_FLT_ID" expression="X.OUTB_FLT_ID"/>
+        <DBMapperTableEntries name="OUTB_FLT_CODE" expression="X.OUTB_FLT_CODE"/>
+        <DBMapperTableEntries name="OUTB_FLT_NO" expression="X.OUTB_FLT_NO"/>
+        <DBMapperTableEntries name="OUTB_DEP_PORT_ID" expression="X.OUTB_DEP_PORT_ID"/>
+        <DBMapperTableEntries name="OUTB_ARR_PORT_ID" expression="X.OUTB_ARR_PORT_ID"/>
+        <DBMapperTableEntries name="OUTB_CARRIER_CODE" expression="X.OUTB_CARRIER_CODE"/>
+        <DBMapperTableEntries name="OUTB_IP_COUNTRY_ID" expression="X.OUTB_IP_COUNTRY_ID"/>
+        <DBMapperTableEntries name="OUTB_ROUTE_ID" expression="X.OUTB_ROUTE_ID"/>
+        <DBMapperTableEntries name="OUTB_REGION_ID" expression="X.OUTB_REGION_ID"/>
+        <DBMapperTableEntries name="OUTB_RM_REPORTING_GRP_ID" expression="X.OUTB_RM_REPORTING_GRP_ID"/>
+        <DBMapperTableEntries name="OUTB_LEG_REPORTING_GRP_ID" expression="X.OUTB_LEG_REPORTING_GRP_ID"/>
+        <DBMapperTableEntries name="OUTB_OPERATION_TYPE_ID" expression="X.OUTB_OPERATION_TYPE_ID"/>
+        <DBMapperTableEntries name="OUTB_TRN_CHN_ID" expression="X.OUTB_TRN_CHN_ID"/>
+        <DBMapperTableEntries name="OUTB_GEO_DIRECTION_TYPE_CODE" expression="X.OUTB_GEO_DIRECTION_TYPE_CODE"/>
+        <DBMapperTableEntries name="TRAN_PAX_CNT" expression="SUM(NVL(M.TRAN_PAX_CNT, 0))"/>
+        <DBMapperTableEntries name="PAX_FLOWN_CNT" expression="SUM(NVL(M.PAX_FLOWN_CNT, 0))"/>
+        <DBMapperTableEntries name="PAX_PREDEP_CNT" expression="SUM(NVL(M.PAX_PREDEP_CNT, 0))"/>
+        <DBMapperTableEntries name="OPR_REV_GROSS_AMT_LOC" expression="SUM(NVL(M.OPR_REV_GROSS_AMT_LOC, 0))"/>
+        <DBMapperTableEntries name="OPR_REV_GROSS_AMT_EUR" expression="SUM(NVL(M.OPR_REV_GROSS_AMT_EUR, 0))"/>
+        <DBMapperTableEntries name="OPR_REV_NET_AMT_LOC" expression="SUM(NVL(M.OPR_REV_NET_AMT_LOC, 0))"/>
+        <DBMapperTableEntries name="OPR_REV_NET_AMT_EUR" expression="SUM(NVL(M.OPR_REV_NET_AMT_EUR, 0))"/>
+        <DBMapperTableEntries name="INB_OPR_REV_GROSS_AMT_LOC" expression="SUM(X.INB_OPR_REV_GROSS_AMT_LOC)"/>
+        <DBMapperTableEntries name="INB_OPR_REV_GROSS_AMT_EUR" expression="SUM(X.INB_OPR_REV_GROSS_AMT_EUR)"/>
+        <DBMapperTableEntries name="INB_OPR_REV_NET_AMT_LOC" expression="SUM(X.INB_OPR_REV_NET_AMT_LOC)"/>
+        <DBMapperTableEntries name="INB_OPR_REV_NET_AMT_EUR" expression="SUM(X.INB_OPR_REV_NET_AMT_EUR)"/>
+        <DBMapperTableEntries name="OUTB_OPR_REV_GROSS_AMT_LOC" expression="SUM(X.OUTB_OPR_REV_GROSS_AMT_LOC)"/>
+        <DBMapperTableEntries name="OUTB_OPR_REV_GROSS_AMT_EUR" expression="SUM(X.OUTB_OPR_REV_GROSS_AMT_EUR)"/>
+        <DBMapperTableEntries name="OUTB_OPR_REV_NET_AMT_LOC" expression="SUM(X.OUTB_OPR_REV_NET_AMT_LOC)"/>
+        <DBMapperTableEntries name="OUTB_OPR_REV_NET_AMT_EUR" expression="SUM(X.OUTB_OPR_REV_NET_AMT_EUR)"/>
+        <DBMapperTableEntries name="ANC_QC_GROSS_AMT_LOC" expression="SUM(NVL(M.ANC_QC_GROSS_AMT_LOC, 0))"/>
+        <DBMapperTableEntries name="ANC_QC_GROSS_AMT_EUR" expression="SUM(NVL(M.ANC_QC_GROSS_AMT_EUR, 0))"/>
+        <DBMapperTableEntries name="ANC_QC_NET_AMT_LOC" expression="SUM(NVL(M.ANC_QC_NET_AMT_LOC, 0))"/>
+        <DBMapperTableEntries name="ANC_QC_NET_AMT_EUR" expression="SUM(NVL(M.ANC_QC_NET_AMT_EUR, 0))"/>
+        <DBMapperTableEntries name="INB_ANC_QC_GROSS_AMT_LOC" expression="SUM(X.INB_ANC_QC_GROSS_AMT_LOC)"/>
+        <DBMapperTableEntries name="INB_ANC_QC_GROSS_AMT_EUR" expression="SUM(X.INB_ANC_QC_GROSS_AMT_EUR)"/>
+        <DBMapperTableEntries name="INB_ANC_QC_NET_AMT_LOC" expression="SUM(X.INB_ANC_QC_NET_AMT_LOC)"/>
+        <DBMapperTableEntries name="INB_ANC_QC_NET_AMT_EUR" expression="SUM(X.INB_ANC_QC_NET_AMT_EUR)"/>
+        <DBMapperTableEntries name="OUTB_ANC_QC_GROSS_AMT_LOC" expression="SUM(X.OUTB_ANC_QC_GROSS_AMT_LOC)"/>
+        <DBMapperTableEntries name="OUTB_ANC_QC_GROSS_AMT_EUR" expression="SUM(X.OUTB_ANC_QC_GROSS_AMT_EUR)"/>
+        <DBMapperTableEntries name="OUTB_ANC_QC_NET_AMT_LOC" expression="SUM(X.OUTB_ANC_QC_NET_AMT_LOC)"/>
+        <DBMapperTableEntries name="OUTB_ANC_QC_NET_AMT_EUR" expression="SUM(X.OUTB_ANC_QC_NET_AMT_EUR)"/>
+        <DBMapperTableEntries name="ANC_SF_GROSS_AMT_LOC" expression="SUM(NVL(M.ANC_SF_GROSS_AMT_LOC, 0))"/>
+        <DBMapperTableEntries name="ANC_SF_GROSS_AMT_EUR" expression="SUM(NVL(M.ANC_SF_GROSS_AMT_EUR, 0))"/>
+        <DBMapperTableEntries name="ANC_SF_NET_AMT_LOC" expression="SUM(NVL(M.ANC_SF_NET_AMT_LOC, 0))"/>
+        <DBMapperTableEntries name="ANC_SF_NET_AMT_EUR" expression="SUM(NVL(M.ANC_SF_NET_AMT_EUR, 0))"/>
+        <DBMapperTableEntries name="INB_ANC_SF_GROSS_AMT_LOC" expression="SUM(X.INB_ANC_SF_GROSS_AMT_LOC)"/>
+        <DBMapperTableEntries name="INB_ANC_SF_GROSS_AMT_EUR" expression="SUM(X.INB_ANC_SF_GROSS_AMT_EUR)"/>
+        <DBMapperTableEntries name="INB_ANC_SF_NET_AMT_LOC" expression="SUM(X.INB_ANC_SF_NET_AMT_LOC)"/>
+        <DBMapperTableEntries name="INB_ANC_SF_NET_AMT_EUR" expression="SUM(X.INB_ANC_SF_NET_AMT_EUR)"/>
+        <DBMapperTableEntries name="OUTB_ANC_SF_GROSS_AMT_LOC" expression="SUM(X.OUTB_ANC_SF_GROSS_AMT_LOC)"/>
+        <DBMapperTableEntries name="OUTB_ANC_SF_GROSS_AMT_EUR" expression="SUM(X.OUTB_ANC_SF_GROSS_AMT_EUR)"/>
+        <DBMapperTableEntries name="OUTB_ANC_SF_NET_AMT_LOC" expression="SUM(X.OUTB_ANC_SF_NET_AMT_LOC)"/>
+        <DBMapperTableEntries name="OUTB_ANC_SF_NET_AMT_EUR" expression="SUM(X.OUTB_ANC_SF_NET_AMT_EUR)"/>
+        <FilterEntries name="other" expression="GROUP BY M.TRN_DT, M.SEG_ID, M.FARE_BASIS_ID, M.RES_CLASS_CODE, M.FLT_ID, M.FLT_CODE, M.FLT_NO, M.DEP_PORT_ID, M.ARR_PORT_ID, M.CARRIER_CODE, M.IP_COUNTRY_ID, M.ROUTE_ID, M.REGION_ID, M.RM_REPORTING_GRP_ID, M.LEG_REPORTING_GRP_ID, M.OPERATION_TYPE_ID, M.TRN_CHN_ID, M.GEO_DIRECTION_TYPE_CODE, CASE WHEN X.INB_MATCH_FLAG = 1 AND X.OUTB_MATCH_FLAG = 0 THEN X.INB_GEO_PART || CASE WHEN UPPER(M.OPERATION_TYPE_NAME) = 'PEGASUS DOMESTIC' THEN 'DOM' ELSE 'INT' END WHEN X.INB_MATCH_FLAG = 0 AND X.OUTB_MATCH_FLAG = 1 THEN CASE WHEN UPPER(M.OPERATION_TYPE_NAME) = 'PEGASUS DOMESTIC' THEN 'DOM' ELSE 'INT' END || X.OUTB_GEO_PART WHEN X.INB_MATCH_FLAG = 1 AND X.OUTB_MATCH_FLAG = 1 THEN X.INB_GEO_PART || X.OUTB_GEO_PART ELSE NULL END, X.INB_SEG_ID, X.INB_FARE_BASIS_ID, X.INB_RES_CLASS_CODE, X.INB_FLT_ID, X.INB_FLT_CODE, X.INB_FLT_NO, X.INB_DEP_PORT_ID, X.INB_ARR_PORT_ID, X.INB_CARRIER_CODE, X.INB_IP_COUNTRY_ID, X.INB_ROUTE_ID, X.INB_REGION_ID, X.INB_RM_REPORTING_GRP_ID, X.INB_LEG_REPORTING_GRP_ID, X.INB_OPERATION_TYPE_ID, X.INB_TRN_CHN_ID, X.INB_GEO_DIRECTION_TYPE_CODE, X.OUTB_SEG_ID, X.OUTB_FARE_BASIS_ID, X.OUTB_RES_CLASS_CODE, X.OUTB_FLT_ID, X.OUTB_FLT_CODE, X.OUTB_FLT_NO, X.OUTB_DEP_PORT_ID, X.OUTB_ARR_PORT_ID, X.OUTB_CARRIER_CODE, X.OUTB_IP_COUNTRY_ID, X.OUTB_ROUTE_ID, X.OUTB_REGION_ID, X.OUTB_RM_REPORTING_GRP_ID, X.OUTB_LEG_REPORTING_GRP_ID, X.OUTB_OPERATION_TYPE_ID, X.OUTB_TRN_CHN_ID, X.OUTB_GEO_DIRECTION_TYPE_CODE" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_03_INB_OUTB"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_03_INB_OUTB&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_03_INB_OUTB"/>
+    <metadata connector="TABLE" label="DW_STG.STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_03_INB_OUTB" name="table1">
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CPN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="TRN_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="TRN_EFFECT_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="INB_MATCH_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="OUTB_MATCH_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="INB_GEO_PART" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="OUTB_GEO_PART" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_SEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_FARE_BASIS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="INB_RES_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="INB_FLT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="INB_FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_DEP_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_ARR_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="INB_CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_IP_COUNTRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_ROUTE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_REGION_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_RM_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_LEG_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_OPERATION_TYPE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_TRN_CHN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="INB_GEO_DIRECTION_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="INB_OPR_REV_GROSS_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INB_OPR_REV_GROSS_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INB_OPR_REV_NET_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INB_OPR_REV_NET_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INB_ANC_QC_GROSS_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INB_ANC_QC_GROSS_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INB_ANC_QC_NET_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INB_ANC_QC_NET_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INB_ANC_SF_GROSS_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INB_ANC_SF_GROSS_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INB_ANC_SF_NET_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INB_ANC_SF_NET_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_SEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_FARE_BASIS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="OUTB_RES_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="OUTB_FLT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="OUTB_FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_DEP_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_ARR_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="OUTB_CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_IP_COUNTRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_ROUTE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_REGION_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_RM_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_LEG_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_OPERATION_TYPE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_TRN_CHN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="OUTB_GEO_DIRECTION_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="OUTB_OPR_REV_GROSS_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OUTB_OPR_REV_GROSS_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OUTB_OPR_REV_NET_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OUTB_OPR_REV_NET_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OUTB_ANC_QC_GROSS_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OUTB_ANC_QC_GROSS_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OUTB_ANC_QC_NET_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OUTB_ANC_QC_NET_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OUTB_ANC_SF_GROSS_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OUTB_ANC_SF_GROSS_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OUTB_ANC_SF_NET_AMT_LOC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OUTB_ANC_SF_NET_AMT_EUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_LRY"/>
+    <metadata connector="TABLE" label="STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_LRY" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="TRN_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FARE_BASIS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="RES_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="FLT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DEP_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ARR_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="IP_COUNTRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ROUTE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="REGION_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="RM_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OPERATION_TYPE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="TRN_CHN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="GEO_DIRECTION_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PAX_TRAN_GEO_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_SEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_FARE_BASIS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="INB_RES_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="INB_FLT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="INB_FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_DEP_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_ARR_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="INB_CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_IP_COUNTRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_ROUTE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_REGION_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_RM_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_LEG_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_OPERATION_TYPE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INB_TRN_CHN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="INB_GEO_DIRECTION_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_SEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_FARE_BASIS_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="OUTB_RES_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="OUTB_FLT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="OUTB_FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_DEP_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_ARR_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="OUTB_CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_IP_COUNTRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_ROUTE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_REGION_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_RM_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_LEG_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_OPERATION_TYPE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OUTB_TRN_CHN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="OUTB_GEO_DIRECTION_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="TRAN_PAX_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PAX_FLOWN_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PAX_PREDEP_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OPR_REV_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OPR_REV_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OPR_REV_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OPR_REV_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_OPR_REV_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_OPR_REV_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_OPR_REV_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_OPR_REV_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_OPR_REV_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_OPR_REV_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_OPR_REV_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_OPR_REV_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_QC_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_QC_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_QC_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_QC_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_QC_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_QC_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_QC_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_QC_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_QC_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_QC_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_QC_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_QC_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_SF_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_SF_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_SF_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ANC_SF_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_SF_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_SF_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_SF_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INB_ANC_SF_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_SF_GROSS_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_SF_GROSS_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_SF_NET_AMT_LOC" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="OUTB_ANC_SF_NET_AMT_EUR" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_STG.STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_02_MAIN" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_STG.STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_03_INB_OUTB" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_DM_F_FLIGHT_SEGMENT_TRAN_SALES_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
