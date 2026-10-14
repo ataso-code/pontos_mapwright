@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_FDL_LYL_TRN_REDEMPTION_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_FF_MEMBER_AWD"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_FF_MEMBER_AWD&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_FF_MEMBER_AWD"/>
+    <metadata connector="TABLE" label="DW_LND.LND_FF_MEMBER_AWD" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="16" name="FLYER_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="AWD_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DEFINITION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CLAIM_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="ISSUE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="MILES" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CUT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="FLYER_CARD_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="PRINTED" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="TICKETNUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="AWARDUSAGETYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="USERNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="FLIGHT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="CLASS_CODE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ORIGIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DESTINATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="FLIGHT_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="RET_FLIGHT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="RET_FLIGHT_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RET_CLASS_CODE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="RET_ORIGIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="RET_DESTINATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="RET_TICKETNUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="COMPANY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="FLT_COMPANY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="RET_FLT_COMPANY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP3_COMPANY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="STEP3_FLIGHT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP3_FLIGHT_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STEP3_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP3_ORIGIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP3_DESTINATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="STEP3_TICKET_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP4_COMPANY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="STEP4_FLIGHT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP4_FLIGHT_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STEP4_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP4_ORIGIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP4_DESTINATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="STEP4_TICKET_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP5_COMPANY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="STEP5_FLIGHT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP5_FLIGHT_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STEP5_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP5_ORIGIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP5_DESTINATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="STEP5_TICKET_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP6_COMPANY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="STEP6_FLIGHT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP6_FLIGHT_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STEP6_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP6_ORIGIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP6_DESTINATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="STEP6_TICKET_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP7_COMPANY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="STEP7_FLIGHT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP7_FLIGHT_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STEP7_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP7_ORIGIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP7_DESTINATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="STEP7_TICKET_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP8_COMPANY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="STEP8_FLIGHT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP8_FLIGHT_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STEP8_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP8_ORIGIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="STEP8_DESTINATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="STEP8_TICKET_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ENTRY_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="PARTNER_RESERVATION_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2000" name="CERTIFICATE_EXPLANATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CHECKIN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="CHECKOUT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="PARTNER_BRANCH_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="ISSUE_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTNER_BRANCH_EXPL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FINANCE_TRANSACTION_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ISSUE_COUNT_CHILD" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ISSUE_COUNT_INFANT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SERVICE_CHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="NUMBER_OF_DAYS" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REDEPOSITED_POINTS" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ACCOUNTING_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ACCOUNTING_REDEPOSIT_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="6" name="PNR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="CLIENT_UNIQUE_IDENTIFIER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="RTA_SERIAL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="REDEMPTION_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CANCEL_REASON_CODE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="INVOICED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INVOICED_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="INSERTED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="AMENDED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="AMEND_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="REF_ACT_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FEE_AWD_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="ISSUING_CITY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="ISSUING_AGENT_INITIALS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="AWARD_CREDIT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REDEPOSITED_AWARD_CREDIT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CASH_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="HOTEL_SERVICE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CAR_CLASS_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MIGRATION_REFERENCE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="ISSUING_OFFICE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="FARE_BASIS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PROCESS_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="BOOKING_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="ISSUE_DATE_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="16" name="ACC_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="PROMOTION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="RET_PROMOTION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="STEP3_PROMOTION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="STEP4_PROMOTION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="STEP5_PROMOTION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="STEP6_PROMOTION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="STEP7_PROMOTION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="STEP8_PROMOTION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="16" name="OLD_FLYER_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PNR_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="EXPLANATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_LND_FF_MEMBER_AWD"/>
+    <metadata connector="TABLE" label="STG_T_FDL_LYL_TRN_REDEMPTION_LRY" name="STG_T_FDL_LYL_TRN_REDEMPTION_LRY">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="LYL_TRN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="AWARD_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="AWARD_CLAIM_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="AWARD_USAGE_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="18" name="REDEPOSITED_POINTS_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_FF_MEMBER_AWD" tableName="DW_LND.LND_FF_MEMBER_AWD" joinType="NO_JOIN" alias="AWD">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="ID"/>
+        <DBMapperTableEntries name="FLYER_ID"/>
+        <DBMapperTableEntries name="AWD_CODE"/>
+        <DBMapperTableEntries name="DEFINITION"/>
+        <DBMapperTableEntries name="CLAIM_DATE"/>
+        <DBMapperTableEntries name="ISSUE_DATE"/>
+        <DBMapperTableEntries name="MILES"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="CUT_DATE"/>
+        <DBMapperTableEntries name="FLYER_CARD_TYPE"/>
+        <DBMapperTableEntries name="PRINTED"/>
+        <DBMapperTableEntries name="TICKETNUMBER"/>
+        <DBMapperTableEntries name="AWARDUSAGETYPE"/>
+        <DBMapperTableEntries name="USERNAME"/>
+        <DBMapperTableEntries name="FLIGHT_DATE"/>
+        <DBMapperTableEntries name="CLASS_CODE"/>
+        <DBMapperTableEntries name="ORIGIN"/>
+        <DBMapperTableEntries name="DESTINATION"/>
+        <DBMapperTableEntries name="FLIGHT_NUMBER"/>
+        <DBMapperTableEntries name="RET_FLIGHT_DATE"/>
+        <DBMapperTableEntries name="RET_FLIGHT_NUMBER"/>
+        <DBMapperTableEntries name="RET_CLASS_CODE"/>
+        <DBMapperTableEntries name="RET_ORIGIN"/>
+        <DBMapperTableEntries name="RET_DESTINATION"/>
+        <DBMapperTableEntries name="RET_TICKETNUMBER"/>
+        <DBMapperTableEntries name="COMPANY"/>
+        <DBMapperTableEntries name="FLT_COMPANY"/>
+        <DBMapperTableEntries name="RET_FLT_COMPANY"/>
+        <DBMapperTableEntries name="STEP3_COMPANY"/>
+        <DBMapperTableEntries name="STEP3_FLIGHT_DATE"/>
+        <DBMapperTableEntries name="STEP3_FLIGHT_NUMBER"/>
+        <DBMapperTableEntries name="STEP3_CLASS_CODE"/>
+        <DBMapperTableEntries name="STEP3_ORIGIN"/>
+        <DBMapperTableEntries name="STEP3_DESTINATION"/>
+        <DBMapperTableEntries name="STEP3_TICKET_NUMBER"/>
+        <DBMapperTableEntries name="STEP4_COMPANY"/>
+        <DBMapperTableEntries name="STEP4_FLIGHT_DATE"/>
+        <DBMapperTableEntries name="STEP4_FLIGHT_NUMBER"/>
+        <DBMapperTableEntries name="STEP4_CLASS_CODE"/>
+        <DBMapperTableEntries name="STEP4_ORIGIN"/>
+        <DBMapperTableEntries name="STEP4_DESTINATION"/>
+        <DBMapperTableEntries name="STEP4_TICKET_NUMBER"/>
+        <DBMapperTableEntries name="STEP5_COMPANY"/>
+        <DBMapperTableEntries name="STEP5_FLIGHT_DATE"/>
+        <DBMapperTableEntries name="STEP5_FLIGHT_NUMBER"/>
+        <DBMapperTableEntries name="STEP5_CLASS_CODE"/>
+        <DBMapperTableEntries name="STEP5_ORIGIN"/>
+        <DBMapperTableEntries name="STEP5_DESTINATION"/>
+        <DBMapperTableEntries name="STEP5_TICKET_NUMBER"/>
+        <DBMapperTableEntries name="STEP6_COMPANY"/>
+        <DBMapperTableEntries name="STEP6_FLIGHT_DATE"/>
+        <DBMapperTableEntries name="STEP6_FLIGHT_NUMBER"/>
+        <DBMapperTableEntries name="STEP6_CLASS_CODE"/>
+        <DBMapperTableEntries name="STEP6_ORIGIN"/>
+        <DBMapperTableEntries name="STEP6_DESTINATION"/>
+        <DBMapperTableEntries name="STEP6_TICKET_NUMBER"/>
+        <DBMapperTableEntries name="STEP7_COMPANY"/>
+        <DBMapperTableEntries name="STEP7_FLIGHT_DATE"/>
+        <DBMapperTableEntries name="STEP7_FLIGHT_NUMBER"/>
+        <DBMapperTableEntries name="STEP7_CLASS_CODE"/>
+        <DBMapperTableEntries name="STEP7_ORIGIN"/>
+        <DBMapperTableEntries name="STEP7_DESTINATION"/>
+        <DBMapperTableEntries name="STEP7_TICKET_NUMBER"/>
+        <DBMapperTableEntries name="STEP8_COMPANY"/>
+        <DBMapperTableEntries name="STEP8_FLIGHT_DATE"/>
+        <DBMapperTableEntries name="STEP8_FLIGHT_NUMBER"/>
+        <DBMapperTableEntries name="STEP8_CLASS_CODE"/>
+        <DBMapperTableEntries name="STEP8_ORIGIN"/>
+        <DBMapperTableEntries name="STEP8_DESTINATION"/>
+        <DBMapperTableEntries name="STEP8_TICKET_NUMBER"/>
+        <DBMapperTableEntries name="ENTRY_TYPE"/>
+        <DBMapperTableEntries name="PARTNER_RESERVATION_NUMBER"/>
+        <DBMapperTableEntries name="CERTIFICATE_EXPLANATION"/>
+        <DBMapperTableEntries name="CHECKIN_DATE"/>
+        <DBMapperTableEntries name="CHECKOUT_DATE"/>
+        <DBMapperTableEntries name="PARTNER_BRANCH_NAME"/>
+        <DBMapperTableEntries name="VALID_UNTIL"/>
+        <DBMapperTableEntries name="ISSUE_COUNT"/>
+        <DBMapperTableEntries name="PARTNER_BRANCH_EXPL"/>
+        <DBMapperTableEntries name="FINANCE_TRANSACTION_SEQ"/>
+        <DBMapperTableEntries name="ISSUE_COUNT_CHILD"/>
+        <DBMapperTableEntries name="ISSUE_COUNT_INFANT"/>
+        <DBMapperTableEntries name="SERVICE_CHARGE"/>
+        <DBMapperTableEntries name="NUMBER_OF_DAYS"/>
+        <DBMapperTableEntries name="REDEPOSITED_POINTS"/>
+        <DBMapperTableEntries name="ACCOUNTING_SEQ"/>
+        <DBMapperTableEntries name="ACCOUNTING_REDEPOSIT_SEQ"/>
+        <DBMapperTableEntries name="PNR"/>
+        <DBMapperTableEntries name="CLIENT_UNIQUE_IDENTIFIER"/>
+        <DBMapperTableEntries name="RTA_SERIAL"/>
+        <DBMapperTableEntries name="REDEMPTION_CHANNEL"/>
+        <DBMapperTableEntries name="CANCEL_REASON_CODE"/>
+        <DBMapperTableEntries name="INVOICED"/>
+        <DBMapperTableEntries name="INVOICED_DATE"/>
+        <DBMapperTableEntries name="INSERTED_BY"/>
+        <DBMapperTableEntries name="INSERT_DATE"/>
+        <DBMapperTableEntries name="AMENDED_BY"/>
+        <DBMapperTableEntries name="AMEND_DATE"/>
+        <DBMapperTableEntries name="REF_ACT_SEQ"/>
+        <DBMapperTableEntries name="FEE_AWD_SEQ"/>
+        <DBMapperTableEntries name="ISSUING_CITY_CODE"/>
+        <DBMapperTableEntries name="ISSUING_AGENT_INITIALS"/>
+        <DBMapperTableEntries name="AWARD_CREDIT"/>
+        <DBMapperTableEntries name="REDEPOSITED_AWARD_CREDIT"/>
+        <DBMapperTableEntries name="CASH_AMOUNT"/>
+        <DBMapperTableEntries name="HOTEL_SERVICE_TYPE"/>
+        <DBMapperTableEntries name="CAR_CLASS_TYPE"/>
+        <DBMapperTableEntries name="MIGRATION_REFERENCE"/>
+        <DBMapperTableEntries name="ISSUING_OFFICE_ID"/>
+        <DBMapperTableEntries name="FARE_BASIS"/>
+        <DBMapperTableEntries name="PROCESS_STATUS"/>
+        <DBMapperTableEntries name="BOOKING_DATE"/>
+        <DBMapperTableEntries name="ISSUE_DATE_TIME"/>
+        <DBMapperTableEntries name="ACC_NO"/>
+        <DBMapperTableEntries name="PROMOTION_CODE"/>
+        <DBMapperTableEntries name="RET_PROMOTION_CODE"/>
+        <DBMapperTableEntries name="STEP3_PROMOTION_CODE"/>
+        <DBMapperTableEntries name="STEP4_PROMOTION_CODE"/>
+        <DBMapperTableEntries name="STEP5_PROMOTION_CODE"/>
+        <DBMapperTableEntries name="STEP6_PROMOTION_CODE"/>
+        <DBMapperTableEntries name="STEP7_PROMOTION_CODE"/>
+        <DBMapperTableEntries name="STEP8_PROMOTION_CODE"/>
+        <DBMapperTableEntries name="OLD_FLYER_ID"/>
+        <DBMapperTableEntries name="PNR_ISN"/>
+        <DBMapperTableEntries name="EXPLANATION"/>
+      </InputTables>
+      <OutputTables name="STG_T_FDL_LYL_TRN_REDEMPTION_LRY" tableName="STG_T_FDL_LYL_TRN_REDEMPTION_LRY">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="AWD.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="LYL_TRN_CODE" expression="AWD.ID || 'Redemption'"/>
+        <DBMapperTableEntries name="AWARD_CODE" expression="AWD.AWD_CODE"/>
+        <DBMapperTableEntries name="AWARD_CLAIM_DTTM" expression="AWD.CLAIM_DATE"/>
+        <DBMapperTableEntries name="AWARD_USAGE_TYPE_CODE" expression="AWD.AWARDUSAGETYPE"/>
+        <DBMapperTableEntries name="REDEPOSITED_POINTS_AMT" expression="NVL(AWD.REDEPOSITED_POINTS, 0)"/>
+        <FilterEntries name="where" expression="AWD.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_FDL_LYL_TRN_REDEMPTION_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_FDL_LYL_TRN_REDEMPTION_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_FDL_LYL_TRN_REDEMPTION_LRY"/>
+    <metadata connector="TABLE" label="STG_T_FDL_LYL_TRN_REDEMPTION_LRY" name="tELTOracleOutput_1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="LYL_TRN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="AWARD_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="AWARD_CLAIM_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="AWARD_USAGE_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="18" name="REDEPOSITED_POINTS_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_FF_MEMBER_AWD" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_FDL_LYL_TRN_REDEMPTION_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_FDL_LYL_TRN_REDEMPTION_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
