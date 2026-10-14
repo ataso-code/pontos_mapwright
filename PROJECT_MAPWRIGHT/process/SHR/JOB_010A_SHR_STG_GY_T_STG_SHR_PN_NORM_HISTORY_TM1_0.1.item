@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_SHR_PN_NORM_HISTORY_TM1&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_4"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6OYVIcMNEfGRB8-8_sKJtQ - T_KVS_PN_NORM"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_KVS_PN_NORM&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSEXT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_KVS_PN_NORM"/>
+    <metadata connector="TABLE" label="DGYTODSEXT.T_KVS_PN_NORM" name="table1">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="DIV_EXT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MAIN_DIV_EXT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="MAIN_PORTFOLIO_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MAIN_PORTFOLIO_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="MAIN_PORTFOLIO_TASK_CODE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="MAIN_PORTFOLIO_TASK_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MAIN_PORTFOLIO_TASK_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DEPENDENT_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DEPENDENT_PF_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DEPENDENT_PF_TASK_CODE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="DEPENDENT_PF_TASK_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DEPENDENT_PF_TASK_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_N"/>
+    <metadata connector="TABLE" label="EXP_N" name="EXP_N">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="DIV_EXT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MAIN_DIV_EXT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="MAIN_PORTFOLIO_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MAIN_PORTFOLIO_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="MAIN_PORTFOLIO_TASK_CODE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="MAIN_PORTFOLIO_TASK_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MAIN_PORTFOLIO_TASK_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DEPENDENT_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DEPENDENT_PF_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DEPENDENT_PF_TASK_CODE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="DEPENDENT_PF_TASK_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DEPENDENT_PF_TASK_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSEXT.T_KVS_PN_NORM" tableName="DGYTODSEXT.T_KVS_PN_NORM" joinType="NO_JOIN" alias="KVS">
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="DIV_EXT_ID"/>
+        <DBMapperTableEntries name="MAIN_DIV_EXT_ID"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_CODE"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_NAME"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_TASK_CODE"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_TASK_NAME"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_TASK_GROUP"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_CODE"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_NAME"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_TASK_CODE"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_TASK_NAME"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_TASK_GROUP"/>
+      </InputTables>
+      <InputTables name="EXP_LOGX" tableName="EXP_LOGX" joinType="INNER_JOIN" alias="EXP_LOGX">
+        <DBMapperTableEntries name="MANUAL_FILE_ID" expression="KVS.MANUEL_FILE_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="LOAD_DATE" expression="KVS.REPORT_DATE" join="true" operator="="/>
+      </InputTables>
+      <OutputTables name="EXP_N" tableName="EXP_N">
+        <DBMapperTableEntries name="REPORT_DATE" expression="KVS.REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID" expression="KVS.MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="DIV_EXT_ID" expression="KVS.DIV_EXT_ID"/>
+        <DBMapperTableEntries name="MAIN_DIV_EXT_ID" expression="KVS.MAIN_DIV_EXT_ID"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_CODE" expression="KVS.MAIN_PORTFOLIO_CODE"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_NAME" expression="KVS.MAIN_PORTFOLIO_NAME"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_TASK_CODE" expression="KVS.MAIN_PORTFOLIO_TASK_CODE"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_TASK_NAME" expression="KVS.MAIN_PORTFOLIO_TASK_NAME"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_TASK_GROUP" expression="KVS.MAIN_PORTFOLIO_TASK_GROUP"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_CODE" expression="KVS.DEPENDENT_PF_CODE"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_NAME" expression="KVS.DEPENDENT_PF_NAME"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_TASK_CODE" expression="KVS.DEPENDENT_PF_TASK_CODE"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_TASK_NAME" expression="KVS.DEPENDENT_PF_TASK_NAME"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_TASK_GROUP" expression="KVS.DEPENDENT_PF_TASK_GROUP"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-704" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_7"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_T-cKYMdiEfGy28EcxkB-Aw - V_TDM_MANUEL_FILE_LOG"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;V_TDM_MANUEL_FILE_LOG&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DORTODSKVS&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_V_TDM_MANUEL_FILE_LOG"/>
+    <metadata connector="TABLE" label="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" name="table1">
+      <column key="false" length="4000" name="COL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LATEST_FILE_ID_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LATEST_LOAD_DATE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LOAD_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LOAD_DATE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_ID_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-448" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_4"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_C"/>
+    <metadata connector="TABLE" label="EXP_C" name="EXP_C">
+      <column key="false" length="4000" name="MANUAL_FILE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LOAD_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" tableName="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" joinType="NO_JOIN" alias="L">
+        <DBMapperTableEntries name="COL"/>
+        <DBMapperTableEntries name="LATEST_FILE_ID_1"/>
+        <DBMapperTableEntries name="LATEST_LOAD_DATE_1"/>
+        <DBMapperTableEntries name="LOAD_DATE"/>
+        <DBMapperTableEntries name="LOAD_DATE_1"/>
+        <DBMapperTableEntries name="MANUAL_FILE_ID"/>
+        <DBMapperTableEntries name="MANUAL_FILE_ID_1"/>
+        <DBMapperTableEntries name="MANUAL_FILE_NAME"/>
+        <DBMapperTableEntries name="STATUS_CODE"/>
+      </InputTables>
+      <OutputTables name="EXP_C" tableName="EXP_C">
+        <DBMapperTableEntries name="MANUAL_FILE_ID" expression="L.MANUAL_FILE_ID"/>
+        <DBMapperTableEntries name="LOAD_DATE" expression="L.LOAD_DATE"/>
+        <DBMapperTableEntries name="RN" expression="ROW_NUMBER() OVER (ORDER BY L.LOAD_DATE DESC, L.MANUAL_FILE_ID DESC)"/>
+        <FilterEntries name="where" expression="L.MANUAL_FILE_NAME = 'NORM' AND L.STATUS_CODE = 'O' AND L.LOAD_DATE &lt;= TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="-192" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_3"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_LOGX"/>
+    <metadata connector="TABLE" label="EXP_LOGX" name="EXP_LOGX">
+      <column key="false" length="38" name="MANUAL_FILE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LOAD_DATE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_C" tableName="EXP_C" joinType="NO_JOIN" alias="EXP_C">
+        <DBMapperTableEntries name="MANUAL_FILE_ID"/>
+        <DBMapperTableEntries name="LOAD_DATE"/>
+        <DBMapperTableEntries name="RN"/>
+      </InputTables>
+      <OutputTables name="EXP_LOGX" tableName="EXP_LOGX">
+        <DBMapperTableEntries name="MANUAL_FILE_ID" expression="EXP_C.MANUAL_FILE_ID"/>
+        <DBMapperTableEntries name="LOAD_DATE" expression="EXP_C.LOAD_DATE"/>
+        <FilterEntries name="where" expression="EXP_C.RN = 1" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_N"/>
+    <metadata connector="TABLE" label="T_STG_SHR_PN_NORM_HISTORY_TM1" name="T_STG_SHR_PN_NORM_HISTORY_TM1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="PN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="TM_PORTFOLIO_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TM_PORTFOLIO_TASK_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TM_PORTFOLIO_TASK_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TM_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TM_GTP_POS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TL_PORTFOLIO_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TL_PORTFOLIO_TASK_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TL_PORTFOLIO_TASK_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TL_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TL_GTP_POS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_N" tableName="EXP_N" joinType="NO_JOIN" alias="EXP_N">
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="DIV_EXT_ID"/>
+        <DBMapperTableEntries name="MAIN_DIV_EXT_ID"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_CODE"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_NAME"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_TASK_CODE"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_TASK_NAME"/>
+        <DBMapperTableEntries name="MAIN_PORTFOLIO_TASK_GROUP"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_CODE"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_NAME"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_TASK_CODE"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_TASK_NAME"/>
+        <DBMapperTableEntries name="DEPENDENT_PF_TASK_GROUP"/>
+      </InputTables>
+      <InputTables name="EXP_P" tableName="EXP_P" joinType="INNER_JOIN" alias="EXP_P">
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="BRANCH_CODE"/>
+        <DBMapperTableEntries name="DIV_EXT_ID"/>
+        <DBMapperTableEntries name="PF_CODE"/>
+        <DBMapperTableEntries name="PF_NAME" expression="EXP_N.MAIN_PORTFOLIO_NAME" join="true" operator="="/>
+        <DBMapperTableEntries name="PF_DUTY_CODE"/>
+        <DBMapperTableEntries name="PF_DUTY_NAME"/>
+        <DBMapperTableEntries name="REGISTRATION_CONTROL"/>
+        <DBMapperTableEntries name="PF_DUTY_GROUP"/>
+        <DBMapperTableEntries name="GTP_USER_CODE"/>
+      </InputTables>
+      <InputTables name="EXP_PD" tableName="EXP_PD" joinType="INNER_JOIN" alias="EXP_PD">
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="BRANCH_CODE"/>
+        <DBMapperTableEntries name="DIV_EXT_ID"/>
+        <DBMapperTableEntries name="PF_CODE"/>
+        <DBMapperTableEntries name="PF_NAME" expression="EXP_N.DEPENDENT_PF_NAME" join="true" operator="="/>
+        <DBMapperTableEntries name="PF_DUTY_CODE"/>
+        <DBMapperTableEntries name="PF_DUTY_NAME"/>
+        <DBMapperTableEntries name="REGISTRATION_CONTROL"/>
+        <DBMapperTableEntries name="PF_DUTY_GROUP"/>
+        <DBMapperTableEntries name="GTP_USER_CODE"/>
+      </InputTables>
+      <OutputTables name="T_STG_SHR_PN_NORM_HISTORY_TM1" tableName="T_STG_SHR_PN_NORM_HISTORY_TM1">
+        <DBMapperTableEntries name="ETL_DATE" expression="TO_DATE('04.09.2025', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="'GTP'"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="PN_DATE" expression="TO_DATE('04.09.2025', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="TM_PORTFOLIO_CODE" expression="EXP_N.MAIN_PORTFOLIO_CODE"/>
+        <DBMapperTableEntries name="TM_PORTFOLIO_TASK_CODE" expression="EXP_N.MAIN_PORTFOLIO_TASK_CODE"/>
+        <DBMapperTableEntries name="TM_PORTFOLIO_TASK_NAME" expression="EXP_N.MAIN_PORTFOLIO_TASK_NAME"/>
+        <DBMapperTableEntries name="TM_DIV_CODE" expression="EXP_P.DIV_EXT_ID"/>
+        <DBMapperTableEntries name="TM_GTP_POS_CODE" expression="EXP_P.GTP_USER_CODE"/>
+        <DBMapperTableEntries name="TL_PORTFOLIO_CODE" expression="EXP_N.DEPENDENT_PF_CODE"/>
+        <DBMapperTableEntries name="TL_PORTFOLIO_TASK_CODE" expression="EXP_N.DEPENDENT_PF_TASK_CODE"/>
+        <DBMapperTableEntries name="TL_PORTFOLIO_TASK_NAME" expression="EXP_N.DEPENDENT_PF_TASK_NAME"/>
+        <DBMapperTableEntries name="TL_DIV_CODE" expression="EXP_PD.DIV_EXT_ID"/>
+        <DBMapperTableEntries name="TL_GTP_POS_CODE" expression="EXP_PD.GTP_USER_CODE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_8"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6OYVIcMNEfGRB8-8_sKJtQ - T_KVS_PN_PORTFOY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_KVS_PN_PORTFOY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSEXT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_KVS_PN_PORTFOY"/>
+    <metadata connector="TABLE" label="DGYTODSEXT.T_KVS_PN_PORTFOY" name="table1">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="BRANCH_CODE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="DIV_EXT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PF_DUTY_CODE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_DUTY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="REGISTRATION_CONTROL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_DUTY_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GTP_USER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_5"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_P"/>
+    <metadata connector="TABLE" label="EXP_P" name="EXP_P">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="BRANCH_CODE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="DIV_EXT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PF_DUTY_CODE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_DUTY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="REGISTRATION_CONTROL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_DUTY_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GTP_USER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSEXT.T_KVS_PN_PORTFOY" tableName="DGYTODSEXT.T_KVS_PN_PORTFOY" joinType="NO_JOIN" alias="KVS1">
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="BRANCH_CODE"/>
+        <DBMapperTableEntries name="DIV_EXT_ID"/>
+        <DBMapperTableEntries name="PF_CODE"/>
+        <DBMapperTableEntries name="PF_NAME"/>
+        <DBMapperTableEntries name="PF_DUTY_CODE"/>
+        <DBMapperTableEntries name="PF_DUTY_NAME"/>
+        <DBMapperTableEntries name="REGISTRATION_CONTROL"/>
+        <DBMapperTableEntries name="PF_DUTY_GROUP"/>
+        <DBMapperTableEntries name="GTP_USER_CODE"/>
+      </InputTables>
+      <InputTables name="EXP_LOGX1" tableName="EXP_LOGX1" joinType="INNER_JOIN" alias="EXP_LOGX1">
+        <DBMapperTableEntries name="MANUAL_FILE_ID" expression="KVS1.MANUEL_FILE_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="LOAD_DATE" expression="KVS1.REPORT_DATE" join="true" operator="="/>
+      </InputTables>
+      <OutputTables name="EXP_P" tableName="EXP_P">
+        <DBMapperTableEntries name="REPORT_DATE" expression="KVS1.REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID" expression="KVS1.MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="BRANCH_CODE" expression="KVS1.BRANCH_CODE"/>
+        <DBMapperTableEntries name="DIV_EXT_ID" expression="KVS1.DIV_EXT_ID"/>
+        <DBMapperTableEntries name="PF_CODE" expression="KVS1.PF_CODE"/>
+        <DBMapperTableEntries name="PF_NAME" expression="KVS1.PF_NAME"/>
+        <DBMapperTableEntries name="PF_DUTY_CODE" expression="KVS1.PF_DUTY_CODE"/>
+        <DBMapperTableEntries name="PF_DUTY_NAME" expression="KVS1.PF_DUTY_NAME"/>
+        <DBMapperTableEntries name="REGISTRATION_CONTROL" expression="KVS1.REGISTRATION_CONTROL"/>
+        <DBMapperTableEntries name="PF_DUTY_GROUP" expression="KVS1.PF_DUTY_GROUP"/>
+        <DBMapperTableEntries name="GTP_USER_CODE" expression="KVS1.GTP_USER_CODE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-704" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_11"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_T-cKYMdiEfGy28EcxkB-Aw - V_TDM_MANUEL_FILE_LOG"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;V_TDM_MANUEL_FILE_LOG&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DORTODSKVS&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_V_TDM_MANUEL_FILE_LOG"/>
+    <metadata connector="TABLE" label="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" name="table1">
+      <column key="false" length="4000" name="COL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LATEST_FILE_ID_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LATEST_LOAD_DATE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LOAD_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LOAD_DATE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_ID_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-448" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_7"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_C1"/>
+    <metadata connector="TABLE" label="EXP_C1" name="EXP_C1">
+      <column key="false" length="4000" name="MANUAL_FILE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LOAD_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" tableName="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" joinType="NO_JOIN" alias="L1">
+        <DBMapperTableEntries name="COL"/>
+        <DBMapperTableEntries name="LATEST_FILE_ID_1"/>
+        <DBMapperTableEntries name="LATEST_LOAD_DATE_1"/>
+        <DBMapperTableEntries name="LOAD_DATE"/>
+        <DBMapperTableEntries name="LOAD_DATE_1"/>
+        <DBMapperTableEntries name="MANUAL_FILE_ID"/>
+        <DBMapperTableEntries name="MANUAL_FILE_ID_1"/>
+        <DBMapperTableEntries name="MANUAL_FILE_NAME"/>
+        <DBMapperTableEntries name="STATUS_CODE"/>
+      </InputTables>
+      <OutputTables name="EXP_C1" tableName="EXP_C1">
+        <DBMapperTableEntries name="MANUAL_FILE_ID" expression="L1.MANUAL_FILE_ID"/>
+        <DBMapperTableEntries name="LOAD_DATE" expression="L1.LOAD_DATE"/>
+        <DBMapperTableEntries name="RN" expression="ROW_NUMBER() OVER (ORDER BY L1.LOAD_DATE DESC, L1.MANUAL_FILE_ID DESC)"/>
+        <FilterEntries name="where" expression="L1.MANUAL_FILE_NAME = 'PORTFOLIO' AND L1.STATUS_CODE = 'O' AND L1.LOAD_DATE &lt;= TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="-192" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_6"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_LOGX1"/>
+    <metadata connector="TABLE" label="EXP_LOGX1" name="EXP_LOGX1">
+      <column key="false" length="38" name="MANUAL_FILE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LOAD_DATE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_C1" tableName="EXP_C1" joinType="NO_JOIN" alias="EXP_C1">
+        <DBMapperTableEntries name="MANUAL_FILE_ID"/>
+        <DBMapperTableEntries name="LOAD_DATE"/>
+        <DBMapperTableEntries name="RN"/>
+      </InputTables>
+      <OutputTables name="EXP_LOGX1" tableName="EXP_LOGX1">
+        <DBMapperTableEntries name="MANUAL_FILE_ID" expression="EXP_C1.MANUAL_FILE_ID"/>
+        <DBMapperTableEntries name="LOAD_DATE" expression="EXP_C1.LOAD_DATE"/>
+        <FilterEntries name="where" expression="EXP_C1.RN = 1" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_12"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6OYVIcMNEfGRB8-8_sKJtQ - T_KVS_PN_PORTFOY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_KVS_PN_PORTFOY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSEXT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_KVS_PN_PORTFOY"/>
+    <metadata connector="TABLE" label="DGYTODSEXT.T_KVS_PN_PORTFOY" name="table1">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="BRANCH_CODE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="DIV_EXT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PF_DUTY_CODE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_DUTY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="REGISTRATION_CONTROL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_DUTY_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GTP_USER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_8"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_PD"/>
+    <metadata connector="TABLE" label="EXP_PD" name="EXP_PD">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="BRANCH_CODE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="DIV_EXT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PF_DUTY_CODE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_DUTY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="REGISTRATION_CONTROL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_DUTY_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GTP_USER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSEXT.T_KVS_PN_PORTFOY" tableName="DGYTODSEXT.T_KVS_PN_PORTFOY" joinType="NO_JOIN" alias="KVS2">
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="BRANCH_CODE"/>
+        <DBMapperTableEntries name="DIV_EXT_ID"/>
+        <DBMapperTableEntries name="PF_CODE"/>
+        <DBMapperTableEntries name="PF_NAME"/>
+        <DBMapperTableEntries name="PF_DUTY_CODE"/>
+        <DBMapperTableEntries name="PF_DUTY_NAME"/>
+        <DBMapperTableEntries name="REGISTRATION_CONTROL"/>
+        <DBMapperTableEntries name="PF_DUTY_GROUP"/>
+        <DBMapperTableEntries name="GTP_USER_CODE"/>
+      </InputTables>
+      <InputTables name="EXP_LOGX2" tableName="EXP_LOGX2" joinType="INNER_JOIN" alias="EXP_LOGX2">
+        <DBMapperTableEntries name="MANUAL_FILE_ID" expression="KVS2.MANUEL_FILE_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="LOAD_DATE" expression="KVS2.REPORT_DATE" join="true" operator="="/>
+      </InputTables>
+      <OutputTables name="EXP_PD" tableName="EXP_PD">
+        <DBMapperTableEntries name="REPORT_DATE" expression="KVS2.REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID" expression="KVS2.MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="BRANCH_CODE" expression="KVS2.BRANCH_CODE"/>
+        <DBMapperTableEntries name="DIV_EXT_ID" expression="KVS2.DIV_EXT_ID"/>
+        <DBMapperTableEntries name="PF_CODE" expression="KVS2.PF_CODE"/>
+        <DBMapperTableEntries name="PF_NAME" expression="KVS2.PF_NAME"/>
+        <DBMapperTableEntries name="PF_DUTY_CODE" expression="KVS2.PF_DUTY_CODE"/>
+        <DBMapperTableEntries name="PF_DUTY_NAME" expression="KVS2.PF_DUTY_NAME"/>
+        <DBMapperTableEntries name="REGISTRATION_CONTROL" expression="KVS2.REGISTRATION_CONTROL"/>
+        <DBMapperTableEntries name="PF_DUTY_GROUP" expression="KVS2.PF_DUTY_GROUP"/>
+        <DBMapperTableEntries name="GTP_USER_CODE" expression="KVS2.GTP_USER_CODE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-704" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_15"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_T-cKYMdiEfGy28EcxkB-Aw - V_TDM_MANUEL_FILE_LOG"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;V_TDM_MANUEL_FILE_LOG&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DORTODSKVS&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_V_TDM_MANUEL_FILE_LOG"/>
+    <metadata connector="TABLE" label="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" name="table1">
+      <column key="false" length="4000" name="COL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LATEST_FILE_ID_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LATEST_LOAD_DATE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LOAD_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LOAD_DATE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_ID_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-448" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_10"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_C2"/>
+    <metadata connector="TABLE" label="EXP_C2" name="EXP_C2">
+      <column key="false" length="4000" name="MANUAL_FILE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LOAD_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" tableName="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" joinType="NO_JOIN" alias="L2">
+        <DBMapperTableEntries name="COL"/>
+        <DBMapperTableEntries name="LATEST_FILE_ID_1"/>
+        <DBMapperTableEntries name="LATEST_LOAD_DATE_1"/>
+        <DBMapperTableEntries name="LOAD_DATE"/>
+        <DBMapperTableEntries name="LOAD_DATE_1"/>
+        <DBMapperTableEntries name="MANUAL_FILE_ID"/>
+        <DBMapperTableEntries name="MANUAL_FILE_ID_1"/>
+        <DBMapperTableEntries name="MANUAL_FILE_NAME"/>
+        <DBMapperTableEntries name="STATUS_CODE"/>
+      </InputTables>
+      <OutputTables name="EXP_C2" tableName="EXP_C2">
+        <DBMapperTableEntries name="MANUAL_FILE_ID" expression="L2.MANUAL_FILE_ID"/>
+        <DBMapperTableEntries name="LOAD_DATE" expression="L2.LOAD_DATE"/>
+        <DBMapperTableEntries name="RN" expression="ROW_NUMBER() OVER (ORDER BY L2.LOAD_DATE DESC, L2.MANUAL_FILE_ID DESC)"/>
+        <FilterEntries name="where" expression="L2.MANUAL_FILE_NAME = 'PORTFOLIO' AND L2.STATUS_CODE = 'O' AND L2.LOAD_DATE &lt;= TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="-192" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_9"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_LOGX2"/>
+    <metadata connector="TABLE" label="EXP_LOGX2" name="EXP_LOGX2">
+      <column key="false" length="38" name="MANUAL_FILE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LOAD_DATE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_C2" tableName="EXP_C2" joinType="NO_JOIN" alias="EXP_C2">
+        <DBMapperTableEntries name="MANUAL_FILE_ID"/>
+        <DBMapperTableEntries name="LOAD_DATE"/>
+        <DBMapperTableEntries name="RN"/>
+      </InputTables>
+      <OutputTables name="EXP_LOGX2" tableName="EXP_LOGX2">
+        <DBMapperTableEntries name="MANUAL_FILE_ID" expression="EXP_C2.MANUAL_FILE_ID"/>
+        <DBMapperTableEntries name="LOAD_DATE" expression="EXP_C2.LOAD_DATE"/>
+        <FilterEntries name="where" expression="EXP_C2.RN = 1" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_SHR_PN_NORM_HISTORY_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_SHR_PN_NORM_HISTORY_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_SHR_PN_NORM_HISTORY_TM1"/>
+    <metadata connector="TABLE" label="T_STG_SHR_PN_NORM_HISTORY_TM1" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="PN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="TM_PORTFOLIO_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TM_PORTFOLIO_TASK_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TM_PORTFOLIO_TASK_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TM_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TM_GTP_POS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TL_PORTFOLIO_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TL_PORTFOLIO_TASK_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TL_PORTFOLIO_TASK_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TL_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TL_GTP_POS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTODSEXT.T_KVS_PN_NORM" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_4" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_7" target="tELTOracleMap_4"/>
+  <connection connectorName="TABLE_REF" label="EXP_C" lineStyle="22" mergeOrder="0" metaname="EXP_C" outputId="0" source="tELTOracleMap_4" target="tELTOracleMap_3"/>
+  <connection connectorName="TABLE_REF" label="EXP_LOGX" lineStyle="22" mergeOrder="0" metaname="EXP_LOGX" outputId="0" source="tELTOracleMap_3" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_N" lineStyle="22" mergeOrder="0" metaname="EXP_N" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DGYTODSEXT.T_KVS_PN_PORTFOY" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_8" target="tELTOracleMap_5"/>
+  <connection connectorName="TABLE" label="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_11" target="tELTOracleMap_7"/>
+  <connection connectorName="TABLE_REF" label="EXP_C1" lineStyle="22" mergeOrder="0" metaname="EXP_C1" outputId="0" source="tELTOracleMap_7" target="tELTOracleMap_6"/>
+  <connection connectorName="TABLE_REF" label="EXP_LOGX1" lineStyle="22" mergeOrder="0" metaname="EXP_LOGX1" outputId="0" source="tELTOracleMap_6" target="tELTOracleMap_5"/>
+  <connection connectorName="TABLE_REF" label="EXP_P" lineStyle="22" mergeOrder="0" metaname="EXP_P" outputId="0" source="tELTOracleMap_5" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DGYTODSEXT.T_KVS_PN_PORTFOY" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_12" target="tELTOracleMap_8"/>
+  <connection connectorName="TABLE" label="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_15" target="tELTOracleMap_10"/>
+  <connection connectorName="TABLE_REF" label="EXP_C2" lineStyle="22" mergeOrder="0" metaname="EXP_C2" outputId="0" source="tELTOracleMap_10" target="tELTOracleMap_9"/>
+  <connection connectorName="TABLE_REF" label="EXP_LOGX2" lineStyle="22" mergeOrder="0" metaname="EXP_LOGX2" outputId="0" source="tELTOracleMap_9" target="tELTOracleMap_8"/>
+  <connection connectorName="TABLE_REF" label="EXP_PD" lineStyle="22" mergeOrder="0" metaname="EXP_PD" outputId="0" source="tELTOracleMap_8" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_SHR_PN_NORM_HISTORY_TM1" lineStyle="9" mergeOrder="0" metaname="T_STG_SHR_PN_NORM_HISTORY_TM1" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
