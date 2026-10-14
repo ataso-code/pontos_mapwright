@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTDWH.T_DWH_RPT_MDS&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_DWH_RPT_MDS_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_DWH_RPT_MDS_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_DWH_RPT_MDS_TM1"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_DWH_RPT_MDS_TM1" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="-1" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="SURVEY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="SURVEY_ACTION_DT_SHRT_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="DATA_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="PROCESS_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="SURVEY_ACTION_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="SURVEY_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PROCESS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="PROCESS_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE1_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE2_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE3_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE4_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="EMAIL1_ADDRESS_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="EMAIL2_ADDRESS_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="GB_CUS_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="GB_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="HOST_USER_NAME_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="HOST_USERID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="150" name="UNIT_NAME_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="UNIT_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="SEGMENT_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="N1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="NIY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="N2_N3_N4" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="X6" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="PERSONEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="BILGILENDIRME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="KDU" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="CONTACT_IP_NAME_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="JOB_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="JOB_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_STG_DWH_RPT_MDS_TM1"/>
+    <metadata connector="TABLE" label="T_DWH_RPT_MDS" name="T_DWH_RPT_MDS">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="-1" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="SURVEY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="SURVEY_ACTION_DT_SHRT_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="DATA_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="PROCESS_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="SURVEY_ACTION_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="SURVEY_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PROCESS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="PROCESS_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE1_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE2_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE3_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE4_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="EMAIL1_ADDRESS_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="EMAIL2_ADDRESS_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="GB_CUS_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="GB_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="HOST_USER_NAME_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="HOST_USERID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="150" name="UNIT_NAME_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="UNIT_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="SEGMENT_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="N1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="NIY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="N2_N3_N4" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="X6" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="PERSONEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="BILGILENDIRME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="KDU" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="CONTACT_IP_NAME_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="JOB_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="JOB_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTSTG.T_STG_DWH_RPT_MDS_TM1" tableName="DGYTSTG.T_STG_DWH_RPT_MDS_TM1" joinType="NO_JOIN" alias="T_STG_DWH_RPT_MDS_TM1">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="SURVEY_ID"/>
+        <DBMapperTableEntries name="SURVEY_ACTION_DT_SHRT_TEXT"/>
+        <DBMapperTableEntries name="DATA_DATE"/>
+        <DBMapperTableEntries name="PROCESS_DATE"/>
+        <DBMapperTableEntries name="SURVEY_ACTION_DATE"/>
+        <DBMapperTableEntries name="SURVEY_TYPE"/>
+        <DBMapperTableEntries name="PROCESS_CODE"/>
+        <DBMapperTableEntries name="PROCESS_TEXT"/>
+        <DBMapperTableEntries name="MOBILE_PHONE_NUM"/>
+        <DBMapperTableEntries name="MOBILE_PHONE1_NUM"/>
+        <DBMapperTableEntries name="MOBILE_PHONE2_NUM"/>
+        <DBMapperTableEntries name="MOBILE_PHONE3_NUM"/>
+        <DBMapperTableEntries name="MOBILE_PHONE4_NUM"/>
+        <DBMapperTableEntries name="EMAIL1_ADDRESS_TEXT"/>
+        <DBMapperTableEntries name="EMAIL2_ADDRESS_TEXT"/>
+        <DBMapperTableEntries name="GB_CUS_NAME"/>
+        <DBMapperTableEntries name="GB_CUS_CODE"/>
+        <DBMapperTableEntries name="HOST_USER_NAME_TEXT"/>
+        <DBMapperTableEntries name="HOST_USERID"/>
+        <DBMapperTableEntries name="UNIT_NAME_TEXT"/>
+        <DBMapperTableEntries name="UNIT_NUM"/>
+        <DBMapperTableEntries name="SEGMENT_TEXT"/>
+        <DBMapperTableEntries name="N1"/>
+        <DBMapperTableEntries name="NIY"/>
+        <DBMapperTableEntries name="N2_N3_N4"/>
+        <DBMapperTableEntries name="X6"/>
+        <DBMapperTableEntries name="PERSONEL"/>
+        <DBMapperTableEntries name="BILGILENDIRME"/>
+        <DBMapperTableEntries name="KDU"/>
+        <DBMapperTableEntries name="CONTACT_IP_NAME_TEXT"/>
+        <DBMapperTableEntries name="JOB_CODE"/>
+        <DBMapperTableEntries name="JOB_NAME"/>
+      </InputTables>
+      <OutputTables name="T_DWH_RPT_MDS" tableName="T_DWH_RPT_MDS">
+        <DBMapperTableEntries name="ETL_DATE" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="SURVEY_ID" expression="T_STG_DWH_RPT_MDS_TM1.SURVEY_ID"/>
+        <DBMapperTableEntries name="SURVEY_ACTION_DT_SHRT_TEXT" expression="T_STG_DWH_RPT_MDS_TM1.SURVEY_ACTION_DT_SHRT_TEXT"/>
+        <DBMapperTableEntries name="DATA_DATE" expression="T_STG_DWH_RPT_MDS_TM1.DATA_DATE"/>
+        <DBMapperTableEntries name="PROCESS_DATE" expression="T_STG_DWH_RPT_MDS_TM1.PROCESS_DATE"/>
+        <DBMapperTableEntries name="SURVEY_ACTION_DATE" expression="T_STG_DWH_RPT_MDS_TM1.SURVEY_ACTION_DATE"/>
+        <DBMapperTableEntries name="SURVEY_TYPE" expression="T_STG_DWH_RPT_MDS_TM1.SURVEY_TYPE"/>
+        <DBMapperTableEntries name="PROCESS_CODE" expression="T_STG_DWH_RPT_MDS_TM1.PROCESS_CODE"/>
+        <DBMapperTableEntries name="PROCESS_TEXT" expression="T_STG_DWH_RPT_MDS_TM1.PROCESS_TEXT"/>
+        <DBMapperTableEntries name="MOBILE_PHONE_NUM" expression="T_STG_DWH_RPT_MDS_TM1.MOBILE_PHONE_NUM"/>
+        <DBMapperTableEntries name="MOBILE_PHONE1_NUM" expression="T_STG_DWH_RPT_MDS_TM1.MOBILE_PHONE1_NUM"/>
+        <DBMapperTableEntries name="MOBILE_PHONE2_NUM" expression="T_STG_DWH_RPT_MDS_TM1.MOBILE_PHONE2_NUM"/>
+        <DBMapperTableEntries name="MOBILE_PHONE3_NUM" expression="T_STG_DWH_RPT_MDS_TM1.MOBILE_PHONE3_NUM"/>
+        <DBMapperTableEntries name="MOBILE_PHONE4_NUM" expression="T_STG_DWH_RPT_MDS_TM1.MOBILE_PHONE4_NUM"/>
+        <DBMapperTableEntries name="EMAIL1_ADDRESS_TEXT" expression="T_STG_DWH_RPT_MDS_TM1.EMAIL1_ADDRESS_TEXT"/>
+        <DBMapperTableEntries name="EMAIL2_ADDRESS_TEXT" expression="T_STG_DWH_RPT_MDS_TM1.EMAIL2_ADDRESS_TEXT"/>
+        <DBMapperTableEntries name="GB_CUS_NAME" expression="T_STG_DWH_RPT_MDS_TM1.GB_CUS_NAME"/>
+        <DBMapperTableEntries name="GB_CUS_CODE" expression="T_STG_DWH_RPT_MDS_TM1.GB_CUS_CODE"/>
+        <DBMapperTableEntries name="HOST_USER_NAME_TEXT" expression="T_STG_DWH_RPT_MDS_TM1.HOST_USER_NAME_TEXT"/>
+        <DBMapperTableEntries name="HOST_USERID" expression="T_STG_DWH_RPT_MDS_TM1.HOST_USERID"/>
+        <DBMapperTableEntries name="UNIT_NAME_TEXT" expression="T_STG_DWH_RPT_MDS_TM1.UNIT_NAME_TEXT"/>
+        <DBMapperTableEntries name="UNIT_NUM" expression="T_STG_DWH_RPT_MDS_TM1.UNIT_NUM"/>
+        <DBMapperTableEntries name="SEGMENT_TEXT" expression="T_STG_DWH_RPT_MDS_TM1.SEGMENT_TEXT"/>
+        <DBMapperTableEntries name="N1" expression="T_STG_DWH_RPT_MDS_TM1.N1"/>
+        <DBMapperTableEntries name="NIY" expression="T_STG_DWH_RPT_MDS_TM1.NIY"/>
+        <DBMapperTableEntries name="N2_N3_N4" expression="T_STG_DWH_RPT_MDS_TM1.N2_N3_N4"/>
+        <DBMapperTableEntries name="X6" expression="T_STG_DWH_RPT_MDS_TM1.X6"/>
+        <DBMapperTableEntries name="PERSONEL" expression="T_STG_DWH_RPT_MDS_TM1.PERSONEL"/>
+        <DBMapperTableEntries name="BILGILENDIRME" expression="T_STG_DWH_RPT_MDS_TM1.BILGILENDIRME"/>
+        <DBMapperTableEntries name="KDU" expression="T_STG_DWH_RPT_MDS_TM1.KDU"/>
+        <DBMapperTableEntries name="CONTACT_IP_NAME_TEXT" expression="T_STG_DWH_RPT_MDS_TM1.CONTACT_IP_NAME_TEXT"/>
+        <DBMapperTableEntries name="JOB_CODE" expression="T_STG_DWH_RPT_MDS_TM1.JOB_CODE"/>
+        <DBMapperTableEntries name="JOB_NAME" expression="T_STG_DWH_RPT_MDS_TM1.JOB_NAME"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ - T_DWH_RPT_MDS"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_DWH_RPT_MDS&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTDWH&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_DWH_RPT_MDS"/>
+    <metadata connector="TABLE" label="T_DWH_RPT_MDS" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="-1" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="SURVEY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="SURVEY_ACTION_DT_SHRT_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="DATA_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="PROCESS_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="SURVEY_ACTION_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="SURVEY_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PROCESS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="PROCESS_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE1_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE2_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE3_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MOBILE_PHONE4_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="EMAIL1_ADDRESS_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="EMAIL2_ADDRESS_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="GB_CUS_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="GB_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="HOST_USER_NAME_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="HOST_USERID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="150" name="UNIT_NAME_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="UNIT_NUM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="SEGMENT_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="N1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="NIY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="N2_N3_N4" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="X6" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="PERSONEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="BILGILENDIRME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="KDU" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="CONTACT_IP_NAME_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="JOB_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="JOB_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_DWH_RPT_MDS_TM1" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_DWH_RPT_MDS" lineStyle="9" mergeOrder="0" metaname="T_DWH_RPT_MDS" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
