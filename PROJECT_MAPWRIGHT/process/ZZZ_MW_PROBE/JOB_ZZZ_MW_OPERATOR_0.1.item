@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_SHR_EQ_DLY_PL_TM1_TMP01&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_GTPTAX_STOCK"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_GTPTAX_STOCK&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_GTPTAX_STOCK"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_GTPTAX_STOCK" name="table1">
+      <column key="false" length="15" name="TAX_AVG_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ORG_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="VALUE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="STOCK_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="FIN_INST_TYPE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="CUSTOMER_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FIN_INST_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="COST_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="TRANS_TYPE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="NOMINAL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="COMMISSION_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="REMAINING" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="UNIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="EXCESS_PER_CP_PAYMENT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="EXCHANGE_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="TAX_FREE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_UPD" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="LAST_UPD_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="31" name="RELATED_AVERAGE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="CANCEL_REMAINING_VALUE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="PERIOD" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="ACCOUNT_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_GTPTAX_STOCK"/>
+    <metadata connector="TABLE" label="T_STG_SHR_EQ_DLY_PL_TM1_TMP01" name="T_STG_SHR_EQ_DLY_PL_TM1_TMP01">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="PREV_MAX_VALUE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="31" name="RELATED_AVERAGE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSOPR.T_GTPTAX_STOCK" tableName="DGYTODSOPR.T_GTPTAX_STOCK" joinType="NO_JOIN" alias="A">
+        <DBMapperTableEntries name="TAX_AVG_ID"/>
+        <DBMapperTableEntries name="ORG_ID"/>
+        <DBMapperTableEntries name="VALUE_DATE"/>
+        <DBMapperTableEntries name="STOCK_DATE"/>
+        <DBMapperTableEntries name="FIN_INST_TYPE_ID"/>
+        <DBMapperTableEntries name="CUSTOMER_ID"/>
+        <DBMapperTableEntries name="FIN_INST_ID"/>
+        <DBMapperTableEntries name="COST_DATE"/>
+        <DBMapperTableEntries name="TRANS_TYPE_ID"/>
+        <DBMapperTableEntries name="NOMINAL"/>
+        <DBMapperTableEntries name="PRICE"/>
+        <DBMapperTableEntries name="COMMISSION_AMOUNT"/>
+        <DBMapperTableEntries name="AMOUNT"/>
+        <DBMapperTableEntries name="REMAINING"/>
+        <DBMapperTableEntries name="UNIT"/>
+        <DBMapperTableEntries name="EXCESS_PER_CP_PAYMENT"/>
+        <DBMapperTableEntries name="EXCHANGE_RATE"/>
+        <DBMapperTableEntries name="TAX_FREE"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="LAST_UPD"/>
+        <DBMapperTableEntries name="LAST_UPD_BY"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="RELATED_AVERAGE_ID"/>
+        <DBMapperTableEntries name="CANCEL_REMAINING_VALUE"/>
+        <DBMapperTableEntries name="PERIOD"/>
+        <DBMapperTableEntries name="ACCOUNT_ID"/>
+      </InputTables>
+      <InputTables name="B" tableName="DGYTODSOPR.T_GTPTAX_STOCK" joinType="LEFT_OUTER_JOIN" alias="B">
+        <DBMapperTableEntries name="TAX_AVG_ID"/>
+        <DBMapperTableEntries name="ORG_ID"/>
+        <DBMapperTableEntries name="VALUE_DATE" expression="A.VALUE_DATE" join="true" operator="&lt;"/>
+        <DBMapperTableEntries name="STOCK_DATE"/>
+        <DBMapperTableEntries name="FIN_INST_TYPE_ID"/>
+        <DBMapperTableEntries name="CUSTOMER_ID"/>
+        <DBMapperTableEntries name="FIN_INST_ID"/>
+        <DBMapperTableEntries name="COST_DATE"/>
+        <DBMapperTableEntries name="TRANS_TYPE_ID"/>
+        <DBMapperTableEntries name="NOMINAL"/>
+        <DBMapperTableEntries name="PRICE"/>
+        <DBMapperTableEntries name="COMMISSION_AMOUNT"/>
+        <DBMapperTableEntries name="AMOUNT"/>
+        <DBMapperTableEntries name="REMAINING"/>
+        <DBMapperTableEntries name="UNIT"/>
+        <DBMapperTableEntries name="EXCESS_PER_CP_PAYMENT"/>
+        <DBMapperTableEntries name="EXCHANGE_RATE"/>
+        <DBMapperTableEntries name="TAX_FREE"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="LAST_UPD"/>
+        <DBMapperTableEntries name="LAST_UPD_BY"/>
+        <DBMapperTableEntries name="STATUS" expression="1" join="true" operator="="/>
+        <DBMapperTableEntries name="RELATED_AVERAGE_ID" expression="A.RELATED_AVERAGE_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="CANCEL_REMAINING_VALUE"/>
+        <DBMapperTableEntries name="PERIOD"/>
+        <DBMapperTableEntries name="ACCOUNT_ID"/>
+      </InputTables>
+      <OutputTables name="T_STG_SHR_EQ_DLY_PL_TM1_TMP01" tableName="T_STG_SHR_EQ_DLY_PL_TM1_TMP01">
+        <DBMapperTableEntries name="ETL_DATE" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="PREV_MAX_VALUE_DATE" expression="MAX(B.VALUE_DATE)"/>
+        <DBMapperTableEntries name="RELATED_AVERAGE_ID" expression="B.RELATED_AVERAGE_ID"/>
+        <FilterEntries name="where" expression="A.STATUS = 1 AND A.VALUE_DATE = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+        <FilterEntries name="other" expression="GROUP BY B.RELATED_AVERAGE_ID, A.VALUE_DATE" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_SHR_EQ_DLY_PL_TM1_TMP01"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_SHR_EQ_DLY_PL_TM1_TMP01&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_SHR_EQ_DLY_PL_TM1_TMP01"/>
+    <metadata connector="TABLE" label="T_STG_SHR_EQ_DLY_PL_TM1_TMP01" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="PREV_MAX_VALUE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="31" name="RELATED_AVERAGE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_GTPTAX_STOCK" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_SHR_EQ_DLY_PL_TM1_TMP01" lineStyle="9" mergeOrder="0" metaname="T_STG_SHR_EQ_DLY_PL_TM1_TMP01" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
