@@ -21,7 +21,7 @@
     <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_CDL_D_COUPON_01_EXCH_DT&quot;"/>
     <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
   </node>
-  <node componentName="tELTOracleInput" posX="-192" posY="160">
+  <node componentName="tELTOracleInput" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
     <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_RES_COUPON_HST"/>
@@ -43,7 +43,7 @@
       <column key="false" length="-1" name="ISSUE_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" posX="64" posY="160">
+  <node componentName="tELTOracleMap" posX="320" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
@@ -78,7 +78,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleMap" posX="320" posY="160">
+  <node componentName="tELTOracleMap" posX="576" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
@@ -105,7 +105,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleOutput" posX="576" posY="160">
+  <node componentName="tELTOracleOutput" posX="832" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
     <elementParameter name="DATA_ACTION" value="INSERT"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
