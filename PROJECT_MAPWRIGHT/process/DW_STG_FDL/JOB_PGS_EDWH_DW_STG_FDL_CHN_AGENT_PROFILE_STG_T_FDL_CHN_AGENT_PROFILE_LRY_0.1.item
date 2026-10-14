@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_FDL_CHN_AGENT_PROFILE_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_CRS_PROFILE"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_CRS_PROFILE&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_CRS_PROFILE"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_CRS_PROFILE" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PROFILE_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="64" name="COMPANY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="COMPANY_SHORT_ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="32" name="AIRIMP_PROCESSING_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="SITA_PNR_ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="SITA_AVS_ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="SITA_SSIM_ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SR_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="16" name="BATAP_COMMUNICATION_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="45" name="BATAP_REAL_SYSTEM_IP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="45" name="BATAP_BACKUP_SYSTEM_IP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="BATAP_REAL_PORT_NUMBER" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="BATAP_BACKUP_PORT_NUMBER" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="32" name="PAYMENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="32" name="SERVER_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="16" name="MATIP_COMMUNICATION_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="45" name="MATIP_SYSTEM_IP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MATIP_PORT_NUMBER" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="RECORDLOCATERTYPE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="32" name="GROUPPNR_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="USE_TRL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="64" name="TYPEB_LOG_FILE_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="DEFAULT_PAX_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="32" name="ADDSEG_INFM_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="128" name="NETWORK_ERROR_EMAIL_LIST" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="128" name="MESSAGE_ERROR_EMAIL_LIST" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="128" name="NETWORK_ERROR_SMS_LIST" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="32" name="SENDER_EMAIL_ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="ENCRYPTION_KEY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="USE_CANCELED_PNR_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="DOES_THIS_HAVE_SUBAGENTS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MAX_AVS_MESSAGE_LINE_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="DEFAULT_CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="COMPANY_CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="128" name="TYPEA_LOG_FILE_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ID_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="SITA_PNL_ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="16" name="TYPE_A_COMMUNICATION_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="45" name="MATIP_INTERNAL_COM_IP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MATIP_INTERNAL_COM_PORT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CANCEL_REBOOK_AUTHORIZED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="AIRLINE_MAIN_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="OUR_ORIGINATOR_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ORIGINATOR_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="OUR_COUNTRY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SYNTAX_VERSION_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="INCLUDE_ASSOCIATION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="HTHMPX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="HTHHDR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="HTHH1" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="HTHH2" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TPRLENGTH" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SEGMENT_SEPERATOR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="COMPOSITE_SEPERATOR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ATOMIC_SEPERATOR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TPR_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="HTH_ADRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="OUR_HTH_ADRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="HAS_ET_AGREEMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="NO_REC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="ET_MCO_INV_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="BATAP_SLEEP_TIME" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="NETWORK_LISTENER_SLEEP_TIME" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SYSTEM_RANGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="HAS_AMOUNT_INFO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="HAS_ADTK_AGREEMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ALLOW_OVERBOOK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TIME_OUT_MINIUTES" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="AVAILABILITY_MESSAGE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="AVAILABILITY_CODE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="AIRLINE_CODE_NUMERIC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MAX_NAME_CHANGE_CHAR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="ICAO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SUPPORT_WAITLIST" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="USE_MQ_CLIENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SEND_ASM_NEW" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SEND_UAC_WITH_SELL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="ET_GDS_COMM_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SSR_EMD" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="COMPANY_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="INTERLINE_AGREEMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SEND_AVS_WITH_MC_INFO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="NAR_NCO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SUPPORT_GROUP_REZ" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SUPPORT_SPLIT_CARF" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SSM_SINGLE_FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="GIVE_SSR_OPTION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ALLOW_SYNC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_LND_PAX_CRS_PROFILE"/>
+    <metadata connector="TABLE" label="STG_T_FDL_CHN_AGENT_PROFILE_LRY" name="STG_T_FDL_CHN_AGENT_PROFILE_LRY">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SR_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PROFILE_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="100" name="COMPANY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="COMPANY_SHORT_ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="AIRIMP_PROCESSING_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_PAX_CRS_PROFILE" tableName="DW_LND.LND_PAX_CRS_PROFILE" joinType="NO_JOIN" alias="LND_PAX_CRS_PROFILE">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="PROFILE_ISN"/>
+        <DBMapperTableEntries name="COMPANY_NAME"/>
+        <DBMapperTableEntries name="COMPANY_SHORT_ADDRESS"/>
+        <DBMapperTableEntries name="AIRIMP_PROCESSING_TYPE"/>
+        <DBMapperTableEntries name="SITA_PNR_ADDRESS"/>
+        <DBMapperTableEntries name="SITA_AVS_ADDRESS"/>
+        <DBMapperTableEntries name="SITA_SSIM_ADDRESS"/>
+        <DBMapperTableEntries name="SR_ISN"/>
+        <DBMapperTableEntries name="BATAP_COMMUNICATION_TYPE"/>
+        <DBMapperTableEntries name="BATAP_REAL_SYSTEM_IP"/>
+        <DBMapperTableEntries name="BATAP_BACKUP_SYSTEM_IP"/>
+        <DBMapperTableEntries name="BATAP_REAL_PORT_NUMBER"/>
+        <DBMapperTableEntries name="BATAP_BACKUP_PORT_NUMBER"/>
+        <DBMapperTableEntries name="PAYMENT_TYPE"/>
+        <DBMapperTableEntries name="SERVER_NAME"/>
+        <DBMapperTableEntries name="MATIP_COMMUNICATION_TYPE"/>
+        <DBMapperTableEntries name="MATIP_SYSTEM_IP"/>
+        <DBMapperTableEntries name="MATIP_PORT_NUMBER"/>
+        <DBMapperTableEntries name="RECORDLOCATERTYPE"/>
+        <DBMapperTableEntries name="GROUPPNR_TYPE"/>
+        <DBMapperTableEntries name="USE_TRL"/>
+        <DBMapperTableEntries name="TYPEB_LOG_FILE_NAME"/>
+        <DBMapperTableEntries name="DEFAULT_PAX_USER_ISN"/>
+        <DBMapperTableEntries name="ADDSEG_INFM_CODE"/>
+        <DBMapperTableEntries name="NETWORK_ERROR_EMAIL_LIST"/>
+        <DBMapperTableEntries name="MESSAGE_ERROR_EMAIL_LIST"/>
+        <DBMapperTableEntries name="NETWORK_ERROR_SMS_LIST"/>
+        <DBMapperTableEntries name="SENDER_EMAIL_ADDRESS"/>
+        <DBMapperTableEntries name="ENCRYPTION_KEY"/>
+        <DBMapperTableEntries name="USE_CANCELED_PNR_NO"/>
+        <DBMapperTableEntries name="DOES_THIS_HAVE_SUBAGENTS"/>
+        <DBMapperTableEntries name="MAX_AVS_MESSAGE_LINE_COUNT"/>
+        <DBMapperTableEntries name="DEFAULT_CURRENCY"/>
+        <DBMapperTableEntries name="COMPANY_CARRIER_CODE"/>
+        <DBMapperTableEntries name="TYPEA_LOG_FILE_NAME"/>
+        <DBMapperTableEntries name="ID_CODE"/>
+        <DBMapperTableEntries name="SITA_PNL_ADDRESS"/>
+        <DBMapperTableEntries name="TYPE_A_COMMUNICATION_TYPE"/>
+        <DBMapperTableEntries name="MATIP_INTERNAL_COM_IP"/>
+        <DBMapperTableEntries name="MATIP_INTERNAL_COM_PORT"/>
+        <DBMapperTableEntries name="CANCEL_REBOOK_AUTHORIZED"/>
+        <DBMapperTableEntries name="AIRLINE_MAIN_PORT"/>
+        <DBMapperTableEntries name="OUR_ORIGINATOR_TYPE_CODE"/>
+        <DBMapperTableEntries name="ORIGINATOR_CODE"/>
+        <DBMapperTableEntries name="OUR_COUNTRY_CODE"/>
+        <DBMapperTableEntries name="SYNTAX_VERSION_NUMBER"/>
+        <DBMapperTableEntries name="INCLUDE_ASSOCIATION_CODE"/>
+        <DBMapperTableEntries name="HTHMPX"/>
+        <DBMapperTableEntries name="HTHHDR"/>
+        <DBMapperTableEntries name="HTHH1"/>
+        <DBMapperTableEntries name="HTHH2"/>
+        <DBMapperTableEntries name="TPRLENGTH"/>
+        <DBMapperTableEntries name="SEGMENT_SEPERATOR"/>
+        <DBMapperTableEntries name="COMPOSITE_SEPERATOR"/>
+        <DBMapperTableEntries name="ATOMIC_SEPERATOR"/>
+        <DBMapperTableEntries name="TPR_COUNT"/>
+        <DBMapperTableEntries name="HTH_ADRESS"/>
+        <DBMapperTableEntries name="OUR_HTH_ADRESS"/>
+        <DBMapperTableEntries name="HAS_ET_AGREEMENT"/>
+        <DBMapperTableEntries name="NO_REC"/>
+        <DBMapperTableEntries name="ET_MCO_INV_NO"/>
+        <DBMapperTableEntries name="BATAP_SLEEP_TIME"/>
+        <DBMapperTableEntries name="NETWORK_LISTENER_SLEEP_TIME"/>
+        <DBMapperTableEntries name="SYSTEM_RANGE"/>
+        <DBMapperTableEntries name="HAS_AMOUNT_INFO"/>
+        <DBMapperTableEntries name="HAS_ADTK_AGREEMENT"/>
+        <DBMapperTableEntries name="ALLOW_OVERBOOK"/>
+        <DBMapperTableEntries name="TIME_OUT_MINIUTES"/>
+        <DBMapperTableEntries name="AVAILABILITY_MESSAGE_TYPE"/>
+        <DBMapperTableEntries name="AVAILABILITY_CODE_TYPE"/>
+        <DBMapperTableEntries name="AIRLINE_CODE_NUMERIC"/>
+        <DBMapperTableEntries name="MAX_NAME_CHANGE_CHAR"/>
+        <DBMapperTableEntries name="ICAO"/>
+        <DBMapperTableEntries name="SUPPORT_WAITLIST"/>
+        <DBMapperTableEntries name="USE_MQ_CLIENT"/>
+        <DBMapperTableEntries name="SEND_ASM_NEW"/>
+        <DBMapperTableEntries name="SEND_UAC_WITH_SELL"/>
+        <DBMapperTableEntries name="ET_GDS_COMM_ISN"/>
+        <DBMapperTableEntries name="IS_SSR_EMD"/>
+        <DBMapperTableEntries name="COMPANY_TYPE"/>
+        <DBMapperTableEntries name="INTERLINE_AGREEMENT"/>
+        <DBMapperTableEntries name="SEND_AVS_WITH_MC_INFO"/>
+        <DBMapperTableEntries name="NAR_NCO"/>
+        <DBMapperTableEntries name="SUPPORT_GROUP_REZ"/>
+        <DBMapperTableEntries name="SUPPORT_SPLIT_CARF"/>
+        <DBMapperTableEntries name="SSM_SINGLE_FLT_NO"/>
+        <DBMapperTableEntries name="GIVE_SSR_OPTION"/>
+        <DBMapperTableEntries name="IS_ALLOW_SYNC"/>
+      </InputTables>
+      <OutputTables name="STG_T_FDL_CHN_AGENT_PROFILE_LRY" tableName="STG_T_FDL_CHN_AGENT_PROFILE_LRY">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="LND_PAX_CRS_PROFILE.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="SR_ISN" expression="TO_CHAR(LND_PAX_CRS_PROFILE.SR_ISN)"/>
+        <DBMapperTableEntries name="PROFILE_ISN" expression="NVL(LND_PAX_CRS_PROFILE.PROFILE_ISN, -1)"/>
+        <DBMapperTableEntries name="COMPANY_NAME" expression="NVL(LND_PAX_CRS_PROFILE.COMPANY_NAME, '-1')"/>
+        <DBMapperTableEntries name="COMPANY_SHORT_ADDRESS" expression="NVL(LND_PAX_CRS_PROFILE.COMPANY_SHORT_ADDRESS, '-1')"/>
+        <DBMapperTableEntries name="AIRIMP_PROCESSING_TYPE_CODE" expression="NVL(LND_PAX_CRS_PROFILE.AIRIMP_PROCESSING_TYPE, '-1')"/>
+        <DBMapperTableEntries name="CARRIER_CODE" expression="NVL(LND_PAX_CRS_PROFILE.COMPANY_CARRIER_CODE, '-1')"/>
+        <FilterEntries name="where" expression="LND_PAX_CRS_PROFILE.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_FDL_CHN_AGENT_PROFILE_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_FDL_CHN_AGENT_PROFILE_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_FDL_CHN_AGENT_PROFILE_LRY"/>
+    <metadata connector="TABLE" label="STG_T_FDL_CHN_AGENT_PROFILE_LRY" name="tELTOracleOutput_1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SR_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PROFILE_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="100" name="COMPANY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="COMPANY_SHORT_ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="AIRIMP_PROCESSING_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_CRS_PROFILE" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_FDL_CHN_AGENT_PROFILE_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_FDL_CHN_AGENT_PROFILE_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
