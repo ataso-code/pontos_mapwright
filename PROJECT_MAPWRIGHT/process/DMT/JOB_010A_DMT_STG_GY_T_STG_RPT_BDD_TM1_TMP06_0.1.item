@@ -20,7 +20,7 @@
     <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_RPT_BDD_TM1_TMP06&quot;"/>
     <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
   </node>
-  <node componentName="tELTOracleInput" posX="-192" posY="160">
+  <node componentName="tELTOracleInput" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
     <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_qBwFwcMeEfGuM7c_OEd9ZA - T_RPT_EMP_DUTY_MONTHLY"/>
@@ -44,7 +44,7 @@
       <column key="false" length="1" name="IS_SELECTED_DUTY" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" posX="64" posY="160">
+  <node componentName="tELTOracleMap" posX="320" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
@@ -99,7 +99,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleMap" posX="320" posY="160">
+  <node componentName="tELTOracleMap" posX="576" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
@@ -159,7 +159,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleOutput" posX="576" posY="160">
+  <node componentName="tELTOracleOutput" posX="832" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
     <elementParameter name="DATA_ACTION" value="INSERT"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
