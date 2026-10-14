@@ -4,6 +4,22 @@
     <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
   </context>
   <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_CDL_F_FF_STATUS_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
   <node componentName="tELTOracleInput" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
@@ -125,7 +141,7 @@
         <DBMapperTableEntries name="SRC_LAST_UPDATE_USER_CODE"/>
         <DBMapperTableEntries name="SRC_LAST_UPDATE_DTTM"/>
       </InputTables>
-      <InputTables name="TRN1" tableName="TRN1" joinType="LEFT_OUTER_JOIN" alias="TRN1">
+      <InputTables name="EXP_TRN" tableName="EXP_TRN" joinType="LEFT_OUTER_JOIN" alias="EXP_TRN">
         <DBMapperTableEntries name="FF_ID" expression="MBB.FF_ID" join="true" operator="="/>
         <DBMapperTableEntries name="PROGRAM_ACTIVENESS_STATUS_ID"/>
         <DBMapperTableEntries name="FLIGHT_ACTIVENESS_STATUS_ID"/>
@@ -171,13 +187,13 @@
         <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
         <DBMapperTableEntries name="FF_ID" expression="MBB.FF_ID"/>
         <DBMapperTableEntries name="MEMBERSHIP_STATUS_CODE" expression="MBB_HST.MEMBERSHIP_STATUS_CODE"/>
-        <DBMapperTableEntries name="PROGRAM_ACTIVENESS_STATUS_ID" expression="NVL(TRN1.PROGRAM_ACTIVENESS_STATUS_ID, 2)"/>
-        <DBMapperTableEntries name="FLIGHT_ACTIVENESS_STATUS_ID" expression="NVL(TRN1.FLIGHT_ACTIVENESS_STATUS_ID, 2)"/>
-        <DBMapperTableEntries name="REDEMPTION_ACTIVENESS_STATUS_ID" expression="NVL(TRN1.REDEMPTION_ACTIVENESS_STATUS_ID, 2)"/>
-        <DBMapperTableEntries name="EARNING_ACTIVENESS_STATUS_ID" expression="NVL(TRN1.EARNING_ACTIVENESS_STATUS_ID, 2)"/>
+        <DBMapperTableEntries name="PROGRAM_ACTIVENESS_STATUS_ID" expression="NVL(EXP_TRN.PROGRAM_ACTIVENESS_STATUS_ID, 2)"/>
+        <DBMapperTableEntries name="FLIGHT_ACTIVENESS_STATUS_ID" expression="NVL(EXP_TRN.FLIGHT_ACTIVENESS_STATUS_ID, 2)"/>
+        <DBMapperTableEntries name="REDEMPTION_ACTIVENESS_STATUS_ID" expression="NVL(EXP_TRN.REDEMPTION_ACTIVENESS_STATUS_ID, 2)"/>
+        <DBMapperTableEntries name="EARNING_ACTIVENESS_STATUS_ID" expression="NVL(EXP_TRN.EARNING_ACTIVENESS_STATUS_ID, 2)"/>
         <DBMapperTableEntries name="NEW_FF_MEMBER_FLAG" expression="CASE WHEN TRUNC(MBB.MEMBERSHIP_START_DT, 'MM') = TRUNC(TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY'), 'MM') THEN 1 ELSE 0 END"/>
-        <DBMapperTableEntries name="LAST_TRN_DT_IN_365_DAYS" expression="NVL(TRN1.LAST_TRN_DT_IN_365_DAYS, TO_DATE('01.01.1900', 'DD.MM.YYYY'))"/>
-        <DBMapperTableEntries name="LAST_FLT_TRN_DT_IN_365_DAYS" expression="NVL(TRN1.LAST_FLT_TRN_DT_IN_365_DAYS, TO_DATE('01.01.1900', 'DD.MM.YYYY'))"/>
+        <DBMapperTableEntries name="LAST_TRN_DT_IN_365_DAYS" expression="NVL(EXP_TRN.LAST_TRN_DT_IN_365_DAYS, TO_DATE('01.01.1900', 'DD.MM.YYYY'))"/>
+        <DBMapperTableEntries name="LAST_FLT_TRN_DT_IN_365_DAYS" expression="NVL(EXP_TRN.LAST_FLT_TRN_DT_IN_365_DAYS, TO_DATE('01.01.1900', 'DD.MM.YYYY'))"/>
         <FilterEntries name="where" expression="(TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') BETWEEN MBB_HST.VALID_FROM_DT AND MBB_HST.VALID_TO_DT) AND (STC.MEMBERSHIP_STATUS_CTGRY_NAME = 'Open' AND (CASE WHEN MBB.MEMBERSHIP_START_DT > TO_DATE('24.07.2018', 'DD.MM.YYYY') AND MBB.MEMBERSHIP_STATUS_CODE IN ('WA') THEN 1 ELSE 0 END) = 0 AND MBB.MEMBERSHIP_START_DT &lt;= LAST_DAY(TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')))" filterKind="WHERE_CLAUSE"/>
       </OutputTables>
     </nodeData>
@@ -226,8 +242,8 @@
     <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
     <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
     <elementParameter name="MAPPING" value="oracle_id"/>
-    <elementParameter name="LABEL" value="MAP_TRN1"/>
-    <metadata connector="TABLE" label="TRN1" name="TRN1">
+    <elementParameter name="LABEL" value="MAP_EXP_TRN"/>
+    <metadata connector="TABLE" label="EXP_TRN" name="EXP_TRN">
       <column key="false" length="10" name="FF_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column key="false" length="38" name="PROGRAM_ACTIVENESS_STATUS_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column key="false" length="38" name="FLIGHT_ACTIVENESS_STATUS_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
@@ -297,7 +313,7 @@
         <DBMapperTableEntries name="AWARD_USAGE_TYPE_CODE"/>
         <DBMapperTableEntries name="REDEPOSITED_POINTS_AMT"/>
       </InputTables>
-      <OutputTables name="TRN1" tableName="TRN1">
+      <OutputTables name="EXP_TRN" tableName="EXP_TRN">
         <DBMapperTableEntries name="FF_ID" expression="TRN.FF_ID"/>
         <DBMapperTableEntries name="PROGRAM_ACTIVENESS_STATUS_ID" expression="1"/>
         <DBMapperTableEntries name="FLIGHT_ACTIVENESS_STATUS_ID" expression="MIN(CASE WHEN TRN_T.LYL_TRN_TYPE_CODE = 'F' THEN 1 ELSE 2 END)"/>
@@ -461,12 +477,13 @@
       <column key="false" length="-1" name="LAST_FLT_TRN_DT_IN_365_DAYS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
     </metadata>
   </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
   <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBER" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
   <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_6" target="tELTOracleMap_2"/>
   <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN_TYPE" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_7" target="tELTOracleMap_2"/>
   <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN_CLASS" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_8" target="tELTOracleMap_2"/>
   <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN_REDEMPTION" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_9" target="tELTOracleMap_2"/>
-  <connection connectorName="TABLE_REF" label="TRN1" lineStyle="22" mergeOrder="0" metaname="TRN1" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE_REF" label="EXP_TRN" lineStyle="22" mergeOrder="0" metaname="EXP_TRN" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
   <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBER_HST" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_3" target="tELTOracleMap_1"/>
   <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_4" target="tELTOracleMap_1"/>
   <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_5" target="tELTOracleMap_1"/>
