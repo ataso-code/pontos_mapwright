@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_FDL_REF_CITY_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_CITY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_CITY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_CITY"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_CITY" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="COUNTRY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="LATDEG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="7" name="LATMIN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="LATSGN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="LONDEG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="7" name="LONMIN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="LONSGN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="PULL_DOWN_CONTROL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_IATCI_ALLOWED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_TR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_EN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_DE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_FR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_RU" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_NL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_DA" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_IT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_HE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_SV" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_ES" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_AR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="STATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ZONE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="AREA" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_LND_PAX_CITY"/>
+    <metadata connector="TABLE" label="STG_T_FDL_REF_CITY_LRY" name="STG_T_FDL_REF_CITY_LRY">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CITY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="CITY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CITY_LAT_DEG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CITY_LAT_MIN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CITY_LAT_SIGN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CITY_LON_DEG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CITY_LON_MIN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CITY_LON_SIGN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IATCI_ALLOWED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="CITY_SHORT_NAME_TR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="CITY_SHORT_NAME_EN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="COUNTRY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_PAX_CITY" tableName="DW_LND.LND_PAX_CITY" joinType="NO_JOIN" alias="LND_PAX_CITY">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="CODE"/>
+        <DBMapperTableEntries name="NAME"/>
+        <DBMapperTableEntries name="COUNTRY"/>
+        <DBMapperTableEntries name="LATDEG"/>
+        <DBMapperTableEntries name="LATMIN"/>
+        <DBMapperTableEntries name="LATSGN"/>
+        <DBMapperTableEntries name="LONDEG"/>
+        <DBMapperTableEntries name="LONMIN"/>
+        <DBMapperTableEntries name="LONSGN"/>
+        <DBMapperTableEntries name="PULL_DOWN_CONTROL"/>
+        <DBMapperTableEntries name="IS_IATCI_ALLOWED"/>
+        <DBMapperTableEntries name="SHORT_NAME_TR"/>
+        <DBMapperTableEntries name="SHORT_NAME_EN"/>
+        <DBMapperTableEntries name="SHORT_NAME_DE"/>
+        <DBMapperTableEntries name="SHORT_NAME_FR"/>
+        <DBMapperTableEntries name="SHORT_NAME_RU"/>
+        <DBMapperTableEntries name="SHORT_NAME_NL"/>
+        <DBMapperTableEntries name="SHORT_NAME_DA"/>
+        <DBMapperTableEntries name="SHORT_NAME_IT"/>
+        <DBMapperTableEntries name="SHORT_NAME_HE"/>
+        <DBMapperTableEntries name="SHORT_NAME_SV"/>
+        <DBMapperTableEntries name="SHORT_NAME_ES"/>
+        <DBMapperTableEntries name="SHORT_NAME_AR"/>
+        <DBMapperTableEntries name="STATE"/>
+        <DBMapperTableEntries name="ZONE"/>
+        <DBMapperTableEntries name="AREA"/>
+      </InputTables>
+      <OutputTables name="STG_T_FDL_REF_CITY_LRY" tableName="STG_T_FDL_REF_CITY_LRY">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="LND_PAX_CITY.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="CITY_CODE" expression="LND_PAX_CITY.CODE"/>
+        <DBMapperTableEntries name="CITY_NAME" expression="NVL(LND_PAX_CITY.NAME, '-1')"/>
+        <DBMapperTableEntries name="CITY_LAT_DEG" expression="NVL(LND_PAX_CITY.LATDEG, -1)"/>
+        <DBMapperTableEntries name="CITY_LAT_MIN" expression="NVL(LND_PAX_CITY.LATMIN, -1)"/>
+        <DBMapperTableEntries name="CITY_LAT_SIGN_CODE" expression="NVL(LND_PAX_CITY.LATSGN, '-1')"/>
+        <DBMapperTableEntries name="CITY_LON_DEG" expression="NVL(LND_PAX_CITY.LONDEG, -1)"/>
+        <DBMapperTableEntries name="CITY_LON_MIN" expression="NVL(LND_PAX_CITY.LONMIN, -1)"/>
+        <DBMapperTableEntries name="CITY_LON_SIGN_CODE" expression="NVL(LND_PAX_CITY.LONSGN, '-1')"/>
+        <DBMapperTableEntries name="IATCI_ALLOWED_FLAG" expression="DECODE(LND_PAX_CITY.IS_IATCI_ALLOWED, 'T', 1, 0)"/>
+        <DBMapperTableEntries name="CITY_SHORT_NAME_TR" expression="CASE WHEN LND_PAX_CITY.CODE IN ('ADA', 'COV') THEN 'Adana' ELSE NVL(LND_PAX_CITY.SHORT_NAME_TR, '-1') END"/>
+        <DBMapperTableEntries name="CITY_SHORT_NAME_EN" expression="CASE WHEN LND_PAX_CITY.CODE IN ('ADA', 'COV') THEN 'Adana' ELSE NVL(LND_PAX_CITY.SHORT_NAME_EN, '-1') END"/>
+        <DBMapperTableEntries name="COUNTRY_CODE" expression="NVL(LND_PAX_CITY.COUNTRY, -1)"/>
+        <FilterEntries name="where" expression="LND_PAX_CITY.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_FDL_REF_CITY_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_FDL_REF_CITY_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_FDL_REF_CITY_LRY"/>
+    <metadata connector="TABLE" label="STG_T_FDL_REF_CITY_LRY" name="tELTOracleOutput_1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CITY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="CITY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CITY_LAT_DEG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CITY_LAT_MIN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CITY_LAT_SIGN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CITY_LON_DEG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CITY_LON_MIN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CITY_LON_SIGN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IATCI_ALLOWED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="CITY_SHORT_NAME_TR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="CITY_SHORT_NAME_EN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="COUNTRY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_CITY" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_FDL_REF_CITY_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_FDL_REF_CITY_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
