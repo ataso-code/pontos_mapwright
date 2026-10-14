@@ -5,22 +5,6 @@
     <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
   </context>
   <parameters/>
-  <node componentName="tPrejob" posX="64" posY="32">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
-    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
-  </node>
-  <node componentName="tOracleRow" posX="256" posY="32">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
-    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
-    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
-    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
-    <elementParameter name="PORT" value="&quot;1521&quot;"/>
-    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
-    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
-    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_DM_F_CHN_RESERVATION_LRY&quot;"/>
-    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
-  </node>
   <node componentName="tELTOracleInput" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
@@ -334,7 +318,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleInput" posX="64" posY="208">
+  <node componentName="tELTOracleInput" posX="64" posY="272">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
     <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_i1m34cMNEfGRB8-8_sKJtQ - CDL_D_PNR"/>
@@ -378,7 +362,7 @@
       <column key="false" length="5" name="RES_LANG_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleInput" posX="64" posY="256">
+  <node componentName="tELTOracleInput" posX="64" posY="384">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
     <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_i1m34cMNEfGRB8-8_sKJtQ - CDL_SCD_PNR"/>
@@ -429,7 +413,6 @@
       <column key="false" length="10" name="TRN_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
   <connection connectorName="TABLE" label="DW_CDL.CDL_F_COUPON_SALES" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
   <connection connectorName="TABLE" label="DW_CDL.CDL_D_PNR" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_1"/>
   <connection connectorName="TABLE" label="DW_CDL.CDL_SCD_PNR" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_3" target="tELTOracleMap_1"/>
