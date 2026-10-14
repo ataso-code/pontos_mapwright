@@ -20,7 +20,7 @@
     <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_FDL_CHN_CRS_USER_LRY_PAX&quot;"/>
     <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
   </node>
-  <node componentName="tELTOracleInput" posX="-448" posY="160">
+  <node componentName="tELTOracleInput" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_7"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
     <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_USERFILE"/>
@@ -67,7 +67,7 @@
       <column key="false" length="1" name="IS_FALLBACK_EDUCATED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" posX="-192" posY="160">
+  <node componentName="tELTOracleMap" posX="320" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_3"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
@@ -152,7 +152,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleMap" posX="64" posY="160">
+  <node componentName="tELTOracleMap" posX="576" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
@@ -214,7 +214,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleMap" posX="320" posY="160">
+  <node componentName="tELTOracleMap" posX="832" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
@@ -299,7 +299,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleInput" posX="-448" posY="208">
+  <node componentName="tELTOracleInput" posX="64" posY="272">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_9"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
     <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_SR_LOCATION"/>
@@ -361,7 +361,7 @@
       <column key="false" length="20" name="TCKN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" posX="-192" posY="208">
+  <node componentName="tELTOracleMap" posX="320" posY="272">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_5"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
@@ -443,7 +443,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleMap" posX="64" posY="208">
+  <node componentName="tELTOracleMap" posX="576" posY="272">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_4"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
@@ -477,7 +477,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleInput" posX="-192" posY="256">
+  <node componentName="tELTOracleInput" posX="320" posY="384">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_10"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
     <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_REF_SOURCE"/>
@@ -496,7 +496,7 @@
       <column key="false" length="250" name="SYS_SRC_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" posX="64" posY="256">
+  <node componentName="tELTOracleMap" posX="576" posY="384">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_6"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
@@ -527,7 +527,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleInput" posX="-192" posY="304">
+  <node componentName="tELTOracleInput" posX="320" posY="496">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_11"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
     <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_REF_SOURCE"/>
@@ -546,7 +546,7 @@
       <column key="false" length="250" name="SYS_SRC_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" posX="64" posY="304">
+  <node componentName="tELTOracleMap" posX="576" posY="496">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_7"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
@@ -577,7 +577,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleInput" posX="-192" posY="352">
+  <node componentName="tELTOracleInput" posX="320" posY="608">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_12"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
     <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_REF_SOURCE"/>
@@ -596,7 +596,7 @@
       <column key="false" length="250" name="SYS_SRC_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" posX="64" posY="352">
+  <node componentName="tELTOracleMap" posX="576" posY="608">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_8"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
@@ -627,7 +627,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleOutput" posX="576" posY="160">
+  <node componentName="tELTOracleOutput" posX="1088" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
     <elementParameter name="DATA_ACTION" value="INSERT"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
