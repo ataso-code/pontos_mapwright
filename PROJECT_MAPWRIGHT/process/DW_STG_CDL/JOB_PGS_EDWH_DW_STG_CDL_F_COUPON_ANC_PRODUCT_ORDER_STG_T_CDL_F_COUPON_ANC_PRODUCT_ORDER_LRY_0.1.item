@@ -5,6 +5,22 @@
     <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
   </context>
   <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_CDL_F_COUPON_ANC_PRODUCT_ORDER_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
   <node componentName="tELTOracleInput" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
@@ -332,6 +348,7 @@
       <column key="false" length="5" name="SEAT_POSITION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
   <connection connectorName="TABLE" label="DW_FDL.FDL_RES_PNR_ORDER_LINE" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
   <connection connectorName="TABLE" label="DW_FDL.FDL_RES_PNR_LEG" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_1"/>
   <connection connectorName="TABLE" label="DW_FDL.FDL_FLT_LEG_SEGMENT" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_3" target="tELTOracleMap_1"/>
