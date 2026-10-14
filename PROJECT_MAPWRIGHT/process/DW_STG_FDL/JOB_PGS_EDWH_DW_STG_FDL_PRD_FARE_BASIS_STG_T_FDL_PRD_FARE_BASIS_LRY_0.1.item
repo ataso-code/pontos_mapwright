@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_FDL_PRD_FARE_BASIS_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_FARE_BASIS_DEFINITION"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_FARE_BASIS_DEFINITION&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_FARE_BASIS_DEFINITION"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_FARE_BASIS_DEFINITION" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="RULE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE_BASIS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RBD" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CABIN_CLASS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE_TYPE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SEASON_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DAY_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="TICKET_DESIGNATOR_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TICKETING_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="JOURNEY_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="OW_TO_DOUBLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ADD_ON" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="DISPLAY_LEVEL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CHANNEL_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE_GROUP_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PASSENGER_TYPE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="DISPLAY_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="BAGGAGE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="ALLOWED_RI" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="EFFECTIVE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DISCONTINUE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="FORCE_SHOW_ON_WEB" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DELETED_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_LND_PAX_FARE_BASIS_DEFINITION"/>
+    <metadata connector="TABLE" label="STG_T_FDL_PRD_FARE_BASIS_LRY" name="STG_T_FDL_PRD_FARE_BASIS_LRY">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="FARE_BASIS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="RES_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="CABIN_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="FARE_BASIS_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ADD_ON_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="DISPLAY_LEVEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FARE_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="EFF_FROM_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="TICKETING_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="JOURNEY_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="OW_TO_DOUBLE_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CHN_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="DISPLAY_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ALLOWED_REISSUE_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="FORCE_SHOW_ON_WEB_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="GRPSALES_SPECIAL_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID_PAX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_PAX_FARE_BASIS_DEFINITION" tableName="DW_LND.LND_PAX_FARE_BASIS_DEFINITION" joinType="NO_JOIN" alias="def">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="ID"/>
+        <DBMapperTableEntries name="RULE_ID"/>
+        <DBMapperTableEntries name="FARE_BASIS_CODE"/>
+        <DBMapperTableEntries name="RBD"/>
+        <DBMapperTableEntries name="CABIN_CLASS"/>
+        <DBMapperTableEntries name="FARE_TYPE_ID"/>
+        <DBMapperTableEntries name="SEASON_TYPE"/>
+        <DBMapperTableEntries name="DAY_TYPE"/>
+        <DBMapperTableEntries name="TICKET_DESIGNATOR_CODE"/>
+        <DBMapperTableEntries name="TICKETING_CODE"/>
+        <DBMapperTableEntries name="JOURNEY_TYPE"/>
+        <DBMapperTableEntries name="OW_TO_DOUBLE"/>
+        <DBMapperTableEntries name="IS_ADD_ON"/>
+        <DBMapperTableEntries name="DISPLAY_LEVEL"/>
+        <DBMapperTableEntries name="CHANNEL_ID"/>
+        <DBMapperTableEntries name="FARE_GROUP_ID"/>
+        <DBMapperTableEntries name="PASSENGER_TYPE_ID"/>
+        <DBMapperTableEntries name="DISPLAY_TYPE"/>
+        <DBMapperTableEntries name="BAGGAGE_ID"/>
+        <DBMapperTableEntries name="ALLOWED_RI"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="EFFECTIVE_DATE"/>
+        <DBMapperTableEntries name="DISCONTINUE_DATE"/>
+        <DBMapperTableEntries name="FORCE_SHOW_ON_WEB"/>
+        <DBMapperTableEntries name="CREATED_DATE"/>
+        <DBMapperTableEntries name="DELETED_DATE"/>
+      </InputTables>
+      <InputTables name="EXP_EXT" tableName="EXP_EXT" joinType="LEFT_OUTER_JOIN" alias="EXP_EXT">
+        <DBMapperTableEntries name="FARE_BASIS_DEFINITION_ID" expression="def.ID" join="true" operator="="/>
+        <DBMapperTableEntries name="IS_GROUP"/>
+      </InputTables>
+      <InputTables name="EXP_PAX" tableName="EXP_PAX" joinType="CROSS_JOIN" alias="EXP_PAX">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+      </InputTables>
+      <OutputTables name="STG_T_FDL_PRD_FARE_BASIS_LRY" tableName="STG_T_FDL_PRD_FARE_BASIS_LRY">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="def.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="ID" expression="def.ID"/>
+        <DBMapperTableEntries name="FARE_BASIS_CODE" expression="NVL(TRIM(def.FARE_BASIS_CODE), '-1')"/>
+        <DBMapperTableEntries name="RES_CLASS_CODE" expression="NVL(TRIM(def.RBD), '-1')"/>
+        <DBMapperTableEntries name="CABIN_CLASS_CODE" expression="NVL(TRIM(def.CABIN_CLASS), '-1')"/>
+        <DBMapperTableEntries name="FARE_BASIS_STATUS_CODE" expression="NVL(TRIM(def.STATUS), '-1')"/>
+        <DBMapperTableEntries name="ADD_ON_FLAG" expression="CASE WHEN def.IS_ADD_ON = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="DISPLAY_LEVEL" expression="def.DISPLAY_LEVEL"/>
+        <DBMapperTableEntries name="FARE_GRP_ID" expression="def.FARE_GROUP_ID"/>
+        <DBMapperTableEntries name="EFF_FROM_DT" expression="def.EFFECTIVE_DATE"/>
+        <DBMapperTableEntries name="CREATED_DTTM" expression="def.CREATED_DATE"/>
+        <DBMapperTableEntries name="TICKETING_CODE" expression="NVL(TRIM(def.TICKETING_CODE), '-1')"/>
+        <DBMapperTableEntries name="JOURNEY_TYPE_CODE" expression="NVL(TRIM(def.JOURNEY_TYPE), '-1')"/>
+        <DBMapperTableEntries name="OW_TO_DOUBLE_FLAG" expression="CASE WHEN def.OW_TO_DOUBLE = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="CHN_GRP_ID" expression="CASE WHEN def.CHANNEL_ID = 163 THEN 5 WHEN def.CHANNEL_ID = 164 THEN 1 ELSE -1 END"/>
+        <DBMapperTableEntries name="DISPLAY_TYPE_CODE" expression="NVL(TRIM(def.DISPLAY_TYPE), '-1')"/>
+        <DBMapperTableEntries name="ALLOWED_REISSUE_FLAG" expression="CASE WHEN def.ALLOWED_RI = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="FORCE_SHOW_ON_WEB_FLAG" expression="CASE WHEN def.FORCE_SHOW_ON_WEB = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="GRPSALES_SPECIAL_FLAG" expression="CASE WHEN EXP_EXT.IS_GROUP = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="SYS_SRC_ID_PAX" expression="EXP_PAX.SYS_SRC_ID"/>
+        <FilterEntries name="where" expression="def.DELETED_DATE IS NULL AND def.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_4"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_FARE_BASIS_EXTENSION"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_FARE_BASIS_EXTENSION&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_FARE_BASIS_EXTENSION"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_FARE_BASIS_EXTENSION" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE_BASIS_DEFINITION_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PENALTY_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="OPTION_RULE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="128" name="DISALLOWED_FB_FOR_REISSUE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="VALIDITY_DURATION_DAYS" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="VALIDITY_DURATION_MONTHS" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="VALIDITY_DURATION_YEARS" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_PROMOTIONAL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="FARE_REST" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_OPEN_REISSUE_ALLOWED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_EXT"/>
+    <metadata connector="TABLE" label="EXP_EXT" name="EXP_EXT">
+      <column key="false" length="20" name="FARE_BASIS_DEFINITION_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_PAX_FARE_BASIS_EXTENSION" tableName="DW_LND.LND_PAX_FARE_BASIS_EXTENSION" joinType="NO_JOIN" alias="E">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="ID"/>
+        <DBMapperTableEntries name="FARE_BASIS_DEFINITION_ID"/>
+        <DBMapperTableEntries name="PENALTY_ISN"/>
+        <DBMapperTableEntries name="OPTION_RULE_CODE"/>
+        <DBMapperTableEntries name="DISALLOWED_FB_FOR_REISSUE"/>
+        <DBMapperTableEntries name="IS_GROUP"/>
+        <DBMapperTableEntries name="VALIDITY_DURATION_DAYS"/>
+        <DBMapperTableEntries name="VALIDITY_DURATION_MONTHS"/>
+        <DBMapperTableEntries name="VALIDITY_DURATION_YEARS"/>
+        <DBMapperTableEntries name="IS_PROMOTIONAL"/>
+        <DBMapperTableEntries name="FARE_REST"/>
+        <DBMapperTableEntries name="IS_OPEN_REISSUE_ALLOWED"/>
+      </InputTables>
+      <OutputTables name="EXP_EXT" tableName="EXP_EXT">
+        <DBMapperTableEntries name="FARE_BASIS_DEFINITION_ID" expression="E.FARE_BASIS_DEFINITION_ID"/>
+        <DBMapperTableEntries name="IS_GROUP" expression="MAX(E.IS_GROUP)"/>
+        <FilterEntries name="where" expression="E.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+        <FilterEntries name="other" expression="GROUP BY E.FARE_BASIS_DEFINITION_ID" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_5"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_REF_SOURCE"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_REF_SOURCE&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_REF_SOURCE"/>
+    <metadata connector="TABLE" label="DW_LND.LND_REF_SOURCE" name="table1">
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SYS_SRC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="SYS_SRC_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="SYS_SRC_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_3"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_PAX"/>
+    <metadata connector="TABLE" label="EXP_PAX" name="EXP_PAX">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_REF_SOURCE" tableName="DW_LND.LND_REF_SOURCE" joinType="NO_JOIN" alias="LND_REF_SOURCE">
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="SYS_SRC_CODE"/>
+        <DBMapperTableEntries name="SYS_SRC_NAME"/>
+        <DBMapperTableEntries name="SYS_SRC_DESC"/>
+      </InputTables>
+      <OutputTables name="EXP_PAX" tableName="EXP_PAX">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="LND_REF_SOURCE.SYS_SRC_ID"/>
+        <FilterEntries name="where" expression="LND_REF_SOURCE.SYS_SRC_CODE = 'PAX'" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_FDL_PRD_FARE_BASIS_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_FDL_PRD_FARE_BASIS_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_FDL_PRD_FARE_BASIS_LRY"/>
+    <metadata connector="TABLE" label="STG_T_FDL_PRD_FARE_BASIS_LRY" name="tELTOracleOutput_1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="FARE_BASIS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="RES_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="CABIN_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="FARE_BASIS_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ADD_ON_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="DISPLAY_LEVEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FARE_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="EFF_FROM_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="TICKETING_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="JOURNEY_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="OW_TO_DOUBLE_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CHN_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="DISPLAY_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ALLOWED_REISSUE_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="FORCE_SHOW_ON_WEB_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="GRPSALES_SPECIAL_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID_PAX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_FARE_BASIS_DEFINITION" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_FARE_BASIS_EXTENSION" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_4" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_EXT" lineStyle="22" mergeOrder="0" metaname="EXP_EXT" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_REF_SOURCE" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_5" target="tELTOracleMap_3"/>
+  <connection connectorName="TABLE_REF" label="EXP_PAX" lineStyle="22" mergeOrder="0" metaname="EXP_PAX" outputId="0" source="tELTOracleMap_3" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_FDL_PRD_FARE_BASIS_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_FDL_PRD_FARE_BASIS_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
