@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_MDL_PARTY_COM_TM1&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_MDL_PARTY_COM_TM1_TMP05"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_MDL_PARTY_COM_TM1_TMP05&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_MDL_PARTY_COM_TM1_TMP05"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_MDL_PARTY_COM_TM1_TMP05" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CONTACT_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GTP_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="FULL_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MARS_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="BUSINESSTEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="201" name="MOBILETEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="BUSINESSEMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="PERSONALEMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="EMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MAX_RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_STG_MDL_PARTY_COM_TM1_TMP05"/>
+    <metadata connector="TABLE" label="T_STG_MDL_PARTY_COM_TM1" name="T_STG_MDL_PARTY_COM_TM1">
+      <column key="false" length="-1" name="DWH_VALID_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DWH_VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="UPDATE_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="500" name="PARTY_COM_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="HOME_TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="HAS_HOME_TEL_CON_PERM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="BUSS_TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="HAS_BUSS_TEL_CON_PERM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="MOBILE_TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="PERSONAL_EMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="HAS_PERSONAL_EMAIL_CON_PERM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4000" name="BUSS_EMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="HAS_BUSS_EMAIL_CON_PERM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="HOME_FAX_TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="BUSS_FAX_TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="HAS_MOBILE_TEL_CALL_PERM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="HAS_MOBILE_TEL_SMS_PERM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTSTG.T_STG_MDL_PARTY_COM_TM1_TMP05" tableName="DGYTSTG.T_STG_MDL_PARTY_COM_TM1_TMP05" joinType="NO_JOIN" alias="ACALLD">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="TP"/>
+        <DBMapperTableEntries name="CONTACT_PARTY_ID"/>
+        <DBMapperTableEntries name="GTP_NUMBER"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="FULL_NAME"/>
+        <DBMapperTableEntries name="MARS_PARTY_ID"/>
+        <DBMapperTableEntries name="ADDRESS"/>
+        <DBMapperTableEntries name="TEL"/>
+        <DBMapperTableEntries name="BUSINESSTEL"/>
+        <DBMapperTableEntries name="MOBILETEL"/>
+        <DBMapperTableEntries name="BUSINESSEMAIL"/>
+        <DBMapperTableEntries name="PERSONALEMAIL"/>
+        <DBMapperTableEntries name="EMAIL"/>
+        <DBMapperTableEntries name="MAX_RN"/>
+        <DBMapperTableEntries name="RN"/>
+      </InputTables>
+      <InputTables name="EXP_EMAIL" tableName="EXP_EMAIL" joinType="LEFT_OUTER_JOIN" alias="EXP_EMAIL">
+        <DBMapperTableEntries name="RECIPIENT" expression="ACALLD.EMAIL" join="true" operator="="/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="ACALLD.TP" join="true" operator="="/>
+      </InputTables>
+      <InputTables name="EXP_SMS" tableName="EXP_SMS" joinType="LEFT_OUTER_JOIN" alias="EXP_SMS">
+        <DBMapperTableEntries name="RECIPIENT" expression="ACALLD.MOBILETEL" join="true" operator="="/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="ACALLD.TP" join="true" operator="="/>
+      </InputTables>
+      <InputTables name="EXP_MOBILECALL" tableName="EXP_MOBILECALL" joinType="LEFT_OUTER_JOIN" alias="EXP_MOBILECALL">
+        <DBMapperTableEntries name="RECIPIENT" expression="ACALLD.MOBILETEL" join="true" operator="="/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="ACALLD.TP" join="true" operator="="/>
+      </InputTables>
+      <InputTables name="EXP_HOMECALL" tableName="EXP_HOMECALL" joinType="LEFT_OUTER_JOIN" alias="EXP_HOMECALL">
+        <DBMapperTableEntries name="RECIPIENT" expression="ACALLD.TEL" join="true" operator="="/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="ACALLD.TP" join="true" operator="="/>
+      </InputTables>
+      <InputTables name="EXP_WORKCALL" tableName="EXP_WORKCALL" joinType="LEFT_OUTER_JOIN" alias="EXP_WORKCALL">
+        <DBMapperTableEntries name="RECIPIENT" expression="ACALLD.BUSINESSTEL" join="true" operator="="/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="ACALLD.TP" join="true" operator="="/>
+      </InputTables>
+      <OutputTables name="T_STG_MDL_PARTY_COM_TM1" tableName="T_STG_MDL_PARTY_COM_TM1">
+        <DBMapperTableEntries name="DWH_VALID_FROM" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="DWH_VALID_UNTIL" expression="TO_DATE('99991231', 'YYYYMMDD')"/>
+        <DBMapperTableEntries name="DWH_STATUS" expression="'1'"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="'GTP'"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="UPDATE_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="UPDATE_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="PARTY_COM_ID" expression="'GENMARS_' || REPLACE(ACALLD.MARS_PARTY_ID, '~20002', '') || '~10012'"/>
+        <DBMapperTableEntries name="PARTY_ID" expression="ACALLD.MARS_PARTY_ID"/>
+        <DBMapperTableEntries name="HOME_TEL" expression="ACALLD.TEL"/>
+        <DBMapperTableEntries name="HAS_HOME_TEL_CON_PERM" expression="CASE WHEN NOT EXP_HOMECALL.RECIPIENT IS NULL THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="BUSS_TEL" expression="ACALLD.BUSINESSTEL"/>
+        <DBMapperTableEntries name="HAS_BUSS_TEL_CON_PERM" expression="CASE WHEN NOT EXP_WORKCALL.RECIPIENT IS NULL THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="MOBILE_TEL" expression="ACALLD.MOBILETEL"/>
+        <DBMapperTableEntries name="PERSONAL_EMAIL" expression="ACALLD.EMAIL"/>
+        <DBMapperTableEntries name="HAS_PERSONAL_EMAIL_CON_PERM" expression="CASE WHEN NOT EXP_EMAIL.RECIPIENT IS NULL THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="BUSS_EMAIL" expression="ACALLD.EMAIL"/>
+        <DBMapperTableEntries name="HAS_BUSS_EMAIL_CON_PERM" expression="CASE WHEN NOT EXP_EMAIL.RECIPIENT IS NULL THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="HOME_FAX_TEL" expression="'?'"/>
+        <DBMapperTableEntries name="BUSS_FAX_TEL" expression="'?'"/>
+        <DBMapperTableEntries name="HAS_MOBILE_TEL_CALL_PERM" expression="CASE WHEN NOT EXP_MOBILECALL.RECIPIENT IS NULL THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="HAS_MOBILE_TEL_SMS_PERM" expression="CASE WHEN NOT EXP_SMS.RECIPIENT IS NULL THEN 1 ELSE 0 END"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_8"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_GTPFSI_IYS_INT_REQUEST"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_GTPFSI_IYS_INT_REQUEST&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_GTPFSI_IYS_INT_REQUEST"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" name="table1">
+      <column key="false" length="15" name="IYR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="IDENTITY_TCKN_YKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="TAX_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PASSPORT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="IDENTITY_KKTC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="NAME_SURNAME_TITLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="EXTERNAL_ACCOUNT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="8" name="CONSENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="RECIPIENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="26" name="RECIPIENT_TIMESTAMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="80" name="RECIPIENT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="RECIPIENT_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="INSERT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="UPDATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-192" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_3"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_IYS"/>
+    <metadata connector="TABLE" label="EXP_IYS" name="EXP_IYS">
+      <column key="false" length="15" name="IYR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="IDENTITY_TCKN_YKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="TAX_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PASSPORT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="IDENTITY_KKTC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="NAME_SURNAME_TITLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="EXTERNAL_ACCOUNT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="8" name="CONSENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="RECIPIENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="26" name="RECIPIENT_TIMESTAMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="80" name="RECIPIENT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="RECIPIENT_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="INSERT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="UPDATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" tableName="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" joinType="NO_JOIN" alias="T_GTPFSI_IYS_INT_REQUEST">
+        <DBMapperTableEntries name="IYR_ID"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY"/>
+      </InputTables>
+      <OutputTables name="EXP_IYS" tableName="EXP_IYS">
+        <DBMapperTableEntries name="IYR_ID" expression="T_GTPFSI_IYS_INT_REQUEST.IYR_ID"/>
+        <DBMapperTableEntries name="STATUS" expression="T_GTPFSI_IYS_INT_REQUEST.STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN" expression="T_GTPFSI_IYS_INT_REQUEST.IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER" expression="T_GTPFSI_IYS_INT_REQUEST.TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO" expression="T_GTPFSI_IYS_INT_REQUEST.PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC" expression="T_GTPFSI_IYS_INT_REQUEST.IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE" expression="T_GTPFSI_IYS_INT_REQUEST.NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO" expression="T_GTPFSI_IYS_INT_REQUEST.EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE" expression="T_GTPFSI_IYS_INT_REQUEST.CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="T_GTPFSI_IYS_INT_REQUEST.RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT" expression="CASE WHEN SUBSTR(REPLACE(T_GTPFSI_IYS_INT_REQUEST.RECIPIENT, '+', ''), 1, 2) = '09' THEN SUBSTR(REPLACE(T_GTPFSI_IYS_INT_REQUEST.RECIPIENT, '+', ''), 2) ELSE REPLACE(T_GTPFSI_IYS_INT_REQUEST.RECIPIENT, '+', '') END"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS" expression="T_GTPFSI_IYS_INT_REQUEST.RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP" expression="T_GTPFSI_IYS_INT_REQUEST.RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL" expression="T_GTPFSI_IYS_INT_REQUEST.RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME" expression="T_GTPFSI_IYS_INT_REQUEST.RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL" expression="T_GTPFSI_IYS_INT_REQUEST.INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED" expression="T_GTPFSI_IYS_INT_REQUEST.CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY" expression="T_GTPFSI_IYS_INT_REQUEST.CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED" expression="T_GTPFSI_IYS_INT_REQUEST.UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY" expression="T_GTPFSI_IYS_INT_REQUEST.UPDATED_BY"/>
+        <FilterEntries name="where" expression="T_GTPFSI_IYS_INT_REQUEST.STATUS = 1" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_EMAIL"/>
+    <metadata connector="TABLE" label="EXP_EMAIL" name="EXP_EMAIL">
+      <column key="false" length="38" name="RECIPIENT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="RECIPIENT_TYPE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_IYS" tableName="EXP_IYS" joinType="NO_JOIN" alias="EXP_IYS">
+        <DBMapperTableEntries name="IYR_ID"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY"/>
+      </InputTables>
+      <OutputTables name="EXP_EMAIL" tableName="EXP_EMAIL">
+        <DBMapperTableEntries name="RECIPIENT" expression="EXP_IYS.RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="EXP_IYS.RECIPIENT_TYPE"/>
+        <FilterEntries name="where" expression="EXP_IYS.RECIPIENT_STATUS = 'Y' AND EXP_IYS.CONSENT_TYPE = 'EMAIL'" filterKind="WHERE_CLAUSE"/>
+        <FilterEntries name="other" expression="GROUP BY EXP_IYS.RECIPIENT, EXP_IYS.RECIPIENT_TYPE" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_10"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_GTPFSI_IYS_INT_REQUEST"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_GTPFSI_IYS_INT_REQUEST&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_GTPFSI_IYS_INT_REQUEST"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" name="table1">
+      <column key="false" length="15" name="IYR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="IDENTITY_TCKN_YKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="TAX_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PASSPORT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="IDENTITY_KKTC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="NAME_SURNAME_TITLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="EXTERNAL_ACCOUNT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="8" name="CONSENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="RECIPIENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="26" name="RECIPIENT_TIMESTAMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="80" name="RECIPIENT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="RECIPIENT_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="INSERT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="UPDATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-192" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_5"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_IYS1"/>
+    <metadata connector="TABLE" label="EXP_IYS1" name="EXP_IYS1">
+      <column key="false" length="15" name="IYR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="IDENTITY_TCKN_YKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="TAX_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PASSPORT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="IDENTITY_KKTC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="NAME_SURNAME_TITLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="EXTERNAL_ACCOUNT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="8" name="CONSENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="RECIPIENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="26" name="RECIPIENT_TIMESTAMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="80" name="RECIPIENT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="RECIPIENT_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="INSERT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="UPDATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" tableName="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" joinType="NO_JOIN" alias="T_GTPFSI_IYS_INT_REQUEST1">
+        <DBMapperTableEntries name="IYR_ID"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY"/>
+      </InputTables>
+      <OutputTables name="EXP_IYS1" tableName="EXP_IYS1">
+        <DBMapperTableEntries name="IYR_ID" expression="T_GTPFSI_IYS_INT_REQUEST1.IYR_ID"/>
+        <DBMapperTableEntries name="STATUS" expression="T_GTPFSI_IYS_INT_REQUEST1.STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN" expression="T_GTPFSI_IYS_INT_REQUEST1.IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER" expression="T_GTPFSI_IYS_INT_REQUEST1.TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO" expression="T_GTPFSI_IYS_INT_REQUEST1.PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC" expression="T_GTPFSI_IYS_INT_REQUEST1.IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE" expression="T_GTPFSI_IYS_INT_REQUEST1.NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO" expression="T_GTPFSI_IYS_INT_REQUEST1.EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE" expression="T_GTPFSI_IYS_INT_REQUEST1.CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="T_GTPFSI_IYS_INT_REQUEST1.RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT" expression="CASE WHEN SUBSTR(REPLACE(T_GTPFSI_IYS_INT_REQUEST1.RECIPIENT, '+', ''), 1, 2) = '09' THEN SUBSTR(REPLACE(T_GTPFSI_IYS_INT_REQUEST1.RECIPIENT, '+', ''), 2) ELSE REPLACE(T_GTPFSI_IYS_INT_REQUEST1.RECIPIENT, '+', '') END"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS" expression="T_GTPFSI_IYS_INT_REQUEST1.RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP" expression="T_GTPFSI_IYS_INT_REQUEST1.RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL" expression="T_GTPFSI_IYS_INT_REQUEST1.RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME" expression="T_GTPFSI_IYS_INT_REQUEST1.RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL" expression="T_GTPFSI_IYS_INT_REQUEST1.INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED" expression="T_GTPFSI_IYS_INT_REQUEST1.CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY" expression="T_GTPFSI_IYS_INT_REQUEST1.CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED" expression="T_GTPFSI_IYS_INT_REQUEST1.UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY" expression="T_GTPFSI_IYS_INT_REQUEST1.UPDATED_BY"/>
+        <FilterEntries name="where" expression="T_GTPFSI_IYS_INT_REQUEST1.STATUS = 1" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_4"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_SMS"/>
+    <metadata connector="TABLE" label="EXP_SMS" name="EXP_SMS">
+      <column key="false" length="38" name="RECIPIENT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="RECIPIENT_TYPE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_IYS1" tableName="EXP_IYS1" joinType="NO_JOIN" alias="EXP_IYS1">
+        <DBMapperTableEntries name="IYR_ID"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY"/>
+      </InputTables>
+      <OutputTables name="EXP_SMS" tableName="EXP_SMS">
+        <DBMapperTableEntries name="RECIPIENT" expression="EXP_IYS1.RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="EXP_IYS1.RECIPIENT_TYPE"/>
+        <FilterEntries name="where" expression="EXP_IYS1.RECIPIENT_STATUS = 'Y' AND EXP_IYS1.CONSENT_TYPE = 'SMS'" filterKind="WHERE_CLAUSE"/>
+        <FilterEntries name="other" expression="GROUP BY EXP_IYS1.RECIPIENT, EXP_IYS1.RECIPIENT_TYPE" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_12"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_GTPFSI_IYS_INT_REQUEST"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_GTPFSI_IYS_INT_REQUEST&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_GTPFSI_IYS_INT_REQUEST"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" name="table1">
+      <column key="false" length="15" name="IYR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="IDENTITY_TCKN_YKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="TAX_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PASSPORT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="IDENTITY_KKTC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="NAME_SURNAME_TITLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="EXTERNAL_ACCOUNT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="8" name="CONSENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="RECIPIENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="26" name="RECIPIENT_TIMESTAMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="80" name="RECIPIENT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="RECIPIENT_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="INSERT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="UPDATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-192" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_7"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_IYS2"/>
+    <metadata connector="TABLE" label="EXP_IYS2" name="EXP_IYS2">
+      <column key="false" length="15" name="IYR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="IDENTITY_TCKN_YKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="TAX_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PASSPORT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="IDENTITY_KKTC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="NAME_SURNAME_TITLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="EXTERNAL_ACCOUNT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="8" name="CONSENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="RECIPIENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="26" name="RECIPIENT_TIMESTAMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="80" name="RECIPIENT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="RECIPIENT_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="INSERT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="UPDATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" tableName="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" joinType="NO_JOIN" alias="T_GTPFSI_IYS_INT_REQUEST2">
+        <DBMapperTableEntries name="IYR_ID"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY"/>
+      </InputTables>
+      <OutputTables name="EXP_IYS2" tableName="EXP_IYS2">
+        <DBMapperTableEntries name="IYR_ID" expression="T_GTPFSI_IYS_INT_REQUEST2.IYR_ID"/>
+        <DBMapperTableEntries name="STATUS" expression="T_GTPFSI_IYS_INT_REQUEST2.STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN" expression="T_GTPFSI_IYS_INT_REQUEST2.IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER" expression="T_GTPFSI_IYS_INT_REQUEST2.TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO" expression="T_GTPFSI_IYS_INT_REQUEST2.PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC" expression="T_GTPFSI_IYS_INT_REQUEST2.IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE" expression="T_GTPFSI_IYS_INT_REQUEST2.NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO" expression="T_GTPFSI_IYS_INT_REQUEST2.EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE" expression="T_GTPFSI_IYS_INT_REQUEST2.CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="T_GTPFSI_IYS_INT_REQUEST2.RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT" expression="CASE WHEN SUBSTR(REPLACE(T_GTPFSI_IYS_INT_REQUEST2.RECIPIENT, '+', ''), 1, 2) = '09' THEN SUBSTR(REPLACE(T_GTPFSI_IYS_INT_REQUEST2.RECIPIENT, '+', ''), 2) ELSE REPLACE(T_GTPFSI_IYS_INT_REQUEST2.RECIPIENT, '+', '') END"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS" expression="T_GTPFSI_IYS_INT_REQUEST2.RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP" expression="T_GTPFSI_IYS_INT_REQUEST2.RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL" expression="T_GTPFSI_IYS_INT_REQUEST2.RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME" expression="T_GTPFSI_IYS_INT_REQUEST2.RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL" expression="T_GTPFSI_IYS_INT_REQUEST2.INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED" expression="T_GTPFSI_IYS_INT_REQUEST2.CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY" expression="T_GTPFSI_IYS_INT_REQUEST2.CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED" expression="T_GTPFSI_IYS_INT_REQUEST2.UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY" expression="T_GTPFSI_IYS_INT_REQUEST2.UPDATED_BY"/>
+        <FilterEntries name="where" expression="T_GTPFSI_IYS_INT_REQUEST2.STATUS = 1" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_6"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_MOBILECALL"/>
+    <metadata connector="TABLE" label="EXP_MOBILECALL" name="EXP_MOBILECALL">
+      <column key="false" length="38" name="RECIPIENT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="RECIPIENT_TYPE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_IYS2" tableName="EXP_IYS2" joinType="NO_JOIN" alias="EXP_IYS2">
+        <DBMapperTableEntries name="IYR_ID"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY"/>
+      </InputTables>
+      <OutputTables name="EXP_MOBILECALL" tableName="EXP_MOBILECALL">
+        <DBMapperTableEntries name="RECIPIENT" expression="EXP_IYS2.RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="EXP_IYS2.RECIPIENT_TYPE"/>
+        <FilterEntries name="where" expression="EXP_IYS2.RECIPIENT_STATUS = 'Y' AND EXP_IYS2.CONSENT_TYPE = 'PHONE'" filterKind="WHERE_CLAUSE"/>
+        <FilterEntries name="other" expression="GROUP BY EXP_IYS2.RECIPIENT, EXP_IYS2.RECIPIENT_TYPE" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_14"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_GTPFSI_IYS_INT_REQUEST"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_GTPFSI_IYS_INT_REQUEST&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_GTPFSI_IYS_INT_REQUEST"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" name="table1">
+      <column key="false" length="15" name="IYR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="IDENTITY_TCKN_YKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="TAX_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PASSPORT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="IDENTITY_KKTC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="NAME_SURNAME_TITLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="EXTERNAL_ACCOUNT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="8" name="CONSENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="RECIPIENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="26" name="RECIPIENT_TIMESTAMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="80" name="RECIPIENT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="RECIPIENT_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="INSERT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="UPDATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-192" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_9"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_IYS3"/>
+    <metadata connector="TABLE" label="EXP_IYS3" name="EXP_IYS3">
+      <column key="false" length="15" name="IYR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="IDENTITY_TCKN_YKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="TAX_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PASSPORT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="IDENTITY_KKTC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="NAME_SURNAME_TITLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="EXTERNAL_ACCOUNT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="8" name="CONSENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="RECIPIENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="26" name="RECIPIENT_TIMESTAMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="80" name="RECIPIENT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="RECIPIENT_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="INSERT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="UPDATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" tableName="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" joinType="NO_JOIN" alias="T_GTPFSI_IYS_INT_REQUEST3">
+        <DBMapperTableEntries name="IYR_ID"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY"/>
+      </InputTables>
+      <OutputTables name="EXP_IYS3" tableName="EXP_IYS3">
+        <DBMapperTableEntries name="IYR_ID" expression="T_GTPFSI_IYS_INT_REQUEST3.IYR_ID"/>
+        <DBMapperTableEntries name="STATUS" expression="T_GTPFSI_IYS_INT_REQUEST3.STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN" expression="T_GTPFSI_IYS_INT_REQUEST3.IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER" expression="T_GTPFSI_IYS_INT_REQUEST3.TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO" expression="T_GTPFSI_IYS_INT_REQUEST3.PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC" expression="T_GTPFSI_IYS_INT_REQUEST3.IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE" expression="T_GTPFSI_IYS_INT_REQUEST3.NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO" expression="T_GTPFSI_IYS_INT_REQUEST3.EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE" expression="T_GTPFSI_IYS_INT_REQUEST3.CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="T_GTPFSI_IYS_INT_REQUEST3.RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT" expression="CASE WHEN SUBSTR(REPLACE(T_GTPFSI_IYS_INT_REQUEST3.RECIPIENT, '+', ''), 1, 2) = '09' THEN SUBSTR(REPLACE(T_GTPFSI_IYS_INT_REQUEST3.RECIPIENT, '+', ''), 2) ELSE REPLACE(T_GTPFSI_IYS_INT_REQUEST3.RECIPIENT, '+', '') END"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS" expression="T_GTPFSI_IYS_INT_REQUEST3.RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP" expression="T_GTPFSI_IYS_INT_REQUEST3.RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL" expression="T_GTPFSI_IYS_INT_REQUEST3.RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME" expression="T_GTPFSI_IYS_INT_REQUEST3.RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL" expression="T_GTPFSI_IYS_INT_REQUEST3.INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED" expression="T_GTPFSI_IYS_INT_REQUEST3.CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY" expression="T_GTPFSI_IYS_INT_REQUEST3.CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED" expression="T_GTPFSI_IYS_INT_REQUEST3.UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY" expression="T_GTPFSI_IYS_INT_REQUEST3.UPDATED_BY"/>
+        <FilterEntries name="where" expression="T_GTPFSI_IYS_INT_REQUEST3.STATUS = 1" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_8"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_HOMECALL"/>
+    <metadata connector="TABLE" label="EXP_HOMECALL" name="EXP_HOMECALL">
+      <column key="false" length="38" name="RECIPIENT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="RECIPIENT_TYPE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_IYS3" tableName="EXP_IYS3" joinType="NO_JOIN" alias="EXP_IYS3">
+        <DBMapperTableEntries name="IYR_ID"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY"/>
+      </InputTables>
+      <OutputTables name="EXP_HOMECALL" tableName="EXP_HOMECALL">
+        <DBMapperTableEntries name="RECIPIENT" expression="EXP_IYS3.RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="EXP_IYS3.RECIPIENT_TYPE"/>
+        <FilterEntries name="where" expression="EXP_IYS3.RECIPIENT_STATUS = 'Y' AND EXP_IYS3.CONSENT_TYPE = 'PHONE'" filterKind="WHERE_CLAUSE"/>
+        <FilterEntries name="other" expression="GROUP BY EXP_IYS3.RECIPIENT, EXP_IYS3.RECIPIENT_TYPE" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="400">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_16"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_GTPFSI_IYS_INT_REQUEST"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_GTPFSI_IYS_INT_REQUEST&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_GTPFSI_IYS_INT_REQUEST"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" name="table1">
+      <column key="false" length="15" name="IYR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="IDENTITY_TCKN_YKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="TAX_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PASSPORT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="IDENTITY_KKTC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="NAME_SURNAME_TITLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="EXTERNAL_ACCOUNT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="8" name="CONSENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="RECIPIENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="26" name="RECIPIENT_TIMESTAMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="80" name="RECIPIENT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="RECIPIENT_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="INSERT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="UPDATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-192" posY="400">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_11"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_IYS4"/>
+    <metadata connector="TABLE" label="EXP_IYS4" name="EXP_IYS4">
+      <column key="false" length="15" name="IYR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="IDENTITY_TCKN_YKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="TAX_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PASSPORT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="IDENTITY_KKTC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="NAME_SURNAME_TITLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="EXTERNAL_ACCOUNT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="8" name="CONSENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="RECIPIENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="RECIPIENT_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="26" name="RECIPIENT_TIMESTAMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="80" name="RECIPIENT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="RECIPIENT_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="INSERT_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="UPDATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" tableName="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" joinType="NO_JOIN" alias="T_GTPFSI_IYS_INT_REQUEST4">
+        <DBMapperTableEntries name="IYR_ID"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY"/>
+      </InputTables>
+      <OutputTables name="EXP_IYS4" tableName="EXP_IYS4">
+        <DBMapperTableEntries name="IYR_ID" expression="T_GTPFSI_IYS_INT_REQUEST4.IYR_ID"/>
+        <DBMapperTableEntries name="STATUS" expression="T_GTPFSI_IYS_INT_REQUEST4.STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN" expression="T_GTPFSI_IYS_INT_REQUEST4.IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER" expression="T_GTPFSI_IYS_INT_REQUEST4.TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO" expression="T_GTPFSI_IYS_INT_REQUEST4.PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC" expression="T_GTPFSI_IYS_INT_REQUEST4.IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE" expression="T_GTPFSI_IYS_INT_REQUEST4.NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO" expression="T_GTPFSI_IYS_INT_REQUEST4.EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE" expression="T_GTPFSI_IYS_INT_REQUEST4.CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="T_GTPFSI_IYS_INT_REQUEST4.RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT" expression="CASE WHEN SUBSTR(REPLACE(T_GTPFSI_IYS_INT_REQUEST4.RECIPIENT, '+', ''), 1, 2) = '09' THEN SUBSTR(REPLACE(T_GTPFSI_IYS_INT_REQUEST4.RECIPIENT, '+', ''), 2) ELSE REPLACE(T_GTPFSI_IYS_INT_REQUEST4.RECIPIENT, '+', '') END"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS" expression="T_GTPFSI_IYS_INT_REQUEST4.RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP" expression="T_GTPFSI_IYS_INT_REQUEST4.RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL" expression="T_GTPFSI_IYS_INT_REQUEST4.RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME" expression="T_GTPFSI_IYS_INT_REQUEST4.RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL" expression="T_GTPFSI_IYS_INT_REQUEST4.INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED" expression="T_GTPFSI_IYS_INT_REQUEST4.CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY" expression="T_GTPFSI_IYS_INT_REQUEST4.CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED" expression="T_GTPFSI_IYS_INT_REQUEST4.UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY" expression="T_GTPFSI_IYS_INT_REQUEST4.UPDATED_BY"/>
+        <FilterEntries name="where" expression="T_GTPFSI_IYS_INT_REQUEST4.STATUS = 1" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="400">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_10"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_WORKCALL"/>
+    <metadata connector="TABLE" label="EXP_WORKCALL" name="EXP_WORKCALL">
+      <column key="false" length="38" name="RECIPIENT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="RECIPIENT_TYPE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_IYS4" tableName="EXP_IYS4" joinType="NO_JOIN" alias="EXP_IYS4">
+        <DBMapperTableEntries name="IYR_ID"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="IDENTITY_TCKN_YKN"/>
+        <DBMapperTableEntries name="TAX_NUMBER"/>
+        <DBMapperTableEntries name="PASSPORT_NO"/>
+        <DBMapperTableEntries name="IDENTITY_KKTC"/>
+        <DBMapperTableEntries name="NAME_SURNAME_TITLE"/>
+        <DBMapperTableEntries name="EXTERNAL_ACCOUNT_NO"/>
+        <DBMapperTableEntries name="CONSENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE"/>
+        <DBMapperTableEntries name="RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_STATUS"/>
+        <DBMapperTableEntries name="RECIPIENT_TIMESTAMP"/>
+        <DBMapperTableEntries name="RECIPIENT_CHANNEL"/>
+        <DBMapperTableEntries name="RECIPIENT_DATETIME"/>
+        <DBMapperTableEntries name="INSERT_CHANNEL"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="UPDATED"/>
+        <DBMapperTableEntries name="UPDATED_BY"/>
+      </InputTables>
+      <OutputTables name="EXP_WORKCALL" tableName="EXP_WORKCALL">
+        <DBMapperTableEntries name="RECIPIENT" expression="EXP_IYS4.RECIPIENT"/>
+        <DBMapperTableEntries name="RECIPIENT_TYPE" expression="EXP_IYS4.RECIPIENT_TYPE"/>
+        <FilterEntries name="where" expression="EXP_IYS4.RECIPIENT_STATUS = 'Y' AND EXP_IYS4.CONSENT_TYPE = 'PHONE'" filterKind="WHERE_CLAUSE"/>
+        <FilterEntries name="other" expression="GROUP BY EXP_IYS4.RECIPIENT, EXP_IYS4.RECIPIENT_TYPE" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_MDL_PARTY_COM_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_MDL_PARTY_COM_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_MDL_PARTY_COM_TM1"/>
+    <metadata connector="TABLE" label="T_STG_MDL_PARTY_COM_TM1" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="DWH_VALID_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DWH_VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="UPDATE_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="500" name="PARTY_COM_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="HOME_TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="HAS_HOME_TEL_CON_PERM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="BUSS_TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="HAS_BUSS_TEL_CON_PERM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="MOBILE_TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="PERSONAL_EMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="HAS_PERSONAL_EMAIL_CON_PERM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4000" name="BUSS_EMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="HAS_BUSS_EMAIL_CON_PERM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="HOME_FAX_TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="BUSS_FAX_TEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="HAS_MOBILE_TEL_CALL_PERM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="HAS_MOBILE_TEL_SMS_PERM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_MDL_PARTY_COM_TM1_TMP05" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_8" target="tELTOracleMap_3"/>
+  <connection connectorName="TABLE_REF" label="EXP_IYS" lineStyle="22" mergeOrder="0" metaname="EXP_IYS" outputId="0" source="tELTOracleMap_3" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_EMAIL" lineStyle="22" mergeOrder="0" metaname="EXP_EMAIL" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_10" target="tELTOracleMap_5"/>
+  <connection connectorName="TABLE_REF" label="EXP_IYS1" lineStyle="22" mergeOrder="0" metaname="EXP_IYS1" outputId="0" source="tELTOracleMap_5" target="tELTOracleMap_4"/>
+  <connection connectorName="TABLE_REF" label="EXP_SMS" lineStyle="22" mergeOrder="0" metaname="EXP_SMS" outputId="0" source="tELTOracleMap_4" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_12" target="tELTOracleMap_7"/>
+  <connection connectorName="TABLE_REF" label="EXP_IYS2" lineStyle="22" mergeOrder="0" metaname="EXP_IYS2" outputId="0" source="tELTOracleMap_7" target="tELTOracleMap_6"/>
+  <connection connectorName="TABLE_REF" label="EXP_MOBILECALL" lineStyle="22" mergeOrder="0" metaname="EXP_MOBILECALL" outputId="0" source="tELTOracleMap_6" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_14" target="tELTOracleMap_9"/>
+  <connection connectorName="TABLE_REF" label="EXP_IYS3" lineStyle="22" mergeOrder="0" metaname="EXP_IYS3" outputId="0" source="tELTOracleMap_9" target="tELTOracleMap_8"/>
+  <connection connectorName="TABLE_REF" label="EXP_HOMECALL" lineStyle="22" mergeOrder="0" metaname="EXP_HOMECALL" outputId="0" source="tELTOracleMap_8" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_GTPFSI_IYS_INT_REQUEST" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_16" target="tELTOracleMap_11"/>
+  <connection connectorName="TABLE_REF" label="EXP_IYS4" lineStyle="22" mergeOrder="0" metaname="EXP_IYS4" outputId="0" source="tELTOracleMap_11" target="tELTOracleMap_10"/>
+  <connection connectorName="TABLE_REF" label="EXP_WORKCALL" lineStyle="22" mergeOrder="0" metaname="EXP_WORKCALL" outputId="0" source="tELTOracleMap_10" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_MDL_PARTY_COM_TM1" lineStyle="9" mergeOrder="0" metaname="T_STG_MDL_PARTY_COM_TM1" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
