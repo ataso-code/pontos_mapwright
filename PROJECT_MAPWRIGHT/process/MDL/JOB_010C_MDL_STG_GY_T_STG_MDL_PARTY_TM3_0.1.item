@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_MDL_PARTY_TM3&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_GTPBS_INSTITUTIONS"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_GTPBS_INSTITUTIONS&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_GTPBS_INSTITUTIONS"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_GTPBS_INSTITUTIONS" name="table1">
+      <column key="false" length="15" name="INSTITUTION_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ORG_GROUP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="FULL_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_UPD" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="LAST_UPD_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_GTPBS_INSTITUTIONS"/>
+    <metadata connector="TABLE" label="T_STG_MDL_PARTY_TM3" name="T_STG_MDL_PARTY_TM3">
+      <column key="false" length="-1" name="DWH_VALID_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DWH_VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="DWH_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="UPDATE_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_TP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_CLS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_STATUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSOPR.T_GTPBS_INSTITUTIONS" tableName="DGYTODSOPR.T_GTPBS_INSTITUTIONS" joinType="NO_JOIN" alias="A">
+        <DBMapperTableEntries name="INSTITUTION_ID"/>
+        <DBMapperTableEntries name="ORG_GROUP_ID"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="TYPE"/>
+        <DBMapperTableEntries name="FULL_NAME"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="LAST_UPD"/>
+        <DBMapperTableEntries name="LAST_UPD_BY"/>
+      </InputTables>
+      <OutputTables name="T_STG_MDL_PARTY_TM3" tableName="T_STG_MDL_PARTY_TM3">
+        <DBMapperTableEntries name="DWH_VALID_FROM" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="DWH_VALID_UNTIL" expression="TO_DATE('99991231', 'YYYYMMDD')"/>
+        <DBMapperTableEntries name="DWH_STATUS" expression="'1'"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="'GTP'"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="UPDATE_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="UPDATE_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="PARTY_ID" expression="(A.INSTITUTION_ID || '~30006')"/>
+        <DBMapperTableEntries name="PARTY_CODE" expression="A.INSTITUTION_ID"/>
+        <DBMapperTableEntries name="PARTY_NAME" expression="A.FULL_NAME"/>
+        <DBMapperTableEntries name="PARTY_DESC" expression="A.FULL_NAME"/>
+        <DBMapperTableEntries name="PARTY_TP_ID" expression="'CON~40015'"/>
+        <DBMapperTableEntries name="PARTY_CLS_ID" expression="'INS~40007'"/>
+        <DBMapperTableEntries name="PARTY_STATUS_ID" expression="(CASE WHEN A.STATUS = 1 THEN 'ACTIVE' ELSE 'PASSIVE' END || '~40014')"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_MDL_PARTY_TM3"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_MDL_PARTY_TM3&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_MDL_PARTY_TM3"/>
+    <metadata connector="TABLE" label="T_STG_MDL_PARTY_TM3" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="DWH_VALID_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DWH_VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="DWH_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="UPDATE_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_TP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_CLS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PARTY_STATUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_GTPBS_INSTITUTIONS" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_MDL_PARTY_TM3" lineStyle="9" mergeOrder="0" metaname="T_STG_MDL_PARTY_TM3" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
