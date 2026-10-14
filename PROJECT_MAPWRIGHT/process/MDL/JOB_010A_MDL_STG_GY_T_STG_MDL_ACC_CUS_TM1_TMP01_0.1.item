@@ -20,7 +20,7 @@
     <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_MDL_ACC_CUS_TM1_TMP01&quot;"/>
     <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
   </node>
-  <node componentName="tELTOracleInput" posX="-448" posY="160">
+  <node componentName="tELTOracleInput" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
     <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_UTdLIcMPEfGRB8-8_sKJtQ - T_MDL_PARTY_REL"/>
@@ -45,7 +45,7 @@
       <column key="false" length="-1" name="END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" posX="-192" posY="160">
+  <node componentName="tELTOracleMap" posX="320" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_3"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
@@ -108,7 +108,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleMap" posX="64" posY="160">
+  <node componentName="tELTOracleMap" posX="576" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
@@ -173,7 +173,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleMap" posX="320" posY="160">
+  <node componentName="tELTOracleMap" posX="832" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
     <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
@@ -223,7 +223,7 @@
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleOutput" posX="576" posY="160">
+  <node componentName="tELTOracleOutput" posX="1088" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
     <elementParameter name="DATA_ACTION" value="INSERT"/>
     <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
