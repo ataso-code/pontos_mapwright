@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_DWH_CL_TRS_ACT_TM1_TMP02&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_UTdLIcMPEfGRB8-8_sKJtQ - T_MDL_ACC_PORTFOLIO"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_MDL_ACC_PORTFOLIO&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTMDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_MDL_ACC_PORTFOLIO"/>
+    <metadata connector="TABLE" label="DGYTMDL.T_MDL_ACC_PORTFOLIO" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_BAL_TP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACC_BAL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="38" name="ACC_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="AO_COST_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FIFO_COST_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARKET_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARKET_CAP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MKK_BLOCKAGE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COLLATERAL_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COLLATERAL_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FIFO_POTENTIAL_PROFIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="AO_POTENTIAL_PROFIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COLLATERAL_BASE_CREDIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MAXIMUM_CREDIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="REMAIN_CREDIT_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VOLUME" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_VIOP_DS1_CT_L1"/>
+    <metadata connector="TABLE" label="EXP_VIOP_DS1_CT_L1" name="EXP_VIOP_DS1_CT_L1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="COL_TRANS_CUR_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="CURRENT_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="PREVIOUS_BALANCE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CONVERTION_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTMDL.T_MDL_ACC_PORTFOLIO" tableName="DGYTMDL.T_MDL_ACC_PORTFOLIO" joinType="NO_JOIN" alias="PORT">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="ACC_ID"/>
+        <DBMapperTableEntries name="PROD_ID"/>
+        <DBMapperTableEntries name="ACC_BAL_TP_ID"/>
+        <DBMapperTableEntries name="ACC_BAL_DATE"/>
+        <DBMapperTableEntries name="ACC_BALANCE"/>
+        <DBMapperTableEntries name="AO_COST_PRICE"/>
+        <DBMapperTableEntries name="FIFO_COST_PRICE"/>
+        <DBMapperTableEntries name="MARKET_PRICE"/>
+        <DBMapperTableEntries name="MARKET_CAP"/>
+        <DBMapperTableEntries name="MKK_BLOCKAGE"/>
+        <DBMapperTableEntries name="COLLATERAL_RATE"/>
+        <DBMapperTableEntries name="COLLATERAL_AMOUNT"/>
+        <DBMapperTableEntries name="FIFO_POTENTIAL_PROFIT"/>
+        <DBMapperTableEntries name="AO_POTENTIAL_PROFIT"/>
+        <DBMapperTableEntries name="COLLATERAL_BASE_CREDIT"/>
+        <DBMapperTableEntries name="MAXIMUM_CREDIT"/>
+        <DBMapperTableEntries name="REMAIN_CREDIT_AMOUNT"/>
+        <DBMapperTableEntries name="VOLUME"/>
+      </InputTables>
+      <InputTables name="DGYTMDL.T_MDL_ACC_BAL_TP" tableName="DGYTMDL.T_MDL_ACC_BAL_TP" joinType="INNER_JOIN" alias="BTP">
+        <DBMapperTableEntries name="DWH_VALID_FROM"/>
+        <DBMapperTableEntries name="DWH_VALID_UNTIL"/>
+        <DBMapperTableEntries name="DWH_STATUS"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="UPDATE_TIMESTAMP"/>
+        <DBMapperTableEntries name="UPDATE_RUNID"/>
+        <DBMapperTableEntries name="ACC_BAL_TP_ID" expression="PORT.ACC_BAL_TP_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="ACC_BAL_TP_CODE"/>
+        <DBMapperTableEntries name="ACC_BAL_TP_NAME"/>
+        <DBMapperTableEntries name="ACC_BAL_TP_DESC"/>
+      </InputTables>
+      <InputTables name="DGYTMDL.T_MDL_ACC" tableName="DGYTMDL.T_MDL_ACC" joinType="INNER_JOIN" alias="ACC">
+        <DBMapperTableEntries name="DWH_VALID_FROM"/>
+        <DBMapperTableEntries name="DWH_VALID_UNTIL"/>
+        <DBMapperTableEntries name="DWH_STATUS"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="UPDATE_TIMESTAMP"/>
+        <DBMapperTableEntries name="UPDATE_RUNID"/>
+        <DBMapperTableEntries name="ACC_ID" expression="PORT.ACC_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="ACC_CODE"/>
+        <DBMapperTableEntries name="ACC_NAME"/>
+        <DBMapperTableEntries name="ACC_DESC"/>
+        <DBMapperTableEntries name="ACC_NUMBER"/>
+        <DBMapperTableEntries name="CUS_PARTY_ID"/>
+        <DBMapperTableEntries name="ACC_OPEN_DATE"/>
+        <DBMapperTableEntries name="ACC_CLOSE_DATE"/>
+        <DBMapperTableEntries name="ACC_STATUS_ID"/>
+        <DBMapperTableEntries name="BRANCH_PARTY_ID"/>
+        <DBMapperTableEntries name="CURRENCY_PROD_ID"/>
+      </InputTables>
+      <InputTables name="DGYTMDL.T_MDL_ACC_BRK" tableName="DGYTMDL.T_MDL_ACC_BRK" joinType="INNER_JOIN" alias="BRK">
+        <DBMapperTableEntries name="DWH_VALID_FROM"/>
+        <DBMapperTableEntries name="DWH_VALID_UNTIL"/>
+        <DBMapperTableEntries name="DWH_STATUS"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="UPDATE_TIMESTAMP"/>
+        <DBMapperTableEntries name="UPDATE_RUNID"/>
+        <DBMapperTableEntries name="ACC_ID" expression="ACC.ACC_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="BRK_ACC_CLS_ID"/>
+        <DBMapperTableEntries name="DEFAULT_ACC_FLAG"/>
+        <DBMapperTableEntries name="BANK_ACC_ID"/>
+        <DBMapperTableEntries name="DEFAULT_FIN_PROD_ID"/>
+        <DBMapperTableEntries name="DEFAULT_INTEREST_TP"/>
+        <DBMapperTableEntries name="DEFAULT_INTEREST_OP_TP"/>
+        <DBMapperTableEntries name="DEFAULT_RATE"/>
+        <DBMapperTableEntries name="INTEREST_FIN_PROD_ID"/>
+        <DBMapperTableEntries name="ACC_GRP_ID"/>
+        <DBMapperTableEntries name="INTEREST_TP"/>
+        <DBMapperTableEntries name="INTEREST_OP_TP"/>
+        <DBMapperTableEntries name="INTEREST_RATE"/>
+        <DBMapperTableEntries name="APRVL_MAX_CREDIT_LIMIT"/>
+        <DBMapperTableEntries name="CREDIT_LIMIT"/>
+        <DBMapperTableEntries name="CREDIT_TP"/>
+        <DBMapperTableEntries name="STATEMENT_SEND_TP"/>
+        <DBMapperTableEntries name="VIOP_STATEMENT_SEND_TP"/>
+        <DBMapperTableEntries name="ACC_CLOSE_DESC"/>
+      </InputTables>
+      <InputTables name="DGYTMDL.T_MDL_ACC_MARS_REL" tableName="DGYTMDL.T_MDL_ACC_MARS_REL" joinType="LEFT_OUTER_JOIN" alias="AMR">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="MARS_PARTY_ID"/>
+        <DBMapperTableEntries name="ACC_ID" expression="PORT.ACC_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="DIV_ID"/>
+      </InputTables>
+      <OutputTables name="EXP_VIOP_DS1_CT_L1" tableName="EXP_VIOP_DS1_CT_L1">
+        <DBMapperTableEntries name="ETL_DATE" expression="PORT.ETL_DATE"/>
+        <DBMapperTableEntries name="ACC_NUMBER" expression="ACC.ACC_NUMBER"/>
+        <DBMapperTableEntries name="COL_TRANS_CUR_PROD_ID" expression="PORT.PROD_ID"/>
+        <DBMapperTableEntries name="ACC_ID" expression="PORT.ACC_ID"/>
+        <DBMapperTableEntries name="CURRENT_BALANCE" expression="PORT.ACC_BALANCE"/>
+        <DBMapperTableEntries name="CUS_ID" expression="AMR.MARS_PARTY_ID"/>
+        <DBMapperTableEntries name="DIV_ID" expression="AMR.DIV_ID"/>
+        <DBMapperTableEntries name="PREVIOUS_BALANCE" expression="NVL(LAG(PORT.ACC_BALANCE) OVER (PARTITION BY PORT.ACC_ID ORDER BY PORT.ETL_DATE), 0)"/>
+        <DBMapperTableEntries name="CONVERTION_RATE" expression="PORT.MARKET_PRICE"/>
+        <FilterEntries name="where" expression="(TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') BETWEEN BRK.DWH_VALID_FROM AND BRK.DWH_VALID_UNTIL) AND (TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') BETWEEN ACC.DWH_VALID_FROM AND ACC.DWH_VALID_UNTIL) AND (TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') BETWEEN BTP.DWH_VALID_FROM AND BTP.DWH_VALID_UNTIL) AND (PORT.ETL_DATE = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') AND BTP.ACC_BAL_TP_NAME = 'VIOPCUSTODY' AND BRK.BRK_ACC_CLS_ID = 'VIOP~40002')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_UTdLIcMPEfGRB8-8_sKJtQ - T_MDL_ACC_BAL_TP"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_MDL_ACC_BAL_TP&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTMDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_MDL_ACC_BAL_TP"/>
+    <metadata connector="TABLE" label="DGYTMDL.T_MDL_ACC_BAL_TP" name="table1">
+      <column key="false" length="-1" name="DWH_VALID_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DWH_VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="DWH_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="UPDATE_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_BAL_TP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_BAL_TP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_BAL_TP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_BAL_TP_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_4"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_UTdLIcMPEfGRB8-8_sKJtQ - T_MDL_ACC"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_MDL_ACC&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTMDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_MDL_ACC"/>
+    <metadata connector="TABLE" label="DGYTMDL.T_MDL_ACC" name="table1">
+      <column key="false" length="-1" name="DWH_VALID_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DWH_VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="DWH_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="UPDATE_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACC_OPEN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACC_CLOSE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_STATUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="BRANCH_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CURRENCY_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_5"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_UTdLIcMPEfGRB8-8_sKJtQ - T_MDL_ACC_BRK"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_MDL_ACC_BRK&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTMDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_MDL_ACC_BRK"/>
+    <metadata connector="TABLE" label="DGYTMDL.T_MDL_ACC_BRK" name="table1">
+      <column key="false" length="-1" name="DWH_VALID_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DWH_VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="DWH_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="UPDATE_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="BRK_ACC_CLS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="DEFAULT_ACC_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="BANK_ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DEFAULT_FIN_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DEFAULT_INTEREST_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DEFAULT_INTEREST_OP_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="DEFAULT_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="INTEREST_FIN_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_GRP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="INTEREST_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="INTEREST_OP_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="INTEREST_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="APRVL_MAX_CREDIT_LIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CREDIT_LIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="CREDIT_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="STATEMENT_SEND_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="VIOP_STATEMENT_SEND_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_CLOSE_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_6"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_UTdLIcMPEfGRB8-8_sKJtQ - T_MDL_ACC_MARS_REL"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_MDL_ACC_MARS_REL&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTMDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_MDL_ACC_MARS_REL"/>
+    <metadata connector="TABLE" label="DGYTMDL.T_MDL_ACC_MARS_REL" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MARS_PARTY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_VIOP_DS1_CT_L1"/>
+    <metadata connector="TABLE" label="T_STG_DWH_CL_TRS_ACT_TM1_TMP02" name="T_STG_DWH_CL_TRS_ACT_TM1_TMP02">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="COL_TRANS_CUR_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="CURRENT_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PREVIOUS_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CONVERTION_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BALANCE_DIFF_OC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BALANCE_DIFF" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_VIOP_DS1_CT_L1" tableName="EXP_VIOP_DS1_CT_L1" joinType="NO_JOIN" alias="EXP_VIOP_DS1_CT_L1">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="ACC_NUMBER"/>
+        <DBMapperTableEntries name="COL_TRANS_CUR_PROD_ID"/>
+        <DBMapperTableEntries name="ACC_ID"/>
+        <DBMapperTableEntries name="CURRENT_BALANCE"/>
+        <DBMapperTableEntries name="CUS_ID"/>
+        <DBMapperTableEntries name="DIV_ID"/>
+        <DBMapperTableEntries name="PREVIOUS_BALANCE"/>
+        <DBMapperTableEntries name="CONVERTION_RATE"/>
+      </InputTables>
+      <OutputTables name="T_STG_DWH_CL_TRS_ACT_TM1_TMP02" tableName="T_STG_DWH_CL_TRS_ACT_TM1_TMP02">
+        <DBMapperTableEntries name="ETL_DATE" expression="EXP_VIOP_DS1_CT_L1.ETL_DATE"/>
+        <DBMapperTableEntries name="ACC_NUMBER" expression="EXP_VIOP_DS1_CT_L1.ACC_NUMBER"/>
+        <DBMapperTableEntries name="COL_TRANS_CUR_PROD_ID" expression="EXP_VIOP_DS1_CT_L1.COL_TRANS_CUR_PROD_ID"/>
+        <DBMapperTableEntries name="ACC_ID" expression="EXP_VIOP_DS1_CT_L1.ACC_ID"/>
+        <DBMapperTableEntries name="CURRENT_BALANCE" expression="EXP_VIOP_DS1_CT_L1.CURRENT_BALANCE"/>
+        <DBMapperTableEntries name="PREVIOUS_BALANCE" expression="EXP_VIOP_DS1_CT_L1.PREVIOUS_BALANCE"/>
+        <DBMapperTableEntries name="CONVERTION_RATE" expression="EXP_VIOP_DS1_CT_L1.CONVERTION_RATE"/>
+        <DBMapperTableEntries name="BALANCE_DIFF_OC" expression="EXP_VIOP_DS1_CT_L1.CURRENT_BALANCE - EXP_VIOP_DS1_CT_L1.PREVIOUS_BALANCE"/>
+        <DBMapperTableEntries name="BALANCE_DIFF" expression="(EXP_VIOP_DS1_CT_L1.CURRENT_BALANCE - EXP_VIOP_DS1_CT_L1.PREVIOUS_BALANCE) * EXP_VIOP_DS1_CT_L1.CONVERTION_RATE"/>
+        <DBMapperTableEntries name="CUS_ID" expression="EXP_VIOP_DS1_CT_L1.CUS_ID"/>
+        <DBMapperTableEntries name="DIV_ID" expression="EXP_VIOP_DS1_CT_L1.DIV_ID"/>
+        <FilterEntries name="where" expression="EXP_VIOP_DS1_CT_L1.CURRENT_BALANCE &lt;> EXP_VIOP_DS1_CT_L1.PREVIOUS_BALANCE" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_DWH_CL_TRS_ACT_TM1_TMP02"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_DWH_CL_TRS_ACT_TM1_TMP02&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_DWH_CL_TRS_ACT_TM1_TMP02"/>
+    <metadata connector="TABLE" label="T_STG_DWH_CL_TRS_ACT_TM1_TMP02" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_NUMBER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="COL_TRANS_CUR_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="CURRENT_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PREVIOUS_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CONVERTION_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BALANCE_DIFF_OC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BALANCE_DIFF" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTMDL.T_MDL_ACC_PORTFOLIO" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DGYTMDL.T_MDL_ACC_BAL_TP" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_3" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DGYTMDL.T_MDL_ACC" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_4" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DGYTMDL.T_MDL_ACC_BRK" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_5" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DGYTMDL.T_MDL_ACC_MARS_REL" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_6" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_VIOP_DS1_CT_L1" lineStyle="22" mergeOrder="0" metaname="EXP_VIOP_DS1_CT_L1" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_DWH_CL_TRS_ACT_TM1_TMP02" lineStyle="9" mergeOrder="0" metaname="T_STG_DWH_CL_TRS_ACT_TM1_TMP02" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

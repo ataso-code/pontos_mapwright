@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default"/>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_FDL_REF_CALENDAR_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_MAN_CALENDAR"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_MAN_CALENDAR&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_MAN_CALENDAR"/>
+    <metadata connector="TABLE" label="DW_LND.LND_MAN_CALENDAR" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="DAY_ID" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_BASE_CALENDAR"/>
+    <metadata connector="TABLE" label="EXP_BASE_CALENDAR" name="EXP_BASE_CALENDAR">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="DAY_ID" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="38" name="LAST_YEAR_TODAY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="DAY_END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="4000" name="WEEK_DAY_FULL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="WEEK_DAY_SHORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="WEEK_START_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="WEEK_END_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DAY_NUM_OF_WEEK" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="38" name="DAY_NUM_OF_MONTH" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DAY_NUM_OF_YEAR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4000" name="MONTH_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MONTH_SHORT_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MONTH_LONG_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MONTH_SHORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MONTH_LONG" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MONTH_YEAR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="MONTH_NUM_OF_YEAR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4000" name="MONTH_OF_YEAR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="QUARTER_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="QUARTER_NUM_OF_YEAR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="HALF_NUM_OF_YEAR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4000" name="HALF_OF_YEAR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="YEAR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="PGS_FLT_WEEK_YEAR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="ISO_WEEK" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_MAN_CALENDAR" tableName="DW_LND.LND_MAN_CALENDAR" joinType="NO_JOIN" alias="t">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="DAY_ID"/>
+      </InputTables>
+      <OutputTables name="EXP_BASE_CALENDAR" tableName="EXP_BASE_CALENDAR">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="t.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="DAY_ID" expression="t.DAY_ID"/>
+        <DBMapperTableEntries name="LAST_YEAR_TODAY" expression="t.DAY_ID - 7 * 52"/>
+        <DBMapperTableEntries name="DAY_END_DATE" expression="t.DAY_ID"/>
+        <DBMapperTableEntries name="WEEK_DAY_FULL" expression="TO_CHAR(t.DAY_ID, 'Day', 'NLS_DATE_LANGUAGE=ENGLISH')"/>
+        <DBMapperTableEntries name="WEEK_DAY_SHORT" expression="TO_CHAR(t.DAY_ID, 'DY', 'NLS_DATE_LANGUAGE=ENGLISH')"/>
+        <DBMapperTableEntries name="WEEK_START_DT" expression="TRUNC(t.DAY_ID, 'IW')"/>
+        <DBMapperTableEntries name="WEEK_END_DT" expression="TRUNC(t.DAY_ID, 'IW') + 6"/>
+        <DBMapperTableEntries name="DAY_NUM_OF_WEEK" expression="(TRUNC(t.DAY_ID) - TRUNC(t.DAY_ID, 'IW') + 1)"/>
+        <DBMapperTableEntries name="DAY_NUM_OF_MONTH" expression="TO_NUMBER(TO_CHAR(t.DAY_ID, 'DD'))"/>
+        <DBMapperTableEntries name="DAY_NUM_OF_YEAR" expression="TO_NUMBER(TO_CHAR(t.DAY_ID, 'DDD'))"/>
+        <DBMapperTableEntries name="MONTH_ID" expression="UPPER(TO_CHAR(t.DAY_ID, 'Mon', 'NLS_DATE_LANGUAGE=ENGLISH') || '-' || TO_CHAR(t.DAY_ID, 'YYYY'))"/>
+        <DBMapperTableEntries name="MONTH_SHORT_DESC" expression="TO_CHAR(t.DAY_ID, 'Mon', 'NLS_DATE_LANGUAGE=ENGLISH') || ' ' || TO_CHAR(t.DAY_ID, 'YYYY')"/>
+        <DBMapperTableEntries name="MONTH_LONG_DESC" expression="RTRIM(TO_CHAR(t.DAY_ID, 'Month', 'NLS_DATE_LANGUAGE=ENGLISH')) || ' ' || TO_CHAR(t.DAY_ID, 'YYYY')"/>
+        <DBMapperTableEntries name="MONTH_SHORT" expression="TO_CHAR(t.DAY_ID, 'Mon', 'NLS_DATE_LANGUAGE=ENGLISH')"/>
+        <DBMapperTableEntries name="MONTH_LONG" expression="TO_CHAR(t.DAY_ID, 'Month', 'NLS_DATE_LANGUAGE=ENGLISH')"/>
+        <DBMapperTableEntries name="MONTH_YEAR" expression="TO_CHAR(t.DAY_ID, 'YYYYMM')"/>
+        <DBMapperTableEntries name="MONTH_NUM_OF_YEAR" expression="TO_NUMBER(TO_CHAR(t.DAY_ID, 'MM'))"/>
+        <DBMapperTableEntries name="MONTH_OF_YEAR" expression="TO_CHAR(t.DAY_ID, 'MM')"/>
+        <DBMapperTableEntries name="QUARTER_ID" expression="'Q' || UPPER(TO_CHAR(t.DAY_ID, 'Q') || '-' || TO_CHAR(t.DAY_ID, 'YYYY'))"/>
+        <DBMapperTableEntries name="QUARTER_NUM_OF_YEAR" expression="TO_NUMBER(TO_CHAR(t.DAY_ID, 'Q'))"/>
+        <DBMapperTableEntries name="HALF_NUM_OF_YEAR" expression="CASE WHEN TO_NUMBER(TO_CHAR(t.DAY_ID, 'Q')) &lt;= 2 THEN 1 ELSE 2 END"/>
+        <DBMapperTableEntries name="HALF_OF_YEAR_ID" expression="CASE WHEN TO_NUMBER(TO_CHAR(t.DAY_ID, 'Q')) &lt;= 2 THEN 'H1-' || TO_CHAR(t.DAY_ID, 'YYYY') ELSE 'H2-' || TO_CHAR(t.DAY_ID, 'YYYY') END"/>
+        <DBMapperTableEntries name="YEAR_ID" expression="TO_CHAR(t.DAY_ID, 'YYYY')"/>
+        <DBMapperTableEntries name="PGS_FLT_WEEK_YEAR" expression="CASE WHEN (TRUNC(TRUNC(t.DAY_ID, 'YEAR'), 'IW') + 7) > TRUNC(t.DAY_ID) THEN 1 ELSE TRUNC((TRUNC(t.DAY_ID) - (TRUNC(TRUNC(t.DAY_ID, 'YEAR'), 'IW') + 7)) / 7) + 2 END"/>
+        <DBMapperTableEntries name="ISO_WEEK" expression="TO_NUMBER(TO_CHAR(t.DAY_ID, 'IW'))"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_BASE_CALENDAR"/>
+    <metadata connector="TABLE" label="STG_T_FDL_REF_CALENDAR_LRY" name="STG_T_FDL_REF_CALENDAR_LRY">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="DAY_ID" nullable="false" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_YEAR_DAY_ID" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_OF_WEEK_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_OF_MONTH_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_OF_YEAR_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="9" name="WEEK_DAY_LONG" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="WEEK_DAY_SHORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="WEEK_START_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="WEEK_END_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="ISO_WEEK_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PGS_FLT_WEEK_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="RM_WEEK_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MONTH_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_CNT_IN_MONTH" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="MONTH_SHORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="9" name="MONTH_LONG" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="8" name="YEAR_MONTH_SHORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="14" name="YEAR_MONTH_LONG" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MONTH_OF_YEAR_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="MONTH_END_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="7" name="QUARTER_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="QUARTER_OF_YEAR_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_CNT_IN_QUARTER" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="QUARTER_END_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="7" name="HALF_YEAR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="HALF_OF_YEAR_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_CNT_IN_HALF_YEAR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="HALF_YEAR_END_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="YEAR_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_CNT_IN_YEAR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="YEAR_END_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_BASE_CALENDAR" tableName="EXP_BASE_CALENDAR" joinType="NO_JOIN" alias="EXP_BASE_CALENDAR">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="DAY_ID"/>
+        <DBMapperTableEntries name="LAST_YEAR_TODAY"/>
+        <DBMapperTableEntries name="DAY_END_DATE"/>
+        <DBMapperTableEntries name="WEEK_DAY_FULL"/>
+        <DBMapperTableEntries name="WEEK_DAY_SHORT"/>
+        <DBMapperTableEntries name="WEEK_START_DT"/>
+        <DBMapperTableEntries name="WEEK_END_DT"/>
+        <DBMapperTableEntries name="DAY_NUM_OF_WEEK"/>
+        <DBMapperTableEntries name="DAY_NUM_OF_MONTH"/>
+        <DBMapperTableEntries name="DAY_NUM_OF_YEAR"/>
+        <DBMapperTableEntries name="MONTH_ID"/>
+        <DBMapperTableEntries name="MONTH_SHORT_DESC"/>
+        <DBMapperTableEntries name="MONTH_LONG_DESC"/>
+        <DBMapperTableEntries name="MONTH_SHORT"/>
+        <DBMapperTableEntries name="MONTH_LONG"/>
+        <DBMapperTableEntries name="MONTH_YEAR"/>
+        <DBMapperTableEntries name="MONTH_NUM_OF_YEAR"/>
+        <DBMapperTableEntries name="MONTH_OF_YEAR"/>
+        <DBMapperTableEntries name="QUARTER_ID"/>
+        <DBMapperTableEntries name="QUARTER_NUM_OF_YEAR"/>
+        <DBMapperTableEntries name="HALF_NUM_OF_YEAR"/>
+        <DBMapperTableEntries name="HALF_OF_YEAR_ID"/>
+        <DBMapperTableEntries name="YEAR_ID"/>
+        <DBMapperTableEntries name="PGS_FLT_WEEK_YEAR"/>
+        <DBMapperTableEntries name="ISO_WEEK"/>
+      </InputTables>
+      <OutputTables name="STG_T_FDL_REF_CALENDAR_LRY" tableName="STG_T_FDL_REF_CALENDAR_LRY">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="EXP_BASE_CALENDAR.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="DAY_ID" expression="EXP_BASE_CALENDAR.DAY_ID"/>
+        <DBMapperTableEntries name="LAST_YEAR_DAY_ID" expression="EXP_BASE_CALENDAR.LAST_YEAR_TODAY"/>
+        <DBMapperTableEntries name="DAY_OF_WEEK_NUM" expression="EXP_BASE_CALENDAR.DAY_NUM_OF_WEEK"/>
+        <DBMapperTableEntries name="DAY_OF_MONTH_NUM" expression="EXP_BASE_CALENDAR.DAY_NUM_OF_MONTH"/>
+        <DBMapperTableEntries name="DAY_OF_YEAR_NUM" expression="EXP_BASE_CALENDAR.DAY_NUM_OF_YEAR"/>
+        <DBMapperTableEntries name="WEEK_DAY_LONG" expression="EXP_BASE_CALENDAR.WEEK_DAY_FULL"/>
+        <DBMapperTableEntries name="WEEK_DAY_SHORT" expression="EXP_BASE_CALENDAR.WEEK_DAY_SHORT"/>
+        <DBMapperTableEntries name="WEEK_START_DT" expression="EXP_BASE_CALENDAR.WEEK_START_DT"/>
+        <DBMapperTableEntries name="WEEK_END_DT" expression="EXP_BASE_CALENDAR.WEEK_END_DT"/>
+        <DBMapperTableEntries name="ISO_WEEK_NUM" expression="EXP_BASE_CALENDAR.ISO_WEEK"/>
+        <DBMapperTableEntries name="PGS_FLT_WEEK_NUM" expression="EXP_BASE_CALENDAR.PGS_FLT_WEEK_YEAR"/>
+        <DBMapperTableEntries name="RM_WEEK_NUM" expression="NULL"/>
+        <DBMapperTableEntries name="MONTH_ID" expression="EXP_BASE_CALENDAR.MONTH_ID"/>
+        <DBMapperTableEntries name="DAY_CNT_IN_MONTH" expression="COUNT(*) OVER (PARTITION BY EXP_BASE_CALENDAR.MONTH_ID)"/>
+        <DBMapperTableEntries name="MONTH_SHORT" expression="EXP_BASE_CALENDAR.MONTH_SHORT"/>
+        <DBMapperTableEntries name="MONTH_LONG" expression="EXP_BASE_CALENDAR.MONTH_LONG"/>
+        <DBMapperTableEntries name="YEAR_MONTH_SHORT" expression="EXP_BASE_CALENDAR.MONTH_SHORT_DESC"/>
+        <DBMapperTableEntries name="YEAR_MONTH_LONG" expression="EXP_BASE_CALENDAR.MONTH_LONG_DESC"/>
+        <DBMapperTableEntries name="MONTH_OF_YEAR_NUM" expression="EXP_BASE_CALENDAR.MONTH_NUM_OF_YEAR"/>
+        <DBMapperTableEntries name="MONTH_END_DT" expression="MAX(EXP_BASE_CALENDAR.DAY_ID) OVER (PARTITION BY EXP_BASE_CALENDAR.MONTH_ID)"/>
+        <DBMapperTableEntries name="QUARTER_ID" expression="EXP_BASE_CALENDAR.QUARTER_ID"/>
+        <DBMapperTableEntries name="QUARTER_OF_YEAR_NUM" expression="EXP_BASE_CALENDAR.QUARTER_NUM_OF_YEAR"/>
+        <DBMapperTableEntries name="DAY_CNT_IN_QUARTER" expression="COUNT(*) OVER (PARTITION BY EXP_BASE_CALENDAR.QUARTER_ID)"/>
+        <DBMapperTableEntries name="QUARTER_END_DT" expression="MAX(EXP_BASE_CALENDAR.DAY_ID) OVER (PARTITION BY EXP_BASE_CALENDAR.QUARTER_ID)"/>
+        <DBMapperTableEntries name="HALF_YEAR_ID" expression="EXP_BASE_CALENDAR.HALF_OF_YEAR_ID"/>
+        <DBMapperTableEntries name="HALF_OF_YEAR_NUM" expression="EXP_BASE_CALENDAR.HALF_NUM_OF_YEAR"/>
+        <DBMapperTableEntries name="DAY_CNT_IN_HALF_YEAR" expression="COUNT(*) OVER (PARTITION BY EXP_BASE_CALENDAR.HALF_OF_YEAR_ID)"/>
+        <DBMapperTableEntries name="HALF_YEAR_END_DT" expression="MAX(EXP_BASE_CALENDAR.DAY_ID) OVER (PARTITION BY EXP_BASE_CALENDAR.HALF_OF_YEAR_ID)"/>
+        <DBMapperTableEntries name="YEAR_ID" expression="EXP_BASE_CALENDAR.YEAR_ID"/>
+        <DBMapperTableEntries name="DAY_CNT_IN_YEAR" expression="ADD_MONTHS(TRUNC(EXP_BASE_CALENDAR.DAY_ID, 'YEAR'), 12) - TRUNC(EXP_BASE_CALENDAR.DAY_ID, 'YEAR')"/>
+        <DBMapperTableEntries name="YEAR_END_DT" expression="MAX(EXP_BASE_CALENDAR.DAY_ID) OVER (PARTITION BY EXP_BASE_CALENDAR.YEAR_ID)"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_FDL_REF_CALENDAR_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_FDL_REF_CALENDAR_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_FDL_REF_CALENDAR_LRY"/>
+    <metadata connector="TABLE" label="STG_T_FDL_REF_CALENDAR_LRY" name="tELTOracleOutput_1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="DAY_ID" nullable="false" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_YEAR_DAY_ID" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_OF_WEEK_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_OF_MONTH_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_OF_YEAR_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="9" name="WEEK_DAY_LONG" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="WEEK_DAY_SHORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="WEEK_START_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="WEEK_END_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="ISO_WEEK_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PGS_FLT_WEEK_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="RM_WEEK_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MONTH_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_CNT_IN_MONTH" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="MONTH_SHORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="9" name="MONTH_LONG" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="8" name="YEAR_MONTH_SHORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="14" name="YEAR_MONTH_LONG" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MONTH_OF_YEAR_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="MONTH_END_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="7" name="QUARTER_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="QUARTER_OF_YEAR_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_CNT_IN_QUARTER" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="QUARTER_END_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="7" name="HALF_YEAR_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="HALF_OF_YEAR_NUM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_CNT_IN_HALF_YEAR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="HALF_YEAR_END_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="YEAR_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DAY_CNT_IN_YEAR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="YEAR_END_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_MAN_CALENDAR" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_BASE_CALENDAR" lineStyle="22" mergeOrder="0" metaname="EXP_BASE_CALENDAR" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_FDL_REF_CALENDAR_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_FDL_REF_CALENDAR_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

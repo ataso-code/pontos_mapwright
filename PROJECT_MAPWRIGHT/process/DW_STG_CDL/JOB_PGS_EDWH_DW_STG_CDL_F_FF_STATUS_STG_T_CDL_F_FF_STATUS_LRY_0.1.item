@@ -1,124 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
-  <context confirmationNeeded="false" hide="false" name="Default">
-    <contextParameter name="VAR_ETL_DATE" prompt="VAR_ETL_DATE?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="01.01.2026" internalId="_XgybUMdYEfG4apJ1NWW_-w"/>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
   </context>
-  <parameters>
-    <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="320" show="false"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
-    <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_HADOOP_VERSION" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_ENABLE_KERBEROS" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_PRINCIPAL" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_USERNAME" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_GROUP" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_USE_KEYTAB" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_KT_PRINCIPAL" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_KEY_TAB" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_ENABLE_OO_KERBEROS" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_END_POINT" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_JOB_TRACKER_ENDPOINT" value="" show="false"/>
-    <elementParameter field="TEXT" name="OOZIE_END_POINT" value="" show="false"/>
-    <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" value="false" show="false"/>
-    <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" value="false" show="false"/>
-    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
-    <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000"/>
-    <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
-    <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" value="false" show="false"/>
-    <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" value="false" show="false"/>
-    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="&quot;C:/Talend/8.0.1/studio/workspace_mapwright/in.csv&quot;" show="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" value="false" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" value="ISO-8859-15" show="false"/>
-    <elementParameter field="TECHNICAL" name="OVERRIDE_ENCODING_IN_EXTRA:ENCODING_TYPE" value="ISO-8859-15" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" value="" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" value="ORACLE_18" show="false"/>
-    <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TABLE" name="DRIVER_JAR_IMPLICIT_CONTEXT" show="false"/>
-    <elementParameter field="TEXT" name="DRIVER_CLASS_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="HOST_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="PORT_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="DBNAME_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:fakaCo4s72R7if8jHPsby6GKuGLXp55+SHuNa27g" show="false"/>
-    <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning" show="false"/>
-    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false" show="false"/>
-    <elementParameter field="CHECK" name="DISABLE_ERROR" value="false" show="false"/>
-    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="true" show="false"/>
-    <elementParameter field="CHECK" name="DISABLE_INFO" value="true" show="false"/>
-    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false"/>
-    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false"/>
-    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
-    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false" show="false"/>
-    <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false" show="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;C:/Talend/8.0.1/studio/workspace_mapwright/.metadata&quot;" show="false"/>
-    <elementParameter field="TEXT" name="FILENAME_STATS" value="&quot;stats_file.txt&quot;" show="false"/>
-    <elementParameter field="TEXT" name="FILENAME_LOGS" value="&quot;logs_file.txt&quot;" show="false"/>
-    <elementParameter field="TEXT" name="FILENAME_METTER" value="&quot;meter_file.txt&quot;" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="ISO-8859-15" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15" show="false"/>
-    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" value="false" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_TYPE" value="JDBCOutput" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_18" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
-    <elementParameter field="TEXT" name="DRIVER_CLASS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:4rVIlS48qSxGvsUYCk4kGAkj9hdMfg2fzJJgNtUA" show="false"/>
-    <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="false" show="false"/>
-    <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" value="" show="false"/>
-    <elementParameter field="CHECK" name="HEADER_ENABLED" value="false" show="false"/>
-    <elementParameter field="TEXT" name="HEADER_LIBRARY" value="" show="false"/>
-    <elementParameter field="TEXT" name="HEADER_CODE" value="" show="false"/>
-    <elementParameter field="TEXT" name="HEADER_IMPORT" value="" show="false"/>
-    <elementParameter field="TEXT" name="HEADERFOOTER_FOOTERID" value="" show="false"/>
-    <elementParameter field="CHECK" name="FOOTER_ENABLED" value="false" show="false"/>
-    <elementParameter field="TEXT" name="FOOTER_LIBRARY" value="" show="false"/>
-    <elementParameter field="TEXT" name="FOOTER_CODE" value="" show="false"/>
-    <elementParameter field="TEXT" name="FOOTER_IMPORT" value="" show="false"/>
-  </parameters>
-  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="40" posY="160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1" show="false"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleInput" show="false"/>
-    <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
-    <elementParameter field="TEXT" name="FAMILY" value="ELT/Map/Oracle" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="false" show="false"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" value="true" show="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" value="false" show="false"/>
-    <elementParameter field="TEXT" name="HELP" value="org.talend.help.tELTOracleInput" show="false"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" value="" show="false"/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="C:\Talend\8.0.1\studio\configuration\lib\java" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_FF_MEMBER" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;FDL_LYL_FF_MEMBER&quot;"/>
-    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="TEXT" name="LABEL" value="SRC_FDL_LYL_FF_MEMBER"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_CDL_F_FF_STATUS_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_FF_MEMBER"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_FF_MEMBER&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_FF_MEMBER"/>
     <metadata connector="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBER" name="table1">
       <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
@@ -163,43 +72,17 @@
       <column key="false" length="-1" name="SRC_LAST_UPDATE_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="400" posY="160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1" show="false"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleMap" show="false"/>
-    <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
-    <elementParameter field="TEXT" name="FAMILY" value="ELT/Map/Oracle" show="false"/>
-    <elementParameter field="CHECK" name="START" value="true" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="true" show="false"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" value="false" show="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" value="false" show="false"/>
-    <elementParameter field="TEXT" name="HELP" value="org.talend.help.tELTOracleMap" show="false"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" value="" show="false"/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="C:\Talend\8.0.1\studio\configuration\lib\java" show="false"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
-    <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_18"/>
-    <elementParameter field="TEXT" name="RAC_URL" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;kronos&quot;"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;1521&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;orcl&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;MAPWRIGHT&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:TxHmyKPklmnOiqkHpngNZJO2Dfm180/GV/Ywy665n9+S4T5l8z+x"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_TqJy4MdWEfG9P_56b7Vm6g-tELTOracleMap_1-PREVIEW.bmp"/>
-    <elementParameter field="CHECK" name="DRY_RUN" value="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
-    <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
-    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
-    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="MAP_FDL_LYL_FF_MEMBER"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_FDL_LYL_FF_MEMBER"/>
     <metadata connector="TABLE" label="STG_T_CDL_F_FF_STATUS_LRY" name="STG_T_CDL_F_FF_STATUS_LRY">
       <column key="false" length="-1" name="SNAPSHOT_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
       <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
@@ -258,7 +141,7 @@
         <DBMapperTableEntries name="SRC_LAST_UPDATE_USER_CODE"/>
         <DBMapperTableEntries name="SRC_LAST_UPDATE_DTTM"/>
       </InputTables>
-      <InputTables name="TRN1" tableName="TRN1" joinType="LEFT_OUTER_JOIN" alias="TRN1">
+      <InputTables name="EXP_TRN" tableName="EXP_TRN" joinType="LEFT_OUTER_JOIN" alias="EXP_TRN">
         <DBMapperTableEntries name="FF_ID" expression="MBB.FF_ID" join="true" operator="="/>
         <DBMapperTableEntries name="PROGRAM_ACTIVENESS_STATUS_ID"/>
         <DBMapperTableEntries name="FLIGHT_ACTIVENESS_STATUS_ID"/>
@@ -304,35 +187,25 @@
         <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
         <DBMapperTableEntries name="FF_ID" expression="MBB.FF_ID"/>
         <DBMapperTableEntries name="MEMBERSHIP_STATUS_CODE" expression="MBB_HST.MEMBERSHIP_STATUS_CODE"/>
-        <DBMapperTableEntries name="PROGRAM_ACTIVENESS_STATUS_ID" expression="NVL(TRN1.PROGRAM_ACTIVENESS_STATUS_ID, 2)"/>
-        <DBMapperTableEntries name="FLIGHT_ACTIVENESS_STATUS_ID" expression="NVL(TRN1.FLIGHT_ACTIVENESS_STATUS_ID, 2)"/>
-        <DBMapperTableEntries name="REDEMPTION_ACTIVENESS_STATUS_ID" expression="NVL(TRN1.REDEMPTION_ACTIVENESS_STATUS_ID, 2)"/>
-        <DBMapperTableEntries name="EARNING_ACTIVENESS_STATUS_ID" expression="NVL(TRN1.EARNING_ACTIVENESS_STATUS_ID, 2)"/>
+        <DBMapperTableEntries name="PROGRAM_ACTIVENESS_STATUS_ID" expression="NVL(EXP_TRN.PROGRAM_ACTIVENESS_STATUS_ID, 2)"/>
+        <DBMapperTableEntries name="FLIGHT_ACTIVENESS_STATUS_ID" expression="NVL(EXP_TRN.FLIGHT_ACTIVENESS_STATUS_ID, 2)"/>
+        <DBMapperTableEntries name="REDEMPTION_ACTIVENESS_STATUS_ID" expression="NVL(EXP_TRN.REDEMPTION_ACTIVENESS_STATUS_ID, 2)"/>
+        <DBMapperTableEntries name="EARNING_ACTIVENESS_STATUS_ID" expression="NVL(EXP_TRN.EARNING_ACTIVENESS_STATUS_ID, 2)"/>
         <DBMapperTableEntries name="NEW_FF_MEMBER_FLAG" expression="CASE WHEN TRUNC(MBB.MEMBERSHIP_START_DT, 'MM') = TRUNC(TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY'), 'MM') THEN 1 ELSE 0 END"/>
-        <DBMapperTableEntries name="LAST_TRN_DT_IN_365_DAYS" expression="NVL(TRN1.LAST_TRN_DT_IN_365_DAYS, TO_DATE('01.01.1900', 'DD.MM.YYYY'))"/>
-        <DBMapperTableEntries name="LAST_FLT_TRN_DT_IN_365_DAYS" expression="NVL(TRN1.LAST_FLT_TRN_DT_IN_365_DAYS, TO_DATE('01.01.1900', 'DD.MM.YYYY'))"/>
-        <FilterEntries name="where" expression="(TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') BETWEEN MBB_HST.VALID_FROM_DT AND MBB_HST.VALID_TO_DT) AND (STC.MEMBERSHIP_STATUS_CTGRY_NAME = 'Open' AND (CASE WHEN MBB.MEMBERSHIP_START_DT > TO_DATE('24.07.2018', 'DD.MM.YYYY') AND MBB.MEMBERSHIP_STATUS_CODE IN ('WA') THEN 1 ELSE 0 END) = 0 AND MBB.MEMBERSHIP_START_DT &lt;= LAST_DAY(TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')))" filterKind="WHERE_FILTER"/>
+        <DBMapperTableEntries name="LAST_TRN_DT_IN_365_DAYS" expression="NVL(EXP_TRN.LAST_TRN_DT_IN_365_DAYS, TO_DATE('01.01.1900', 'DD.MM.YYYY'))"/>
+        <DBMapperTableEntries name="LAST_FLT_TRN_DT_IN_365_DAYS" expression="NVL(EXP_TRN.LAST_FLT_TRN_DT_IN_365_DAYS, TO_DATE('01.01.1900', 'DD.MM.YYYY'))"/>
+        <FilterEntries name="where" expression="(TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') BETWEEN MBB_HST.VALID_FROM_DT AND MBB_HST.VALID_TO_DT) AND (STC.MEMBERSHIP_STATUS_CTGRY_NAME = 'Open' AND (CASE WHEN MBB.MEMBERSHIP_START_DT > TO_DATE('24.07.2018', 'DD.MM.YYYY') AND MBB.MEMBERSHIP_STATUS_CODE IN ('WA') THEN 1 ELSE 0 END) = 0 AND MBB.MEMBERSHIP_START_DT &lt;= LAST_DAY(TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')))" filterKind="WHERE_CLAUSE"/>
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-240" posY="200">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_6" show="false"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleInput" show="false"/>
-    <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
-    <elementParameter field="TEXT" name="FAMILY" value="ELT/Map/Oracle" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="false" show="false"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" value="false" show="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" value="false" show="false"/>
-    <elementParameter field="TEXT" name="HELP" value="org.talend.help.tELTOracleInput" show="false"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" value="" show="false"/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="C:\Talend\8.0.1\studio\configuration\lib\java" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_TRN" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;FDL_LYL_TRN&quot;"/>
-    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="TEXT" name="LABEL" value="SRC_FDL_LYL_TRN"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  <node componentName="tELTOracleInput" posX="-192" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_6"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_TRN"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_TRN&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_TRN"/>
     <metadata connector="TABLE" label="DW_FDL.FDL_LYL_TRN" name="table1">
       <column key="false" length="-1" name="LYL_TRN_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
       <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
@@ -359,44 +232,18 @@
       <column key="false" length="1" name="DELETED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="80" posY="260">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2" show="false"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleMap" show="false"/>
-    <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
-    <elementParameter field="TEXT" name="FAMILY" value="ELT/Map/Oracle" show="false"/>
-    <elementParameter field="CHECK" name="START" value="false" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="true" show="false"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" value="false" show="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" value="false" show="false"/>
-    <elementParameter field="TEXT" name="HELP" value="org.talend.help.tELTOracleMap" show="false"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" value="" show="false"/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="C:\Talend\8.0.1\studio\configuration\lib\java" show="false"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false" show="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
-    <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_23" show="false"/>
-    <elementParameter field="TEXT" name="RAC_URL" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;kronos&quot;" show="false"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;1521&quot;" show="false"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;orcl&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;MAPWRIGHT&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Xr8BQ+EOOH9XRVgEqhZIwoRbZkcZhLCyhjGUmqAZ" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id" show="false"/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_TqJy4MdWEfG9P_56b7Vm6g-tELTOracleMap_2-PREVIEW.bmp"/>
-    <elementParameter field="CHECK" name="DRY_RUN" value="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
-    <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;" show="false"/>
-    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false" show="false"/>
-    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="MAP_TRN1"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="TABLE" label="TRN1" name="TRN1">
+  <node componentName="tELTOracleMap" posX="64" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_TRN"/>
+    <metadata connector="TABLE" label="EXP_TRN" name="EXP_TRN">
       <column key="false" length="10" name="FF_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column key="false" length="38" name="PROGRAM_ACTIVENESS_STATUS_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column key="false" length="38" name="FLIGHT_ACTIVENESS_STATUS_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
@@ -466,7 +313,7 @@
         <DBMapperTableEntries name="AWARD_USAGE_TYPE_CODE"/>
         <DBMapperTableEntries name="REDEPOSITED_POINTS_AMT"/>
       </InputTables>
-      <OutputTables name="TRN1" tableName="TRN1">
+      <OutputTables name="EXP_TRN" tableName="EXP_TRN">
         <DBMapperTableEntries name="FF_ID" expression="TRN.FF_ID"/>
         <DBMapperTableEntries name="PROGRAM_ACTIVENESS_STATUS_ID" expression="1"/>
         <DBMapperTableEntries name="FLIGHT_ACTIVENESS_STATUS_ID" expression="MIN(CASE WHEN TRN_T.LYL_TRN_TYPE_CODE = 'F' THEN 1 ELSE 2 END)"/>
@@ -474,29 +321,19 @@
         <DBMapperTableEntries name="EARNING_ACTIVENESS_STATUS_ID" expression="MIN(CASE WHEN TRN_T.LYL_TRN_TYPE_CODE IN ('F', 'P') THEN 1 ELSE 2 END)"/>
         <DBMapperTableEntries name="LAST_TRN_DT_IN_365_DAYS" expression="MAX(LYL_TRN_DT)"/>
         <DBMapperTableEntries name="LAST_FLT_TRN_DT_IN_365_DAYS" expression="MAX(CASE WHEN TRN_T.LYL_TRN_TYPE_CODE = 'F' THEN LYL_TRN_DT END)"/>
-        <FilterEntries name="where" expression="(TRN_T.LYL_TRN_TYPE_CODE IN ('F', 'P') OR TRN_C.LYL_TRN_CLASS_CODE = 'GAME_1' OR NVL(TRN_RDMP.AWARD_CODE, -1) = 'PGS001') AND TRN.LYL_TRN_DT BETWEEN TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') - 365 AND TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') AND TRN.DELETED_FLAG = 0" filterKind="WHERE_FILTER"/>
+        <FilterEntries name="where" expression="(TRN_T.LYL_TRN_TYPE_CODE IN ('F', 'P') OR TRN_C.LYL_TRN_CLASS_CODE = 'GAME_1' OR NVL(TRN_RDMP.AWARD_CODE, -1) = 'PGS001') AND TRN.LYL_TRN_DT BETWEEN TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') - 365 AND TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') AND TRN.DELETED_FLAG = 0" filterKind="WHERE_CLAUSE"/>
         <FilterEntries name="other" expression="GROUP BY TRN.FF_ID" filterKind="OTHER_FILTER"/>
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-240" posY="320">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_7" show="false"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleInput" show="false"/>
-    <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
-    <elementParameter field="TEXT" name="FAMILY" value="ELT/Map/Oracle" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="false" show="false"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" value="false" show="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" value="false" show="false"/>
-    <elementParameter field="TEXT" name="HELP" value="org.talend.help.tELTOracleInput" show="false"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" value="" show="false"/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="C:\Talend\8.0.1\studio\configuration\lib\java" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_TRN_TYPE" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;FDL_LYL_TRN_TYPE&quot;"/>
-    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="TEXT" name="LABEL" value="SRC_FDL_LYL_TRN_TYPE"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  <node componentName="tELTOracleInput" posX="-192" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_7"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_TRN_TYPE"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_TRN_TYPE&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_TRN_TYPE"/>
     <metadata connector="TABLE" label="DW_FDL.FDL_LYL_TRN_TYPE" name="table1">
       <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
@@ -509,24 +346,14 @@
       <column key="false" length="10" name="LYL_TRN_CLASS_CTGRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-240" posY="380">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_8" show="false"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleInput" show="false"/>
-    <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
-    <elementParameter field="TEXT" name="FAMILY" value="ELT/Map/Oracle" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="false" show="false"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" value="false" show="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" value="false" show="false"/>
-    <elementParameter field="TEXT" name="HELP" value="org.talend.help.tELTOracleInput" show="false"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" value="" show="false"/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="C:\Talend\8.0.1\studio\configuration\lib\java" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_TRN_CLASS" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;FDL_LYL_TRN_CLASS&quot;"/>
-    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="TEXT" name="LABEL" value="SRC_FDL_LYL_TRN_CLASS"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  <node componentName="tELTOracleInput" posX="-192" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_8"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_TRN_CLASS"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_TRN_CLASS&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_TRN_CLASS"/>
     <metadata connector="TABLE" label="DW_FDL.FDL_LYL_TRN_CLASS" name="table1">
       <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
@@ -540,24 +367,14 @@
       <column key="false" length="10" name="LYL_TRN_CLASS_CTGRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-240" posY="440">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_9" show="false"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleInput" show="false"/>
-    <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
-    <elementParameter field="TEXT" name="FAMILY" value="ELT/Map/Oracle" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="false" show="false"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" value="false" show="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" value="false" show="false"/>
-    <elementParameter field="TEXT" name="HELP" value="org.talend.help.tELTOracleInput" show="false"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" value="" show="false"/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="C:\Talend\8.0.1\studio\configuration\lib\java" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_TRN_REDEMPTION" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;FDL_LYL_TRN_REDEMPTION&quot;"/>
-    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="TEXT" name="LABEL" value="SRC_FDL_LYL_TRN_REDEMPTION"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  <node componentName="tELTOracleInput" posX="-192" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_9"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_TRN_REDEMPTION"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_TRN_REDEMPTION&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_TRN_REDEMPTION"/>
     <metadata connector="TABLE" label="DW_FDL.FDL_LYL_TRN_REDEMPTION" name="table1">
       <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
@@ -571,24 +388,14 @@
       <column key="false" length="18" name="REDEPOSITED_POINTS_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="80" posY="320">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3" show="false"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleInput" show="false"/>
-    <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
-    <elementParameter field="TEXT" name="FAMILY" value="ELT/Map/Oracle" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="false" show="false"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" value="false" show="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" value="false" show="false"/>
-    <elementParameter field="TEXT" name="HELP" value="org.talend.help.tELTOracleInput" show="false"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" value="" show="false"/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="C:\Talend\8.0.1\studio\configuration\lib\java" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_FF_MEMBER_HST" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;FDL_LYL_FF_MEMBER_HST&quot;"/>
-    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="TEXT" name="LABEL" value="SRC_FDL_LYL_FF_MEMBER_HST"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  <node componentName="tELTOracleInput" posX="64" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_FF_MEMBER_HST"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_FF_MEMBER_HST&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_FF_MEMBER_HST"/>
     <metadata connector="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBER_HST" name="table1">
       <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
@@ -602,24 +409,14 @@
       <column key="false" length="5" name="MEMBERSHIP_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="80" posY="380">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_4" show="false"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleInput" show="false"/>
-    <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
-    <elementParameter field="TEXT" name="FAMILY" value="ELT/Map/Oracle" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="false" show="false"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" value="false" show="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" value="false" show="false"/>
-    <elementParameter field="TEXT" name="HELP" value="org.talend.help.tELTOracleInput" show="false"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" value="" show="false"/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="C:\Talend\8.0.1\studio\configuration\lib\java" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_FF_MEMBERSHIP_STATUS" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;FDL_LYL_FF_MEMBERSHIP_STATUS&quot;"/>
-    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="TEXT" name="LABEL" value="SRC_FDL_LYL_FF_MEMBERSHIP_STATUS"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  <node componentName="tELTOracleInput" posX="64" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_4"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_FF_MEMBERSHIP_STATUS"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_FF_MEMBERSHIP_STATUS&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_FF_MEMBERSHIP_STATUS"/>
     <metadata connector="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS" name="table1">
       <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
@@ -631,24 +428,14 @@
       <column key="false" length="10" name="MEMBERSHIP_STATUS_CTGRY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="80" posY="440">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_5" show="false"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleInput" show="false"/>
-    <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
-    <elementParameter field="TEXT" name="FAMILY" value="ELT/Map/Oracle" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="false" show="false"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" value="false" show="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" value="false" show="false"/>
-    <elementParameter field="TEXT" name="HELP" value="org.talend.help.tELTOracleInput" show="false"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" value="" show="false"/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="C:\Talend\8.0.1\studio\configuration\lib\java" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY&quot;"/>
-    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="TEXT" name="LABEL" value="SRC_FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  <node componentName="tELTOracleInput" posX="64" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_5"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY"/>
     <metadata connector="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY" name="table1">
       <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
@@ -659,94 +446,22 @@
       <column key="false" length="30" name="MEMBERSHIP_STATUS_CTGRY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="720" posY="200">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1" show="false"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" value="tELTOracleOutput" show="false"/>
-    <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
-    <elementParameter field="TEXT" name="FAMILY" value="ELT/Map/Oracle" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="false" show="false"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" value="false" show="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" value="true" show="false"/>
-    <elementParameter field="TEXT" name="HELP" value="org.talend.help.tELTOracleOutput" show="false"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" value="" show="false"/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="C:\Talend\8.0.1\studio\configuration\lib\java" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_CDL_F_FF_STATUS_LRY" show="false"/>
-    <elementParameter field="CHECK" name="USE_WHERE_CONDITIONS_TABLE" value="false" show="false"/>
-    <elementParameter field="MEMO" name="WHERE_CLAUSE" value="&quot;&quot;" show="false"/>
-    <elementParameter field="LABEL" name="NOTE" value="WHERE conditions table&#xA;(for UPDATE and DELETE only)" show="false"/>
-    <elementParameter field="TABLE" name="WHERE_CONDITIONS_TABLE" show="false"/>
-    <elementParameter field="CHECK" name="USE_MERGE_UPDATE" value="false" show="false"/>
-    <elementParameter field="TABLE" name="SCHEMA_UPDATE" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="SNAPSHOT_DT" id="0"/>
-      <elementValue elementRef="UPDATE" value="false" id="1"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="INSERT_DTTM" id="2"/>
-      <elementValue elementRef="UPDATE" value="false" id="3"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="INSERT_RUN_ID" id="4"/>
-      <elementValue elementRef="UPDATE" value="false" id="5"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="FF_ID" id="6"/>
-      <elementValue elementRef="UPDATE" value="false" id="7"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="MEMBERSHIP_STATUS_CODE" id="8"/>
-      <elementValue elementRef="UPDATE" value="false" id="9"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PROGRAM_ACTIVENESS_STATUS_ID" id="10"/>
-      <elementValue elementRef="UPDATE" value="false" id="11"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="FLIGHT_ACTIVENESS_STATUS_ID" id="12"/>
-      <elementValue elementRef="UPDATE" value="false" id="13"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="REDEMPTION_ACTIVENESS_STATUS_ID" id="14"/>
-      <elementValue elementRef="UPDATE" value="false" id="15"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="EARNING_ACTIVENESS_STATUS_ID" id="16"/>
-      <elementValue elementRef="UPDATE" value="false" id="17"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="NEW_FF_MEMBER_FLAG" id="18"/>
-      <elementValue elementRef="UPDATE" value="false" id="19"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LAST_TRN_DT_IN_365_DAYS" id="20"/>
-      <elementValue elementRef="UPDATE" value="false" id="21"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LAST_FLT_TRN_DT_IN_365_DAYS" id="22"/>
-      <elementValue elementRef="UPDATE" value="false" id="23"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="USE_MERGE_UPDATE_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="MERGE_UPDATE_WHERE_STRING" value="&quot; &quot;" show="false"/>
-    <elementParameter field="CHECK" name="USE_MERGE_UPDATE_DELETE_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="MERGE_UPDATE_DELETE_WHERE_STRING" value="&quot; &quot;" show="false"/>
-    <elementParameter field="CHECK" name="USE_MERGE_INSERT" value="false" show="false"/>
-    <elementParameter field="TABLE" name="SCHEMA_INSERT" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="SNAPSHOT_DT" id="0"/>
-      <elementValue elementRef="INSERT" value="false" id="1"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="INSERT_DTTM" id="2"/>
-      <elementValue elementRef="INSERT" value="false" id="3"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="INSERT_RUN_ID" id="4"/>
-      <elementValue elementRef="INSERT" value="false" id="5"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="FF_ID" id="6"/>
-      <elementValue elementRef="INSERT" value="false" id="7"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="MEMBERSHIP_STATUS_CODE" id="8"/>
-      <elementValue elementRef="INSERT" value="false" id="9"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PROGRAM_ACTIVENESS_STATUS_ID" id="10"/>
-      <elementValue elementRef="INSERT" value="false" id="11"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="FLIGHT_ACTIVENESS_STATUS_ID" id="12"/>
-      <elementValue elementRef="INSERT" value="false" id="13"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="REDEMPTION_ACTIVENESS_STATUS_ID" id="14"/>
-      <elementValue elementRef="INSERT" value="false" id="15"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="EARNING_ACTIVENESS_STATUS_ID" id="16"/>
-      <elementValue elementRef="INSERT" value="false" id="17"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="NEW_FF_MEMBER_FLAG" id="18"/>
-      <elementValue elementRef="INSERT" value="false" id="19"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LAST_TRN_DT_IN_365_DAYS" id="20"/>
-      <elementValue elementRef="INSERT" value="false" id="21"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LAST_FLT_TRN_DT_IN_365_DAYS" id="22"/>
-      <elementValue elementRef="INSERT" value="false" id="23"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="USE_MERGE_INSERT_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="MERGE_INSERT_WHERE_STRING" value="&quot; &quot;" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;STG_T_CDL_F_FF_STATUS_LRY&quot;"/>
-    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
-    <elementParameter field="CHECK" name="IS_TABLE_NAME_VARIABLE" value="false"/>
-    <elementParameter field="CHECK" name="USE_DIFFERENT_TABLE" value="false"/>
-    <elementParameter field="TEXT" name="DIFFERENT_TABLE_NAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
-    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="TGT_STG_T_CDL_F_FF_STATUS_LRY"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_CDL_F_FF_STATUS_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_CDL_F_FF_STATUS_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_CDL_F_FF_STATUS_LRY"/>
     <metadata connector="TABLE" label="STG_T_CDL_F_FF_STATUS_LRY" name="tELTOracleOutput_1">
       <column key="false" length="-1" name="SNAPSHOT_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
       <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
@@ -762,39 +477,15 @@
       <column key="false" length="-1" name="LAST_FLT_TRN_DT_IN_365_DAYS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
     </metadata>
   </node>
-  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBER" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTOracleInput_1" target="tELTOracleMap_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table1" show="false"/>
-  </connection>
-  <connection connectorName="TABLE" label="STG_T_CDL_F_FF_STATUS_LRY" lineStyle="9" metaname="STG_T_CDL_F_FF_STATUS_LRY" offsetLabelX="0" offsetLabelY="0" source="tELTOracleMap_1" target="tELTOracleOutput_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="STG_T_CDL_F_FF_STATUS_LRY" show="false"/>
-  </connection>
-  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTOracleInput_6" target="tELTOracleMap_2">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table1" show="false"/>
-  </connection>
-  <connection connectorName="TABLE_REF" label="TRN1" lineStyle="22" metaname="TRN1" offsetLabelX="0" offsetLabelY="0" source="tELTOracleMap_2" target="tELTOracleMap_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="TRN1" show="false"/>
-  </connection>
-  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN_TYPE" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTOracleInput_7" target="tELTOracleMap_2">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table1" show="false"/>
-  </connection>
-  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN_CLASS" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTOracleInput_8" target="tELTOracleMap_2">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table1" show="false"/>
-  </connection>
-  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN_REDEMPTION" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTOracleInput_9" target="tELTOracleMap_2">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table1" show="false"/>
-  </connection>
-  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBER_HST" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTOracleInput_3" target="tELTOracleMap_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table1" show="false"/>
-  </connection>
-  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTOracleInput_4" target="tELTOracleMap_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table1" show="false"/>
-  </connection>
-  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTOracleInput_5" target="tELTOracleMap_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table1" show="false"/>
-  </connection>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
-  </subjob>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBER" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_6" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN_TYPE" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_7" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN_CLASS" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_8" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_TRN_REDEMPTION" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_9" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_TRN" lineStyle="22" mergeOrder="0" metaname="EXP_TRN" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBER_HST" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_3" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_4" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_LYL_FF_MEMBERSHIP_STATUS_CTGRY" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_5" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_CDL_F_FF_STATUS_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_CDL_F_FF_STATUS_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
 </talendfile:ProcessType>

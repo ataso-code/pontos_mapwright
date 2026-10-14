@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default"/>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_FCT_DATE_TM1&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ - T_DWH_DATE"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_DWH_DATE&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTDWH&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_DWH_DATE"/>
+    <metadata connector="TABLE" label="DGYTDWH.T_DWH_DATE" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DAY_NAME_TR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="12" name="DAY_OF_WEEK" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="DAY_OF_MONTH" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="DAY_OF_QUARTER" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="DAY_OF_YEAR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="WEEK_OF_MONTH" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="WEEK_OF_QUARTER" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="WEEK_OF_YEAR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="MONTH" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="MONTH_OF_QUARTER" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="MONTH_NAME_TR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MONTH_NAME_EN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="12" name="YEAR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="FIRST_DAY_OF_MONTH" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_DAY_OF_MONTH" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="FIRST_DAY_OF_QUARTER" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_DAY_OF_QUARTER" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="FIRST_DAY_OF_YEAR" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_DAY_OF_YEAR" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_BUSINESS_DAY" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY_IN_US" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY_IN_UK" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY_IN_JPN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY_IN_CHN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="PREVIOUS_BUSINESS_DAY" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="NEXT_BUSINESS_DAY" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="SETTLEMENT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DAY_NAME_EN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="WEEK_START_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="WEEK_END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_DWH_DATE"/>
+    <metadata connector="TABLE" label="T_STG_FCT_DATE_TM1" name="T_STG_FCT_DATE_TM1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DAY_NAME_TR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="12" name="DAY_OF_WEEK" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="DAY_OF_MONTH" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="DAY_OF_QUARTER" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="DAY_OF_YEAR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="WEEK_OF_MONTH" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="WEEK_OF_QUARTER" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="WEEK_OF_YEAR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="MONTH" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="MONTH_OF_QUARTER" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="MONTH_NAME_TR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MONTH_NAME_EN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="12" name="YEAR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="FIRST_DAY_OF_MONTH" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_DAY_OF_MONTH" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="FIRST_DAY_OF_QUARTER" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_DAY_OF_QUARTER" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="FIRST_DAY_OF_YEAR" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_DAY_OF_YEAR" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_BUSINESS_DAY" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY_IN_US" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY_IN_UK" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY_IN_JPN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY_IN_CHN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="PREVIOUS_BUSINESS_DAY" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="NEXT_BUSINESS_DAY" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="SETTLEMENT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DAY_NAME_EN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="WEEK_START_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="WEEK_END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTDWH.T_DWH_DATE" tableName="DGYTDWH.T_DWH_DATE" joinType="NO_JOIN" alias="T_DWH_DATE">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="DAY_NAME_TR"/>
+        <DBMapperTableEntries name="DAY_OF_WEEK"/>
+        <DBMapperTableEntries name="DAY_OF_MONTH"/>
+        <DBMapperTableEntries name="DAY_OF_QUARTER"/>
+        <DBMapperTableEntries name="DAY_OF_YEAR"/>
+        <DBMapperTableEntries name="WEEK_OF_MONTH"/>
+        <DBMapperTableEntries name="WEEK_OF_QUARTER"/>
+        <DBMapperTableEntries name="WEEK_OF_YEAR"/>
+        <DBMapperTableEntries name="MONTH"/>
+        <DBMapperTableEntries name="MONTH_OF_QUARTER"/>
+        <DBMapperTableEntries name="MONTH_NAME_TR"/>
+        <DBMapperTableEntries name="MONTH_NAME_EN"/>
+        <DBMapperTableEntries name="YEAR"/>
+        <DBMapperTableEntries name="FIRST_DAY_OF_MONTH"/>
+        <DBMapperTableEntries name="LAST_DAY_OF_MONTH"/>
+        <DBMapperTableEntries name="FIRST_DAY_OF_QUARTER"/>
+        <DBMapperTableEntries name="LAST_DAY_OF_QUARTER"/>
+        <DBMapperTableEntries name="FIRST_DAY_OF_YEAR"/>
+        <DBMapperTableEntries name="LAST_DAY_OF_YEAR"/>
+        <DBMapperTableEntries name="IS_BUSINESS_DAY"/>
+        <DBMapperTableEntries name="IS_HOLIDAY"/>
+        <DBMapperTableEntries name="IS_HOLIDAY_IN_US"/>
+        <DBMapperTableEntries name="IS_HOLIDAY_IN_UK"/>
+        <DBMapperTableEntries name="IS_HOLIDAY_IN_JPN"/>
+        <DBMapperTableEntries name="IS_HOLIDAY_IN_CHN"/>
+        <DBMapperTableEntries name="PREVIOUS_BUSINESS_DAY"/>
+        <DBMapperTableEntries name="NEXT_BUSINESS_DAY"/>
+        <DBMapperTableEntries name="SETTLEMENT_DATE"/>
+        <DBMapperTableEntries name="DAY_NAME_EN"/>
+        <DBMapperTableEntries name="WEEK_START_DATE"/>
+        <DBMapperTableEntries name="WEEK_END_DATE"/>
+      </InputTables>
+      <OutputTables name="T_STG_FCT_DATE_TM1" tableName="T_STG_FCT_DATE_TM1">
+        <DBMapperTableEntries name="ETL_DATE" expression="T_DWH_DATE.ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="T_DWH_DATE.DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="DAY_NAME_TR" expression="T_DWH_DATE.DAY_NAME_TR"/>
+        <DBMapperTableEntries name="DAY_OF_WEEK" expression="T_DWH_DATE.DAY_OF_WEEK"/>
+        <DBMapperTableEntries name="DAY_OF_MONTH" expression="T_DWH_DATE.DAY_OF_MONTH"/>
+        <DBMapperTableEntries name="DAY_OF_QUARTER" expression="T_DWH_DATE.DAY_OF_QUARTER"/>
+        <DBMapperTableEntries name="DAY_OF_YEAR" expression="T_DWH_DATE.DAY_OF_YEAR"/>
+        <DBMapperTableEntries name="WEEK_OF_MONTH" expression="T_DWH_DATE.WEEK_OF_MONTH"/>
+        <DBMapperTableEntries name="WEEK_OF_QUARTER" expression="T_DWH_DATE.WEEK_OF_QUARTER"/>
+        <DBMapperTableEntries name="WEEK_OF_YEAR" expression="T_DWH_DATE.WEEK_OF_YEAR"/>
+        <DBMapperTableEntries name="MONTH" expression="T_DWH_DATE.MONTH"/>
+        <DBMapperTableEntries name="MONTH_OF_QUARTER" expression="T_DWH_DATE.MONTH_OF_QUARTER"/>
+        <DBMapperTableEntries name="MONTH_NAME_TR" expression="T_DWH_DATE.MONTH_NAME_TR"/>
+        <DBMapperTableEntries name="MONTH_NAME_EN" expression="T_DWH_DATE.MONTH_NAME_EN"/>
+        <DBMapperTableEntries name="YEAR" expression="T_DWH_DATE.YEAR"/>
+        <DBMapperTableEntries name="FIRST_DAY_OF_MONTH" expression="T_DWH_DATE.FIRST_DAY_OF_MONTH"/>
+        <DBMapperTableEntries name="LAST_DAY_OF_MONTH" expression="T_DWH_DATE.LAST_DAY_OF_MONTH"/>
+        <DBMapperTableEntries name="FIRST_DAY_OF_QUARTER" expression="T_DWH_DATE.FIRST_DAY_OF_QUARTER"/>
+        <DBMapperTableEntries name="LAST_DAY_OF_QUARTER" expression="T_DWH_DATE.LAST_DAY_OF_QUARTER"/>
+        <DBMapperTableEntries name="FIRST_DAY_OF_YEAR" expression="T_DWH_DATE.FIRST_DAY_OF_YEAR"/>
+        <DBMapperTableEntries name="LAST_DAY_OF_YEAR" expression="T_DWH_DATE.LAST_DAY_OF_YEAR"/>
+        <DBMapperTableEntries name="IS_BUSINESS_DAY" expression="T_DWH_DATE.IS_BUSINESS_DAY"/>
+        <DBMapperTableEntries name="IS_HOLIDAY" expression="T_DWH_DATE.IS_HOLIDAY"/>
+        <DBMapperTableEntries name="IS_HOLIDAY_IN_US" expression="T_DWH_DATE.IS_HOLIDAY_IN_US"/>
+        <DBMapperTableEntries name="IS_HOLIDAY_IN_UK" expression="T_DWH_DATE.IS_HOLIDAY_IN_UK"/>
+        <DBMapperTableEntries name="IS_HOLIDAY_IN_JPN" expression="T_DWH_DATE.IS_HOLIDAY_IN_JPN"/>
+        <DBMapperTableEntries name="IS_HOLIDAY_IN_CHN" expression="T_DWH_DATE.IS_HOLIDAY_IN_CHN"/>
+        <DBMapperTableEntries name="PREVIOUS_BUSINESS_DAY" expression="T_DWH_DATE.PREVIOUS_BUSINESS_DAY"/>
+        <DBMapperTableEntries name="NEXT_BUSINESS_DAY" expression="T_DWH_DATE.NEXT_BUSINESS_DAY"/>
+        <DBMapperTableEntries name="SETTLEMENT_DATE" expression="T_DWH_DATE.SETTLEMENT_DATE"/>
+        <DBMapperTableEntries name="DAY_NAME_EN" expression="T_DWH_DATE.DAY_NAME_EN"/>
+        <DBMapperTableEntries name="WEEK_START_DATE" expression="T_DWH_DATE.WEEK_START_DATE"/>
+        <DBMapperTableEntries name="WEEK_END_DATE" expression="T_DWH_DATE.WEEK_END_DATE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_FCT_DATE_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_FCT_DATE_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_FCT_DATE_TM1"/>
+    <metadata connector="TABLE" label="T_STG_FCT_DATE_TM1" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DAY_NAME_TR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="12" name="DAY_OF_WEEK" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="DAY_OF_MONTH" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="DAY_OF_QUARTER" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="DAY_OF_YEAR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="WEEK_OF_MONTH" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="WEEK_OF_QUARTER" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="WEEK_OF_YEAR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="MONTH" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="MONTH_OF_QUARTER" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="MONTH_NAME_TR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MONTH_NAME_EN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="12" name="YEAR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="FIRST_DAY_OF_MONTH" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_DAY_OF_MONTH" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="FIRST_DAY_OF_QUARTER" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_DAY_OF_QUARTER" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="FIRST_DAY_OF_YEAR" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_DAY_OF_YEAR" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_BUSINESS_DAY" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY_IN_US" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY_IN_UK" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY_IN_JPN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HOLIDAY_IN_CHN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="PREVIOUS_BUSINESS_DAY" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="NEXT_BUSINESS_DAY" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="SETTLEMENT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DAY_NAME_EN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="WEEK_START_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="WEEK_END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTDWH.T_DWH_DATE" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_FCT_DATE_TM1" lineStyle="9" mergeOrder="0" metaname="T_STG_FCT_DATE_TM1" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

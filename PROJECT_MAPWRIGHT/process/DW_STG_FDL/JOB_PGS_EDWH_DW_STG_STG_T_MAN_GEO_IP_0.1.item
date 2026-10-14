@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default"/>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_MAN_GEO_IP&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_5"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_MAN_GEO_IP_V4"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_MAN_GEO_IP_V4&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_MAN_GEO_IP_V4"/>
+    <metadata connector="TABLE" label="DW_LND.LND_MAN_GEO_IP_V4" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="GEO_NETWORK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GEONAME_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="REGISTERED_COUNTRY_GEONAME_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="REPRESENTED_COUNTRY_GEONAME_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="IS_ANONYMOUS_PROXY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="IS_SATELLITE_PROVIDER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-192" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_3"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_C"/>
+    <metadata connector="TABLE" label="EXP_C" name="EXP_C">
+      <column key="false" length="50" name="geo_network" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="geoname_id" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="ip_dec" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="cidr" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_MAN_GEO_IP_V4" tableName="DW_LND.LND_MAN_GEO_IP_V4" joinType="NO_JOIN" alias="LND_MAN_GEO_IP_V4">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="GEO_NETWORK"/>
+        <DBMapperTableEntries name="GEONAME_ID"/>
+        <DBMapperTableEntries name="REGISTERED_COUNTRY_GEONAME_ID"/>
+        <DBMapperTableEntries name="REPRESENTED_COUNTRY_GEONAME_ID"/>
+        <DBMapperTableEntries name="IS_ANONYMOUS_PROXY"/>
+        <DBMapperTableEntries name="IS_SATELLITE_PROVIDER"/>
+      </InputTables>
+      <OutputTables name="EXP_C" tableName="EXP_C">
+        <DBMapperTableEntries name="geo_network" expression="LND_MAN_GEO_IP_V4.geo_network"/>
+        <DBMapperTableEntries name="geoname_id" expression="LND_MAN_GEO_IP_V4.geoname_id"/>
+        <DBMapperTableEntries name="ip_dec" expression="TO_NUMBER(REGEXP_SUBSTR(REGEXP_SUBSTR(LND_MAN_GEO_IP_V4.geo_network, '^[^/]+'), '\d+', 1, 1)) * 16777216 + TO_NUMBER(REGEXP_SUBSTR(REGEXP_SUBSTR(LND_MAN_GEO_IP_V4.geo_network, '^[^/]+'), '\d+', 1, 2)) * 65536 + TO_NUMBER(REGEXP_SUBSTR(REGEXP_SUBSTR(LND_MAN_GEO_IP_V4.geo_network, '^[^/]+'), '\d+', 1, 3)) * 256 + TO_NUMBER(REGEXP_SUBSTR(REGEXP_SUBSTR(LND_MAN_GEO_IP_V4.geo_network, '^[^/]+'), '\d+', 1, 4))"/>
+        <DBMapperTableEntries name="cidr" expression="TO_NUMBER(REGEXP_SUBSTR(LND_MAN_GEO_IP_V4.geo_network, '\d+$'))"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_r"/>
+    <metadata connector="TABLE" label="EXP_r" name="EXP_r">
+      <column key="false" length="38" name="geoname_id" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4000" name="longfrom" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="longto" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_C" tableName="EXP_C" joinType="NO_JOIN" alias="EXP_C">
+        <DBMapperTableEntries name="geo_network"/>
+        <DBMapperTableEntries name="geoname_id"/>
+        <DBMapperTableEntries name="ip_dec"/>
+        <DBMapperTableEntries name="cidr"/>
+      </InputTables>
+      <OutputTables name="EXP_r" tableName="EXP_r">
+        <DBMapperTableEntries name="geoname_id" expression="EXP_C.geoname_id"/>
+        <DBMapperTableEntries name="longfrom" expression="BITAND(EXP_C.ip_dec, POWER(2, 32) - POWER(2, 32 - EXP_C.cidr))"/>
+        <DBMapperTableEntries name="longto" expression="BITAND(EXP_C.ip_dec, POWER(2, 32) - POWER(2, 32 - EXP_C.cidr)) + POWER(2, 32 - EXP_C.cidr) - 1"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_r"/>
+    <metadata connector="TABLE" label="STG_T_MAN_GEO_IP" name="STG_T_MAN_GEO_IP">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="IP_FROM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="IP_TO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="LONG_FROM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LONG_TO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="COUNTRY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="COUNTRY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_r" tableName="EXP_r" joinType="NO_JOIN" alias="EXP_r">
+        <DBMapperTableEntries name="geoname_id"/>
+        <DBMapperTableEntries name="longfrom"/>
+        <DBMapperTableEntries name="longto"/>
+      </InputTables>
+      <InputTables name="DW_LND.LND_MAN_GEO_IP_LOCATIONS" tableName="DW_LND.LND_MAN_GEO_IP_LOCATIONS" joinType="INNER_JOIN" alias="l">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="GEONAME_ID" expression="EXP_r.geoname_id" join="true" operator="="/>
+        <DBMapperTableEntries name="LOCALE_CODE"/>
+        <DBMapperTableEntries name="CONTINENT_CODE"/>
+        <DBMapperTableEntries name="CONTINENT_NAME"/>
+        <DBMapperTableEntries name="COUNTRY_ISO_CODE"/>
+        <DBMapperTableEntries name="COUNTRY_NAME"/>
+        <DBMapperTableEntries name="IS_IN_EUROPEAN_UNION"/>
+      </InputTables>
+      <InputTables name="EXP_MAN" tableName="EXP_MAN" joinType="CROSS_JOIN" alias="EXP_MAN">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+      </InputTables>
+      <OutputTables name="STG_T_MAN_GEO_IP" tableName="STG_T_MAN_GEO_IP">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="EXP_MAN.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="IP_FROM" expression="TRUNC(EXP_r.longfrom / 16777216) || '.' || TRUNC(MOD(EXP_r.longfrom, 16777216) / 65536) || '.' || TRUNC(MOD(EXP_r.longfrom, 65536) / 256) || '.' || MOD(EXP_r.longfrom, 256)"/>
+        <DBMapperTableEntries name="IP_TO" expression="TRUNC(EXP_r.longto / 16777216) || '.' || TRUNC(MOD(EXP_r.longto, 16777216) / 65536) || '.' || TRUNC(MOD(EXP_r.longto, 65536) / 256) || '.' || MOD(EXP_r.longto, 256)"/>
+        <DBMapperTableEntries name="LONG_FROM" expression="EXP_r.longfrom"/>
+        <DBMapperTableEntries name="LONG_TO" expression="EXP_r.longto"/>
+        <DBMapperTableEntries name="COUNTRY_CODE" expression="l.country_iso_code"/>
+        <DBMapperTableEntries name="COUNTRY_NAME" expression="l.country_name"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_MAN_GEO_IP_LOCATIONS"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_MAN_GEO_IP_LOCATIONS&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_MAN_GEO_IP_LOCATIONS"/>
+    <metadata connector="TABLE" label="DW_LND.LND_MAN_GEO_IP_LOCATIONS" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="GEONAME_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="LOCALE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="CONTINENT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="CONTINENT_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="COUNTRY_ISO_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="COUNTRY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="IS_IN_EUROPEAN_UNION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_6"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_REF_SOURCE"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_REF_SOURCE&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_REF_SOURCE"/>
+    <metadata connector="TABLE" label="DW_LND.LND_REF_SOURCE" name="table1">
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SYS_SRC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="SYS_SRC_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="SYS_SRC_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_4"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_MAN"/>
+    <metadata connector="TABLE" label="EXP_MAN" name="EXP_MAN">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_REF_SOURCE" tableName="DW_LND.LND_REF_SOURCE" joinType="NO_JOIN" alias="LND_REF_SOURCE">
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="SYS_SRC_CODE"/>
+        <DBMapperTableEntries name="SYS_SRC_NAME"/>
+        <DBMapperTableEntries name="SYS_SRC_DESC"/>
+      </InputTables>
+      <OutputTables name="EXP_MAN" tableName="EXP_MAN">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="LND_REF_SOURCE.SYS_SRC_ID"/>
+        <FilterEntries name="where" expression="LND_REF_SOURCE.SYS_SRC_CODE = 'MAN'" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_MAN_GEO_IP"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_MAN_GEO_IP&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_MAN_GEO_IP"/>
+    <metadata connector="TABLE" label="STG_T_MAN_GEO_IP" name="tELTOracleOutput_1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="IP_FROM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="IP_TO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="LONG_FROM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LONG_TO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="COUNTRY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="COUNTRY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_MAN_GEO_IP_V4" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_5" target="tELTOracleMap_3"/>
+  <connection connectorName="TABLE_REF" label="EXP_C" lineStyle="22" mergeOrder="0" metaname="EXP_C" outputId="0" source="tELTOracleMap_3" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_r" lineStyle="22" mergeOrder="0" metaname="EXP_r" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_MAN_GEO_IP_LOCATIONS" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_REF_SOURCE" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_6" target="tELTOracleMap_4"/>
+  <connection connectorName="TABLE_REF" label="EXP_MAN" lineStyle="22" mergeOrder="0" metaname="EXP_MAN" outputId="0" source="tELTOracleMap_4" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_MAN_GEO_IP" lineStyle="9" mergeOrder="0" metaname="STG_T_MAN_GEO_IP" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

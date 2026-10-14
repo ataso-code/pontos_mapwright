@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default"/>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_FDL_RES_MCO_TYPE_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_SSR"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_SSR&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_SSR"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_SSR" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="SSR_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="500" name="SSR_EXPLANATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ALLOWED_ICI" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ALLOWED_KIOSK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="SR_CONFIRM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="CRS_CONFIRM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="WEB_CONFIRM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="REPLY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SEGMENT_NULL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_PAX_NULL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_INFO_ONLY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_FREE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SHOWON_DROPDOWN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="256" name="REJECTION_COMMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SHOWN_ON_CHECKIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SHOWN_ON_SSR_LIST" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SHOW_ON_WEB" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SHOW_ON_BCARD" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SSR_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="PRM_ELIGIBLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="FREE_TEXT_IN_REQUEST" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SEND_EXPLANATION_WITH_PNL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ALLOWED_WAITLIST" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_IATA_SSR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CATERING_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SHOW_IN_QUEUE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="ACTION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="AUTOMATED_FORMAT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="FREE_TEXT_IN_REPLY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="ALLOWED_COUNT_PER_PAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CATERING_SALE_PERMIT_HOUR" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SEND_WITH_PSM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SEND_WITH_PNL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SHOWN_ON_PIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SHOWN_ON_ONBOARD" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ALLOWED_BAG_DROP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ALLOWED_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ALLOWED_OVERBOOK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_HUM_SSR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="150" name="SSR_DETAILS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_GATE_SSR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_LND_PAX_SSR"/>
+    <metadata connector="TABLE" label="STG_T_FDL_RES_MCO_TYPE_LRY" name="STG_T_FDL_RES_MCO_TYPE_LRY">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="MCO_TYPE_CODE" nullable="false" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="MCO_TYPE_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MCO_GRP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="MCO_GRP_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_PAX_SSR" tableName="DW_LND.LND_PAX_SSR" joinType="NO_JOIN" alias="S">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="SSR_CODE"/>
+        <DBMapperTableEntries name="SSR_EXPLANATION"/>
+        <DBMapperTableEntries name="IS_ALLOWED_ICI"/>
+        <DBMapperTableEntries name="IS_ALLOWED_KIOSK"/>
+        <DBMapperTableEntries name="SR_CONFIRM"/>
+        <DBMapperTableEntries name="CRS_CONFIRM"/>
+        <DBMapperTableEntries name="WEB_CONFIRM"/>
+        <DBMapperTableEntries name="REPLY"/>
+        <DBMapperTableEntries name="IS_SEGMENT_NULL"/>
+        <DBMapperTableEntries name="IS_PAX_NULL"/>
+        <DBMapperTableEntries name="IS_INFO_ONLY"/>
+        <DBMapperTableEntries name="IS_FREE"/>
+        <DBMapperTableEntries name="IS_SHOWON_DROPDOWN"/>
+        <DBMapperTableEntries name="REJECTION_COMMENT"/>
+        <DBMapperTableEntries name="IS_SHOWN_ON_CHECKIN"/>
+        <DBMapperTableEntries name="IS_SHOWN_ON_SSR_LIST"/>
+        <DBMapperTableEntries name="IS_SHOW_ON_WEB"/>
+        <DBMapperTableEntries name="IS_SHOW_ON_BCARD"/>
+        <DBMapperTableEntries name="SSR_GROUP"/>
+        <DBMapperTableEntries name="PRM_ELIGIBLE"/>
+        <DBMapperTableEntries name="FREE_TEXT_IN_REQUEST"/>
+        <DBMapperTableEntries name="SEND_EXPLANATION_WITH_PNL"/>
+        <DBMapperTableEntries name="IS_ALLOWED_WAITLIST"/>
+        <DBMapperTableEntries name="IS_IATA_SSR"/>
+        <DBMapperTableEntries name="CATERING_TYPE"/>
+        <DBMapperTableEntries name="IS_SHOW_IN_QUEUE"/>
+        <DBMapperTableEntries name="ACTION_CODE"/>
+        <DBMapperTableEntries name="AUTOMATED_FORMAT"/>
+        <DBMapperTableEntries name="FREE_TEXT_IN_REPLY"/>
+        <DBMapperTableEntries name="ALLOWED_COUNT_PER_PAX"/>
+        <DBMapperTableEntries name="CATERING_SALE_PERMIT_HOUR"/>
+        <DBMapperTableEntries name="SEND_WITH_PSM"/>
+        <DBMapperTableEntries name="SEND_WITH_PNL"/>
+        <DBMapperTableEntries name="IS_SHOWN_ON_PIL"/>
+        <DBMapperTableEntries name="IS_SHOWN_ON_ONBOARD"/>
+        <DBMapperTableEntries name="IS_ALLOWED_BAG_DROP"/>
+        <DBMapperTableEntries name="IS_ALLOWED_GROUP"/>
+        <DBMapperTableEntries name="IS_ALLOWED_OVERBOOK"/>
+        <DBMapperTableEntries name="IS_HUM_SSR"/>
+        <DBMapperTableEntries name="SSR_DETAILS"/>
+        <DBMapperTableEntries name="IS_GATE_SSR"/>
+      </InputTables>
+      <OutputTables name="STG_T_FDL_RES_MCO_TYPE_LRY" tableName="STG_T_FDL_RES_MCO_TYPE_LRY">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="S.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="MCO_TYPE_CODE" expression="TRIM(S.SSR_CODE)"/>
+        <DBMapperTableEntries name="MCO_TYPE_DESC" expression="CASE WHEN TRIM(S.SSR_CODE) = 'GIZ' AND (S.SSR_EXPLANATION IS NULL OR TRIM(S.SSR_EXPLANATION) = '') THEN 'GIZ' ELSE TRIM(S.SSR_EXPLANATION) END"/>
+        <DBMapperTableEntries name="MCO_GRP_CODE" expression="TRIM(S.SSR_GROUP)"/>
+        <DBMapperTableEntries name="MCO_GRP_DESC" expression="CASE WHEN S.SSR_GROUP = 'BAG' THEN 'Fazla bagaj (XBAG), el bagajı (HBAG) veya ek bagaj (WBAG) gibi hizmetlerin konsolide edildiği gruptur' WHEN S.SSR_GROUP = 'CATERING' THEN 'Uçuş öncesi sipariş edilen yemek ve içecek (Pre-order meal) hizmetlerini kapsar.' WHEN S.SSR_GROUP = 'DCS' THEN 'Havalimanı check-in bedeli olarak bilinen ve QC koduyla takip edilen operasyonel geliri ifade eder.' WHEN S.SSR_GROUP = 'EQP' THEN 'Spor ekipmanları (Golf, Kayak vb.) gibi özel taşıma gerektiren yan hizmetlerin grubudur.' WHEN S.SSR_GROUP = 'OTH' THEN 'Ana kategorilere girmeyen; IFE, FLEX veya cezai işlemler gibi çeşitli hizmetlerin fallback grubudur.' WHEN S.SSR_GROUP = 'SEAT' THEN 'Koltuk seçimi ve ekstra diz mesafeli koltuklar (EX - Exit) gibi koltuk bazlı hizmetleri temsil eder.' WHEN S.SSR_GROUP = 'WCH' THEN 'Tekerlekli sandalye yardım hizmetlerini (WCHC, WCHR, WCHS) ifade eder.' ELSE NULL END"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_FDL_RES_MCO_TYPE_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_FDL_RES_MCO_TYPE_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_FDL_RES_MCO_TYPE_LRY"/>
+    <metadata connector="TABLE" label="STG_T_FDL_RES_MCO_TYPE_LRY" name="tELTOracleOutput_1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="MCO_TYPE_CODE" nullable="false" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="MCO_TYPE_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="MCO_GRP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="MCO_GRP_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_SSR" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_FDL_RES_MCO_TYPE_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_FDL_RES_MCO_TYPE_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

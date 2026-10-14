@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+    <contextParameter name="VAR_FROM_ETL_DATE" promptNeeded="false" type="id_String"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_FDL_RES_COUPON_03_PAX_CPN&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_P_PAX_COUPON"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_P_PAX_COUPON&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_STG_P_PAX_COUPON"/>
+    <metadata connector="TABLE" label="DW_STG.STG_P_PAX_COUPON" name="table1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="13" name="TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PNR_LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="X_CPN_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="CPN_SHARE_LOCAL" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="CPN_SHARE_USD" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="CI_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="true" length="10" name="CPN_ISN" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PAX_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="CI_GROUP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="CI_BAG_PIECES_X" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CI_WEIGHT_KG_X" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CI_STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="CANCEL_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="NV_AFTER" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="NV_BEFORE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="CI_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="OFFLOAD_EXPLANATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="OFFLOAD_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_PRORATED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PRINT_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ERROR_AMOUNT_FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ERROR_AMOUNT_TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="FLOWN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_TAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FARE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_COMMISSION" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="OFFLOADED_CI_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_SURCHARGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="TKT_TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="SEAT_CHANGE_EXPLANATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_PENALTY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="CI_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="7" name="CI_SYSTEM_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_DISCOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="DSCNT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="MCO_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DSCNT_SR_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LOC_FF_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="HOLD_BAG_CI_GROUP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="OCET_COUPON_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="REJECT_REASON" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="14" name="SAC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CONTROLLING_AIRLINE_PROFILE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="BOARDING_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="AS_OF_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="2" name="BOARDING_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_T"/>
+    <metadata connector="TABLE" label="EXP_T" name="EXP_T">
+      <column key="false" length="38" name="RN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="13" name="TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="3" name="ARR_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="DEP_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CPN_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="DSCNT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOR" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="RULE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SR_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FARE_BASIS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="MCO_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PNR_LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CPN_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="NV_AFTER" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="NV_BEFORE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="14" name="SAC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CI_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="CI_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="CI_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="8" name="CHECK_IN_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="OFFLOADED_CI_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="OFFLOAD_EXPLANATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="OFFLOAD_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="CHECKIN_GRP_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="BP_PRINT_CNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="BOARDING_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="2" name="BOARDING_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PACKAGE_SSR_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_STG.STG_P_PAX_COUPON" tableName="DW_STG.STG_P_PAX_COUPON" joinType="NO_JOIN" alias="CP">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="TKT_NO"/>
+        <DBMapperTableEntries name="CPN_NO"/>
+        <DBMapperTableEntries name="PNR_LEG_ISN"/>
+        <DBMapperTableEntries name="LEG_ISN"/>
+        <DBMapperTableEntries name="X_CPN_STATUS"/>
+        <DBMapperTableEntries name="CPN_SHARE_LOCAL"/>
+        <DBMapperTableEntries name="CPN_SHARE_USD"/>
+        <DBMapperTableEntries name="CI_SEQ"/>
+        <DBMapperTableEntries name="CPN_ISN"/>
+        <DBMapperTableEntries name="PAX_ISN"/>
+        <DBMapperTableEntries name="CI_GROUP"/>
+        <DBMapperTableEntries name="CI_BAG_PIECES_X"/>
+        <DBMapperTableEntries name="CI_WEIGHT_KG_X"/>
+        <DBMapperTableEntries name="CI_STATUS"/>
+        <DBMapperTableEntries name="CANCEL_TYPE"/>
+        <DBMapperTableEntries name="NV_AFTER"/>
+        <DBMapperTableEntries name="NV_BEFORE"/>
+        <DBMapperTableEntries name="CI_USER_ISN"/>
+        <DBMapperTableEntries name="OFFLOAD_EXPLANATION"/>
+        <DBMapperTableEntries name="OFFLOAD_USER_ISN"/>
+        <DBMapperTableEntries name="FARE"/>
+        <DBMapperTableEntries name="TAX"/>
+        <DBMapperTableEntries name="IS_PRORATED"/>
+        <DBMapperTableEntries name="PRINT_COUNT"/>
+        <DBMapperTableEntries name="ERROR_AMOUNT_FARE"/>
+        <DBMapperTableEntries name="ERROR_AMOUNT_TAX"/>
+        <DBMapperTableEntries name="FLOWN"/>
+        <DBMapperTableEntries name="COMMISSION"/>
+        <DBMapperTableEntries name="LOC_TAX"/>
+        <DBMapperTableEntries name="LOC_FARE"/>
+        <DBMapperTableEntries name="LOC_COMMISSION"/>
+        <DBMapperTableEntries name="CURRENCY"/>
+        <DBMapperTableEntries name="OFFLOADED_CI_SEQ"/>
+        <DBMapperTableEntries name="SURCHARGE"/>
+        <DBMapperTableEntries name="LOC_SURCHARGE"/>
+        <DBMapperTableEntries name="TKT_TYPE"/>
+        <DBMapperTableEntries name="SEAT_CHANGE_EXPLANATION"/>
+        <DBMapperTableEntries name="PENALTY"/>
+        <DBMapperTableEntries name="LOC_PENALTY"/>
+        <DBMapperTableEntries name="CI_DATE"/>
+        <DBMapperTableEntries name="CI_SYSTEM_ID"/>
+        <DBMapperTableEntries name="DISCOUNT"/>
+        <DBMapperTableEntries name="LOC_DISCOUNT"/>
+        <DBMapperTableEntries name="DSCNT_CODE"/>
+        <DBMapperTableEntries name="MCO_TYPE"/>
+        <DBMapperTableEntries name="SERVICE_FEE"/>
+        <DBMapperTableEntries name="LOC_SERVICE_FEE"/>
+        <DBMapperTableEntries name="DSCNT_SR_ISN"/>
+        <DBMapperTableEntries name="FF_AMOUNT"/>
+        <DBMapperTableEntries name="LOC_FF_AMOUNT"/>
+        <DBMapperTableEntries name="HOLD_BAG_CI_GROUP"/>
+        <DBMapperTableEntries name="CPN_STATUS"/>
+        <DBMapperTableEntries name="OCET_COUPON_STATUS"/>
+        <DBMapperTableEntries name="REJECT_REASON"/>
+        <DBMapperTableEntries name="SAC"/>
+        <DBMapperTableEntries name="CONTROLLING_AIRLINE_PROFILE"/>
+        <DBMapperTableEntries name="BOARDING_TIME"/>
+        <DBMapperTableEntries name="AS_OF_DATE"/>
+        <DBMapperTableEntries name="BOARDING_TYPE"/>
+      </InputTables>
+      <InputTables name="DW_STG.STG_P_PAX_PNR_LEG" tableName="DW_STG.STG_P_PAX_PNR_LEG" joinType="INNER_JOIN" alias="PL">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="PNR_LEG_ISN" expression="CP.PNR_LEG_ISN" join="true" operator="="/>
+        <DBMapperTableEntries name="PNR_ISN"/>
+        <DBMapperTableEntries name="REZ_CLASS"/>
+        <DBMapperTableEntries name="X_STATUS"/>
+        <DBMapperTableEntries name="SEQ"/>
+        <DBMapperTableEntries name="LEG_ISN"/>
+        <DBMapperTableEntries name="FLOWN"/>
+        <DBMapperTableEntries name="SEG_ISN"/>
+        <DBMapperTableEntries name="LS_SEQ"/>
+        <DBMapperTableEntries name="FARE_TYPE"/>
+        <DBMapperTableEntries name="FARE_BASIS"/>
+        <DBMapperTableEntries name="CRC_ATTENTION"/>
+        <DBMapperTableEntries name="TARIFF_FARE_ISN"/>
+        <DBMapperTableEntries name="IS_STOP_OVER"/>
+        <DBMapperTableEntries name="IS_RE_ACCOMMODATED"/>
+        <DBMapperTableEntries name="PNL_ADD_DATE"/>
+        <DBMapperTableEntries name="PNL_DEL_DATE"/>
+        <DBMapperTableEntries name="IS_ANY_CHANGE"/>
+        <DBMapperTableEntries name="CRS_REZ_CLASS"/>
+        <DBMapperTableEntries name="CODESHARE_ISN"/>
+        <DBMapperTableEntries name="MASTER_ADD_ON_PNR_LEG_ISN"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="PENALTY_ISN"/>
+        <DBMapperTableEntries name="PACKAGE_SSR_ISN"/>
+        <DBMapperTableEntries name="AS_OF_DATE"/>
+        <DBMapperTableEntries name="TPM_FARE_ISN"/>
+      </InputTables>
+      <InputTables name="DW_LND.LND_PAX_LEG" tableName="DW_LND.LND_PAX_LEG" joinType="INNER_JOIN" alias="L">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="LEG_ISN" expression="CP.LEG_ISN" join="true" operator="="/>
+        <DBMapperTableEntries name="SCH_DEP_DT"/>
+        <DBMapperTableEntries name="SPL_ISN"/>
+        <DBMapperTableEntries name="SCH_ARR_DT"/>
+        <DBMapperTableEntries name="PLN_DEP_DT"/>
+        <DBMapperTableEntries name="PLN_ARR_DT"/>
+        <DBMapperTableEntries name="ACT_DEP_DT"/>
+        <DBMapperTableEntries name="ACT_ARR_DT"/>
+        <DBMapperTableEntries name="AA_CODE"/>
+        <DBMapperTableEntries name="FLT_NO"/>
+        <DBMapperTableEntries name="LEG_NO"/>
+        <DBMapperTableEntries name="DEP_CITY"/>
+        <DBMapperTableEntries name="DEP_PORT"/>
+        <DBMapperTableEntries name="ARR_CITY"/>
+        <DBMapperTableEntries name="ARR_PORT"/>
+        <DBMapperTableEntries name="AC_TYPE"/>
+        <DBMapperTableEntries name="AC_ISN"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="INHIBIT_SALES"/>
+        <DBMapperTableEntries name="CI_SEQ"/>
+        <DBMapperTableEntries name="BOARDING_TIME"/>
+        <DBMapperTableEntries name="BOARDING_GATE"/>
+        <DBMapperTableEntries name="SSM_SENT"/>
+        <DBMapperTableEntries name="TOUR_OPERATOR"/>
+        <DBMapperTableEntries name="FLT_TYPE"/>
+        <DBMapperTableEntries name="F_CAP"/>
+        <DBMapperTableEntries name="C_CAP"/>
+        <DBMapperTableEntries name="Y_CAP"/>
+        <DBMapperTableEntries name="CRC_COMMENT"/>
+        <DBMapperTableEntries name="DAILY_ISN"/>
+        <DBMapperTableEntries name="DCS_STATUS"/>
+        <DBMapperTableEntries name="DIV_PORT"/>
+        <DBMapperTableEntries name="DIV_ARR_DT"/>
+        <DBMapperTableEntries name="AB_USER_ISN"/>
+        <DBMapperTableEntries name="FL_USER_ISN"/>
+        <DBMapperTableEntries name="DV_USER_ISN"/>
+        <DBMapperTableEntries name="PL_USER_ISN"/>
+        <DBMapperTableEntries name="AC_AIRBORNE_TIME"/>
+        <DBMapperTableEntries name="AC_TOUCHDOWN_TIME"/>
+        <DBMapperTableEntries name="MSG_SPECIAL_INFO"/>
+        <DBMapperTableEntries name="FC_STATUS"/>
+        <DBMapperTableEntries name="FC_STATUS_COMMENT"/>
+        <DBMapperTableEntries name="SCH_ROTATION_ISN"/>
+        <DBMapperTableEntries name="SCH_DURATION"/>
+        <DBMapperTableEntries name="SCH_SERVICE_TYPE"/>
+        <DBMapperTableEntries name="SCH_ACTIVATED_DATE"/>
+        <DBMapperTableEntries name="SCH_DEACTIVATED_DATE"/>
+        <DBMapperTableEntries name="SCH_PARENT_DAILY_ISN"/>
+        <DBMapperTableEntries name="SCH_ACTION_CODE"/>
+        <DBMapperTableEntries name="SCH_CONNECTION_ISN"/>
+        <DBMapperTableEntries name="SCH_CONN_LEG_SEQ"/>
+        <DBMapperTableEntries name="SCH_REMARKS"/>
+        <DBMapperTableEntries name="SCH_HOR_SCH_ISN"/>
+        <DBMapperTableEntries name="SCH_DAILY_ISN"/>
+        <DBMapperTableEntries name="DL_CODE_1"/>
+        <DBMapperTableEntries name="DL_CODE_2"/>
+        <DBMapperTableEntries name="DL_D1"/>
+        <DBMapperTableEntries name="DL_D2"/>
+        <DBMapperTableEntries name="MVT_PAX"/>
+        <DBMapperTableEntries name="MVT_TECH_CHK"/>
+        <DBMapperTableEntries name="MVT_DISP_CHK"/>
+        <DBMapperTableEntries name="MVT_TECH_CHK_DT"/>
+        <DBMapperTableEntries name="MVT_DISP_CHK_DT"/>
+        <DBMapperTableEntries name="MVT_TTL"/>
+        <DBMapperTableEntries name="MVT_TOF"/>
+        <DBMapperTableEntries name="SCH_ACTIVATED_BY"/>
+        <DBMapperTableEntries name="UTC_SCH_DEP_DT"/>
+        <DBMapperTableEntries name="UTC_SCH_ARR_DT"/>
+        <DBMapperTableEntries name="UTC_EST_DEP_DT"/>
+        <DBMapperTableEntries name="UTC_EST_ARR_DT"/>
+        <DBMapperTableEntries name="UTC_ACT_DEP_DT"/>
+        <DBMapperTableEntries name="UTC_ACT_ARR_DT"/>
+        <DBMapperTableEntries name="UTC_ACT_AB_DT"/>
+        <DBMapperTableEntries name="UTC_ACT_TD_DT"/>
+        <DBMapperTableEntries name="UTC_DIV_ARR_DT"/>
+        <DBMapperTableEntries name="MVT_ATC_CHK"/>
+        <DBMapperTableEntries name="MVT_ATC_CHK_DT"/>
+        <DBMapperTableEntries name="MVT_NOTAM_CHK"/>
+        <DBMapperTableEntries name="MVT_NOTAM_CHK_DT"/>
+        <DBMapperTableEntries name="MVT_ATC_CHK_USER_ISN"/>
+        <DBMapperTableEntries name="MVT_NOTAM_CHK_USER_ISN"/>
+        <DBMapperTableEntries name="PAX_ADULT_COUNT"/>
+        <DBMapperTableEntries name="PAX_CHD_COUNT"/>
+        <DBMapperTableEntries name="PAX_INF_COUNT"/>
+        <DBMapperTableEntries name="TOTAL_PAYLOAD"/>
+        <DBMapperTableEntries name="TOW"/>
+        <DBMapperTableEntries name="PICKED_PAX"/>
+        <DBMapperTableEntries name="FUEL_COMP"/>
+        <DBMapperTableEntries name="FUEL_UPLIFT"/>
+        <DBMapperTableEntries name="FUEL_IN_TANKS_AFTER_UPLIFT"/>
+        <DBMapperTableEntries name="BLOCK_FUEL"/>
+        <DBMapperTableEntries name="LANDING_FUEL"/>
+        <DBMapperTableEntries name="FUEL_ACTUAL_BURN_OFF"/>
+        <DBMapperTableEntries name="TRIP_FUEL"/>
+        <DBMapperTableEntries name="MVT_ARR_DL_CODE_1"/>
+        <DBMapperTableEntries name="MVT_ARR_DL_CODE_2"/>
+        <DBMapperTableEntries name="MVT_ARR_DL_D1"/>
+        <DBMapperTableEntries name="MVT_ARR_DL_D2"/>
+        <DBMapperTableEntries name="LDM_MAIL"/>
+        <DBMapperTableEntries name="FC_AC_ISN"/>
+        <DBMapperTableEntries name="IS_PNL_SENT"/>
+        <DBMapperTableEntries name="VALIDITY_MESSAGE"/>
+        <DBMapperTableEntries name="VALUES_LOCKED"/>
+        <DBMapperTableEntries name="SLOT_CTOT"/>
+        <DBMapperTableEntries name="SLOT_CTOT_WARNING"/>
+        <DBMapperTableEntries name="FLIGHT_PLAN"/>
+        <DBMapperTableEntries name="IMPORT_TYPE"/>
+        <DBMapperTableEntries name="LOG_REPORT_NO"/>
+        <DBMapperTableEntries name="LR_OFFBLOCK_DATE"/>
+        <DBMapperTableEntries name="LR_TAKEOFF_DATE"/>
+        <DBMapperTableEntries name="LR_LANDING_DATE"/>
+        <DBMapperTableEntries name="LR_ONBLOCK_DATE"/>
+        <DBMapperTableEntries name="DE_ICE_TYPE_LT"/>
+        <DBMapperTableEntries name="LR_CARGO_CNT"/>
+        <DBMapperTableEntries name="LR_PAX_PAD_CNT"/>
+        <DBMapperTableEntries name="FUEL_REM_BEF_FLT"/>
+        <DBMapperTableEntries name="FLIGHT_PLAN_MIN_REQ_F"/>
+        <DBMapperTableEntries name="TOTALIZER_BURN_OFF"/>
+        <DBMapperTableEntries name="ZWF_ESTIMATED"/>
+        <DBMapperTableEntries name="ZWF_ACTUAL"/>
+        <DBMapperTableEntries name="ZWF_MAC"/>
+        <DBMapperTableEntries name="FLIGHT_LEVEL"/>
+        <DBMapperTableEntries name="LR_PAX_ADULT"/>
+        <DBMapperTableEntries name="LR_PAX_CHD"/>
+        <DBMapperTableEntries name="LR_PAX_INF"/>
+        <DBMapperTableEntries name="CHK_FIRE_T"/>
+        <DBMapperTableEntries name="CHK_GPU"/>
+        <DBMapperTableEntries name="CHK_ASU"/>
+        <DBMapperTableEntries name="CHK_BRIDGE"/>
+        <DBMapperTableEntries name="SHOW_FLIGHT"/>
+        <DBMapperTableEntries name="LOG_REPORT_NO_SEQ"/>
+        <DBMapperTableEntries name="FLIGHT_GROUP_NAME"/>
+        <DBMapperTableEntries name="REPORTING_GROUP_NAME"/>
+        <DBMapperTableEntries name="REPORTING_GROUP_ISN"/>
+        <DBMapperTableEntries name="FLT_SUFFIX"/>
+        <DBMapperTableEntries name="SERVICE_TYPE"/>
+        <DBMapperTableEntries name="FLIGHT_GROUP_ISN"/>
+        <DBMapperTableEntries name="SUMMARY_REFRESH_DATE"/>
+        <DBMapperTableEntries name="SEG_LEG_SEQ"/>
+        <DBMapperTableEntries name="LEG_SEG_ISN"/>
+        <DBMapperTableEntries name="OPERATIONAL_SUFFIX"/>
+      </InputTables>
+      <InputTables name="DW_LND.LND_PAX_PNR_SSR" tableName="DW_LND.LND_PAX_PNR_SSR" joinType="LEFT_OUTER_JOIN" alias="PS">
+        <DBMapperTableEntries name="LANDING_DT" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" join="true" operator="="/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="PNR_ISN"/>
+        <DBMapperTableEntries name="SSR_CODE" expression="'BNDL'" join="true" operator="="/>
+        <DBMapperTableEntries name="SSR_EXPLANATION"/>
+        <DBMapperTableEntries name="SSR_STATUS"/>
+        <DBMapperTableEntries name="USER_ISN"/>
+        <DBMapperTableEntries name="ENTRY_DATE"/>
+        <DBMapperTableEntries name="PNR_SSR_ISN"/>
+        <DBMapperTableEntries name="PAX_ISN"/>
+        <DBMapperTableEntries name="X_PNR_SEG_ISN"/>
+        <DBMapperTableEntries name="OPTION_EXPIRE_TIME"/>
+        <DBMapperTableEntries name="PAYMENT_CPN_ISN" expression="CP.CPN_ISN" join="true" operator="="/>
+        <DBMapperTableEntries name="CONNECTED_SSR_ISN"/>
+        <DBMapperTableEntries name="PAYMENT_STATUS"/>
+        <DBMapperTableEntries name="TKT_NO"/>
+        <DBMapperTableEntries name="APPROVE_DATE"/>
+        <DBMapperTableEntries name="PNR_LEG_ISN"/>
+        <DBMapperTableEntries name="CRS_SSR_EXPLANATION"/>
+        <DBMapperTableEntries name="PACKAGE_SSR_ISN"/>
+        <DBMapperTableEntries name="SSR_SUB_CODE"/>
+      </InputTables>
+      <InputTables name="DW_LND.LND_PAX_PNR_LEG_RULE_INFO" tableName="DW_LND.LND_PAX_PNR_LEG_RULE_INFO" joinType="LEFT_OUTER_JOIN" alias="RI">
+        <DBMapperTableEntries name="LANDING_DT" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" join="true" operator="="/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="PNR_LEG_ISN" expression="PS.PNR_LEG_ISN" join="true" operator="="/>
+        <DBMapperTableEntries name="PACKAGE_ID"/>
+        <DBMapperTableEntries name="PACKAGE_RULE_ID"/>
+      </InputTables>
+      <InputTables name="DW_LND.LND_PAX_PACKAGE_TOTAL_FARES" tableName="DW_LND.LND_PAX_PACKAGE_TOTAL_FARES" joinType="LEFT_OUTER_JOIN" alias="PTF">
+        <DBMapperTableEntries name="LANDING_DT" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" join="true" operator="="/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="ID" expression="RI.PACKAGE_RULE_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="PACKAGE_ID"/>
+        <DBMapperTableEntries name="RULE_ID"/>
+        <DBMapperTableEntries name="POS_ISN"/>
+        <DBMapperTableEntries name="FARE"/>
+        <DBMapperTableEntries name="CURRENCY"/>
+        <DBMapperTableEntries name="RATIO"/>
+        <DBMapperTableEntries name="CHANNEL"/>
+        <DBMapperTableEntries name="BOOKING_STEP"/>
+        <DBMapperTableEntries name="DISPLAY_ORDER"/>
+        <DBMapperTableEntries name="BUNDLE_LABEL"/>
+        <DBMapperTableEntries name="BONUS_POINTS"/>
+        <DBMapperTableEntries name="VALID_FROM"/>
+        <DBMapperTableEntries name="VALID_UNTIL"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="DISPLAY_NAME"/>
+        <DBMapperTableEntries name="IS_SPECIAL_FARE"/>
+        <DBMapperTableEntries name="IS_TIMER_ACTIVE"/>
+      </InputTables>
+      <InputTables name="DW_STG.STG_P_PAX_TICKET" tableName="DW_STG.STG_P_PAX_TICKET" joinType="INNER_JOIN" alias="TKT">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="TKT_NO" expression="CP.TKT_NO" join="true" operator="="/>
+        <DBMapperTableEntries name="PNR_ISN"/>
+        <DBMapperTableEntries name="REP_ISN"/>
+        <DBMapperTableEntries name="TKT_TYPE"/>
+        <DBMapperTableEntries name="PAX_ISN"/>
+        <DBMapperTableEntries name="EQFR_CURR"/>
+        <DBMapperTableEntries name="EQFR"/>
+        <DBMapperTableEntries name="TAX_TOTAL"/>
+        <DBMapperTableEntries name="DOS"/>
+        <DBMapperTableEntries name="CHK_DIGIT"/>
+        <DBMapperTableEntries name="BAG_KG"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="PRINT_COUNT"/>
+        <DBMapperTableEntries name="PARENT_TKT_NO"/>
+        <DBMapperTableEntries name="CANCEL_TYPE"/>
+        <DBMapperTableEntries name="ENDORSEMENTS"/>
+        <DBMapperTableEntries name="REFUND_DATE"/>
+        <DBMapperTableEntries name="MCO_TYPE"/>
+        <DBMapperTableEntries name="EXTRA_BAG_ISN"/>
+        <DBMapperTableEntries name="SUGGESTED_SERVICE_FEE"/>
+        <DBMapperTableEntries name="ISSUE_ISN"/>
+        <DBMapperTableEntries name="AFTER_MULTIPLE_CURRENCY"/>
+        <DBMapperTableEntries name="FLIGHT_GROUP"/>
+        <DBMapperTableEntries name="FIRST_DEP_PORT"/>
+        <DBMapperTableEntries name="IS_ET_TICKET"/>
+        <DBMapperTableEntries name="PROFILE_ISN"/>
+        <DBMapperTableEntries name="DOCUMENT_NO"/>
+        <DBMapperTableEntries name="FCA"/>
+        <DBMapperTableEntries name="ICDN"/>
+        <DBMapperTableEntries name="FIRST_DOCUMENT_NO"/>
+        <DBMapperTableEntries name="CONJ_TKT_COUNT"/>
+        <DBMapperTableEntries name="DOMESTIC"/>
+        <DBMapperTableEntries name="FCMI"/>
+      </InputTables>
+      <InputTables name="DW_LND.LND_PAX_USERFILE" tableName="DW_LND.LND_PAX_USERFILE" joinType="LEFT_OUTER_JOIN" alias="U">
+        <DBMapperTableEntries name="LANDING_DT" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" join="true" operator="="/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="USER_ISN" expression="CP.CI_USER_ISN" join="true" operator="="/>
+        <DBMapperTableEntries name="USER_NAME"/>
+        <DBMapperTableEntries name="GRANT_LEVEL"/>
+        <DBMapperTableEntries name="LOGON_ID"/>
+        <DBMapperTableEntries name="DEPARTMENT"/>
+        <DBMapperTableEntries name="ENGLISH_SPEAKING"/>
+        <DBMapperTableEntries name="MAIL_ASSIGNABLE"/>
+        <DBMapperTableEntries name="ON_VACATION"/>
+        <DBMapperTableEntries name="SR_ISN"/>
+        <DBMapperTableEntries name="DELETED"/>
+        <DBMapperTableEntries name="DEF_PORT"/>
+        <DBMapperTableEntries name="WS_USER_PASSWORD"/>
+        <DBMapperTableEntries name="WS_PASWORD_RESET"/>
+        <DBMapperTableEntries name="CHECKIN_SYSTEM"/>
+        <DBMapperTableEntries name="FF_NAME"/>
+        <DBMapperTableEntries name="FF_SURNAME"/>
+        <DBMapperTableEntries name="FF_ID"/>
+        <DBMapperTableEntries name="REGISTER_NUMBER"/>
+        <DBMapperTableEntries name="DELETE_TIME"/>
+        <DBMapperTableEntries name="LAST_LOGIN_TIME"/>
+        <DBMapperTableEntries name="SR_CODE"/>
+        <DBMapperTableEntries name="SR_NAME"/>
+        <DBMapperTableEntries name="SR_TYPE"/>
+        <DBMapperTableEntries name="SR_LEVEL"/>
+        <DBMapperTableEntries name="IS_CACHABLE"/>
+        <DBMapperTableEntries name="USER_EMAIL"/>
+        <DBMapperTableEntries name="IS_SYSTEM_USER"/>
+        <DBMapperTableEntries name="USER_PHONE"/>
+        <DBMapperTableEntries name="USER_PASSWORD"/>
+        <DBMapperTableEntries name="HASHED_PASSWORD"/>
+        <DBMapperTableEntries name="FULL_NAME"/>
+        <DBMapperTableEntries name="IS_FALLBACK_EDUCATED"/>
+      </InputTables>
+      <OutputTables name="EXP_T" tableName="EXP_T">
+        <DBMapperTableEntries name="RN" expression="ROW_NUMBER() OVER (PARTITION BY CP.TKT_NO, L.FLT_NO, TRUNC(L.SCH_DEP_DT), L.ARR_PORT, L.DEP_PORT ORDER BY CP.PNR_LEG_ISN DESC)"/>
+        <DBMapperTableEntries name="TKT_NO" expression="CP.TKT_NO"/>
+        <DBMapperTableEntries name="CPN_NO" expression="CP.CPN_NO"/>
+        <DBMapperTableEntries name="FLT_NO" expression="L.FLT_NO"/>
+        <DBMapperTableEntries name="SCH_DEP_DT" expression="L.SCH_DEP_DT"/>
+        <DBMapperTableEntries name="ARR_PORT" expression="L.ARR_PORT"/>
+        <DBMapperTableEntries name="DEP_PORT" expression="L.DEP_PORT"/>
+        <DBMapperTableEntries name="LEG_ISN" expression="CP.LEG_ISN"/>
+        <DBMapperTableEntries name="SEG_ISN" expression="PL.SEG_ISN"/>
+        <DBMapperTableEntries name="CPN_STATUS" expression="CASE WHEN NVL(CP.CPN_STATUS, CP.X_CPN_STATUS) = 'OK' THEN 'O' WHEN NVL(CP.CPN_STATUS, CP.X_CPN_STATUS) = 'OF' THEN 'O' WHEN NVL(CP.CPN_STATUS, CP.X_CPN_STATUS) = 'C1' THEN 'C' WHEN NVL(CP.CPN_STATUS, CP.X_CPN_STATUS) = 'BD' THEN 'F' WHEN NVL(CP.CPN_STATUS, CP.X_CPN_STATUS) = 'RF' THEN 'R' WHEN NVL(CP.CPN_STATUS, CP.X_CPN_STATUS) = 'Z' THEN 'Z' WHEN NVL(CP.CPN_STATUS, CP.X_CPN_STATUS) = 'VO' THEN 'V' WHEN NVL(CP.CPN_STATUS, CP.X_CPN_STATUS) = 'CX' THEN 'R' WHEN NVL(CP.CPN_STATUS, CP.X_CPN_STATUS) = 'CI' THEN 'C' ELSE CP.CPN_STATUS END"/>
+        <DBMapperTableEntries name="DSCNT_CODE" expression="CP.DSCNT_CODE"/>
+        <DBMapperTableEntries name="DOS" expression="TKT.DOS"/>
+        <DBMapperTableEntries name="DOR" expression="TKT.REFUND_DATE"/>
+        <DBMapperTableEntries name="RULE_ID" expression="PTF.RULE_ID"/>
+        <DBMapperTableEntries name="SR_ISN" expression="U.SR_ISN"/>
+        <DBMapperTableEntries name="FARE_BASIS" expression="PL.FARE_BASIS"/>
+        <DBMapperTableEntries name="MCO_TYPE" expression="CP.MCO_TYPE"/>
+        <DBMapperTableEntries name="PNR_LEG_ISN" expression="CP.PNR_LEG_ISN"/>
+        <DBMapperTableEntries name="CPN_ISN" expression="CP.CPN_ISN"/>
+        <DBMapperTableEntries name="NV_AFTER" expression="CP.NV_AFTER"/>
+        <DBMapperTableEntries name="NV_BEFORE" expression="CP.NV_BEFORE"/>
+        <DBMapperTableEntries name="SAC" expression="CP.SAC"/>
+        <DBMapperTableEntries name="CI_USER_ISN" expression="CP.CI_USER_ISN"/>
+        <DBMapperTableEntries name="CI_SEQ" expression="CP.CI_SEQ"/>
+        <DBMapperTableEntries name="CI_DATE" expression="CP.CI_DATE"/>
+        <DBMapperTableEntries name="CHECK_IN_TYPE" expression="CASE WHEN U.USER_ISN IS NULL THEN NULL WHEN CP.CI_USER_ISN IN (100, 102, 6850693) THEN CASE WHEN CP.CI_USER_ISN = 100 THEN 'INTERNET' WHEN CP.CI_USER_ISN = 102 THEN 'MOBILE' WHEN CP.CI_USER_ISN = 6850693 THEN 'MOBAPP' END ELSE CASE WHEN U.CHECKIN_SYSTEM = 'KIOSK' THEN 'KIOSK' WHEN NOT U.USER_NAME IN ('IATCI_USER', 'IATCI-CODECO', 'IATCI-IPORT', 'IATCI_IN_USER', 'IATCI_OUT_USER', 'IPORT_IATCI_IN', 'IPORT_IATCI_OUT', 'SYSTEM') THEN 'COUNTER' WHEN U.USER_NAME IN ('IATCI_USER', 'IATCI-CODECO', 'IATCI-IPORT', 'IATCI_IN_USER', 'IATCI_OUT_USER', 'IPORT_IATCI_IN', 'IPORT_IATCI_OUT', 'SYSTEM') THEN 'IATCI' ELSE 'UNKNOWN' END END"/>
+        <DBMapperTableEntries name="OFFLOADED_CI_SEQ" expression="CP.OFFLOADED_CI_SEQ"/>
+        <DBMapperTableEntries name="OFFLOAD_EXPLANATION" expression="CP.OFFLOAD_EXPLANATION"/>
+        <DBMapperTableEntries name="OFFLOAD_USER_ISN" expression="CP.OFFLOAD_USER_ISN"/>
+        <DBMapperTableEntries name="CHECKIN_GRP_NO" expression="CP.CI_GROUP"/>
+        <DBMapperTableEntries name="BP_PRINT_CNT" expression="CP.PRINT_COUNT"/>
+        <DBMapperTableEntries name="BOARDING_TIME" expression="CP.BOARDING_TIME"/>
+        <DBMapperTableEntries name="BOARDING_TYPE_CODE" expression="CP.BOARDING_TYPE"/>
+        <DBMapperTableEntries name="PACKAGE_SSR_ISN" expression="PS.PACKAGE_SSR_ISN"/>
+        <FilterEntries name="where" expression="(L.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')) AND (NOT CP.TKT_NO IS NULL AND CP.UPDATE_DTTM BETWEEN TO_DATE('&quot; + context.VAR_FROM_ETL_DATE + &quot;', 'DD.MM.YYYY') + 1 AND (TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') + 2) - INTERVAL '1' SECOND)" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_4"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_P_PAX_PNR_LEG"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_P_PAX_PNR_LEG&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_STG_P_PAX_PNR_LEG"/>
+    <metadata connector="TABLE" label="DW_STG.STG_P_PAX_PNR_LEG" name="table1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="true" length="10" name="PNR_LEG_ISN" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PNR_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REZ_CLASS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="X_STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FLOWN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="LS_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FARE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="FARE_BASIS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CRC_ATTENTION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TARIFF_FARE_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_STOP_OVER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_RE_ACCOMMODATED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="PNL_ADD_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="PNL_DEL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ANY_CHANGE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CRS_REZ_CLASS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CODESHARE_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MASTER_ADD_ON_PNR_LEG_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PENALTY_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PACKAGE_SSR_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="AS_OF_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="TPM_FARE_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_5"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_LEG"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_LEG&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_LEG"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_LEG" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SPL_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="PLN_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="PLN_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACT_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACT_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="3" name="AA_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="LEG_NO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="DEP_CITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="DEP_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ARR_CITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ARR_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="AC_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="AC_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="INHIBIT_SALES" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CI_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="BOARDING_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="30" name="BOARDING_GATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SSM_SENT" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="TOUR_OPERATOR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="FLT_TYPE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="F_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="C_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="Y_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2000" name="CRC_COMMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="DAILY_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="DCS_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="DIV_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="DIV_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="AB_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FL_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DV_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PL_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="AC_AIRBORNE_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="AC_TOUCHDOWN_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1000" name="MSG_SPECIAL_INFO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="FC_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="FC_STATUS_COMMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_ROTATION_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="SCH_DURATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SCH_SERVICE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_ACTIVATED_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_DEACTIVATED_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_PARENT_DAILY_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SCH_ACTION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_CONNECTION_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_CONN_LEG_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SCH_REMARKS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_HOR_SCH_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_DAILY_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="DL_CODE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="DL_CODE_2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="DL_D1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="DL_D2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MVT_PAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="MVT_TECH_CHK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="MVT_DISP_CHK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="MVT_TECH_CHK_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="MVT_DISP_CHK_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="6" name="MVT_TTL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="MVT_TOF" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_ACTIVATED_BY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_SCH_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_SCH_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_EST_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_EST_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_ACT_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_ACT_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_ACT_AB_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_ACT_TD_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_DIV_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="MVT_ATC_CHK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="MVT_ATC_CHK_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="MVT_NOTAM_CHK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="MVT_NOTAM_CHK_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="MVT_ATC_CHK_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MVT_NOTAM_CHK_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PAX_ADULT_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PAX_CHD_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PAX_INF_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_PAYLOAD" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOW" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="PICKED_PAX" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_COMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_UPLIFT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_IN_TANKS_AFTER_UPLIFT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="BLOCK_FUEL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LANDING_FUEL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_ACTUAL_BURN_OFF" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TRIP_FUEL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="MVT_ARR_DL_CODE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="MVT_ARR_DL_CODE_2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MVT_ARR_DL_D1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MVT_ARR_DL_D2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="LDM_MAIL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FC_AC_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_PNL_SENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1000" name="VALIDITY_MESSAGE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="VALUES_LOCKED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="SLOT_CTOT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SLOT_CTOT_WARNING" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="FLIGHT_PLAN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IMPORT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="LOG_REPORT_NO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="LR_OFFBLOCK_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LR_TAKEOFF_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LR_LANDING_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LR_ONBLOCK_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="4" name="DE_ICE_TYPE_LT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LR_CARGO_CNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LR_PAX_PAD_CNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_REM_BEF_FLT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FLIGHT_PLAN_MIN_REQ_F" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTALIZER_BURN_OFF" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ZWF_ESTIMATED" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ZWF_ACTUAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ZWF_MAC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FLIGHT_LEVEL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LR_PAX_ADULT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LR_PAX_CHD" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LR_PAX_INF" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CHK_FIRE_T" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CHK_GPU" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CHK_ASU" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CHK_BRIDGE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SHOW_FLIGHT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="LOG_REPORT_NO_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FLIGHT_GROUP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="REPORTING_GROUP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="REPORTING_GROUP_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="FLT_SUFFIX" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SERVICE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="FLIGHT_GROUP_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="SUMMARY_REFRESH_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="SEG_LEG_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LEG_SEG_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="OPERATIONAL_SUFFIX" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_6"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_PNR_SSR"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_PNR_SSR&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_PNR_SSR"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_PNR_SSR" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PNR_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="SSR_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2000" name="SSR_EXPLANATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="SSR_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="ENTRY_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="PNR_SSR_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PAX_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="X_PNR_SEG_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="OPTION_EXPIRE_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="PAYMENT_CPN_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CONNECTED_SSR_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="PAYMENT_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="APPROVE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="PNR_LEG_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2000" name="CRS_SSR_EXPLANATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PACKAGE_SSR_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="200" name="SSR_SUB_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_7"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_PNR_LEG_RULE_INFO"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_PNR_LEG_RULE_INFO&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_PNR_LEG_RULE_INFO"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_PNR_LEG_RULE_INFO" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PNR_LEG_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PACKAGE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PACKAGE_RULE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="400">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_8"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_PACKAGE_TOTAL_FARES"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_PACKAGE_TOTAL_FARES&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_PACKAGE_TOTAL_FARES"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_PACKAGE_TOTAL_FARES" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PACKAGE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="RULE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="POS_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FARE" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="RATIO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="6" name="CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="BOOKING_STEP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="DISPLAY_ORDER" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="BUNDLE_LABEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="BONUS_POINTS" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="VALID_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="DISPLAY_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SPECIAL_FARE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_TIMER_ACTIVE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="448">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_9"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_P_PAX_TICKET"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_P_PAX_TICKET&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_STG_P_PAX_TICKET"/>
+    <metadata connector="TABLE" label="DW_STG.STG_P_PAX_TICKET" name="table1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="true" length="13" name="TKT_NO" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PNR_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="REP_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="TKT_TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PAX_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="EQFR_CURR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="EQFR" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="TAX_TOTAL" nullable="true" precision="2" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="CHK_DIGIT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="BAG_KG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="PRINT_COUNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="13" name="PARENT_TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CANCEL_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="ENDORSEMENTS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="REFUND_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="4" name="MCO_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="EXTRA_BAG_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SUGGESTED_SERVICE_FEE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ISSUE_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="AFTER_MULTIPLE_CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="FLIGHT_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="FIRST_DEP_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ET_TICKET" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PROFILE_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="13" name="DOCUMENT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="400" name="FCA" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="ICDN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FIRST_DOCUMENT_NO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CONJ_TKT_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="DOMESTIC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="FCMI" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="496">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_10"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_USERFILE"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_USERFILE&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_USERFILE"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_USERFILE" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="USER_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="GRANT_LEVEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="LOGON_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="DEPARTMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ENGLISH_SPEAKING" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="MAIL_ASSIGNABLE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ON_VACATION" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SR_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="DELETED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="DEF_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="WS_USER_PASSWORD" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="WS_PASWORD_RESET" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CHECKIN_SYSTEM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="FF_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="FF_SURNAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="17" name="FF_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="REGISTER_NUMBER" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="DELETE_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_LOGIN_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="SR_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SR_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="SR_TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SR_LEVEL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_CACHABLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="300" name="USER_EMAIL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SYSTEM_USER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="18" name="USER_PHONE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="USER_PASSWORD" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="60" name="HASHED_PASSWORD" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="FULL_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_FALLBACK_EDUCATED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_T"/>
+    <metadata connector="TABLE" label="STG_T_FDL_RES_COUPON_03_PAX_CPN" name="STG_T_FDL_RES_COUPON_03_PAX_CPN">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="13" name="TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PNR_LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="NV_AFTER" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="NV_BEFORE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="14" name="SAC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CPN_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="DEP_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ARR_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="MCO_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="DSCNT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOR" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="RULE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SR_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE_BASIS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CI_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OFFLOADED_CI_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="OFFLOAD_EXPLANATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="OFFLOAD_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CHECKIN_GRP_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="BOARDING_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="BOARDING_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="BP_PRINT_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="CI_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="CI_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="CHECK_IN_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PACKAGE_SSR_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_T" tableName="EXP_T" joinType="NO_JOIN" alias="EXP_T">
+        <DBMapperTableEntries name="RN"/>
+        <DBMapperTableEntries name="TKT_NO"/>
+        <DBMapperTableEntries name="CPN_NO"/>
+        <DBMapperTableEntries name="FLT_NO"/>
+        <DBMapperTableEntries name="SCH_DEP_DT"/>
+        <DBMapperTableEntries name="ARR_PORT"/>
+        <DBMapperTableEntries name="DEP_PORT"/>
+        <DBMapperTableEntries name="LEG_ISN"/>
+        <DBMapperTableEntries name="SEG_ISN"/>
+        <DBMapperTableEntries name="CPN_STATUS"/>
+        <DBMapperTableEntries name="DSCNT_CODE"/>
+        <DBMapperTableEntries name="DOS"/>
+        <DBMapperTableEntries name="DOR"/>
+        <DBMapperTableEntries name="RULE_ID"/>
+        <DBMapperTableEntries name="SR_ISN"/>
+        <DBMapperTableEntries name="FARE_BASIS"/>
+        <DBMapperTableEntries name="MCO_TYPE"/>
+        <DBMapperTableEntries name="PNR_LEG_ISN"/>
+        <DBMapperTableEntries name="CPN_ISN"/>
+        <DBMapperTableEntries name="NV_AFTER"/>
+        <DBMapperTableEntries name="NV_BEFORE"/>
+        <DBMapperTableEntries name="SAC"/>
+        <DBMapperTableEntries name="CI_USER_ISN"/>
+        <DBMapperTableEntries name="CI_SEQ"/>
+        <DBMapperTableEntries name="CI_DATE"/>
+        <DBMapperTableEntries name="CHECK_IN_TYPE"/>
+        <DBMapperTableEntries name="OFFLOADED_CI_SEQ"/>
+        <DBMapperTableEntries name="OFFLOAD_EXPLANATION"/>
+        <DBMapperTableEntries name="OFFLOAD_USER_ISN"/>
+        <DBMapperTableEntries name="CHECKIN_GRP_NO"/>
+        <DBMapperTableEntries name="BP_PRINT_CNT"/>
+        <DBMapperTableEntries name="BOARDING_TIME"/>
+        <DBMapperTableEntries name="BOARDING_TYPE_CODE"/>
+        <DBMapperTableEntries name="PACKAGE_SSR_ISN"/>
+      </InputTables>
+      <InputTables name="EXP_PAX" tableName="EXP_PAX" joinType="CROSS_JOIN" alias="EXP_PAX">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+      </InputTables>
+      <OutputTables name="STG_T_FDL_RES_COUPON_03_PAX_CPN" tableName="STG_T_FDL_RES_COUPON_03_PAX_CPN">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="EXP_PAX.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="TKT_NO" expression="EXP_T.TKT_NO"/>
+        <DBMapperTableEntries name="LEG_ISN" expression="EXP_T.LEG_ISN"/>
+        <DBMapperTableEntries name="CPN_NO" expression="EXP_T.CPN_NO"/>
+        <DBMapperTableEntries name="PNR_LEG_ISN" expression="EXP_T.PNR_LEG_ISN"/>
+        <DBMapperTableEntries name="NV_AFTER" expression="EXP_T.NV_AFTER"/>
+        <DBMapperTableEntries name="NV_BEFORE" expression="EXP_T.NV_BEFORE"/>
+        <DBMapperTableEntries name="SAC" expression="EXP_T.SAC"/>
+        <DBMapperTableEntries name="CPN_ISN" expression="EXP_T.CPN_ISN"/>
+        <DBMapperTableEntries name="SEG_ISN" expression="EXP_T.SEG_ISN"/>
+        <DBMapperTableEntries name="FLT_NO" expression="EXP_T.FLT_NO"/>
+        <DBMapperTableEntries name="DEP_PORT" expression="EXP_T.DEP_PORT"/>
+        <DBMapperTableEntries name="ARR_PORT" expression="EXP_T.ARR_PORT"/>
+        <DBMapperTableEntries name="SCH_DEP_DT" expression="EXP_T.SCH_DEP_DT"/>
+        <DBMapperTableEntries name="MCO_TYPE" expression="EXP_T.MCO_TYPE"/>
+        <DBMapperTableEntries name="DSCNT_CODE" expression="EXP_T.DSCNT_CODE"/>
+        <DBMapperTableEntries name="DOS" expression="EXP_T.DOS"/>
+        <DBMapperTableEntries name="DOR" expression="EXP_T.DOR"/>
+        <DBMapperTableEntries name="RULE_ID" expression="EXP_T.RULE_ID"/>
+        <DBMapperTableEntries name="CPN_STATUS" expression="EXP_T.CPN_STATUS"/>
+        <DBMapperTableEntries name="SR_ISN" expression="EXP_T.SR_ISN"/>
+        <DBMapperTableEntries name="FARE_BASIS" expression="EXP_T.FARE_BASIS"/>
+        <DBMapperTableEntries name="CI_USER_ISN" expression="EXP_T.CI_USER_ISN"/>
+        <DBMapperTableEntries name="OFFLOADED_CI_SEQ" expression="EXP_T.OFFLOADED_CI_SEQ"/>
+        <DBMapperTableEntries name="OFFLOAD_EXPLANATION" expression="EXP_T.OFFLOAD_EXPLANATION"/>
+        <DBMapperTableEntries name="OFFLOAD_USER_ISN" expression="EXP_T.OFFLOAD_USER_ISN"/>
+        <DBMapperTableEntries name="CHECKIN_GRP_NO" expression="EXP_T.CHECKIN_GRP_NO"/>
+        <DBMapperTableEntries name="BOARDING_TIME" expression="EXP_T.BOARDING_TIME"/>
+        <DBMapperTableEntries name="BOARDING_TYPE_CODE" expression="EXP_T.BOARDING_TYPE_CODE"/>
+        <DBMapperTableEntries name="BP_PRINT_CNT" expression="EXP_T.BP_PRINT_CNT"/>
+        <DBMapperTableEntries name="CI_SEQ" expression="EXP_T.CI_SEQ"/>
+        <DBMapperTableEntries name="CI_DATE" expression="EXP_T.CI_DATE"/>
+        <DBMapperTableEntries name="CHECK_IN_TYPE" expression="EXP_T.CHECK_IN_TYPE"/>
+        <DBMapperTableEntries name="PACKAGE_SSR_ISN" expression="EXP_T.PACKAGE_SSR_ISN"/>
+        <FilterEntries name="where" expression="EXP_T.RN = 1" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_11"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_REF_SOURCE"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_REF_SOURCE&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_REF_SOURCE"/>
+    <metadata connector="TABLE" label="DW_LND.LND_REF_SOURCE" name="table1">
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SYS_SRC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="SYS_SRC_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="SYS_SRC_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_3"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_PAX"/>
+    <metadata connector="TABLE" label="EXP_PAX" name="EXP_PAX">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_REF_SOURCE" tableName="DW_LND.LND_REF_SOURCE" joinType="NO_JOIN" alias="LND_REF_SOURCE">
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="SYS_SRC_CODE"/>
+        <DBMapperTableEntries name="SYS_SRC_NAME"/>
+        <DBMapperTableEntries name="SYS_SRC_DESC"/>
+      </InputTables>
+      <OutputTables name="EXP_PAX" tableName="EXP_PAX">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="LND_REF_SOURCE.SYS_SRC_ID"/>
+        <FilterEntries name="where" expression="LND_REF_SOURCE.SYS_SRC_CODE = 'PAX'" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_FDL_RES_COUPON_03_PAX_CPN"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_FDL_RES_COUPON_03_PAX_CPN&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_FDL_RES_COUPON_03_PAX_CPN"/>
+    <metadata connector="TABLE" label="STG_T_FDL_RES_COUPON_03_PAX_CPN" name="tELTOracleOutput_1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="13" name="TKT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PNR_LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="NV_AFTER" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="NV_BEFORE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="14" name="SAC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CPN_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="DEP_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ARR_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="MCO_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="DSCNT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOS" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DOR" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="RULE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="CPN_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SR_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE_BASIS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CI_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="OFFLOADED_CI_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="OFFLOAD_EXPLANATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="OFFLOAD_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CHECKIN_GRP_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="BOARDING_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="BOARDING_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="BP_PRINT_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="CI_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="CI_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="CHECK_IN_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PACKAGE_SSR_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_STG.STG_P_PAX_COUPON" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_3" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DW_STG.STG_P_PAX_PNR_LEG" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_4" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_LEG" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_5" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_PNR_SSR" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_6" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_PNR_LEG_RULE_INFO" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_7" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_PACKAGE_TOTAL_FARES" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_8" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DW_STG.STG_P_PAX_TICKET" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_9" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_USERFILE" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_10" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_T" lineStyle="22" mergeOrder="0" metaname="EXP_T" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_REF_SOURCE" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_11" target="tELTOracleMap_3"/>
+  <connection connectorName="TABLE_REF" label="EXP_PAX" lineStyle="22" mergeOrder="0" metaname="EXP_PAX" outputId="0" source="tELTOracleMap_3" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_FDL_RES_COUPON_03_PAX_CPN" lineStyle="9" mergeOrder="0" metaname="STG_T_FDL_RES_COUPON_03_PAX_CPN" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

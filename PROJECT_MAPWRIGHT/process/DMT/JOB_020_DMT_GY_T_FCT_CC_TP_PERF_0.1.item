@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default"/>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_qBwFwcMeEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTDMT.T_FCT_CC_TP_PERF&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_FCT_CC_TP_PERF_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_FCT_CC_TP_PERF_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_FCT_CC_TP_PERF_TM1"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_FCT_CC_TP_PERF_TM1" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DATE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INTERVAL_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="ANSWERED_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ABONDONED_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="TOTAL_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INT_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FX_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MM_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_VIP_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_VIP_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_VIP_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ANSWERED_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ABONDONED_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="TOTAL_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INT_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FX_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MM_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_VIP_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_VIP_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_VIP_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SERVICE_LEVEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INT_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FX_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MM_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_VIP_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_VIP_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_VIP_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_qBwFwcMeEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_STG_FCT_CC_TP_PERF_TM1"/>
+    <metadata connector="TABLE" label="T_FCT_CC_TP_PERF" name="T_FCT_CC_TP_PERF">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DATE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INTERVAL_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="ANSWERED_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ABONDONED_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="TOTAL_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INT_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FX_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MM_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_VIP_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_VIP_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_VIP_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ANSWERED_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ABONDONED_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="TOTAL_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INT_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FX_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MM_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_VIP_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_VIP_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_VIP_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SERVICE_LEVEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INT_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FX_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MM_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_VIP_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_VIP_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_VIP_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTSTG.T_STG_FCT_CC_TP_PERF_TM1" tableName="DGYTSTG.T_STG_FCT_CC_TP_PERF_TM1" joinType="NO_JOIN" alias="T_STG_FCT_CC_TP_PERF_TM1">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="DATE_ID"/>
+        <DBMapperTableEntries name="INTERVAL_DATETIME"/>
+        <DBMapperTableEntries name="ANSWERED_CALL_CNT"/>
+        <DBMapperTableEntries name="ABONDONED_CALL_CNT"/>
+        <DBMapperTableEntries name="TOTAL_CALL_CNT"/>
+        <DBMapperTableEntries name="EQ_CALL_CNT"/>
+        <DBMapperTableEntries name="VIOP_CALL_CNT"/>
+        <DBMapperTableEntries name="INT_CALL_CNT"/>
+        <DBMapperTableEntries name="FX_CALL_CNT"/>
+        <DBMapperTableEntries name="MM_CALL_CNT"/>
+        <DBMapperTableEntries name="IPO_CALL_CNT"/>
+        <DBMapperTableEntries name="EQ_VIP_CALL_CNT"/>
+        <DBMapperTableEntries name="VIOP_VIP_CALL_CNT"/>
+        <DBMapperTableEntries name="IPO_VIP_CALL_CNT"/>
+        <DBMapperTableEntries name="ANSWERED_CALL_DUR"/>
+        <DBMapperTableEntries name="ABONDONED_CALL_DUR"/>
+        <DBMapperTableEntries name="TOTAL_CALL_DUR"/>
+        <DBMapperTableEntries name="EQ_CALL_DUR"/>
+        <DBMapperTableEntries name="VIOP_CALL_DUR"/>
+        <DBMapperTableEntries name="INT_CALL_DUR"/>
+        <DBMapperTableEntries name="FX_CALL_DUR"/>
+        <DBMapperTableEntries name="MM_CALL_DUR"/>
+        <DBMapperTableEntries name="IPO_CALL_DUR"/>
+        <DBMapperTableEntries name="EQ_VIP_CALL_DUR"/>
+        <DBMapperTableEntries name="VIOP_VIP_CALL_DUR"/>
+        <DBMapperTableEntries name="IPO_VIP_CALL_DUR"/>
+        <DBMapperTableEntries name="SERVICE_LEVEL"/>
+        <DBMapperTableEntries name="EQ_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="VIOP_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="INT_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="FX_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="MM_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="IPO_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="EQ_VIP_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="VIOP_VIP_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="IPO_VIP_CALL_CNT_ABN"/>
+      </InputTables>
+      <OutputTables name="T_FCT_CC_TP_PERF" tableName="T_FCT_CC_TP_PERF">
+        <DBMapperTableEntries name="ETL_DATE" expression="T_STG_FCT_CC_TP_PERF_TM1.ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="T_STG_FCT_CC_TP_PERF_TM1.DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="DATE_ID" expression="T_STG_FCT_CC_TP_PERF_TM1.DATE_ID"/>
+        <DBMapperTableEntries name="INTERVAL_DATETIME" expression="T_STG_FCT_CC_TP_PERF_TM1.INTERVAL_DATETIME"/>
+        <DBMapperTableEntries name="ANSWERED_CALL_CNT" expression="T_STG_FCT_CC_TP_PERF_TM1.ANSWERED_CALL_CNT"/>
+        <DBMapperTableEntries name="ABONDONED_CALL_CNT" expression="T_STG_FCT_CC_TP_PERF_TM1.ABONDONED_CALL_CNT"/>
+        <DBMapperTableEntries name="TOTAL_CALL_CNT" expression="T_STG_FCT_CC_TP_PERF_TM1.TOTAL_CALL_CNT"/>
+        <DBMapperTableEntries name="EQ_CALL_CNT" expression="T_STG_FCT_CC_TP_PERF_TM1.EQ_CALL_CNT"/>
+        <DBMapperTableEntries name="VIOP_CALL_CNT" expression="T_STG_FCT_CC_TP_PERF_TM1.VIOP_CALL_CNT"/>
+        <DBMapperTableEntries name="INT_CALL_CNT" expression="T_STG_FCT_CC_TP_PERF_TM1.INT_CALL_CNT"/>
+        <DBMapperTableEntries name="FX_CALL_CNT" expression="T_STG_FCT_CC_TP_PERF_TM1.FX_CALL_CNT"/>
+        <DBMapperTableEntries name="MM_CALL_CNT" expression="T_STG_FCT_CC_TP_PERF_TM1.MM_CALL_CNT"/>
+        <DBMapperTableEntries name="IPO_CALL_CNT" expression="T_STG_FCT_CC_TP_PERF_TM1.IPO_CALL_CNT"/>
+        <DBMapperTableEntries name="EQ_VIP_CALL_CNT" expression="T_STG_FCT_CC_TP_PERF_TM1.EQ_VIP_CALL_CNT"/>
+        <DBMapperTableEntries name="VIOP_VIP_CALL_CNT" expression="T_STG_FCT_CC_TP_PERF_TM1.VIOP_VIP_CALL_CNT"/>
+        <DBMapperTableEntries name="IPO_VIP_CALL_CNT" expression="T_STG_FCT_CC_TP_PERF_TM1.IPO_VIP_CALL_CNT"/>
+        <DBMapperTableEntries name="ANSWERED_CALL_DUR" expression="T_STG_FCT_CC_TP_PERF_TM1.ANSWERED_CALL_DUR"/>
+        <DBMapperTableEntries name="ABONDONED_CALL_DUR" expression="T_STG_FCT_CC_TP_PERF_TM1.ABONDONED_CALL_DUR"/>
+        <DBMapperTableEntries name="TOTAL_CALL_DUR" expression="T_STG_FCT_CC_TP_PERF_TM1.TOTAL_CALL_DUR"/>
+        <DBMapperTableEntries name="EQ_CALL_DUR" expression="T_STG_FCT_CC_TP_PERF_TM1.EQ_CALL_DUR"/>
+        <DBMapperTableEntries name="VIOP_CALL_DUR" expression="T_STG_FCT_CC_TP_PERF_TM1.VIOP_CALL_DUR"/>
+        <DBMapperTableEntries name="INT_CALL_DUR" expression="T_STG_FCT_CC_TP_PERF_TM1.INT_CALL_DUR"/>
+        <DBMapperTableEntries name="FX_CALL_DUR" expression="T_STG_FCT_CC_TP_PERF_TM1.FX_CALL_DUR"/>
+        <DBMapperTableEntries name="MM_CALL_DUR" expression="T_STG_FCT_CC_TP_PERF_TM1.MM_CALL_DUR"/>
+        <DBMapperTableEntries name="IPO_CALL_DUR" expression="T_STG_FCT_CC_TP_PERF_TM1.IPO_CALL_DUR"/>
+        <DBMapperTableEntries name="EQ_VIP_CALL_DUR" expression="T_STG_FCT_CC_TP_PERF_TM1.EQ_VIP_CALL_DUR"/>
+        <DBMapperTableEntries name="VIOP_VIP_CALL_DUR" expression="T_STG_FCT_CC_TP_PERF_TM1.VIOP_VIP_CALL_DUR"/>
+        <DBMapperTableEntries name="IPO_VIP_CALL_DUR" expression="T_STG_FCT_CC_TP_PERF_TM1.IPO_VIP_CALL_DUR"/>
+        <DBMapperTableEntries name="SERVICE_LEVEL" expression="T_STG_FCT_CC_TP_PERF_TM1.SERVICE_LEVEL"/>
+        <DBMapperTableEntries name="EQ_CALL_CNT_ABN" expression="T_STG_FCT_CC_TP_PERF_TM1.EQ_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="VIOP_CALL_CNT_ABN" expression="T_STG_FCT_CC_TP_PERF_TM1.VIOP_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="INT_CALL_CNT_ABN" expression="T_STG_FCT_CC_TP_PERF_TM1.INT_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="FX_CALL_CNT_ABN" expression="T_STG_FCT_CC_TP_PERF_TM1.FX_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="MM_CALL_CNT_ABN" expression="T_STG_FCT_CC_TP_PERF_TM1.MM_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="IPO_CALL_CNT_ABN" expression="T_STG_FCT_CC_TP_PERF_TM1.IPO_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="EQ_VIP_CALL_CNT_ABN" expression="T_STG_FCT_CC_TP_PERF_TM1.EQ_VIP_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="VIOP_VIP_CALL_CNT_ABN" expression="T_STG_FCT_CC_TP_PERF_TM1.VIOP_VIP_CALL_CNT_ABN"/>
+        <DBMapperTableEntries name="IPO_VIP_CALL_CNT_ABN" expression="T_STG_FCT_CC_TP_PERF_TM1.IPO_VIP_CALL_CNT_ABN"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_qBwFwcMeEfGuM7c_OEd9ZA - T_FCT_CC_TP_PERF"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_FCT_CC_TP_PERF&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTDMT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_qBwFwcMeEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_FCT_CC_TP_PERF"/>
+    <metadata connector="TABLE" label="T_FCT_CC_TP_PERF" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DATE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INTERVAL_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="ANSWERED_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ABONDONED_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="TOTAL_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INT_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FX_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MM_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_VIP_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_VIP_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_VIP_CALL_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ANSWERED_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ABONDONED_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="TOTAL_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INT_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FX_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MM_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_VIP_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_VIP_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_VIP_CALL_DUR" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SERVICE_LEVEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="INT_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FX_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MM_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EQ_VIP_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="VIOP_VIP_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="IPO_VIP_CALL_CNT_ABN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_FCT_CC_TP_PERF_TM1" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_FCT_CC_TP_PERF" lineStyle="9" mergeOrder="0" metaname="T_FCT_CC_TP_PERF" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

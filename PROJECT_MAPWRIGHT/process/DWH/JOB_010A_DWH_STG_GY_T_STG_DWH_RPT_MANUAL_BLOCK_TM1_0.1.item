@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_DWH_RPT_MANUAL_BLOCK_TM1&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6OYVIcMNEfGRB8-8_sKJtQ - T_KVS_MANUAL_BLOCKED"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_KVS_MANUAL_BLOCKED&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSEXT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_KVS_MANUAL_BLOCKED"/>
+    <metadata connector="TABLE" label="DGYTODSEXT.T_KVS_MANUAL_BLOCKED" name="table1">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="PRODUCT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PRICE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_A"/>
+    <metadata connector="TABLE" label="EXP_A" name="EXP_A">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="PRODUCT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PRICE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSEXT.T_KVS_MANUAL_BLOCKED" tableName="DGYTODSEXT.T_KVS_MANUAL_BLOCKED" joinType="NO_JOIN" alias="KVS">
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="PRODUCT"/>
+        <DBMapperTableEntries name="PRICE"/>
+      </InputTables>
+      <InputTables name="EXP_LATEST_FILE" tableName="EXP_LATEST_FILE" joinType="INNER_JOIN" alias="EXP_LATEST_FILE">
+        <DBMapperTableEntries name="REPORT_DATE" expression="KVS.REPORT_DATE" join="true" operator="="/>
+        <DBMapperTableEntries name="LATEST_FILE_ID" expression="KVS.MANUEL_FILE_ID" join="true" operator="="/>
+      </InputTables>
+      <InputTables name="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" tableName="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" joinType="INNER_JOIN" alias="MFL">
+        <DBMapperTableEntries name="COL"/>
+        <DBMapperTableEntries name="LATEST_FILE_ID_1"/>
+        <DBMapperTableEntries name="LATEST_LOAD_DATE_1"/>
+        <DBMapperTableEntries name="LOAD_DATE" expression="KVS.REPORT_DATE" join="true" operator="="/>
+        <DBMapperTableEntries name="LOAD_DATE_1"/>
+        <DBMapperTableEntries name="MANUAL_FILE_ID" expression="KVS.MANUEL_FILE_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="MANUAL_FILE_ID_1"/>
+        <DBMapperTableEntries name="MANUAL_FILE_NAME"/>
+        <DBMapperTableEntries name="STATUS_CODE"/>
+      </InputTables>
+      <OutputTables name="EXP_A" tableName="EXP_A">
+        <DBMapperTableEntries name="REPORT_DATE" expression="KVS.REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID" expression="KVS.MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="PRODUCT" expression="KVS.PRODUCT"/>
+        <DBMapperTableEntries name="PRICE" expression="KVS.PRICE"/>
+        <FilterEntries name="where" expression="(MFL.MANUAL_FILE_NAME = 'MANUAL_BLOCKED') AND (MFL.STATUS_CODE = 'O')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-448" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_5"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6OYVIcMNEfGRB8-8_sKJtQ - T_KVS_MANUAL_BLOCKED"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_KVS_MANUAL_BLOCKED&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSEXT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_KVS_MANUAL_BLOCKED"/>
+    <metadata connector="TABLE" label="DGYTODSEXT.T_KVS_MANUAL_BLOCKED" name="table1">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="PRODUCT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PRICE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="-192" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_3"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_LATEST_FILE"/>
+    <metadata connector="TABLE" label="EXP_LATEST_FILE" name="EXP_LATEST_FILE">
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="LATEST_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSEXT.T_KVS_MANUAL_BLOCKED" tableName="DGYTODSEXT.T_KVS_MANUAL_BLOCKED" joinType="NO_JOIN" alias="T_KVS_MANUAL_BLOCKED">
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="PRODUCT"/>
+        <DBMapperTableEntries name="PRICE"/>
+      </InputTables>
+      <OutputTables name="EXP_LATEST_FILE" tableName="EXP_LATEST_FILE">
+        <DBMapperTableEntries name="REPORT_DATE" expression="T_KVS_MANUAL_BLOCKED.REPORT_DATE"/>
+        <DBMapperTableEntries name="LATEST_FILE_ID" expression="MAX(T_KVS_MANUAL_BLOCKED.MANUEL_FILE_ID)"/>
+        <FilterEntries name="other" expression="GROUP BY T_KVS_MANUAL_BLOCKED.REPORT_DATE" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_4"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_T-cKYMdiEfGy28EcxkB-Aw - V_TDM_MANUEL_FILE_LOG"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;V_TDM_MANUEL_FILE_LOG&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DORTODSKVS&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_V_TDM_MANUEL_FILE_LOG"/>
+    <metadata connector="TABLE" label="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" name="table1">
+      <column key="false" length="4000" name="COL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LATEST_FILE_ID_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LATEST_LOAD_DATE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LOAD_DATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="LOAD_DATE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_ID_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="MANUAL_FILE_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_A"/>
+    <metadata connector="TABLE" label="T_STG_DWH_RPT_MANUAL_BLOCK_TM1" name="T_STG_DWH_RPT_MANUAL_BLOCK_TM1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="PRODUCT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_A" tableName="EXP_A" joinType="NO_JOIN" alias="EXP_A">
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="PRODUCT"/>
+        <DBMapperTableEntries name="PRICE"/>
+      </InputTables>
+      <OutputTables name="T_STG_DWH_RPT_MANUAL_BLOCK_TM1" tableName="T_STG_DWH_RPT_MANUAL_BLOCK_TM1">
+        <DBMapperTableEntries name="ETL_DATE" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="'EXT'"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="REPORT_DATE" expression="EXP_A.REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID" expression="EXP_A.MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="PRODUCT" expression="EXP_A.PRODUCT"/>
+        <DBMapperTableEntries name="PRICE" expression="EXP_A.PRICE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_DWH_RPT_MANUAL_BLOCK_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_DWH_RPT_MANUAL_BLOCK_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_DWH_RPT_MANUAL_BLOCK_TM1"/>
+    <metadata connector="TABLE" label="T_STG_DWH_RPT_MANUAL_BLOCK_TM1" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="PRODUCT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTODSEXT.T_KVS_MANUAL_BLOCKED" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DGYTODSEXT.T_KVS_MANUAL_BLOCKED" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_5" target="tELTOracleMap_3"/>
+  <connection connectorName="TABLE_REF" label="EXP_LATEST_FILE" lineStyle="22" mergeOrder="0" metaname="EXP_LATEST_FILE" outputId="0" source="tELTOracleMap_3" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DORTODSKVS.V_TDM_MANUEL_FILE_LOG" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_4" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_A" lineStyle="22" mergeOrder="0" metaname="EXP_A" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_DWH_RPT_MANUAL_BLOCK_TM1" lineStyle="9" mergeOrder="0" metaname="T_STG_DWH_RPT_MANUAL_BLOCK_TM1" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

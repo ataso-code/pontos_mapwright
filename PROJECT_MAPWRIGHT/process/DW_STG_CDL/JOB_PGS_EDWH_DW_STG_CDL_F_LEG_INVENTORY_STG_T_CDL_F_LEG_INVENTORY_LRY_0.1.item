@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_FROM_ETL_DATE" promptNeeded="false" type="id_String"/>
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_CDL_F_LEG_INVENTORY_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_VSPSIcMQEfGRB8-8_sKJtQ - FDL_RES_INVENTORY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;FDL_RES_INVENTORY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_FDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_FDL_RES_INVENTORY"/>
+    <metadata connector="TABLE" label="DW_FDL.FDL_RES_INVENTORY" name="table1">
+      <column key="true" length="-1" name="SNAPSHOT_DT" nullable="false" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="true" length="5" name="RES_CLASS_CODE" nullable="false" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="true" length="10" name="SEG_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CABIN_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="AUTHORIZATION_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEAT_SOLD_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEAT_SOLD_ALM_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEAT_SOLD_LIMIT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="WAIT_LIST_LENGTH" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="WAIT_LIST_MAX_LENGTH" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="OPEN_FOR_SALE_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FARE_LEVEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="LAST_INCOMING_AVL_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SRC_LAST_UPDATE_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_FDL_RES_INVENTORY"/>
+    <metadata connector="TABLE" label="STG_T_CDL_F_LEG_INVENTORY_LRY" name="STG_T_CDL_F_LEG_INVENTORY_LRY">
+      <column key="false" length="-1" name="SNAPSHOT_DT" nullable="false" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCHEDULED_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="RES_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DEP_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ARR_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SEAT_SOLD_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_FDL.FDL_RES_INVENTORY" tableName="DW_FDL.FDL_RES_INVENTORY" joinType="NO_JOIN" alias="INV">
+        <DBMapperTableEntries name="SNAPSHOT_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="RES_CLASS_CODE"/>
+        <DBMapperTableEntries name="SEG_ID"/>
+        <DBMapperTableEntries name="CABIN_CLASS_CODE"/>
+        <DBMapperTableEntries name="AUTHORIZATION_CNT"/>
+        <DBMapperTableEntries name="SEAT_SOLD_CNT"/>
+        <DBMapperTableEntries name="SEAT_SOLD_ALM_CNT"/>
+        <DBMapperTableEntries name="SEAT_SOLD_LIMIT"/>
+        <DBMapperTableEntries name="WAIT_LIST_LENGTH"/>
+        <DBMapperTableEntries name="WAIT_LIST_MAX_LENGTH"/>
+        <DBMapperTableEntries name="OPEN_FOR_SALE_FLAG"/>
+        <DBMapperTableEntries name="FARE_LEVEL"/>
+        <DBMapperTableEntries name="LAST_INCOMING_AVL_STATUS_CODE"/>
+        <DBMapperTableEntries name="SRC_LAST_UPDATE_DTTM"/>
+      </InputTables>
+      <InputTables name="DW_CDL.CDL_D_FLIGHT_LEG_SEGMENT" tableName="DW_CDL.CDL_D_FLIGHT_LEG_SEGMENT" joinType="LEFT_OUTER_JOIN" alias="LEG_SEG">
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="LEG_SEG_ID"/>
+        <DBMapperTableEntries name="LEG_ID"/>
+        <DBMapperTableEntries name="SEG_ID" expression="INV.SEG_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="LEG_SEG_SEQ"/>
+        <DBMapperTableEntries name="EXCH_KEY"/>
+      </InputTables>
+      <InputTables name="DW_CDL.CDL_D_FLIGHT_SEGMENT" tableName="DW_CDL.CDL_D_FLIGHT_SEGMENT" joinType="LEFT_OUTER_JOIN" alias="SEG">
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="SEG_ID" expression="INV.SEG_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="SEG_ISN"/>
+        <DBMapperTableEntries name="DEP_PORT_ID"/>
+        <DBMapperTableEntries name="ARR_PORT_ID"/>
+        <DBMapperTableEntries name="SCHEDULED_DEP_DTTM"/>
+        <DBMapperTableEntries name="SCHEDULED_ARR_DTTM"/>
+        <DBMapperTableEntries name="SEG_TYPE_CODE"/>
+        <DBMapperTableEntries name="CARRIER_CODE"/>
+        <DBMapperTableEntries name="CODESHARE_FLT_ID"/>
+        <DBMapperTableEntries name="FLT_ID"/>
+        <DBMapperTableEntries name="FLT_NO"/>
+        <DBMapperTableEntries name="SEAT_SELL_STATUS_CODE"/>
+        <DBMapperTableEntries name="DOMESTIC_FLAG"/>
+        <DBMapperTableEntries name="EXCH_KEY"/>
+      </InputTables>
+      <InputTables name="DW_CDL.CDL_D_FLIGHT_LEG" tableName="DW_CDL.CDL_D_FLIGHT_LEG" joinType="LEFT_OUTER_JOIN" alias="LEG">
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="LEG_ID" expression="LEG_SEG.LEG_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="LEG_ISN"/>
+        <DBMapperTableEntries name="FLT_ID"/>
+        <DBMapperTableEntries name="FLT_NO"/>
+        <DBMapperTableEntries name="AC_ID"/>
+        <DBMapperTableEntries name="CARRIER_CODE"/>
+        <DBMapperTableEntries name="DEP_PORT_ID"/>
+        <DBMapperTableEntries name="ARR_PORT_ID"/>
+        <DBMapperTableEntries name="DIVERSION_PORT_ID"/>
+        <DBMapperTableEntries name="PLANNED_DEP_DTTM"/>
+        <DBMapperTableEntries name="PLANNED_ARR_DTTM"/>
+        <DBMapperTableEntries name="SCHEDULED_DEP_DTTM"/>
+        <DBMapperTableEntries name="SCHEDULED_ARR_DTTM"/>
+        <DBMapperTableEntries name="FLT_LEG_TYPE_CODE"/>
+        <DBMapperTableEntries name="SERVICE_TYPE_CODE"/>
+        <DBMapperTableEntries name="LEG_STATUS_CODE"/>
+        <DBMapperTableEntries name="SALES_INHIBIT_FLAG"/>
+        <DBMapperTableEntries name="CHECKIN_SEQ"/>
+        <DBMapperTableEntries name="BOARDING_DTTM"/>
+        <DBMapperTableEntries name="F_SEAT_CAP"/>
+        <DBMapperTableEntries name="C_SEAT_CAP"/>
+        <DBMapperTableEntries name="Y_SEAT_CAP"/>
+        <DBMapperTableEntries name="DIVERSION_ARR_DTTM"/>
+        <DBMapperTableEntries name="DELAY_REASON_CODE_1"/>
+        <DBMapperTableEntries name="DELAY_DUR_1"/>
+        <DBMapperTableEntries name="DELAY_REASON_CODE_2"/>
+        <DBMapperTableEntries name="DELAY_DUR_2"/>
+        <DBMapperTableEntries name="CARRIER_BRAND_CODE"/>
+        <DBMapperTableEntries name="LEG_REPORTING_GRP_ID"/>
+        <DBMapperTableEntries name="EXCH_KEY"/>
+      </InputTables>
+      <OutputTables name="STG_T_CDL_F_LEG_INVENTORY_LRY" tableName="STG_T_CDL_F_LEG_INVENTORY_LRY">
+        <DBMapperTableEntries name="SNAPSHOT_DT" expression="INV.SNAPSHOT_DT"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="SCHEDULED_DEP_DT" expression="TRUNC(LEG.SCHEDULED_DEP_DTTM)"/>
+        <DBMapperTableEntries name="LEG_ID" expression="NVL(LEG.LEG_ID, -1)"/>
+        <DBMapperTableEntries name="SEG_ID" expression="INV.SEG_ID"/>
+        <DBMapperTableEntries name="RES_CLASS_CODE" expression="NVL(INV.RES_CLASS_CODE, '-1')"/>
+        <DBMapperTableEntries name="DEP_PORT_ID" expression="NVL(LEG.DEP_PORT_ID, -1)"/>
+        <DBMapperTableEntries name="ARR_PORT_ID" expression="NVL(LEG.ARR_PORT_ID, -1)"/>
+        <DBMapperTableEntries name="FLT_ID" expression="NVL(LEG.FLT_ID, -1)"/>
+        <DBMapperTableEntries name="CARRIER_CODE" expression="NVL(LEG.CARRIER_CODE, '-1')"/>
+        <DBMapperTableEntries name="SEAT_SOLD_CNT" expression="NVL(INV.SEAT_SOLD_CNT, 0) + NVL(INV.SEAT_SOLD_ALM_CNT, 0)"/>
+        <FilterEntries name="where" expression="INV.SNAPSHOT_DT BETWEEN TO_DATE('&quot; + context.VAR_FROM_ETL_DATE + &quot;', 'DD.MM.YYYY') AND (TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY') + 1) - INTERVAL '1' SECOND AND NVL(SEG.CODESHARE_FLT_ID, -1) = -1 AND NOT LEG.LEG_STATUS_CODE IN ('CX', 'DL') AND LEG.FLT_LEG_TYPE_CODE IN (10, 20, 32, 33)" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_i1m34cMNEfGRB8-8_sKJtQ - CDL_D_FLIGHT_LEG_SEGMENT"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;CDL_D_FLIGHT_LEG_SEGMENT&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_CDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_CDL_D_FLIGHT_LEG_SEGMENT"/>
+    <metadata connector="TABLE" label="DW_CDL.CDL_D_FLIGHT_LEG_SEGMENT" name="table1">
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_SEG_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_SEG_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EXCH_KEY" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_i1m34cMNEfGRB8-8_sKJtQ - CDL_D_FLIGHT_SEGMENT"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;CDL_D_FLIGHT_SEGMENT&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_CDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_CDL_D_FLIGHT_SEGMENT"/>
+    <metadata connector="TABLE" label="DW_CDL.CDL_D_FLIGHT_SEGMENT" name="table1">
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="DEP_PORT_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ARR_PORT_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCHEDULED_DEP_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCHEDULED_ARR_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="SEG_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CODESHARE_FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="SEAT_SELL_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="DOMESTIC_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EXCH_KEY" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_4"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_i1m34cMNEfGRB8-8_sKJtQ - CDL_D_FLIGHT_LEG"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;CDL_D_FLIGHT_LEG&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_CDL&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_CDL_D_FLIGHT_LEG"/>
+    <metadata connector="TABLE" label="DW_CDL.CDL_D_FLIGHT_LEG" name="table1">
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="AC_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DEP_PORT_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ARR_PORT_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="DIVERSION_PORT_ID" nullable="false" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="PLANNED_DEP_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="PLANNED_ARR_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCHEDULED_DEP_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCHEDULED_ARR_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="FLT_LEG_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="SERVICE_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="LEG_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SALES_INHIBIT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CHECKIN_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="BOARDING_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="F_SEAT_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="C_SEAT_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="Y_SEAT_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="DIVERSION_ARR_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="DELAY_REASON_CODE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="DELAY_DUR_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="DELAY_REASON_CODE_2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="DELAY_DUR_2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="CARRIER_BRAND_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_REPORTING_GRP_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EXCH_KEY" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_CDL_F_LEG_INVENTORY_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_CDL_F_LEG_INVENTORY_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_CDL_F_LEG_INVENTORY_LRY"/>
+    <metadata connector="TABLE" label="STG_T_CDL_F_LEG_INVENTORY_LRY" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="SNAPSHOT_DT" nullable="false" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCHEDULED_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SEG_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="RES_CLASS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DEP_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ARR_PORT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FLT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SEAT_SOLD_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_FDL.FDL_RES_INVENTORY" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_CDL.CDL_D_FLIGHT_LEG_SEGMENT" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_CDL.CDL_D_FLIGHT_SEGMENT" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_3" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_CDL.CDL_D_FLIGHT_LEG" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_4" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_CDL_F_LEG_INVENTORY_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_CDL_F_LEG_INVENTORY_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

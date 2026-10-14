@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP07&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_DWH_RPT_BDM_TM1_TMP03"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_DWH_RPT_BDM_TM1_TMP03&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_DWH_RPT_BDM_TM1_TMP03"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP03" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TEAM_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TEAM_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EMP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TM_POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TM_EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TM_EMP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TL_POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TL_EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TL_EMP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_TM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_TL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IND_REVENUE_MULTIPLIER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="REVENUE_MULTIPLIER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_EQ_FILL_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_FUT_VOLUME" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_OPT_VOLUME" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_VOLUME" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_PREMIUM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_NORMAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_FUT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_OPT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_RED_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_TREASURE_OPT_PROFIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_FX_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_FO_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_BORROW_DIV_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_FILL_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_FUT_VOLUME" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_OPT_VOLUME" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_VOLUME" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_PREMIUM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_NORMAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_FUT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_OPT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_RED_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_TREASURE_OPT_PROFIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FX_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_FO_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BORROW_DIV_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_EQ_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_FTR_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_OPT_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_FX_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_EQ_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_DER_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_DIV_DER_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_BROKERAGE_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_COMMISION_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_REVENUE_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OPT_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FX_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_EQ_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_DER_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DIV_DER_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BROKERAGE_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_COMMISION_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_REVENUE_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="IS_ON_LEAVE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_SINGLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TEAM_CNT_OF_TL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_STG_DWH_RPT_BDM_TM1_TMP03"/>
+    <metadata connector="TABLE" label="T_STG_DWH_RPT_BDM_TM1_TMP07" name="T_STG_DWH_RPT_BDM_TM1_TMP07">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EMP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_NORMAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_FUT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_OPT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_RED_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_TREASURE_OPT_PROFIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FX_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_FO_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BORROW_DIV_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_NORMAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_FUT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_OPT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_RED_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_TREASURE_OPT_PROFIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_FX_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_FO_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_BORROW_DIV_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_COMMISION_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_COMMISION_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_REVENUE_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_REVENUE_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_SINGLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TEAM2_CNT_OF_TL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="ADET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISSION_REFUND_EQ" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISSION_REFUND_VIOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISSION_REFUND_INT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTOMER_SATISFACTION_EQ" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTOMER_SATISFACTION_VIOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTOMER_SATISFACTION_INT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STAFF_ERROR_EQ" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STAFF_ERROR_VIOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STAFF_ERROR_INT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEDUCTIBLE_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="HESAP_ADET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP03" tableName="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP03" joinType="NO_JOIN" alias="CTE">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="GY_ACC_DIV_ID"/>
+        <DBMapperTableEntries name="GY_DIV_NAME"/>
+        <DBMapperTableEntries name="GY_DIV_CODE"/>
+        <DBMapperTableEntries name="TEAM_NAME"/>
+        <DBMapperTableEntries name="TEAM_CODE"/>
+        <DBMapperTableEntries name="POS_ID"/>
+        <DBMapperTableEntries name="EMP_ID"/>
+        <DBMapperTableEntries name="EMP_NAME"/>
+        <DBMapperTableEntries name="TM_POS_ID"/>
+        <DBMapperTableEntries name="TM_EMP_ID"/>
+        <DBMapperTableEntries name="TM_EMP_NAME"/>
+        <DBMapperTableEntries name="TL_POS_ID"/>
+        <DBMapperTableEntries name="TL_EMP_ID"/>
+        <DBMapperTableEntries name="TL_EMP_NAME"/>
+        <DBMapperTableEntries name="IS_TM"/>
+        <DBMapperTableEntries name="IS_TL"/>
+        <DBMapperTableEntries name="IND_REVENUE_MULTIPLIER"/>
+        <DBMapperTableEntries name="REVENUE_MULTIPLIER"/>
+        <DBMapperTableEntries name="IND_EQ_FILL_AMOUNT"/>
+        <DBMapperTableEntries name="IND_VIOP_FUT_VOLUME"/>
+        <DBMapperTableEntries name="IND_VIOP_OPT_VOLUME"/>
+        <DBMapperTableEntries name="IND_VIOP_VOLUME"/>
+        <DBMapperTableEntries name="IND_VIOP_PREMIUM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_TOTAL_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_EQ_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_VIOP_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_VIOP_NORMAL_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_VIOP_FUT_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_VIOP_OPT_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_VIOP_RED_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_TOTAL_TREASURE_OPT_PROFIT"/>
+        <DBMapperTableEntries name="IND_FX_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_INT_TOTAL_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_INT_EQ_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_INT_FO_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_INT_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_BORROW_DIV_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="EQ_FILL_AMOUNT"/>
+        <DBMapperTableEntries name="VIOP_FUT_VOLUME"/>
+        <DBMapperTableEntries name="VIOP_OPT_VOLUME"/>
+        <DBMapperTableEntries name="VIOP_VOLUME"/>
+        <DBMapperTableEntries name="VIOP_PREMIUM_AMOUNT"/>
+        <DBMapperTableEntries name="TOTAL_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="EQ_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="VIOP_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="VIOP_NORMAL_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="VIOP_FUT_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="VIOP_OPT_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="VIOP_RED_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="TOTAL_TREASURE_OPT_PROFIT"/>
+        <DBMapperTableEntries name="FX_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="INT_TOTAL_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="INT_EQ_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="INT_FO_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="INT_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="BORROW_DIV_GROSS_COMM_AMOUNT"/>
+        <DBMapperTableEntries name="IND_EQ_GRS_TARGET"/>
+        <DBMapperTableEntries name="IND_FTR_GRS_TARGET"/>
+        <DBMapperTableEntries name="IND_OPT_GRS_TARGET"/>
+        <DBMapperTableEntries name="IND_VIOP_GRS_TARGET"/>
+        <DBMapperTableEntries name="IND_FX_GRS_TARGET"/>
+        <DBMapperTableEntries name="IND_INT_EQ_GRS_TARGET"/>
+        <DBMapperTableEntries name="IND_INT_DER_GRS_TARGET"/>
+        <DBMapperTableEntries name="IND_INT_GRS_TARGET"/>
+        <DBMapperTableEntries name="IND_DIV_DER_GRS_TARGET"/>
+        <DBMapperTableEntries name="IND_BROKERAGE_GRS_TARGET"/>
+        <DBMapperTableEntries name="IND_TOTAL_COMMISION_GRS_TARGET"/>
+        <DBMapperTableEntries name="IND_TOTAL_REVENUE_GRS_TARGET"/>
+        <DBMapperTableEntries name="EQ_GRS_TARGET"/>
+        <DBMapperTableEntries name="FTR_GRS_TARGET"/>
+        <DBMapperTableEntries name="OPT_GRS_TARGET"/>
+        <DBMapperTableEntries name="VIOP_GRS_TARGET"/>
+        <DBMapperTableEntries name="FX_GRS_TARGET"/>
+        <DBMapperTableEntries name="INT_EQ_GRS_TARGET"/>
+        <DBMapperTableEntries name="INT_DER_GRS_TARGET"/>
+        <DBMapperTableEntries name="INT_GRS_TARGET"/>
+        <DBMapperTableEntries name="DIV_DER_GRS_TARGET"/>
+        <DBMapperTableEntries name="BROKERAGE_GRS_TARGET"/>
+        <DBMapperTableEntries name="TOTAL_COMMISION_GRS_TARGET"/>
+        <DBMapperTableEntries name="TOTAL_REVENUE_GRS_TARGET"/>
+        <DBMapperTableEntries name="IS_ON_LEAVE"/>
+        <DBMapperTableEntries name="IS_SINGLE"/>
+        <DBMapperTableEntries name="TEAM_CNT_OF_TL"/>
+      </InputTables>
+      <InputTables name="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP04" tableName="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP04" joinType="LEFT_OUTER_JOIN" alias="CTE_L2">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="POS_ID" expression="CTE.POS_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="COMMISSION_REFUND_EQ"/>
+        <DBMapperTableEntries name="COMMISSION_REFUND_VIOP"/>
+        <DBMapperTableEntries name="COMMISSION_REFUND_INT"/>
+        <DBMapperTableEntries name="CUSTOMER_SATISFACTION_EQ"/>
+        <DBMapperTableEntries name="CUSTOMER_SATISFACTION_VIOP"/>
+        <DBMapperTableEntries name="CUSTOMER_SATISFACTION_INT"/>
+        <DBMapperTableEntries name="STAFF_ERROR_EQ"/>
+        <DBMapperTableEntries name="STAFF_ERROR_VIOP"/>
+        <DBMapperTableEntries name="STAFF_ERROR_INT"/>
+      </InputTables>
+      <InputTables name="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP05" tableName="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP05" joinType="LEFT_OUTER_JOIN" alias="CTE_L3">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="POS_ID" expression="CTE.POS_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="DEDUCTIBLE_AMOUNT"/>
+      </InputTables>
+      <InputTables name="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP06" tableName="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP06" joinType="LEFT_OUTER_JOIN" alias="CTE_L4">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="POS_ID" expression="CTE.POS_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="HESAP_ADET"/>
+      </InputTables>
+      <OutputTables name="T_STG_DWH_RPT_BDM_TM1_TMP07" tableName="T_STG_DWH_RPT_BDM_TM1_TMP07">
+        <DBMapperTableEntries name="ETL_DATE" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="EMP_ID" expression="CTE.EMP_ID"/>
+        <DBMapperTableEntries name="EMP_NAME" expression="CTE.EMP_NAME"/>
+        <DBMapperTableEntries name="POS_ID" expression="CTE.POS_ID"/>
+        <DBMapperTableEntries name="EQ_GROSS_COMM_AMOUNT" expression="SUM(CTE.EQ_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="VIOP_GROSS_COMM_AMOUNT" expression="SUM(CTE.VIOP_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="VIOP_NORMAL_GROSS_COMM_AMOUNT" expression="SUM(CTE.VIOP_NORMAL_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="VIOP_FUT_GROSS_COMM_AMOUNT" expression="SUM(CTE.VIOP_FUT_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="VIOP_OPT_GROSS_COMM_AMOUNT" expression="SUM(CTE.VIOP_OPT_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="VIOP_RED_GROSS_COMM_AMOUNT" expression="SUM(CTE.VIOP_RED_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="TOTAL_TREASURE_OPT_PROFIT" expression="SUM(CTE.TOTAL_TREASURE_OPT_PROFIT)"/>
+        <DBMapperTableEntries name="FX_GROSS_COMM_AMOUNT" expression="SUM(CTE.FX_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="INT_TOTAL_GROSS_COMM_AMOUNT" expression="SUM(CTE.INT_TOTAL_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="INT_EQ_GROSS_COMM_AMOUNT" expression="SUM(CTE.INT_EQ_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="INT_FO_GROSS_COMM_AMOUNT" expression="SUM(CTE.INT_FO_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="INT_GROSS_COMM_AMOUNT" expression="SUM(CTE.INT_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="BORROW_DIV_GROSS_COMM_AMOUNT" expression="SUM(CTE.BORROW_DIV_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="IND_EQ_GROSS_COMM_AMOUNT" expression="SUM(CTE.IND_EQ_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="IND_VIOP_GROSS_COMM_AMOUNT" expression="SUM(CTE.IND_VIOP_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="IND_VIOP_NORMAL_GROSS_COMM_AMOUNT" expression="SUM(CTE.IND_VIOP_NORMAL_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="IND_VIOP_FUT_GROSS_COMM_AMOUNT" expression="SUM(CTE.IND_VIOP_FUT_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="IND_VIOP_OPT_GROSS_COMM_AMOUNT" expression="SUM(CTE.IND_VIOP_OPT_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="IND_VIOP_RED_GROSS_COMM_AMOUNT" expression="SUM(CTE.IND_VIOP_RED_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="IND_TOTAL_TREASURE_OPT_PROFIT" expression="SUM(CTE.IND_TOTAL_TREASURE_OPT_PROFIT)"/>
+        <DBMapperTableEntries name="IND_FX_GROSS_COMM_AMOUNT" expression="SUM(CTE.IND_FX_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="IND_INT_TOTAL_GROSS_COMM_AMOUNT" expression="SUM(CTE.IND_INT_TOTAL_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="IND_INT_EQ_GROSS_COMM_AMOUNT" expression="SUM(CTE.IND_INT_EQ_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="IND_INT_FO_GROSS_COMM_AMOUNT" expression="SUM(CTE.IND_INT_FO_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="IND_INT_GROSS_COMM_AMOUNT" expression="SUM(CTE.IND_INT_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="IND_BORROW_DIV_GROSS_COMM_AMOUNT" expression="SUM(CTE.IND_BORROW_DIV_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="TOTAL_GROSS_COMM_AMOUNT" expression="SUM(CTE.TOTAL_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="IND_TOTAL_GROSS_COMM_AMOUNT" expression="SUM(CTE.IND_TOTAL_GROSS_COMM_AMOUNT)"/>
+        <DBMapperTableEntries name="TOTAL_COMMISION_GRS_TARGET" expression="SUM(CTE.TOTAL_COMMISION_GRS_TARGET)"/>
+        <DBMapperTableEntries name="IND_TOTAL_COMMISION_GRS_TARGET" expression="SUM(CTE.IND_TOTAL_COMMISION_GRS_TARGET)"/>
+        <DBMapperTableEntries name="TOTAL_REVENUE_GRS_TARGET" expression="SUM(CTE.TOTAL_REVENUE_GRS_TARGET)"/>
+        <DBMapperTableEntries name="IND_TOTAL_REVENUE_GRS_TARGET" expression="SUM(CTE.IND_TOTAL_REVENUE_GRS_TARGET)"/>
+        <DBMapperTableEntries name="IS_SINGLE" expression="SUM(CTE.IS_SINGLE)"/>
+        <DBMapperTableEntries name="TEAM2_CNT_OF_TL" expression="SUM(CASE WHEN CTE.TEAM_CNT_OF_TL = 2 THEN 1 ELSE 0 END)"/>
+        <DBMapperTableEntries name="ADET" expression="COUNT(1)"/>
+        <DBMapperTableEntries name="COMMISSION_REFUND_EQ" expression="MAX(CTE_L2.COMMISSION_REFUND_EQ)"/>
+        <DBMapperTableEntries name="COMMISSION_REFUND_VIOP" expression="MAX(CTE_L2.COMMISSION_REFUND_VIOP)"/>
+        <DBMapperTableEntries name="COMMISSION_REFUND_INT" expression="MAX(CTE_L2.COMMISSION_REFUND_INT)"/>
+        <DBMapperTableEntries name="CUSTOMER_SATISFACTION_EQ" expression="MAX(CTE_L2.CUSTOMER_SATISFACTION_EQ)"/>
+        <DBMapperTableEntries name="CUSTOMER_SATISFACTION_VIOP" expression="MAX(CTE_L2.CUSTOMER_SATISFACTION_VIOP)"/>
+        <DBMapperTableEntries name="CUSTOMER_SATISFACTION_INT" expression="MAX(CTE_L2.CUSTOMER_SATISFACTION_INT)"/>
+        <DBMapperTableEntries name="STAFF_ERROR_EQ" expression="MAX(CTE_L2.STAFF_ERROR_EQ)"/>
+        <DBMapperTableEntries name="STAFF_ERROR_VIOP" expression="MAX(CTE_L2.STAFF_ERROR_VIOP)"/>
+        <DBMapperTableEntries name="STAFF_ERROR_INT" expression="MAX(CTE_L2.STAFF_ERROR_INT)"/>
+        <DBMapperTableEntries name="DEDUCTIBLE_AMOUNT" expression="MAX(CTE_L3.DEDUCTIBLE_AMOUNT)"/>
+        <DBMapperTableEntries name="HESAP_ADET" expression="MAX(CTE_L4.HESAP_ADET)"/>
+        <FilterEntries name="other" expression="GROUP BY CTE.EMP_ID, CTE.EMP_NAME, CTE.POS_ID" filterKind="OTHER_FILTER"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_DWH_RPT_BDM_TM1_TMP04"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_DWH_RPT_BDM_TM1_TMP04&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_DWH_RPT_BDM_TM1_TMP04"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP04" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISSION_REFUND_EQ" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISSION_REFUND_VIOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISSION_REFUND_INT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTOMER_SATISFACTION_EQ" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTOMER_SATISFACTION_VIOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTOMER_SATISFACTION_INT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STAFF_ERROR_EQ" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STAFF_ERROR_VIOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STAFF_ERROR_INT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_DWH_RPT_BDM_TM1_TMP05"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_DWH_RPT_BDM_TM1_TMP05&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_DWH_RPT_BDM_TM1_TMP05"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP05" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="DEDUCTIBLE_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_4"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_DWH_RPT_BDM_TM1_TMP06"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_DWH_RPT_BDM_TM1_TMP06&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_DWH_RPT_BDM_TM1_TMP06"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP06" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="HESAP_ADET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_DWH_RPT_BDM_TM1_TMP07"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_DWH_RPT_BDM_TM1_TMP07&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_DWH_RPT_BDM_TM1_TMP07"/>
+    <metadata connector="TABLE" label="T_STG_DWH_RPT_BDM_TM1_TMP07" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EMP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_NORMAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_FUT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_OPT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="VIOP_RED_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_TREASURE_OPT_PROFIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FX_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_FO_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="INT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BORROW_DIV_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_NORMAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_FUT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_OPT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_VIOP_RED_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_TREASURE_OPT_PROFIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_FX_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_EQ_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_FO_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_INT_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_BORROW_DIV_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_COMMISION_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_COMMISION_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_REVENUE_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="IND_TOTAL_REVENUE_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="IS_SINGLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="TEAM2_CNT_OF_TL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="ADET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISSION_REFUND_EQ" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISSION_REFUND_VIOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COMMISSION_REFUND_INT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTOMER_SATISFACTION_EQ" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTOMER_SATISFACTION_VIOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTOMER_SATISFACTION_INT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STAFF_ERROR_EQ" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STAFF_ERROR_VIOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="STAFF_ERROR_INT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DEDUCTIBLE_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="HESAP_ADET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP03" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP04" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP05" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_3" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_DWH_RPT_BDM_TM1_TMP06" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_4" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_DWH_RPT_BDM_TM1_TMP07" lineStyle="9" mergeOrder="0" metaname="T_STG_DWH_RPT_BDM_TM1_TMP07" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

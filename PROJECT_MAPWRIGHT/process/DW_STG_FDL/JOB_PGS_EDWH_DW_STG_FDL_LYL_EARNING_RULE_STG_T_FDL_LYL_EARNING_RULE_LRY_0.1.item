@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_FDL_LYL_EARNING_RULE_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_FF_SCOREDEF"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_FF_SCOREDEF&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_FF_SCOREDEF"/>
+    <metadata connector="TABLE" label="DW_LND.LND_FF_SCOREDEF" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="AIRLINE_CARRIER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="FLIGHT_CLASS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="14" name="TOUR_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ORIGIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DESTINATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="START_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="7" name="DAYOFWEEK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MILE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ADD_POINT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ADD_MILE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MUL_POINT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MUL_MILE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MAX_POINT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MAX_MILE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MIN_POINT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MIN_MILE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CLASS_GROUPED" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CLASS_GROUP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="FLTNO_GROUPED" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="FLTNO_GROUP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CARRIER_GROUPED" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CARRIER_GROUP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="BONUS_EXPLANATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="FLYER_CARD_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CARD_GROUPED" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="CARD_GROUP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PRIORITY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="BOOKING_START_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="BOOKING_END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="25" name="BOOKING_OFFICE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MEMBER_SEGMENT_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FLT_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="RULE_STATISTIC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="MAIN_CHILD" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="APPLY_TO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="DOMESTIC_INTERNATIONAL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="ADD_TPM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MUL_TPM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MAX_TPM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MIN_TPM" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INSERTED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="AMENDED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="AMEND_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="ACT_CLASSIFICATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="COMPANY_BRANCH_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="UNIT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SUPPRESS_IF_ZERO_EARN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_TPM_USED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="PROMOTION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CAMPAIGN_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FROM_DISTANCE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TO_DISTANCE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FLT_RANGE_GROUP_CODE_VALID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="FLT_RANGE_GROUP_CODE_EXCLUSIVE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="FLOWN_CLASS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="FLOWN_CLASS_GROUPED" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="FLOWN_CLASS_GROUP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ROUTE_GROUPED" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ORIGIN_GROUP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DESTINATION_GROUP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CUSTOM_PROMOTION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SR_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="DISCOUNT_CAN_BE_APPLIED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="DISCOUNT_CODE_GROUPED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="DISCOUNT_GROUP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SR_TYPE_GROUPED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SR_TYPE_GROUP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MAX_ISSUE_NUMBER_BY_MEMBER" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="INCLUDE_UA_MEMBERS_IN_MAX_CNT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="EXPIRE_TIME" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EXPIRE_TIME_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="EXPIRE_CALCULATION_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="EXCLUDE_FARE_BASE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="FARE_CODE_GROUPED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="EXCLUDE_FARE_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PACKAGE_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="RULE_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SR_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="DISCOUNT_FOR_ALL_PNR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ROUND_TRIP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="EXCLUDE_FF_PAYMENTS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="ALLOW_TRANSFER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SELECTABLE_AT_PAYMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="BLOCK_OTHERS_WHEN_SELECTED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_LND_FF_SCOREDEF"/>
+    <metadata connector="TABLE" label="STG_T_FDL_LYL_EARNING_RULE_LRY" name="STG_T_FDL_LYL_EARNING_RULE_LRY">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EARNING_RULE_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="EARNING_RULE_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="DEP_PORT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="ARR_PORT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="EFF_FROM_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="EFF_TO_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="DAYS_OF_WEEK" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MILES_AMT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ADD_POINT_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ADD_MILES_AMT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="MUL_POINT_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MUL_MILES_AMT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="MAX_POINT_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MAX_MILES_AMT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="MIN_POINT_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MIN_MILES_AMT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CLASS_GRP_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="CLASS_GRP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="EARNING_EXPLANATION_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PRIORITY_LEVEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="EARNING_RULE_STATISTIC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="MAIN_CHILD_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_FF_SCOREDEF" tableName="DW_LND.LND_FF_SCOREDEF" joinType="NO_JOIN" alias="LND_FF_SCOREDEF">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="ID"/>
+        <DBMapperTableEntries name="AIRLINE_CARRIER"/>
+        <DBMapperTableEntries name="TYPE"/>
+        <DBMapperTableEntries name="FLIGHT_CLASS"/>
+        <DBMapperTableEntries name="TOUR_CODE"/>
+        <DBMapperTableEntries name="ORIGIN"/>
+        <DBMapperTableEntries name="DESTINATION"/>
+        <DBMapperTableEntries name="START_DATE"/>
+        <DBMapperTableEntries name="END_DATE"/>
+        <DBMapperTableEntries name="DAYOFWEEK"/>
+        <DBMapperTableEntries name="MILE"/>
+        <DBMapperTableEntries name="ADD_POINT"/>
+        <DBMapperTableEntries name="ADD_MILE"/>
+        <DBMapperTableEntries name="MUL_POINT"/>
+        <DBMapperTableEntries name="MUL_MILE"/>
+        <DBMapperTableEntries name="MAX_POINT"/>
+        <DBMapperTableEntries name="MAX_MILE"/>
+        <DBMapperTableEntries name="MIN_POINT"/>
+        <DBMapperTableEntries name="MIN_MILE"/>
+        <DBMapperTableEntries name="CLASS_GROUPED"/>
+        <DBMapperTableEntries name="CLASS_GROUP_CODE"/>
+        <DBMapperTableEntries name="FLTNO_GROUPED"/>
+        <DBMapperTableEntries name="FLTNO_GROUP_CODE"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="CARRIER_GROUPED"/>
+        <DBMapperTableEntries name="CARRIER_GROUP_CODE"/>
+        <DBMapperTableEntries name="BONUS_EXPLANATION"/>
+        <DBMapperTableEntries name="FLYER_CARD_TYPE"/>
+        <DBMapperTableEntries name="CARD_GROUPED"/>
+        <DBMapperTableEntries name="CARD_GROUP_CODE"/>
+        <DBMapperTableEntries name="PRIORITY"/>
+        <DBMapperTableEntries name="BOOKING_START_DATE"/>
+        <DBMapperTableEntries name="BOOKING_END_DATE"/>
+        <DBMapperTableEntries name="BOOKING_OFFICE_ID"/>
+        <DBMapperTableEntries name="MEMBER_SEGMENT_SEQ"/>
+        <DBMapperTableEntries name="FLT_COUNT"/>
+        <DBMapperTableEntries name="RULE_STATISTIC_CODE"/>
+        <DBMapperTableEntries name="MAIN_CHILD"/>
+        <DBMapperTableEntries name="APPLY_TO"/>
+        <DBMapperTableEntries name="DOMESTIC_INTERNATIONAL"/>
+        <DBMapperTableEntries name="ADD_TPM"/>
+        <DBMapperTableEntries name="MUL_TPM"/>
+        <DBMapperTableEntries name="MAX_TPM"/>
+        <DBMapperTableEntries name="MIN_TPM"/>
+        <DBMapperTableEntries name="INSERTED_BY"/>
+        <DBMapperTableEntries name="INSERT_DATE"/>
+        <DBMapperTableEntries name="AMENDED_BY"/>
+        <DBMapperTableEntries name="AMEND_DATE"/>
+        <DBMapperTableEntries name="ACT_CLASSIFICATION"/>
+        <DBMapperTableEntries name="COMPANY_BRANCH_SEQ"/>
+        <DBMapperTableEntries name="UNIT_TYPE"/>
+        <DBMapperTableEntries name="SUPPRESS_IF_ZERO_EARN"/>
+        <DBMapperTableEntries name="IS_TPM_USED"/>
+        <DBMapperTableEntries name="PROMOTION_CODE"/>
+        <DBMapperTableEntries name="CAMPAIGN_ISN"/>
+        <DBMapperTableEntries name="FROM_DISTANCE"/>
+        <DBMapperTableEntries name="TO_DISTANCE"/>
+        <DBMapperTableEntries name="FLT_RANGE_GROUP_CODE_VALID"/>
+        <DBMapperTableEntries name="FLT_RANGE_GROUP_CODE_EXCLUSIVE"/>
+        <DBMapperTableEntries name="FLOWN_CLASS"/>
+        <DBMapperTableEntries name="FLOWN_CLASS_GROUPED"/>
+        <DBMapperTableEntries name="FLOWN_CLASS_GROUP_CODE"/>
+        <DBMapperTableEntries name="ROUTE_GROUPED"/>
+        <DBMapperTableEntries name="ORIGIN_GROUP_CODE"/>
+        <DBMapperTableEntries name="DESTINATION_GROUP_CODE"/>
+        <DBMapperTableEntries name="CUSTOM_PROMOTION"/>
+        <DBMapperTableEntries name="SR_TYPE"/>
+        <DBMapperTableEntries name="DISCOUNT_CAN_BE_APPLIED"/>
+        <DBMapperTableEntries name="DISCOUNT_CODE_GROUPED"/>
+        <DBMapperTableEntries name="DISCOUNT_GROUP_CODE"/>
+        <DBMapperTableEntries name="SR_TYPE_GROUPED"/>
+        <DBMapperTableEntries name="SR_TYPE_GROUP_CODE"/>
+        <DBMapperTableEntries name="MAX_ISSUE_NUMBER_BY_MEMBER"/>
+        <DBMapperTableEntries name="INCLUDE_UA_MEMBERS_IN_MAX_CNT"/>
+        <DBMapperTableEntries name="EXPIRE_TIME"/>
+        <DBMapperTableEntries name="EXPIRE_TIME_TYPE"/>
+        <DBMapperTableEntries name="EXPIRE_CALCULATION_TYPE"/>
+        <DBMapperTableEntries name="EXCLUDE_FARE_BASE"/>
+        <DBMapperTableEntries name="FARE_CODE_GROUPED"/>
+        <DBMapperTableEntries name="EXCLUDE_FARE_GROUP"/>
+        <DBMapperTableEntries name="PACKAGE_NAME"/>
+        <DBMapperTableEntries name="RULE_NAME"/>
+        <DBMapperTableEntries name="SR_NAME"/>
+        <DBMapperTableEntries name="DISCOUNT_FOR_ALL_PNR"/>
+        <DBMapperTableEntries name="ROUND_TRIP"/>
+        <DBMapperTableEntries name="EXCLUDE_FF_PAYMENTS"/>
+        <DBMapperTableEntries name="ALLOW_TRANSFER"/>
+        <DBMapperTableEntries name="SELECTABLE_AT_PAYMENT"/>
+        <DBMapperTableEntries name="BLOCK_OTHERS_WHEN_SELECTED"/>
+      </InputTables>
+      <OutputTables name="STG_T_FDL_LYL_EARNING_RULE_LRY" tableName="STG_T_FDL_LYL_EARNING_RULE_LRY">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="LND_FF_SCOREDEF.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="EARNING_RULE_SEQ" expression="LND_FF_SCOREDEF.ID"/>
+        <DBMapperTableEntries name="CARRIER_CODE" expression="LND_FF_SCOREDEF.AIRLINE_CARRIER"/>
+        <DBMapperTableEntries name="EARNING_RULE_TYPE_CODE" expression="LND_FF_SCOREDEF.TYPE"/>
+        <DBMapperTableEntries name="DEP_PORT_CODE" expression="SUBSTR(LND_FF_SCOREDEF.ORIGIN, 1, 3)"/>
+        <DBMapperTableEntries name="ARR_PORT_CODE" expression="SUBSTR(LND_FF_SCOREDEF.DESTINATION, 1, 3)"/>
+        <DBMapperTableEntries name="EFF_FROM_DT" expression="LND_FF_SCOREDEF.START_DATE"/>
+        <DBMapperTableEntries name="EFF_TO_DT" expression="LND_FF_SCOREDEF.END_DATE"/>
+        <DBMapperTableEntries name="DAYS_OF_WEEK" expression="LND_FF_SCOREDEF.DAYOFWEEK"/>
+        <DBMapperTableEntries name="MILES_AMT" expression="NVL(LND_FF_SCOREDEF.MILE, 0)"/>
+        <DBMapperTableEntries name="ADD_POINT_AMT" expression="NVL(LND_FF_SCOREDEF.ADD_POINT, 0)"/>
+        <DBMapperTableEntries name="ADD_MILES_AMT" expression="NVL(LND_FF_SCOREDEF.ADD_MILE, 0)"/>
+        <DBMapperTableEntries name="MUL_POINT_AMT" expression="NVL(LND_FF_SCOREDEF.MUL_POINT, 0)"/>
+        <DBMapperTableEntries name="MUL_MILES_AMT" expression="NVL(LND_FF_SCOREDEF.MUL_MILE, 0)"/>
+        <DBMapperTableEntries name="MAX_POINT_AMT" expression="NVL(LND_FF_SCOREDEF.MAX_POINT, 0)"/>
+        <DBMapperTableEntries name="MAX_MILES_AMT" expression="NVL(LND_FF_SCOREDEF.MAX_MILE, 0)"/>
+        <DBMapperTableEntries name="MIN_POINT_AMT" expression="NVL(LND_FF_SCOREDEF.MIN_POINT, 0)"/>
+        <DBMapperTableEntries name="MIN_MILES_AMT" expression="NVL(LND_FF_SCOREDEF.MIN_MILE, 0)"/>
+        <DBMapperTableEntries name="CLASS_GRP_FLAG" expression="DECODE(LND_FF_SCOREDEF.CLASS_GROUPED, 'T', 1, 0)"/>
+        <DBMapperTableEntries name="CLASS_GRP_CODE" expression="LND_FF_SCOREDEF.CLASS_GROUP_CODE"/>
+        <DBMapperTableEntries name="EARNING_EXPLANATION_TEXT" expression="LND_FF_SCOREDEF.BONUS_EXPLANATION"/>
+        <DBMapperTableEntries name="PRIORITY_LEVEL" expression="LND_FF_SCOREDEF.PRIORITY"/>
+        <DBMapperTableEntries name="EARNING_RULE_STATISTIC_CODE" expression="LND_FF_SCOREDEF.RULE_STATISTIC_CODE"/>
+        <DBMapperTableEntries name="MAIN_CHILD_CODE" expression="LND_FF_SCOREDEF.MAIN_CHILD"/>
+        <FilterEntries name="where" expression="LND_FF_SCOREDEF.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_FDL_LYL_EARNING_RULE_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_FDL_LYL_EARNING_RULE_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_FDL_LYL_EARNING_RULE_LRY"/>
+    <metadata connector="TABLE" label="STG_T_FDL_LYL_EARNING_RULE_LRY" name="tELTOracleOutput_1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="EARNING_RULE_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CARRIER_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="EARNING_RULE_TYPE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="DEP_PORT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="ARR_PORT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="EFF_FROM_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="EFF_TO_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="DAYS_OF_WEEK" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MILES_AMT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="ADD_POINT_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="ADD_MILES_AMT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="MUL_POINT_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MUL_MILES_AMT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="MAX_POINT_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MAX_MILES_AMT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="MIN_POINT_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MIN_MILES_AMT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CLASS_GRP_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="CLASS_GRP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="EARNING_EXPLANATION_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="PRIORITY_LEVEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="EARNING_RULE_STATISTIC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="MAIN_CHILD_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_FF_SCOREDEF" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_FDL_LYL_EARNING_RULE_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_FDL_LYL_EARNING_RULE_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

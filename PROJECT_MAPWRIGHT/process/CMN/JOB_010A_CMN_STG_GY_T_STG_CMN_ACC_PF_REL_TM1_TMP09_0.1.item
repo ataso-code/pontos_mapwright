@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_CMN_ACC_PF_REL_TM1_TMP09&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_CMN_ACC_PF_REL_TM1_TMP06"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_CMN_ACC_PF_REL_TM1_TMP06&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_CMN_ACC_PF_REL_TM1_TMP06"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_CMN_ACC_PF_REL_TM1_TMP06" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="6" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_ACC_OPEN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_ACC_CLOSE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_DIV_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CLS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PF_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="PF_CUS_REL_START_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="PF_CUS_REL_END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="PF_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="PF_DIV_REL_START_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="PF_DIV_REL_END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACC_CON_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACC_DISCON_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="CUS_CON_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="CUS_DISCON_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="ACC_FILTER" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CUS_FILTER" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="PR_GY_ACC_CLOSE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_CRD"/>
+    <metadata connector="TABLE" label="EXP_CRD" name="EXP_CRD">
+      <column key="false" length="255" name="GY_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACC_CON_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PF_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_DIV_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_ACC_OPEN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_ACC_CLOSE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="PR_GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="NX_GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PR_ACC_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="NX_ACC_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTSTG.T_STG_CMN_ACC_PF_REL_TM1_TMP06" tableName="DGYTSTG.T_STG_CMN_ACC_PF_REL_TM1_TMP06" joinType="NO_JOIN" alias="ACC_REL_RAW">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="ACC_ID"/>
+        <DBMapperTableEntries name="GY_ACC_OPEN_DATE"/>
+        <DBMapperTableEntries name="GY_ACC_CLOSE_DATE"/>
+        <DBMapperTableEntries name="ACC_DIV_ID"/>
+        <DBMapperTableEntries name="ACC_DIV_CODE"/>
+        <DBMapperTableEntries name="ACC_DIV_NAME"/>
+        <DBMapperTableEntries name="GY_ACC_CODE"/>
+        <DBMapperTableEntries name="GY_ACC_CLS_CODE"/>
+        <DBMapperTableEntries name="CUS_ID"/>
+        <DBMapperTableEntries name="GY_CUS_CODE"/>
+        <DBMapperTableEntries name="GY_PF_CODE"/>
+        <DBMapperTableEntries name="GY_PF_NAME"/>
+        <DBMapperTableEntries name="PF_CUS_REL_START_DATE"/>
+        <DBMapperTableEntries name="PF_CUS_REL_END_DATE"/>
+        <DBMapperTableEntries name="PF_DIV_ID"/>
+        <DBMapperTableEntries name="PF_DIV_REL_START_DATE"/>
+        <DBMapperTableEntries name="PF_DIV_REL_END_DATE"/>
+        <DBMapperTableEntries name="ACC_CON_DATE"/>
+        <DBMapperTableEntries name="ACC_DISCON_DATE"/>
+        <DBMapperTableEntries name="CUS_CON_DATE"/>
+        <DBMapperTableEntries name="CUS_DISCON_DATE"/>
+        <DBMapperTableEntries name="ACC_FILTER"/>
+        <DBMapperTableEntries name="CUS_FILTER"/>
+        <DBMapperTableEntries name="PR_GY_ACC_CLOSE_DATE"/>
+      </InputTables>
+      <InputTables name="DGYTSTG.T_STG_CMN_ACC_PF_REL_TM1_TMP08" tableName="DGYTSTG.T_STG_CMN_ACC_PF_REL_TM1_TMP08" joinType="INNER_JOIN" alias="LEAD_LAG_DS">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="GY_CUS_CODE"/>
+        <DBMapperTableEntries name="ACC_CON_DATE" expression="ACC_REL_RAW.ACC_CON_DATE" join="true" operator="="/>
+        <DBMapperTableEntries name="PR_GY_PF_CODE"/>
+        <DBMapperTableEntries name="NX_GY_PF_CODE"/>
+        <DBMapperTableEntries name="PR_ACC_DIV_CODE"/>
+        <DBMapperTableEntries name="NX_ACC_DIV_CODE"/>
+        <DBMapperTableEntries name="ACC_ID" expression="ACC_REL_RAW.ACC_ID" join="true" operator="="/>
+      </InputTables>
+      <OutputTables name="EXP_CRD" tableName="EXP_CRD">
+        <DBMapperTableEntries name="GY_CUS_CODE" expression="ACC_REL_RAW.GY_CUS_CODE"/>
+        <DBMapperTableEntries name="ACC_ID" expression="ACC_REL_RAW.ACC_ID"/>
+        <DBMapperTableEntries name="ACC_CON_DATE" expression="ACC_REL_RAW.ACC_CON_DATE"/>
+        <DBMapperTableEntries name="GY_PF_CODE" expression="ACC_REL_RAW.GY_PF_CODE"/>
+        <DBMapperTableEntries name="GY_PF_NAME" expression="ACC_REL_RAW.GY_PF_NAME"/>
+        <DBMapperTableEntries name="ACC_DIV_CODE" expression="ACC_REL_RAW.ACC_DIV_CODE"/>
+        <DBMapperTableEntries name="ACC_DIV_NAME" expression="ACC_REL_RAW.ACC_DIV_NAME"/>
+        <DBMapperTableEntries name="GY_ACC_OPEN_DATE" expression="ACC_REL_RAW.GY_ACC_OPEN_DATE"/>
+        <DBMapperTableEntries name="GY_ACC_CLOSE_DATE" expression="ACC_REL_RAW.GY_ACC_CLOSE_DATE"/>
+        <DBMapperTableEntries name="PR_GY_PF_CODE" expression="LEAD_LAG_DS.PR_GY_PF_CODE"/>
+        <DBMapperTableEntries name="NX_GY_PF_CODE" expression="LEAD_LAG_DS.NX_GY_PF_CODE"/>
+        <DBMapperTableEntries name="PR_ACC_DIV_CODE" expression="LEAD_LAG_DS.PR_ACC_DIV_CODE"/>
+        <DBMapperTableEntries name="NX_ACC_DIV_CODE" expression="LEAD_LAG_DS.NX_ACC_DIV_CODE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_CMN_ACC_PF_REL_TM1_TMP08"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_CMN_ACC_PF_REL_TM1_TMP08&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_CMN_ACC_PF_REL_TM1_TMP08"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_CMN_ACC_PF_REL_TM1_TMP08" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="6" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACC_CON_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="PR_GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="NX_GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PR_ACC_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="NX_ACC_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_CRD"/>
+    <metadata connector="TABLE" label="T_STG_CMN_ACC_PF_REL_TM1_TMP09" name="T_STG_CMN_ACC_PF_REL_TM1_TMP09">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="6" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACC_CON_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PF_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_DIV_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_ACC_OPEN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_ACC_CLOSE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="PR_GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="NX_GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PR_ACC_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="NX_ACC_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REL_TP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REL_TP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="EXP_CRD" tableName="EXP_CRD" joinType="NO_JOIN" alias="EXP_CRD">
+        <DBMapperTableEntries name="GY_CUS_CODE"/>
+        <DBMapperTableEntries name="ACC_ID"/>
+        <DBMapperTableEntries name="ACC_CON_DATE"/>
+        <DBMapperTableEntries name="GY_PF_CODE"/>
+        <DBMapperTableEntries name="GY_PF_NAME"/>
+        <DBMapperTableEntries name="ACC_DIV_CODE"/>
+        <DBMapperTableEntries name="ACC_DIV_NAME"/>
+        <DBMapperTableEntries name="GY_ACC_OPEN_DATE"/>
+        <DBMapperTableEntries name="GY_ACC_CLOSE_DATE"/>
+        <DBMapperTableEntries name="PR_GY_PF_CODE"/>
+        <DBMapperTableEntries name="NX_GY_PF_CODE"/>
+        <DBMapperTableEntries name="PR_ACC_DIV_CODE"/>
+        <DBMapperTableEntries name="NX_ACC_DIV_CODE"/>
+      </InputTables>
+      <OutputTables name="T_STG_CMN_ACC_PF_REL_TM1_TMP09" tableName="T_STG_CMN_ACC_PF_REL_TM1_TMP09">
+        <DBMapperTableEntries name="ETL_DATE" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="GY_CUS_CODE" expression="EXP_CRD.GY_CUS_CODE"/>
+        <DBMapperTableEntries name="ACC_ID" expression="EXP_CRD.ACC_ID"/>
+        <DBMapperTableEntries name="ACC_CON_DATE" expression="EXP_CRD.ACC_CON_DATE"/>
+        <DBMapperTableEntries name="GY_PF_CODE" expression="EXP_CRD.GY_PF_CODE"/>
+        <DBMapperTableEntries name="GY_PF_NAME" expression="EXP_CRD.GY_PF_NAME"/>
+        <DBMapperTableEntries name="ACC_DIV_CODE" expression="EXP_CRD.ACC_DIV_CODE"/>
+        <DBMapperTableEntries name="ACC_DIV_NAME" expression="EXP_CRD.ACC_DIV_NAME"/>
+        <DBMapperTableEntries name="GY_ACC_OPEN_DATE" expression="EXP_CRD.GY_ACC_OPEN_DATE"/>
+        <DBMapperTableEntries name="GY_ACC_CLOSE_DATE" expression="EXP_CRD.GY_ACC_CLOSE_DATE"/>
+        <DBMapperTableEntries name="PR_GY_PF_CODE" expression="EXP_CRD.PR_GY_PF_CODE"/>
+        <DBMapperTableEntries name="NX_GY_PF_CODE" expression="EXP_CRD.NX_GY_PF_CODE"/>
+        <DBMapperTableEntries name="PR_ACC_DIV_CODE" expression="EXP_CRD.PR_ACC_DIV_CODE"/>
+        <DBMapperTableEntries name="NX_ACC_DIV_CODE" expression="EXP_CRD.NX_ACC_DIV_CODE"/>
+        <DBMapperTableEntries name="GY_REL_TP_CODE" expression="CASE WHEN EXP_CRD.GY_ACC_CLOSE_DATE &lt; TO_DATE('9999-12-31', 'YYYY-MM-DD') AND EXP_CRD.NX_GY_PF_CODE IS NULL THEN 'DIS' WHEN NOT EXP_CRD.PR_GY_PF_CODE IS NULL AND EXP_CRD.GY_PF_CODE &lt;> '0000-00011H-POS' AND EXP_CRD.NX_GY_PF_CODE IS NULL THEN 'CON' WHEN EXP_CRD.NX_GY_PF_CODE IS NULL THEN 'CON' WHEN EXP_CRD.ACC_DIV_CODE &lt;> NVL(EXP_CRD.NX_ACC_DIV_CODE, '-') THEN 'DIS' WHEN COALESCE(EXP_CRD.PR_GY_PF_CODE, '-') &lt;> '0000-00011H-POS' AND EXP_CRD.GY_PF_CODE &lt;> '0000-00011H-POS' AND EXP_CRD.NX_GY_PF_CODE &lt;> '0000-00011H-POS' THEN 'CHG' WHEN COALESCE(EXP_CRD.PR_GY_PF_CODE, '-') = '0000-00011H-POS' AND EXP_CRD.GY_PF_CODE &lt;> '0000-00011H-POS' AND COALESCE(EXP_CRD.NX_GY_PF_CODE, '-') &lt;> '0000-00011H-POS' THEN 'CHG' WHEN COALESCE(EXP_CRD.PR_GY_PF_CODE, '-') &lt;> '0000-00011H-POS' AND EXP_CRD.GY_PF_CODE = '0000-00011H-POS' AND COALESCE(EXP_CRD.NX_GY_PF_CODE, '-') &lt;> '0000-00011H-POS' THEN 'DIS' WHEN COALESCE(EXP_CRD.PR_GY_PF_CODE, '-') &lt;> '0000-00011H-POS' AND EXP_CRD.GY_PF_CODE = '0000-00011H-POS' AND COALESCE(EXP_CRD.NX_GY_PF_CODE, '-') = '0000-00011H-POS' THEN 'DIS' WHEN COALESCE(EXP_CRD.PR_GY_PF_CODE, '-') &lt;> '0000-00011H-POS' AND EXP_CRD.GY_PF_CODE &lt;> '0000-00011H-POS' AND COALESCE(EXP_CRD.NX_GY_PF_CODE, '-') = '0000-00011H-POS' THEN 'DIS' WHEN COALESCE(EXP_CRD.PR_GY_PF_CODE, '-') = '0000-00011H-POS' AND EXP_CRD.GY_PF_CODE &lt;> '0000-00011H-POS' AND COALESCE(EXP_CRD.NX_GY_PF_CODE, '-') = '0000-00011H-POS' THEN 'DIS' ELSE '#NA' END"/>
+        <DBMapperTableEntries name="GY_REL_TP_NAME" expression="CASE WHEN EXP_CRD.GY_ACC_CLOSE_DATE &lt; TO_DATE('9999-12-31', 'YYYY-MM-DD') AND EXP_CRD.NX_GY_PF_CODE IS NULL THEN 'ÇÖZÜLME-CASE-01' WHEN NOT EXP_CRD.PR_GY_PF_CODE IS NULL AND EXP_CRD.GY_PF_CODE &lt;> '0000-00011H-POS' AND EXP_CRD.NX_GY_PF_CODE IS NULL THEN 'BAĞLANMA-CASE-02' WHEN EXP_CRD.NX_GY_PF_CODE IS NULL THEN 'BAĞLANMA-CASE-03' WHEN EXP_CRD.ACC_DIV_CODE &lt;> NVL(EXP_CRD.NX_ACC_DIV_CODE, '-') THEN 'ÇÖZÜLME-CASE-04' WHEN COALESCE(EXP_CRD.PR_GY_PF_CODE, '-') &lt;> '0000-00011H-POS' AND EXP_CRD.GY_PF_CODE &lt;> '0000-00011H-POS' AND EXP_CRD.NX_GY_PF_CODE &lt;> '0000-00011H-POS' THEN 'DEĞİŞİKLİK-CASE-05' WHEN COALESCE(EXP_CRD.PR_GY_PF_CODE, '-') = '0000-00011H-POS' AND EXP_CRD.GY_PF_CODE &lt;> '0000-00011H-POS' AND COALESCE(EXP_CRD.NX_GY_PF_CODE, '-') &lt;> '0000-00011H-POS' THEN 'DEĞİŞİKLİK-CASE-06' WHEN COALESCE(EXP_CRD.PR_GY_PF_CODE, '-') &lt;> '0000-00011H-POS' AND EXP_CRD.GY_PF_CODE = '0000-00011H-POS' AND COALESCE(EXP_CRD.NX_GY_PF_CODE, '-') &lt;> '0000-00011H-POS' THEN 'ÇÖZÜLME-CASE-07' WHEN COALESCE(EXP_CRD.PR_GY_PF_CODE, '-') &lt;> '0000-00011H-POS' AND EXP_CRD.GY_PF_CODE = '0000-00011H-POS' AND COALESCE(EXP_CRD.NX_GY_PF_CODE, '-') = '0000-00011H-POS' THEN 'ÇÖZÜLME-CASE-08' WHEN COALESCE(EXP_CRD.PR_GY_PF_CODE, '-') &lt;> '0000-00011H-POS' AND EXP_CRD.GY_PF_CODE &lt;> '0000-00011H-POS' AND COALESCE(EXP_CRD.NX_GY_PF_CODE, '-') = '0000-00011H-POS' THEN 'ÇÖZÜLME-CASE-09' WHEN COALESCE(EXP_CRD.PR_GY_PF_CODE, '-') = '0000-00011H-POS' AND EXP_CRD.GY_PF_CODE &lt;> '0000-00011H-POS' AND COALESCE(EXP_CRD.NX_GY_PF_CODE, '-') = '0000-00011H-POS' THEN 'ÇÖZÜLME-CASE-10' ELSE '#NA' END"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_CMN_ACC_PF_REL_TM1_TMP09"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_CMN_ACC_PF_REL_TM1_TMP09&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_CMN_ACC_PF_REL_TM1_TMP09"/>
+    <metadata connector="TABLE" label="T_STG_CMN_ACC_PF_REL_TM1_TMP09" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="6" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACC_CON_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PF_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_DIV_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_ACC_OPEN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_ACC_CLOSE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="PR_GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="NX_GY_PF_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PR_ACC_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="NX_ACC_DIV_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REL_TP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REL_TP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_CMN_ACC_PF_REL_TM1_TMP06" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_CMN_ACC_PF_REL_TM1_TMP08" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_3" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_CRD" lineStyle="22" mergeOrder="0" metaname="EXP_CRD" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_CMN_ACC_PF_REL_TM1_TMP09" lineStyle="9" mergeOrder="0" metaname="T_STG_CMN_ACC_PF_REL_TM1_TMP09" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

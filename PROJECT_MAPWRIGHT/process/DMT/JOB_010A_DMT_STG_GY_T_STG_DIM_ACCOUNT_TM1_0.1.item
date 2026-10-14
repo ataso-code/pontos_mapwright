@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_DIM_ACCOUNT_TM1&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_0GSFkML5EfGRB8-8_sKJtQ - T_CMN_ACCOUNT"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_CMN_ACCOUNT&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTCMN&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_CMN_ACCOUNT"/>
+    <metadata connector="TABLE" label="DGYTCMN.T_CMN_ACCOUNT" name="table1">
+      <column key="false" length="7" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="7" name="DWH_VALID_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="7" name="DWH_VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="DWH_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="11" name="UPDATE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="UPDATE_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CLS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_FX_ACC_GROUP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_FX_ACC_GROUP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DEFAULT_FIN_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DEFAULT_INTEREST_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_DEFAULT_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="GY_ACC_DEFAULT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_INTEREST_FIN_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_INTEREST_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_INTEREST_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CURR_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_APRVL_MAX_CREDIT_LIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_CREDIT_LIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CREDIT_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_STATEMENT_SEND_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_VIOP_STATEMENT_SEND_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="GY_ACC_OPEN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="7" name="GY_ACC_CLOSE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CLOSE_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GB_ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_ACC_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_ACC_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="GB_ACC_OPEN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="7" name="GB_ACC_CLOSE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_DEP_ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_DEP_ACC_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="GB_DEP_ACC_START_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="7" name="GB_DEP_ACC_END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GY_TCKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GY_YKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GY_VKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GY_MKK_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_TP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="GY_CUS_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="7" name="GY_DIV_REL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PARTY_SEGMENT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PARTY_SEGMENT_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_POSITION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_POSITION_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="GY_REP_REL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ADK_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_DIV_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_VIOP_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_EQ_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_INT_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_FX_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_GY_EMP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_GB_REL_EMP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_FOREIGNER_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_INTEGRATED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_JOINT_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_PROHIBITED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_TERMINATED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="GY_PRIORITY_INDEX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_TP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="LAST_EVENT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="PROHIBITION_RSN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PROHIBITION_RSN_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PROHIBITION_RSN_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_ACCOUNT_LIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACCOUNT_LIMIT_SEGMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_AKBNK_SPAN_MULTIPLIER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_USDTRY_SPAN_MULTIPLIER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_YDS_YRD_CONTROL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="T2_MAX_CHANNEL_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="T2_MAX_RATIO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="NT2_MAX_CHANNEL_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="NT2_MAX_RATIO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CUS_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MARS_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_CMN_ACCOUNT"/>
+    <metadata connector="TABLE" label="T_STG_DIM_ACCOUNT_TM1" name="T_STG_DIM_ACCOUNT_TM1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DWH_VALID_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DWH_VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="DWH_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="UPDATE_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CLS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_FX_ACC_GROUP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_FX_ACC_GROUP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DEFAULT_FIN_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DEFAULT_INTEREST_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_DEFAULT_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="GY_ACC_DEFAULT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_INTEREST_FIN_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_INTEREST_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_INTEREST_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CURR_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_APRVL_MAX_CREDIT_LIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_CREDIT_LIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CREDIT_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_STATEMENT_SEND_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_VIOP_STATEMENT_SEND_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_ACC_OPEN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_ACC_CLOSE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CLOSE_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GB_ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_ACC_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_ACC_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GB_ACC_OPEN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="GB_ACC_CLOSE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_DEP_ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_DEP_ACC_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GB_DEP_ACC_START_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="GB_DEP_ACC_END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GY_TCKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GY_YKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GY_VKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GY_MKK_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_TP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_CUS_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_DIV_REL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PARTY_SEGMENT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PARTY_SEGMENT_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_POSITION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_POSITION_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_REP_REL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ADK_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_DIV_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_VIOP_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_EQ_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_INT_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_FX_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_GY_EMP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_GB_REL_EMP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_FOREIGNER_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_INTEGRATED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_JOINT_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_PROHIBITED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_TERMINATED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="GY_PRIORITY_INDEX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_TP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_EVENT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="PROHIBITION_RSN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PROHIBITION_RSN_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PROHIBITION_RSN_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_ACCOUNT_LIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACCOUNT_LIMIT_SEGMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_AKBNK_SPAN_MULTIPLIER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_USDTRY_SPAN_MULTIPLIER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_YDS_YRD_CONTROL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="T2_MAX_CHANNEL_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="T2_MAX_RATIO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="NT2_MAX_CHANNEL_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="NT2_MAX_RATIO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MARS_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTCMN.T_CMN_ACCOUNT" tableName="DGYTCMN.T_CMN_ACCOUNT" joinType="NO_JOIN" alias="T_CMN_ACCOUNT">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_VALID_FROM"/>
+        <DBMapperTableEntries name="DWH_VALID_UNTIL"/>
+        <DBMapperTableEntries name="DWH_STATUS"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="UPDATE_TIMESTAMP"/>
+        <DBMapperTableEntries name="UPDATE_RUNID"/>
+        <DBMapperTableEntries name="ACC_ID"/>
+        <DBMapperTableEntries name="CUS_ID"/>
+        <DBMapperTableEntries name="GY_ACC_CODE"/>
+        <DBMapperTableEntries name="GY_ACC_DESC"/>
+        <DBMapperTableEntries name="GY_ACC_CLS_CODE"/>
+        <DBMapperTableEntries name="GY_ACC_STATUS_CODE"/>
+        <DBMapperTableEntries name="GY_DIV_ID"/>
+        <DBMapperTableEntries name="GY_FX_ACC_GROUP_CODE"/>
+        <DBMapperTableEntries name="GY_FX_ACC_GROUP_NAME"/>
+        <DBMapperTableEntries name="GY_DEFAULT_FIN_PROD_ID"/>
+        <DBMapperTableEntries name="GY_DEFAULT_INTEREST_TP"/>
+        <DBMapperTableEntries name="GY_DEFAULT_RATE"/>
+        <DBMapperTableEntries name="GY_ACC_DEFAULT_FLAG"/>
+        <DBMapperTableEntries name="GY_INTEREST_FIN_PROD_ID"/>
+        <DBMapperTableEntries name="GY_INTEREST_TP"/>
+        <DBMapperTableEntries name="GY_INTEREST_RATE"/>
+        <DBMapperTableEntries name="GY_CURR_PROD_ID"/>
+        <DBMapperTableEntries name="GY_APRVL_MAX_CREDIT_LIMIT"/>
+        <DBMapperTableEntries name="GY_CREDIT_LIMIT"/>
+        <DBMapperTableEntries name="GY_CREDIT_TP"/>
+        <DBMapperTableEntries name="GY_STATEMENT_SEND_TP"/>
+        <DBMapperTableEntries name="GY_VIOP_STATEMENT_SEND_TP"/>
+        <DBMapperTableEntries name="GY_ACC_OPEN_DATE"/>
+        <DBMapperTableEntries name="GY_ACC_CLOSE_DATE"/>
+        <DBMapperTableEntries name="GY_ACC_CLOSE_DESC"/>
+        <DBMapperTableEntries name="GB_ACC_CODE"/>
+        <DBMapperTableEntries name="GB_ACC_STATUS_CODE"/>
+        <DBMapperTableEntries name="GB_ACC_DIV_ID"/>
+        <DBMapperTableEntries name="GB_ACC_OPEN_DATE"/>
+        <DBMapperTableEntries name="GB_ACC_CLOSE_DATE"/>
+        <DBMapperTableEntries name="GB_DEP_ACC_CODE"/>
+        <DBMapperTableEntries name="GB_DEP_ACC_DIV_ID"/>
+        <DBMapperTableEntries name="GB_DEP_ACC_START_DATE"/>
+        <DBMapperTableEntries name="GB_DEP_ACC_END_DATE"/>
+        <DBMapperTableEntries name="GY_CUS_CODE"/>
+        <DBMapperTableEntries name="GY_CUS_NAME"/>
+        <DBMapperTableEntries name="GY_TCKN"/>
+        <DBMapperTableEntries name="GY_YKN"/>
+        <DBMapperTableEntries name="GY_VKN"/>
+        <DBMapperTableEntries name="GY_MKK_NO"/>
+        <DBMapperTableEntries name="GY_CUS_TP_CODE"/>
+        <DBMapperTableEntries name="GY_CUS_DATE"/>
+        <DBMapperTableEntries name="GY_DIV_REL_DATE"/>
+        <DBMapperTableEntries name="GY_PARTY_SEGMENT_CODE"/>
+        <DBMapperTableEntries name="GY_PARTY_SEGMENT_NAME"/>
+        <DBMapperTableEntries name="GY_REP_POSITION_CODE"/>
+        <DBMapperTableEntries name="GY_REP_POSITION_NAME"/>
+        <DBMapperTableEntries name="GY_REP_REL_DATE"/>
+        <DBMapperTableEntries name="GY_REP_EMP_ID"/>
+        <DBMapperTableEntries name="IS_ADK_CUS"/>
+        <DBMapperTableEntries name="IS_DIV_CUS"/>
+        <DBMapperTableEntries name="IS_VIOP_CUS"/>
+        <DBMapperTableEntries name="IS_EQ_CUS"/>
+        <DBMapperTableEntries name="IS_INT_CUS"/>
+        <DBMapperTableEntries name="IS_FX_CUS"/>
+        <DBMapperTableEntries name="IS_GY_EMP"/>
+        <DBMapperTableEntries name="IS_GB_REL_EMP"/>
+        <DBMapperTableEntries name="IS_FOREIGNER_CUS"/>
+        <DBMapperTableEntries name="IS_INTEGRATED_FLAG"/>
+        <DBMapperTableEntries name="IS_JOINT_CUS"/>
+        <DBMapperTableEntries name="IS_PROHIBITED_FLAG"/>
+        <DBMapperTableEntries name="IS_TERMINATED_FLAG"/>
+        <DBMapperTableEntries name="GY_PRIORITY_INDEX"/>
+        <DBMapperTableEntries name="GY_CUS_TP_NAME"/>
+        <DBMapperTableEntries name="LAST_EVENT_DATE"/>
+        <DBMapperTableEntries name="PROHIBITION_RSN_ID"/>
+        <DBMapperTableEntries name="PROHIBITION_RSN_NAME"/>
+        <DBMapperTableEntries name="PROHIBITION_RSN_DESC"/>
+        <DBMapperTableEntries name="GY_ACCOUNT_LIMIT"/>
+        <DBMapperTableEntries name="GY_ACCOUNT_LIMIT_SEGMENT"/>
+        <DBMapperTableEntries name="GY_AKBNK_SPAN_MULTIPLIER"/>
+        <DBMapperTableEntries name="GY_USDTRY_SPAN_MULTIPLIER"/>
+        <DBMapperTableEntries name="IS_YDS_YRD_CONTROL"/>
+        <DBMapperTableEntries name="T2_MAX_CHANNEL_ID"/>
+        <DBMapperTableEntries name="T2_MAX_RATIO"/>
+        <DBMapperTableEntries name="NT2_MAX_CHANNEL_ID"/>
+        <DBMapperTableEntries name="NT2_MAX_RATIO"/>
+        <DBMapperTableEntries name="GY_ACC_CUS_NAME"/>
+        <DBMapperTableEntries name="GB_CUS_CODE"/>
+        <DBMapperTableEntries name="MARS_NO"/>
+      </InputTables>
+      <OutputTables name="T_STG_DIM_ACCOUNT_TM1" tableName="T_STG_DIM_ACCOUNT_TM1">
+        <DBMapperTableEntries name="ETL_DATE" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="DWH_VALID_FROM" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="DWH_VALID_UNTIL" expression="TO_DATE('99991231', 'YYYYMMDD')"/>
+        <DBMapperTableEntries name="DWH_STATUS" expression="'1'"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="T_CMN_ACCOUNT.DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="UPDATE_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="UPDATE_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="ACC_ID" expression="T_CMN_ACCOUNT.ACC_ID"/>
+        <DBMapperTableEntries name="CUS_ID" expression="T_CMN_ACCOUNT.CUS_ID"/>
+        <DBMapperTableEntries name="GY_ACC_CODE" expression="T_CMN_ACCOUNT.GY_ACC_CODE"/>
+        <DBMapperTableEntries name="GY_ACC_DESC" expression="T_CMN_ACCOUNT.GY_ACC_DESC"/>
+        <DBMapperTableEntries name="GY_ACC_CLS_CODE" expression="T_CMN_ACCOUNT.GY_ACC_CLS_CODE"/>
+        <DBMapperTableEntries name="GY_ACC_STATUS_CODE" expression="T_CMN_ACCOUNT.GY_ACC_STATUS_CODE"/>
+        <DBMapperTableEntries name="GY_DIV_ID" expression="T_CMN_ACCOUNT.GY_DIV_ID"/>
+        <DBMapperTableEntries name="GY_FX_ACC_GROUP_CODE" expression="T_CMN_ACCOUNT.GY_FX_ACC_GROUP_CODE"/>
+        <DBMapperTableEntries name="GY_FX_ACC_GROUP_NAME" expression="T_CMN_ACCOUNT.GY_FX_ACC_GROUP_NAME"/>
+        <DBMapperTableEntries name="GY_DEFAULT_FIN_PROD_ID" expression="T_CMN_ACCOUNT.GY_DEFAULT_FIN_PROD_ID"/>
+        <DBMapperTableEntries name="GY_DEFAULT_INTEREST_TP" expression="T_CMN_ACCOUNT.GY_DEFAULT_INTEREST_TP"/>
+        <DBMapperTableEntries name="GY_DEFAULT_RATE" expression="T_CMN_ACCOUNT.GY_DEFAULT_RATE"/>
+        <DBMapperTableEntries name="GY_ACC_DEFAULT_FLAG" expression="T_CMN_ACCOUNT.GY_ACC_DEFAULT_FLAG"/>
+        <DBMapperTableEntries name="GY_INTEREST_FIN_PROD_ID" expression="T_CMN_ACCOUNT.GY_INTEREST_FIN_PROD_ID"/>
+        <DBMapperTableEntries name="GY_INTEREST_TP" expression="T_CMN_ACCOUNT.GY_INTEREST_TP"/>
+        <DBMapperTableEntries name="GY_INTEREST_RATE" expression="T_CMN_ACCOUNT.GY_INTEREST_RATE"/>
+        <DBMapperTableEntries name="GY_CURR_PROD_ID" expression="T_CMN_ACCOUNT.GY_CURR_PROD_ID"/>
+        <DBMapperTableEntries name="GY_APRVL_MAX_CREDIT_LIMIT" expression="T_CMN_ACCOUNT.GY_APRVL_MAX_CREDIT_LIMIT"/>
+        <DBMapperTableEntries name="GY_CREDIT_LIMIT" expression="T_CMN_ACCOUNT.GY_CREDIT_LIMIT"/>
+        <DBMapperTableEntries name="GY_CREDIT_TP" expression="T_CMN_ACCOUNT.GY_CREDIT_TP"/>
+        <DBMapperTableEntries name="GY_STATEMENT_SEND_TP" expression="T_CMN_ACCOUNT.GY_STATEMENT_SEND_TP"/>
+        <DBMapperTableEntries name="GY_VIOP_STATEMENT_SEND_TP" expression="T_CMN_ACCOUNT.GY_VIOP_STATEMENT_SEND_TP"/>
+        <DBMapperTableEntries name="GY_ACC_OPEN_DATE" expression="T_CMN_ACCOUNT.GY_ACC_OPEN_DATE"/>
+        <DBMapperTableEntries name="GY_ACC_CLOSE_DATE" expression="T_CMN_ACCOUNT.GY_ACC_CLOSE_DATE"/>
+        <DBMapperTableEntries name="GY_ACC_CLOSE_DESC" expression="T_CMN_ACCOUNT.GY_ACC_CLOSE_DESC"/>
+        <DBMapperTableEntries name="GB_ACC_CODE" expression="T_CMN_ACCOUNT.GB_ACC_CODE"/>
+        <DBMapperTableEntries name="GB_ACC_STATUS_CODE" expression="T_CMN_ACCOUNT.GB_ACC_STATUS_CODE"/>
+        <DBMapperTableEntries name="GB_ACC_DIV_ID" expression="T_CMN_ACCOUNT.GB_ACC_DIV_ID"/>
+        <DBMapperTableEntries name="GB_ACC_OPEN_DATE" expression="T_CMN_ACCOUNT.GB_ACC_OPEN_DATE"/>
+        <DBMapperTableEntries name="GB_ACC_CLOSE_DATE" expression="T_CMN_ACCOUNT.GB_ACC_CLOSE_DATE"/>
+        <DBMapperTableEntries name="GB_DEP_ACC_CODE" expression="T_CMN_ACCOUNT.GB_DEP_ACC_CODE"/>
+        <DBMapperTableEntries name="GB_DEP_ACC_DIV_ID" expression="T_CMN_ACCOUNT.GB_DEP_ACC_DIV_ID"/>
+        <DBMapperTableEntries name="GB_DEP_ACC_START_DATE" expression="T_CMN_ACCOUNT.GB_DEP_ACC_START_DATE"/>
+        <DBMapperTableEntries name="GB_DEP_ACC_END_DATE" expression="T_CMN_ACCOUNT.GB_DEP_ACC_END_DATE"/>
+        <DBMapperTableEntries name="GY_CUS_CODE" expression="T_CMN_ACCOUNT.GY_CUS_CODE"/>
+        <DBMapperTableEntries name="GY_CUS_NAME" expression="T_CMN_ACCOUNT.GY_CUS_NAME"/>
+        <DBMapperTableEntries name="GY_TCKN" expression="T_CMN_ACCOUNT.GY_TCKN"/>
+        <DBMapperTableEntries name="GY_YKN" expression="T_CMN_ACCOUNT.GY_YKN"/>
+        <DBMapperTableEntries name="GY_VKN" expression="T_CMN_ACCOUNT.GY_VKN"/>
+        <DBMapperTableEntries name="GY_MKK_NO" expression="T_CMN_ACCOUNT.GY_MKK_NO"/>
+        <DBMapperTableEntries name="GY_CUS_TP_CODE" expression="T_CMN_ACCOUNT.GY_CUS_TP_CODE"/>
+        <DBMapperTableEntries name="GY_CUS_DATE" expression="T_CMN_ACCOUNT.GY_CUS_DATE"/>
+        <DBMapperTableEntries name="GY_DIV_REL_DATE" expression="T_CMN_ACCOUNT.GY_DIV_REL_DATE"/>
+        <DBMapperTableEntries name="GY_PARTY_SEGMENT_CODE" expression="T_CMN_ACCOUNT.GY_PARTY_SEGMENT_CODE"/>
+        <DBMapperTableEntries name="GY_PARTY_SEGMENT_NAME" expression="T_CMN_ACCOUNT.GY_PARTY_SEGMENT_NAME"/>
+        <DBMapperTableEntries name="GY_REP_POSITION_CODE" expression="T_CMN_ACCOUNT.GY_REP_POSITION_CODE"/>
+        <DBMapperTableEntries name="GY_REP_POSITION_NAME" expression="T_CMN_ACCOUNT.GY_REP_POSITION_NAME"/>
+        <DBMapperTableEntries name="GY_REP_REL_DATE" expression="T_CMN_ACCOUNT.GY_REP_REL_DATE"/>
+        <DBMapperTableEntries name="GY_REP_EMP_ID" expression="T_CMN_ACCOUNT.GY_REP_EMP_ID"/>
+        <DBMapperTableEntries name="IS_ADK_CUS" expression="T_CMN_ACCOUNT.IS_ADK_CUS"/>
+        <DBMapperTableEntries name="IS_DIV_CUS" expression="T_CMN_ACCOUNT.IS_DIV_CUS"/>
+        <DBMapperTableEntries name="IS_VIOP_CUS" expression="T_CMN_ACCOUNT.IS_VIOP_CUS"/>
+        <DBMapperTableEntries name="IS_EQ_CUS" expression="T_CMN_ACCOUNT.IS_EQ_CUS"/>
+        <DBMapperTableEntries name="IS_INT_CUS" expression="T_CMN_ACCOUNT.IS_INT_CUS"/>
+        <DBMapperTableEntries name="IS_FX_CUS" expression="T_CMN_ACCOUNT.IS_FX_CUS"/>
+        <DBMapperTableEntries name="IS_GY_EMP" expression="T_CMN_ACCOUNT.IS_GY_EMP"/>
+        <DBMapperTableEntries name="IS_GB_REL_EMP" expression="T_CMN_ACCOUNT.IS_GB_REL_EMP"/>
+        <DBMapperTableEntries name="IS_FOREIGNER_CUS" expression="T_CMN_ACCOUNT.IS_FOREIGNER_CUS"/>
+        <DBMapperTableEntries name="IS_INTEGRATED_FLAG" expression="T_CMN_ACCOUNT.IS_INTEGRATED_FLAG"/>
+        <DBMapperTableEntries name="IS_JOINT_CUS" expression="T_CMN_ACCOUNT.IS_JOINT_CUS"/>
+        <DBMapperTableEntries name="IS_PROHIBITED_FLAG" expression="T_CMN_ACCOUNT.IS_PROHIBITED_FLAG"/>
+        <DBMapperTableEntries name="IS_TERMINATED_FLAG" expression="T_CMN_ACCOUNT.IS_TERMINATED_FLAG"/>
+        <DBMapperTableEntries name="GY_PRIORITY_INDEX" expression="T_CMN_ACCOUNT.GY_PRIORITY_INDEX"/>
+        <DBMapperTableEntries name="GY_CUS_TP_NAME" expression="T_CMN_ACCOUNT.GY_CUS_TP_NAME"/>
+        <DBMapperTableEntries name="LAST_EVENT_DATE" expression="T_CMN_ACCOUNT.LAST_EVENT_DATE"/>
+        <DBMapperTableEntries name="PROHIBITION_RSN_ID" expression="T_CMN_ACCOUNT.PROHIBITION_RSN_ID"/>
+        <DBMapperTableEntries name="PROHIBITION_RSN_NAME" expression="T_CMN_ACCOUNT.PROHIBITION_RSN_NAME"/>
+        <DBMapperTableEntries name="PROHIBITION_RSN_DESC" expression="T_CMN_ACCOUNT.PROHIBITION_RSN_DESC"/>
+        <DBMapperTableEntries name="GY_ACCOUNT_LIMIT" expression="T_CMN_ACCOUNT.GY_ACCOUNT_LIMIT"/>
+        <DBMapperTableEntries name="GY_ACCOUNT_LIMIT_SEGMENT" expression="T_CMN_ACCOUNT.GY_ACCOUNT_LIMIT_SEGMENT"/>
+        <DBMapperTableEntries name="GY_AKBNK_SPAN_MULTIPLIER" expression="T_CMN_ACCOUNT.GY_AKBNK_SPAN_MULTIPLIER"/>
+        <DBMapperTableEntries name="GY_USDTRY_SPAN_MULTIPLIER" expression="T_CMN_ACCOUNT.GY_USDTRY_SPAN_MULTIPLIER"/>
+        <DBMapperTableEntries name="IS_YDS_YRD_CONTROL" expression="T_CMN_ACCOUNT.IS_YDS_YRD_CONTROL"/>
+        <DBMapperTableEntries name="T2_MAX_CHANNEL_ID" expression="T_CMN_ACCOUNT.T2_MAX_CHANNEL_ID"/>
+        <DBMapperTableEntries name="T2_MAX_RATIO" expression="T_CMN_ACCOUNT.T2_MAX_RATIO"/>
+        <DBMapperTableEntries name="NT2_MAX_CHANNEL_ID" expression="T_CMN_ACCOUNT.NT2_MAX_CHANNEL_ID"/>
+        <DBMapperTableEntries name="NT2_MAX_RATIO" expression="T_CMN_ACCOUNT.NT2_MAX_RATIO"/>
+        <DBMapperTableEntries name="GB_CUS_CODE" expression="T_CMN_ACCOUNT.GB_CUS_CODE"/>
+        <DBMapperTableEntries name="MARS_NO" expression="T_CMN_ACCOUNT.MARS_NO"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_DIM_ACCOUNT_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_DIM_ACCOUNT_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_DIM_ACCOUNT_TM1"/>
+    <metadata connector="TABLE" label="T_STG_DIM_ACCOUNT_TM1" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DWH_VALID_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DWH_VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="5" name="DWH_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="UPDATE_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CLS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_FX_ACC_GROUP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_FX_ACC_GROUP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DEFAULT_FIN_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DEFAULT_INTEREST_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_DEFAULT_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="GY_ACC_DEFAULT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_INTEREST_FIN_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_INTEREST_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_INTEREST_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CURR_PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_APRVL_MAX_CREDIT_LIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_CREDIT_LIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CREDIT_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_STATEMENT_SEND_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_VIOP_STATEMENT_SEND_TP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_ACC_OPEN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_ACC_CLOSE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CLOSE_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GB_ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_ACC_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_ACC_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GB_ACC_OPEN_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="GB_ACC_CLOSE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_DEP_ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_DEP_ACC_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GB_DEP_ACC_START_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="GB_DEP_ACC_END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GY_TCKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GY_YKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GY_VKN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="GY_MKK_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_TP_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_CUS_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_DIV_REL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PARTY_SEGMENT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_PARTY_SEGMENT_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_POSITION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_POSITION_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="GY_REP_REL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ADK_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_DIV_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_VIOP_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_EQ_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_INT_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_FX_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_GY_EMP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_GB_REL_EMP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_FOREIGNER_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_INTEGRATED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_JOINT_CUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_PROHIBITED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_TERMINATED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="12" name="GY_PRIORITY_INDEX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_TP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_EVENT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="PROHIBITION_RSN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PROHIBITION_RSN_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PROHIBITION_RSN_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_ACCOUNT_LIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACCOUNT_LIMIT_SEGMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_AKBNK_SPAN_MULTIPLIER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GY_USDTRY_SPAN_MULTIPLIER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_YDS_YRD_CONTROL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="T2_MAX_CHANNEL_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="T2_MAX_RATIO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="NT2_MAX_CHANNEL_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="NT2_MAX_RATIO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="GB_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="MARS_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTCMN.T_CMN_ACCOUNT" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_DIM_ACCOUNT_TM1" lineStyle="9" mergeOrder="0" metaname="T_STG_DIM_ACCOUNT_TM1" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

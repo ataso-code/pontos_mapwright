@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTDWH.T_DWH_RPT_GET_FX_ACC_RISK&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_DWH_RPT_GETFXACCRISK_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_DWH_RPT_GETFXACCRISK_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_DWH_RPT_GETFXACCRISK_TM1"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_DWH_RPT_GETFXACCRISK_TM1" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACCOUNT_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="BRANCH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="FULL_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="INITIAL_MARGIN" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CASH_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DAY_PL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="UNREALIZED_PROFIT_LOSS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="REALIZE_COLLATERAL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COLLATERAL_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COLLATARAL_DIFF" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_MONETARY_VALUE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_MONETARY_VALUE_TL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CURRENT_MARGIN_RATIO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MULTI_POSITION" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MONETARY_VALUE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SYMBOL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="NET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SIDE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="REFERENCE_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="REFERENCE_PRICE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="USERS_TO_PPRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="USERS_TO_PPRICE_PER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="ZERO_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="ZERO_PER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="AUTO_STOP_VALUE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="AUTO_STOP_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COLLATERAL_RATE_FOR_AUTO_STOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARGIN_CALL_VALUE_FX" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARGIN_CALL_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARGIN_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_5_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_10_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_15_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_20_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_44_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_STG_DWH_RPT_GETFXACCRISK_TM1"/>
+    <metadata connector="TABLE" label="T_DWH_RPT_GET_FX_ACC_RISK" name="T_DWH_RPT_GET_FX_ACC_RISK">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACCOUNT_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="BRANCH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="FULL_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="INITIAL_MARGIN" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CASH_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DAY_PL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="UNREALIZED_PROFIT_LOSS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="REALIZE_COLLATERAL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COLLATERAL_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COLLATARAL_DIFF" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_MONETARY_VALUE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_MONETARY_VALUE_TL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CURRENT_MARGIN_RATIO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MULTI_POSITION" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MONETARY_VALUE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SYMBOL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="NET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SIDE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="REFERENCE_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="REFERENCE_PRICE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="USERS_TO_PPRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="USERS_TO_PPRICE_PER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="ZERO_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="ZERO_PER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="AUTO_STOP_VALUE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="AUTO_STOP_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COLLATERAL_RATE_FOR_AUTO_STOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARGIN_CALL_VALUE_FX" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARGIN_CALL_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARGIN_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_5_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_10_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_15_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_20_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_44_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTSTG.T_STG_DWH_RPT_GETFXACCRISK_TM1" tableName="DGYTSTG.T_STG_DWH_RPT_GETFXACCRISK_TM1" joinType="NO_JOIN" alias="T_STG_DWH_RPT_GETFXACCRISK_TM1">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="ACC_ID"/>
+        <DBMapperTableEntries name="ACCOUNT_GROUP"/>
+        <DBMapperTableEntries name="BRANCH"/>
+        <DBMapperTableEntries name="FULL_NAME"/>
+        <DBMapperTableEntries name="CURRENCY"/>
+        <DBMapperTableEntries name="INITIAL_MARGIN"/>
+        <DBMapperTableEntries name="CASH_BALANCE"/>
+        <DBMapperTableEntries name="DAY_PL"/>
+        <DBMapperTableEntries name="UNREALIZED_PROFIT_LOSS"/>
+        <DBMapperTableEntries name="REALIZE_COLLATERAL"/>
+        <DBMapperTableEntries name="COLLATERAL_RATE"/>
+        <DBMapperTableEntries name="COLLATARAL_DIFF"/>
+        <DBMapperTableEntries name="TOTAL_MONETARY_VALUE"/>
+        <DBMapperTableEntries name="TOTAL_MONETARY_VALUE_TL"/>
+        <DBMapperTableEntries name="CURRENT_MARGIN_RATIO"/>
+        <DBMapperTableEntries name="MULTI_POSITION"/>
+        <DBMapperTableEntries name="MONETARY_VALUE"/>
+        <DBMapperTableEntries name="SYMBOL"/>
+        <DBMapperTableEntries name="NET"/>
+        <DBMapperTableEntries name="SIDE"/>
+        <DBMapperTableEntries name="REFERENCE_PRICE"/>
+        <DBMapperTableEntries name="REFERENCE_PRICE_TYPE"/>
+        <DBMapperTableEntries name="USERS_TO_PPRICE"/>
+        <DBMapperTableEntries name="USERS_TO_PPRICE_PER"/>
+        <DBMapperTableEntries name="ZERO_PRICE"/>
+        <DBMapperTableEntries name="ZERO_PER"/>
+        <DBMapperTableEntries name="AUTO_STOP_VALUE"/>
+        <DBMapperTableEntries name="AUTO_STOP_RATE"/>
+        <DBMapperTableEntries name="COLLATERAL_RATE_FOR_AUTO_STOP"/>
+        <DBMapperTableEntries name="MARGIN_CALL_VALUE_FX"/>
+        <DBMapperTableEntries name="MARGIN_CALL_RATE"/>
+        <DBMapperTableEntries name="MARGIN_RATE"/>
+        <DBMapperTableEntries name="PER_5_BALANCE"/>
+        <DBMapperTableEntries name="PER_10_BALANCE"/>
+        <DBMapperTableEntries name="PER_15_BALANCE"/>
+        <DBMapperTableEntries name="PER_20_BALANCE"/>
+        <DBMapperTableEntries name="PER_44_BALANCE"/>
+      </InputTables>
+      <OutputTables name="T_DWH_RPT_GET_FX_ACC_RISK" tableName="T_DWH_RPT_GET_FX_ACC_RISK">
+        <DBMapperTableEntries name="ETL_DATE" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="'OMS'"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="ACC_ID" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.ACC_ID"/>
+        <DBMapperTableEntries name="ACCOUNT_GROUP" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.ACCOUNT_GROUP"/>
+        <DBMapperTableEntries name="BRANCH" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.BRANCH"/>
+        <DBMapperTableEntries name="FULL_NAME" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.FULL_NAME"/>
+        <DBMapperTableEntries name="CURRENCY" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.CURRENCY"/>
+        <DBMapperTableEntries name="INITIAL_MARGIN" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.INITIAL_MARGIN"/>
+        <DBMapperTableEntries name="CASH_BALANCE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.CASH_BALANCE"/>
+        <DBMapperTableEntries name="DAY_PL" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.DAY_PL"/>
+        <DBMapperTableEntries name="UNREALIZED_PROFIT_LOSS" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.UNREALIZED_PROFIT_LOSS"/>
+        <DBMapperTableEntries name="REALIZE_COLLATERAL" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.REALIZE_COLLATERAL"/>
+        <DBMapperTableEntries name="COLLATERAL_RATE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.COLLATERAL_RATE"/>
+        <DBMapperTableEntries name="COLLATARAL_DIFF" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.COLLATARAL_DIFF"/>
+        <DBMapperTableEntries name="TOTAL_MONETARY_VALUE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.TOTAL_MONETARY_VALUE"/>
+        <DBMapperTableEntries name="TOTAL_MONETARY_VALUE_TL" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.TOTAL_MONETARY_VALUE_TL"/>
+        <DBMapperTableEntries name="CURRENT_MARGIN_RATIO" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.CURRENT_MARGIN_RATIO"/>
+        <DBMapperTableEntries name="MULTI_POSITION" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.MULTI_POSITION"/>
+        <DBMapperTableEntries name="MONETARY_VALUE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.MONETARY_VALUE"/>
+        <DBMapperTableEntries name="SYMBOL" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.SYMBOL"/>
+        <DBMapperTableEntries name="NET" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.NET"/>
+        <DBMapperTableEntries name="SIDE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.SIDE"/>
+        <DBMapperTableEntries name="REFERENCE_PRICE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.REFERENCE_PRICE"/>
+        <DBMapperTableEntries name="REFERENCE_PRICE_TYPE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.REFERENCE_PRICE_TYPE"/>
+        <DBMapperTableEntries name="USERS_TO_PPRICE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.USERS_TO_PPRICE"/>
+        <DBMapperTableEntries name="USERS_TO_PPRICE_PER" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.USERS_TO_PPRICE_PER"/>
+        <DBMapperTableEntries name="ZERO_PRICE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.ZERO_PRICE"/>
+        <DBMapperTableEntries name="ZERO_PER" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.ZERO_PER"/>
+        <DBMapperTableEntries name="AUTO_STOP_VALUE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.AUTO_STOP_VALUE"/>
+        <DBMapperTableEntries name="AUTO_STOP_RATE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.AUTO_STOP_RATE"/>
+        <DBMapperTableEntries name="COLLATERAL_RATE_FOR_AUTO_STOP" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.COLLATERAL_RATE_FOR_AUTO_STOP"/>
+        <DBMapperTableEntries name="MARGIN_CALL_VALUE_FX" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.MARGIN_CALL_VALUE_FX"/>
+        <DBMapperTableEntries name="MARGIN_CALL_RATE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.MARGIN_CALL_RATE"/>
+        <DBMapperTableEntries name="MARGIN_RATE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.MARGIN_RATE"/>
+        <DBMapperTableEntries name="PER_5_BALANCE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.PER_5_BALANCE"/>
+        <DBMapperTableEntries name="PER_10_BALANCE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.PER_10_BALANCE"/>
+        <DBMapperTableEntries name="PER_15_BALANCE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.PER_15_BALANCE"/>
+        <DBMapperTableEntries name="PER_20_BALANCE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.PER_20_BALANCE"/>
+        <DBMapperTableEntries name="PER_44_BALANCE" expression="T_STG_DWH_RPT_GETFXACCRISK_TM1.PER_44_BALANCE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ - T_DWH_RPT_GET_FX_ACC_RISK"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_DWH_RPT_GET_FX_ACC_RISK&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTDWH&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_DWH_RPT_GET_FX_ACC_RISK"/>
+    <metadata connector="TABLE" label="T_DWH_RPT_GET_FX_ACC_RISK" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACCOUNT_GROUP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="BRANCH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="FULL_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="INITIAL_MARGIN" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CASH_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DAY_PL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="UNREALIZED_PROFIT_LOSS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="REALIZE_COLLATERAL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COLLATERAL_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COLLATARAL_DIFF" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_MONETARY_VALUE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_MONETARY_VALUE_TL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CURRENT_MARGIN_RATIO" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MULTI_POSITION" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MONETARY_VALUE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SYMBOL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="NET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SIDE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="REFERENCE_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="REFERENCE_PRICE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="USERS_TO_PPRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="USERS_TO_PPRICE_PER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="ZERO_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="ZERO_PER" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="AUTO_STOP_VALUE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="AUTO_STOP_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="COLLATERAL_RATE_FOR_AUTO_STOP" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARGIN_CALL_VALUE_FX" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARGIN_CALL_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARGIN_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_5_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_10_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_15_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_20_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="PER_44_BALANCE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_DWH_RPT_GETFXACCRISK_TM1" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_DWH_RPT_GET_FX_ACC_RISK" lineStyle="9" mergeOrder="0" metaname="T_DWH_RPT_GET_FX_ACC_RISK" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

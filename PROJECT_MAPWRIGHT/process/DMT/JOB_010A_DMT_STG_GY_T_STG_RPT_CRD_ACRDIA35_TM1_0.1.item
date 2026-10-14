@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_RPT_CRD_ACRDIA35_TM1&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_aNy4EcMOEfGRB8-8_sKJtQ - T_DWH_RPT_CRD_ACRD_INT_ABV_35"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_DWH_RPT_CRD_ACRD_INT_ABV_35&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTDWH&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_DWH_RPT_CRD_ACRD_INT_ABV_35"/>
+    <metadata connector="TABLE" label="DGYTDWH.T_DWH_RPT_CRD_ACRD_INT_ABV_35" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CURRENT_ACCOUNT_BALANCE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CREDIT_ACCOUNT_BALANCE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_BALANCE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CREDIT_LIMIT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SUM_OF_SYSTEM_BLOCK" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SUM_OF_MANUAL_BLOCK" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="100" name="CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_POSITION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_POSITION_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_SHARE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INSTITUTIONAL_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="BIST_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="BIST_90_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="BIST_75_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ACCRUED_INTEREST" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_BALANCE_WITH_INTEREST" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="100" name="LIMIT_EXCEED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_BLOCK" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CREDITED_BONDS" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="EQUITY_BONDS" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_SHARE_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="EQUITY_RATIO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_DWH_RPT_CRD_ACRD_INT_ABV_35"/>
+    <metadata connector="TABLE" label="T_STG_RPT_CRD_ACRDIA35_TM1" name="T_STG_RPT_CRD_ACRDIA35_TM1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CURRENT_ACCOUNT_BALANCE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CREDIT_ACCOUNT_BALANCE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_BALANCE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CREDIT_LIMIT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SUM_OF_SYSTEM_BLOCK" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SUM_OF_MANUAL_BLOCK" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="100" name="CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_POSITION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_POSITION_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_SHARE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INSTITUTIONAL_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="BIST_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="BIST_90_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="BIST_75_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ACCRUED_INTEREST" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_BALANCE_WITH_INTEREST" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="100" name="LIMIT_EXCEED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_BLOCK" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CREDITED_BONDS" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="EQUITY_BONDS" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_SHARE_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="EQUITY_RATIO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTDWH.T_DWH_RPT_CRD_ACRD_INT_ABV_35" tableName="DGYTDWH.T_DWH_RPT_CRD_ACRD_INT_ABV_35" joinType="NO_JOIN" alias="T_DWH_RPT_CRD_ACRD_INT_ABV_35">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="ACC_ID"/>
+        <DBMapperTableEntries name="GY_ACC_CODE"/>
+        <DBMapperTableEntries name="CUS_ID"/>
+        <DBMapperTableEntries name="GY_CUS_CODE"/>
+        <DBMapperTableEntries name="GY_CUS_NAME"/>
+        <DBMapperTableEntries name="CURRENT_ACCOUNT_BALANCE"/>
+        <DBMapperTableEntries name="CREDIT_ACCOUNT_BALANCE"/>
+        <DBMapperTableEntries name="TOTAL_BALANCE"/>
+        <DBMapperTableEntries name="CREDIT_LIMIT"/>
+        <DBMapperTableEntries name="SUM_OF_SYSTEM_BLOCK"/>
+        <DBMapperTableEntries name="SUM_OF_MANUAL_BLOCK"/>
+        <DBMapperTableEntries name="CHANNEL"/>
+        <DBMapperTableEntries name="GY_DIV_ID"/>
+        <DBMapperTableEntries name="GY_DIV_NAME"/>
+        <DBMapperTableEntries name="GY_REP_EMP_ID"/>
+        <DBMapperTableEntries name="GY_REP_POSITION_CODE"/>
+        <DBMapperTableEntries name="GY_REP_POSITION_NAME"/>
+        <DBMapperTableEntries name="TOTAL_SHARE_AMOUNT"/>
+        <DBMapperTableEntries name="INSTITUTIONAL_COLLATERAL"/>
+        <DBMapperTableEntries name="BIST_COLLATERAL"/>
+        <DBMapperTableEntries name="BIST_90_COLLATERAL"/>
+        <DBMapperTableEntries name="BIST_75_COLLATERAL"/>
+        <DBMapperTableEntries name="ACCRUED_INTEREST"/>
+        <DBMapperTableEntries name="TOTAL_BALANCE_WITH_INTEREST"/>
+        <DBMapperTableEntries name="LIMIT_EXCEED"/>
+        <DBMapperTableEntries name="TOTAL_BLOCK"/>
+        <DBMapperTableEntries name="CREDITED_BONDS"/>
+        <DBMapperTableEntries name="EQUITY_BONDS"/>
+        <DBMapperTableEntries name="TOTAL_SHARE_COLLATERAL"/>
+        <DBMapperTableEntries name="TOTAL_COLLATERAL"/>
+        <DBMapperTableEntries name="EQUITY_RATIO"/>
+      </InputTables>
+      <OutputTables name="T_STG_RPT_CRD_ACRDIA35_TM1" tableName="T_STG_RPT_CRD_ACRDIA35_TM1">
+        <DBMapperTableEntries name="ETL_DATE" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="ACC_ID" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.ACC_ID"/>
+        <DBMapperTableEntries name="GY_ACC_CODE" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.GY_ACC_CODE"/>
+        <DBMapperTableEntries name="CUS_ID" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.CUS_ID"/>
+        <DBMapperTableEntries name="GY_CUS_CODE" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.GY_CUS_CODE"/>
+        <DBMapperTableEntries name="GY_CUS_NAME" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.GY_CUS_NAME"/>
+        <DBMapperTableEntries name="CURRENT_ACCOUNT_BALANCE" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.CURRENT_ACCOUNT_BALANCE"/>
+        <DBMapperTableEntries name="CREDIT_ACCOUNT_BALANCE" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.CREDIT_ACCOUNT_BALANCE"/>
+        <DBMapperTableEntries name="TOTAL_BALANCE" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.TOTAL_BALANCE"/>
+        <DBMapperTableEntries name="CREDIT_LIMIT" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.CREDIT_LIMIT"/>
+        <DBMapperTableEntries name="SUM_OF_SYSTEM_BLOCK" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.SUM_OF_SYSTEM_BLOCK"/>
+        <DBMapperTableEntries name="SUM_OF_MANUAL_BLOCK" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.SUM_OF_MANUAL_BLOCK"/>
+        <DBMapperTableEntries name="CHANNEL" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.CHANNEL"/>
+        <DBMapperTableEntries name="GY_DIV_ID" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.GY_DIV_ID"/>
+        <DBMapperTableEntries name="GY_DIV_NAME" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.GY_DIV_NAME"/>
+        <DBMapperTableEntries name="GY_REP_EMP_ID" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.GY_REP_EMP_ID"/>
+        <DBMapperTableEntries name="GY_REP_POSITION_CODE" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.GY_REP_POSITION_CODE"/>
+        <DBMapperTableEntries name="GY_REP_POSITION_NAME" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.GY_REP_POSITION_NAME"/>
+        <DBMapperTableEntries name="TOTAL_SHARE_AMOUNT" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.TOTAL_SHARE_AMOUNT"/>
+        <DBMapperTableEntries name="INSTITUTIONAL_COLLATERAL" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.INSTITUTIONAL_COLLATERAL"/>
+        <DBMapperTableEntries name="BIST_COLLATERAL" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.BIST_COLLATERAL"/>
+        <DBMapperTableEntries name="BIST_90_COLLATERAL" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.BIST_90_COLLATERAL"/>
+        <DBMapperTableEntries name="BIST_75_COLLATERAL" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.BIST_75_COLLATERAL"/>
+        <DBMapperTableEntries name="ACCRUED_INTEREST" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.ACCRUED_INTEREST"/>
+        <DBMapperTableEntries name="TOTAL_BALANCE_WITH_INTEREST" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.TOTAL_BALANCE_WITH_INTEREST"/>
+        <DBMapperTableEntries name="LIMIT_EXCEED" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.LIMIT_EXCEED"/>
+        <DBMapperTableEntries name="TOTAL_BLOCK" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.TOTAL_BLOCK"/>
+        <DBMapperTableEntries name="CREDITED_BONDS" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.CREDITED_BONDS"/>
+        <DBMapperTableEntries name="EQUITY_BONDS" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.EQUITY_BONDS"/>
+        <DBMapperTableEntries name="TOTAL_SHARE_COLLATERAL" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.TOTAL_SHARE_COLLATERAL"/>
+        <DBMapperTableEntries name="TOTAL_COLLATERAL" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.TOTAL_COLLATERAL"/>
+        <DBMapperTableEntries name="EQUITY_RATIO" expression="T_DWH_RPT_CRD_ACRD_INT_ABV_35.EQUITY_RATIO"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_RPT_CRD_ACRDIA35_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_RPT_CRD_ACRDIA35_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_RPT_CRD_ACRDIA35_TM1"/>
+    <metadata connector="TABLE" label="T_STG_RPT_CRD_ACRDIA35_TM1" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_ACC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_CUS_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CURRENT_ACCOUNT_BALANCE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CREDIT_ACCOUNT_BALANCE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_BALANCE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CREDIT_LIMIT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SUM_OF_SYSTEM_BLOCK" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SUM_OF_MANUAL_BLOCK" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="100" name="CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_DIV_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_POSITION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="GY_REP_POSITION_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_SHARE_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INSTITUTIONAL_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="BIST_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="BIST_90_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="BIST_75_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ACCRUED_INTEREST" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_BALANCE_WITH_INTEREST" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="100" name="LIMIT_EXCEED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_BLOCK" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="CREDITED_BONDS" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="EQUITY_BONDS" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_SHARE_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_COLLATERAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="EQUITY_RATIO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTDWH.T_DWH_RPT_CRD_ACRD_INT_ABV_35" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_RPT_CRD_ACRDIA35_TM1" lineStyle="9" mergeOrder="0" metaname="T_STG_RPT_CRD_ACRDIA35_TM1" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

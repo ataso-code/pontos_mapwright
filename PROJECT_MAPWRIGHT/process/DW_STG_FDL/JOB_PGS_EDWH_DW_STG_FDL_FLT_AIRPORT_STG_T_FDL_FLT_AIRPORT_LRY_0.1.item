@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_FDL_FLT_AIRPORT_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_PORT"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_PORT&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_PORT"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_PORT" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="CITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="LATDEG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="7" name="LATMIN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="LATSGN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="LONDEG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="7" name="LONMIN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="LONSGN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="ICAO_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="TERMINAL_INFO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="AREA_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CATEGORY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="UTC_DIFFERENCE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="UTC_DIFFRENCE_AT_DST" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="DST_EFF_START_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DST_EFF_END_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="4" name="SUNRISE_SUMMER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="SUNSET_SUMMER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="SUNRISE_WINTER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="SUNSET_WINTER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ALTERNATE_STATION_IATA_CODE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ALTERNATE_STATION_IATA_CODE_2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="ALTERNATE_STATION_ICAO_CODE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="ALTERNATE_STATION_ICAO_CODE_2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="CURFEW_HRS_INT_OPEN_FROM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="CURFEW_HRS_INT_OPEN_TO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CURFEW_DATE_EFF_INT_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="CURFEW_DATE_EFF_INT_TO" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="4" name="CURFEW_HRS_DOM_OPEN_FROM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="CURFEW_HRS_DOM_OPEN_TO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CURFEW_DATE_EFF_DOM_FROM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="CURFEW_DATE_EFF_DOM_TO" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="100" name="AIRPORT_RESTRICTIONS_REMARKS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="AIRCRAFT_RESTRICTIONS_REMARKS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MIN_GR_TIME_DOM_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MIN_GR_TIME_DOM_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MIN_GR_TIME_INT_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MIN_GR_TIME_INT_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MIN_GR_TIME_OPS_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MAX_GR_TIME_DOM_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MAX_GR_TIME_DOM_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MAX_GR_TIME_INT_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MAX_GR_TIME_INT_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MAX_GR_TIME_OPS_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MIN_PCT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MAX_PCT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_UNIT_PRICE_LT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="MONETARY_UNIT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="PRICE_VALID_UNTIL" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="TECHNIC_SERVICES_AVAILABLE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="TRANSIT_TIME_TO_HOTEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="TIME_ZONE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="PULL_DOWN_CONTROL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_EN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_TR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_DE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_FR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_NL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_RU" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="DST_RULE_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="IATA_DST_RULE_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_DA" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_IT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_HE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_SV" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_AR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_AB_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="TIME_ZONE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="SHORT_NAME_ES" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="COUNTRY_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_LND_PAX_PORT"/>
+    <metadata connector="TABLE" label="STG_T_FDL_FLT_AIRPORT_LRY" name="STG_T_FDL_FLT_AIRPORT_LRY">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="CITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="PORT_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="PORT_ICAO_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="LAT_DEG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LAT_MIN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="LAT_SGN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="LON_DEG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LON_MIN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="LON_SGN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="TIME_ZONE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="AB_PORT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="DIGITAL_PORT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EXPRESS_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="STANDARD_TAXI_IN_DUR_MIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="STANDARD_TAXI_OUT_DUR_MIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID_PAX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="HANDLING_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_PAX_PORT" tableName="DW_LND.LND_PAX_PORT" joinType="NO_JOIN" alias="P">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="CODE"/>
+        <DBMapperTableEntries name="NAME"/>
+        <DBMapperTableEntries name="CITY"/>
+        <DBMapperTableEntries name="LATDEG"/>
+        <DBMapperTableEntries name="LATMIN"/>
+        <DBMapperTableEntries name="LATSGN"/>
+        <DBMapperTableEntries name="LONDEG"/>
+        <DBMapperTableEntries name="LONMIN"/>
+        <DBMapperTableEntries name="LONSGN"/>
+        <DBMapperTableEntries name="SHORT_NAME"/>
+        <DBMapperTableEntries name="ICAO_CODE"/>
+        <DBMapperTableEntries name="TERMINAL_INFO"/>
+        <DBMapperTableEntries name="AREA_CODE"/>
+        <DBMapperTableEntries name="CATEGORY"/>
+        <DBMapperTableEntries name="UTC_DIFFERENCE"/>
+        <DBMapperTableEntries name="UTC_DIFFRENCE_AT_DST"/>
+        <DBMapperTableEntries name="DST_EFF_START_DATE"/>
+        <DBMapperTableEntries name="DST_EFF_END_DATE"/>
+        <DBMapperTableEntries name="SUNRISE_SUMMER"/>
+        <DBMapperTableEntries name="SUNSET_SUMMER"/>
+        <DBMapperTableEntries name="SUNRISE_WINTER"/>
+        <DBMapperTableEntries name="SUNSET_WINTER"/>
+        <DBMapperTableEntries name="ALTERNATE_STATION_IATA_CODE_1"/>
+        <DBMapperTableEntries name="ALTERNATE_STATION_IATA_CODE_2"/>
+        <DBMapperTableEntries name="ALTERNATE_STATION_ICAO_CODE_1"/>
+        <DBMapperTableEntries name="ALTERNATE_STATION_ICAO_CODE_2"/>
+        <DBMapperTableEntries name="CURFEW_HRS_INT_OPEN_FROM"/>
+        <DBMapperTableEntries name="CURFEW_HRS_INT_OPEN_TO"/>
+        <DBMapperTableEntries name="CURFEW_DATE_EFF_INT_FROM"/>
+        <DBMapperTableEntries name="CURFEW_DATE_EFF_INT_TO"/>
+        <DBMapperTableEntries name="CURFEW_HRS_DOM_OPEN_FROM"/>
+        <DBMapperTableEntries name="CURFEW_HRS_DOM_OPEN_TO"/>
+        <DBMapperTableEntries name="CURFEW_DATE_EFF_DOM_FROM"/>
+        <DBMapperTableEntries name="CURFEW_DATE_EFF_DOM_TO"/>
+        <DBMapperTableEntries name="AIRPORT_RESTRICTIONS_REMARKS"/>
+        <DBMapperTableEntries name="AIRCRAFT_RESTRICTIONS_REMARKS"/>
+        <DBMapperTableEntries name="MIN_GR_TIME_DOM_DOM"/>
+        <DBMapperTableEntries name="MIN_GR_TIME_DOM_INT"/>
+        <DBMapperTableEntries name="MIN_GR_TIME_INT_DOM"/>
+        <DBMapperTableEntries name="MIN_GR_TIME_INT_INT"/>
+        <DBMapperTableEntries name="MIN_GR_TIME_OPS_TYPE"/>
+        <DBMapperTableEntries name="MAX_GR_TIME_DOM_DOM"/>
+        <DBMapperTableEntries name="MAX_GR_TIME_DOM_INT"/>
+        <DBMapperTableEntries name="MAX_GR_TIME_INT_DOM"/>
+        <DBMapperTableEntries name="MAX_GR_TIME_INT_INT"/>
+        <DBMapperTableEntries name="MAX_GR_TIME_OPS_TYPE"/>
+        <DBMapperTableEntries name="MIN_PCT"/>
+        <DBMapperTableEntries name="MAX_PCT"/>
+        <DBMapperTableEntries name="FUEL_UNIT_PRICE_LT"/>
+        <DBMapperTableEntries name="MONETARY_UNIT"/>
+        <DBMapperTableEntries name="PRICE_VALID_UNTIL"/>
+        <DBMapperTableEntries name="TECHNIC_SERVICES_AVAILABLE"/>
+        <DBMapperTableEntries name="TRANSIT_TIME_TO_HOTEL"/>
+        <DBMapperTableEntries name="TIME_ZONE"/>
+        <DBMapperTableEntries name="PULL_DOWN_CONTROL"/>
+        <DBMapperTableEntries name="SHORT_NAME_EN"/>
+        <DBMapperTableEntries name="SHORT_NAME_TR"/>
+        <DBMapperTableEntries name="SHORT_NAME_DE"/>
+        <DBMapperTableEntries name="SHORT_NAME_FR"/>
+        <DBMapperTableEntries name="SHORT_NAME_NL"/>
+        <DBMapperTableEntries name="SHORT_NAME_RU"/>
+        <DBMapperTableEntries name="DST_RULE_ISN"/>
+        <DBMapperTableEntries name="IATA_DST_RULE_ISN"/>
+        <DBMapperTableEntries name="SHORT_NAME_DA"/>
+        <DBMapperTableEntries name="SHORT_NAME_IT"/>
+        <DBMapperTableEntries name="SHORT_NAME_HE"/>
+        <DBMapperTableEntries name="SHORT_NAME_SV"/>
+        <DBMapperTableEntries name="SHORT_NAME_AR"/>
+        <DBMapperTableEntries name="IS_AB_PORT"/>
+        <DBMapperTableEntries name="TIME_ZONE_CODE"/>
+        <DBMapperTableEntries name="SHORT_NAME_ES"/>
+        <DBMapperTableEntries name="COUNTRY_CODE"/>
+      </InputTables>
+      <InputTables name="DW_LND.LND_MAN_EXPRESS_PORT" tableName="DW_LND.LND_MAN_EXPRESS_PORT" joinType="LEFT_OUTER_JOIN" alias="EP">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="PORT" expression="P.CODE" join="true" operator="="/>
+        <DBMapperTableEntries name="INSERT_DATE"/>
+      </InputTables>
+      <InputTables name="DW_LND.LND_PAX_PORT_CHECK_IN_TIME" tableName="DW_LND.LND_PAX_PORT_CHECK_IN_TIME" joinType="LEFT_OUTER_JOIN" alias="PC">
+        <DBMapperTableEntries name="LANDING_DT" expression="TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" join="true" operator="="/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="PORT_CODE" expression="P.CODE" join="true" operator="="/>
+        <DBMapperTableEntries name="CHECK_IN_LOCK_TIME_DOM"/>
+        <DBMapperTableEntries name="KIOSK_CI_START_TIME_DOM"/>
+        <DBMapperTableEntries name="KIOSK_CI_END_TIME_DOM"/>
+        <DBMapperTableEntries name="KIOSK_CI_RETURN_FLIGHT_TIME"/>
+        <DBMapperTableEntries name="CHECK_IN_LOCK_TIME_INT"/>
+        <DBMapperTableEntries name="OFFLINE_CHECKIN_START_TIME"/>
+        <DBMapperTableEntries name="CHECK_IN_START_TIME_DOM"/>
+        <DBMapperTableEntries name="CHECK_IN_START_TIME_INT"/>
+        <DBMapperTableEntries name="CHECK_IN_ALLOW_TIME_DOM"/>
+        <DBMapperTableEntries name="CHECK_IN_ALLOW_TIME_INT"/>
+        <DBMapperTableEntries name="IS_IATCI_ALLOWED"/>
+        <DBMapperTableEntries name="IS_ICI_ALLOWED"/>
+        <DBMapperTableEntries name="ICI_OPEN_TIME_DOM"/>
+        <DBMapperTableEntries name="ICI_OPEN_TIME_INT"/>
+        <DBMapperTableEntries name="ICI_CLOSE_TIME_DOM"/>
+        <DBMapperTableEntries name="ICI_CLOSE_TIME_INT"/>
+        <DBMapperTableEntries name="IS_SPLIT_FLIGHT_ICI_ALLOWED"/>
+        <DBMapperTableEntries name="IS_MOBILE_CI_ALLOWED"/>
+        <DBMapperTableEntries name="MOBILE_OPEN_TIME_DOM"/>
+        <DBMapperTableEntries name="MOBILE_OPEN_TIME_INT"/>
+        <DBMapperTableEntries name="MOBILE_CLOSE_TIME_DOM"/>
+        <DBMapperTableEntries name="MOBILE_CLOSE_TIME_INT"/>
+        <DBMapperTableEntries name="IS_SPLIT_FLIGHT_MOBILE_ALLOWED"/>
+        <DBMapperTableEntries name="BAG_DROP_OPEN_TIME_DOM"/>
+        <DBMapperTableEntries name="BAG_DROP_OPEN_TIME_INT"/>
+        <DBMapperTableEntries name="BAG_DROP_CLOSE_TIME_DOM"/>
+        <DBMapperTableEntries name="BAG_DROP_CLOSE_TIME_INT"/>
+        <DBMapperTableEntries name="BOARDING_TIME_DOM"/>
+        <DBMapperTableEntries name="BOARDING_TIME_INT"/>
+        <DBMapperTableEntries name="OFFLINE_TYPE"/>
+        <DBMapperTableEntries name="KIOSK_CI_START_TIME_INT"/>
+        <DBMapperTableEntries name="KIOSK_CI_END_TIME_INT"/>
+        <DBMapperTableEntries name="IS_SPLIT_FLIGHT_KIOSK_ALLOWED"/>
+        <DBMapperTableEntries name="MAX_BOARDING_CARD_PRINT"/>
+        <DBMapperTableEntries name="IS_ONLINE_STATION"/>
+        <DBMapperTableEntries name="NO_CUSTOMS"/>
+        <DBMapperTableEntries name="IS_RETURN_CI_ALLOWED"/>
+        <DBMapperTableEntries name="IS_DHC_PORT"/>
+        <DBMapperTableEntries name="IS_MANIFEST_MANDATORY"/>
+        <DBMapperTableEntries name="CONTROL_PORT_FOR_BOARDING_PASS"/>
+        <DBMapperTableEntries name="BAND_WIDTH"/>
+      </InputTables>
+      <InputTables name="DW_LND.LND_MAN_PORT_TAXI" tableName="DW_LND.LND_MAN_PORT_TAXI" joinType="LEFT_OUTER_JOIN" alias="PT">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="PORT" expression="TRIM(P.CODE)" join="true" operator="="/>
+        <DBMapperTableEntries name="ARR_TAXI"/>
+        <DBMapperTableEntries name="DEP_TAXI"/>
+      </InputTables>
+      <InputTables name="DW_LND.LND_MAN_HANDLING" tableName="DW_LND.LND_MAN_HANDLING" joinType="LEFT_OUTER_JOIN" alias="HC">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="DEP_PORT" expression="TRIM(P.CODE)" join="true" operator="="/>
+        <DBMapperTableEntries name="HANDLING"/>
+      </InputTables>
+      <InputTables name="EXP_SS" tableName="EXP_SS" joinType="CROSS_JOIN" alias="EXP_SS">
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+      </InputTables>
+      <OutputTables name="STG_T_FDL_FLT_AIRPORT_LRY" tableName="STG_T_FDL_FLT_AIRPORT_LRY">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="EXP_SS.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="CODE" expression="TRIM(P.CODE)"/>
+        <DBMapperTableEntries name="CITY" expression="TRIM(P.CITY)"/>
+        <DBMapperTableEntries name="PORT_NAME" expression="P.NAME"/>
+        <DBMapperTableEntries name="PORT_ICAO_CODE" expression="NVL(TRIM(P.ICAO_CODE), '-1')"/>
+        <DBMapperTableEntries name="LAT_DEG" expression="P.LATDEG"/>
+        <DBMapperTableEntries name="LAT_MIN" expression="P.LATMIN"/>
+        <DBMapperTableEntries name="LAT_SGN_CODE" expression="NVL(TRIM(P.LATSGN), '-1')"/>
+        <DBMapperTableEntries name="LON_DEG" expression="P.LONDEG"/>
+        <DBMapperTableEntries name="LON_MIN" expression="P.LONMIN"/>
+        <DBMapperTableEntries name="LON_SGN_CODE" expression="NVL(TRIM(P.LONSGN), '-1')"/>
+        <DBMapperTableEntries name="TIME_ZONE_CODE" expression="NVL(TIME_ZONE_CODE, '-1')"/>
+        <DBMapperTableEntries name="AB_PORT_FLAG" expression="CASE WHEN P.IS_AB_PORT = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="DIGITAL_PORT_FLAG" expression="CASE WHEN PC.IS_ONLINE_STATION = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="EXPRESS_FLAG" expression="CASE WHEN TRIM(P.CODE) IN (SELECT PORT FROM DW_LND.LND_MAN_EXPRESS_PORT) THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="STANDARD_TAXI_IN_DUR_MIN" expression="PT.ARR_TAXI"/>
+        <DBMapperTableEntries name="STANDARD_TAXI_OUT_DUR_MIN" expression="PT.DEP_TAXI"/>
+        <DBMapperTableEntries name="SYS_SRC_ID_PAX" expression="EXP_SS.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="HANDLING_CODE" expression="NVL(HC.HANDLING, '-999')"/>
+        <FilterEntries name="where" expression="P.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_MAN_EXPRESS_PORT"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_MAN_EXPRESS_PORT&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_MAN_EXPRESS_PORT"/>
+    <metadata connector="TABLE" label="DW_LND.LND_MAN_EXPRESS_PORT" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_PORT_CHECK_IN_TIME"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_PORT_CHECK_IN_TIME&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_PORT_CHECK_IN_TIME"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_PORT_CHECK_IN_TIME" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="PORT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="CHECK_IN_LOCK_TIME_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="KIOSK_CI_START_TIME_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="KIOSK_CI_END_TIME_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="KIOSK_CI_RETURN_FLIGHT_TIME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="CHECK_IN_LOCK_TIME_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="OFFLINE_CHECKIN_START_TIME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="CHECK_IN_START_TIME_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="CHECK_IN_START_TIME_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="CHECK_IN_ALLOW_TIME_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="CHECK_IN_ALLOW_TIME_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_IATCI_ALLOWED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ICI_ALLOWED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="ICI_OPEN_TIME_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="ICI_OPEN_TIME_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="ICI_CLOSE_TIME_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="ICI_CLOSE_TIME_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SPLIT_FLIGHT_ICI_ALLOWED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_MOBILE_CI_ALLOWED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="MOBILE_OPEN_TIME_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="MOBILE_OPEN_TIME_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="MOBILE_CLOSE_TIME_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="MOBILE_CLOSE_TIME_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SPLIT_FLIGHT_MOBILE_ALLOWED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="BAG_DROP_OPEN_TIME_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="BAG_DROP_OPEN_TIME_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="BAG_DROP_CLOSE_TIME_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="BAG_DROP_CLOSE_TIME_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="BOARDING_TIME_DOM" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="BOARDING_TIME_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="OFFLINE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="KIOSK_CI_START_TIME_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="KIOSK_CI_END_TIME_INT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SPLIT_FLIGHT_KIOSK_ALLOWED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="MAX_BOARDING_CARD_PRINT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_ONLINE_STATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="NO_CUSTOMS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_RETURN_CI_ALLOWED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_DHC_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_MANIFEST_MANDATORY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CONTROL_PORT_FOR_BOARDING_PASS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="155" name="BAND_WIDTH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_4"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_MAN_PORT_TAXI"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_MAN_PORT_TAXI&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_MAN_PORT_TAXI"/>
+    <metadata connector="TABLE" label="DW_LND.LND_MAN_PORT_TAXI" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="ARR_TAXI" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="DEP_TAXI" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_5"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_MAN_HANDLING"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_MAN_HANDLING&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_MAN_HANDLING"/>
+    <metadata connector="TABLE" label="DW_LND.LND_MAN_HANDLING" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="100" name="DEP_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="HANDLING" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="400">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_7"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_REF_SOURCE"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_REF_SOURCE&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_REF_SOURCE"/>
+    <metadata connector="TABLE" label="DW_LND.LND_REF_SOURCE" name="table1">
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UPDATE_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SYS_SRC_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="SYS_SRC_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="SYS_SRC_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="400">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_SS"/>
+    <metadata connector="TABLE" label="EXP_SS" name="EXP_SS">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_REF_SOURCE" tableName="DW_LND.LND_REF_SOURCE" joinType="NO_JOIN" alias="LND_REF_SOURCE">
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="UPDATE_DTTM"/>
+        <DBMapperTableEntries name="UPDATE_RUN_ID"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="SYS_SRC_CODE"/>
+        <DBMapperTableEntries name="SYS_SRC_NAME"/>
+        <DBMapperTableEntries name="SYS_SRC_DESC"/>
+      </InputTables>
+      <OutputTables name="EXP_SS" tableName="EXP_SS">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="LND_REF_SOURCE.SYS_SRC_ID"/>
+        <FilterEntries name="where" expression="LND_REF_SOURCE.SYS_SRC_CODE = 'PAX'" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_FDL_FLT_AIRPORT_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_FDL_FLT_AIRPORT_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_FDL_FLT_AIRPORT_LRY"/>
+    <metadata connector="TABLE" label="STG_T_FDL_FLT_AIRPORT_LRY" name="tELTOracleOutput_1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="CITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="PORT_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="PORT_ICAO_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="LAT_DEG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LAT_MIN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="LAT_SGN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="LON_DEG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LON_MIN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="LON_SGN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="TIME_ZONE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="AB_PORT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="DIGITAL_PORT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="EXPRESS_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="STANDARD_TAXI_IN_DUR_MIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="STANDARD_TAXI_OUT_DUR_MIN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID_PAX" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="HANDLING_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_PORT" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_MAN_EXPRESS_PORT" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_PORT_CHECK_IN_TIME" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_3" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_MAN_PORT_TAXI" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_4" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_MAN_HANDLING" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_5" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_REF_SOURCE" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_7" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_SS" lineStyle="22" mergeOrder="0" metaname="EXP_SS" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_FDL_FLT_AIRPORT_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_FDL_FLT_AIRPORT_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

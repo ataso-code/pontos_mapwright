@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_FDL_PRD_TARIFF_FARE_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_FARE_AMOUNT"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_FARE_AMOUNT&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_FARE_AMOUNT"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_FARE_AMOUNT" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FARE_BASIS_DEFINITION_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="CURRENCY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CHILD_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="INFANT_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="200" name="ENDORSEMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="EFFECTIVE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DISCONTINUE_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="SALES_PERCENTAGE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FIRST_BUNDLE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SECOND_BUNDLE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="THIRD_BUNDLE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_BEYOND" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SHOW_FARE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MIN_PAX_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FOOTNOTE_ID" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="60" name="TOUR_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SPECIAL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SPECIAL_TAX" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ORIGIN_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ORIGIN_CITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="DESTINATION_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="DESTINATION_CITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="DELETED_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_FF" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_AUTO_DEFINED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_USED_FOR_RT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="7" name="DAY_OF_WEEK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_AMOUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_SPLIT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_LND_PAX_FARE_AMOUNT"/>
+    <metadata connector="TABLE" label="STG_T_FDL_PRD_TARIFF_FARE_LRY" name="STG_T_FDL_PRD_TARIFF_FARE_LRY">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="TARIFF_FARE_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="FARE_BASIS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="CURR_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="18" name="TARIFF_FARE_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="TOTAL_TARIFF_FARE_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="CHILD_FARE_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INFNT_FARE_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="250" name="ENDORSEMENT_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="EFF_FROM_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="EFF_TO_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="9" name="SALES_PERCENTAGE" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="BNDL_PRDCT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="BYND_FARE_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SHOW_FARE_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MIN_PAX_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SPECIAL_FARE_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SPECIAL_TAX_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="FF_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="AUTO_DEFINED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SPLIT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="DEP_PORT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="ARR_PORT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_PAX_FARE_AMOUNT" tableName="DW_LND.LND_PAX_FARE_AMOUNT" joinType="NO_JOIN" alias="LND_PAX_FARE_AMOUNT">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="ID"/>
+        <DBMapperTableEntries name="FARE_BASIS_DEFINITION_ID"/>
+        <DBMapperTableEntries name="AMOUNT"/>
+        <DBMapperTableEntries name="CURRENCY"/>
+        <DBMapperTableEntries name="CHILD_AMOUNT"/>
+        <DBMapperTableEntries name="INFANT_AMOUNT"/>
+        <DBMapperTableEntries name="ENDORSEMENT"/>
+        <DBMapperTableEntries name="EFFECTIVE_DATE"/>
+        <DBMapperTableEntries name="DISCONTINUE_DATE"/>
+        <DBMapperTableEntries name="SALES_PERCENTAGE"/>
+        <DBMapperTableEntries name="FIRST_BUNDLE_ID"/>
+        <DBMapperTableEntries name="SECOND_BUNDLE_ID"/>
+        <DBMapperTableEntries name="THIRD_BUNDLE_ID"/>
+        <DBMapperTableEntries name="IS_BEYOND"/>
+        <DBMapperTableEntries name="SHOW_FARE"/>
+        <DBMapperTableEntries name="MIN_PAX_COUNT"/>
+        <DBMapperTableEntries name="FOOTNOTE_ID"/>
+        <DBMapperTableEntries name="TOUR_CODE"/>
+        <DBMapperTableEntries name="IS_SPECIAL"/>
+        <DBMapperTableEntries name="IS_SPECIAL_TAX"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="ORIGIN_PORT"/>
+        <DBMapperTableEntries name="ORIGIN_CITY"/>
+        <DBMapperTableEntries name="DESTINATION_PORT"/>
+        <DBMapperTableEntries name="DESTINATION_CITY"/>
+        <DBMapperTableEntries name="CREATED_DATE"/>
+        <DBMapperTableEntries name="DELETED_DATE"/>
+        <DBMapperTableEntries name="IS_FF"/>
+        <DBMapperTableEntries name="IS_AUTO_DEFINED"/>
+        <DBMapperTableEntries name="IS_USED_FOR_RT"/>
+        <DBMapperTableEntries name="DAY_OF_WEEK"/>
+        <DBMapperTableEntries name="TOTAL_AMOUNT"/>
+        <DBMapperTableEntries name="IS_SPLIT"/>
+      </InputTables>
+      <OutputTables name="STG_T_FDL_PRD_TARIFF_FARE_LRY" tableName="STG_T_FDL_PRD_TARIFF_FARE_LRY">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="LND_PAX_FARE_AMOUNT.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="TARIFF_FARE_ISN" expression="LND_PAX_FARE_AMOUNT.ID"/>
+        <DBMapperTableEntries name="FARE_BASIS_CODE" expression="NVL(TO_CHAR(LND_PAX_FARE_AMOUNT.FARE_BASIS_DEFINITION_ID), '-1')"/>
+        <DBMapperTableEntries name="CURR_CODE" expression="NVL(TO_CHAR(LND_PAX_FARE_AMOUNT.CURRENCY), '-1')"/>
+        <DBMapperTableEntries name="TARIFF_FARE_AMT" expression="NVL(LND_PAX_FARE_AMOUNT.AMOUNT, 0)"/>
+        <DBMapperTableEntries name="TOTAL_TARIFF_FARE_AMT" expression="NVL(LND_PAX_FARE_AMOUNT.TOTAL_AMOUNT, 0)"/>
+        <DBMapperTableEntries name="CHILD_FARE_AMT" expression="NVL(LND_PAX_FARE_AMOUNT.CHILD_AMOUNT, 0)"/>
+        <DBMapperTableEntries name="INFNT_FARE_AMT" expression="NVL(LND_PAX_FARE_AMOUNT.INFANT_AMOUNT, 0)"/>
+        <DBMapperTableEntries name="ENDORSEMENT_TEXT" expression="NVL(LND_PAX_FARE_AMOUNT.ENDORSEMENT, '-1')"/>
+        <DBMapperTableEntries name="EFF_FROM_DT" expression="NVL(LND_PAX_FARE_AMOUNT.EFFECTIVE_DATE, TO_DATE('01.01.1900', 'DD.MM.YYYY'))"/>
+        <DBMapperTableEntries name="EFF_TO_DT" expression="NVL(LND_PAX_FARE_AMOUNT.DISCONTINUE_DATE, TO_DATE('31.12.9999', 'DD.MM.YYYY'))"/>
+        <DBMapperTableEntries name="SALES_PERCENTAGE" expression="NVL(LND_PAX_FARE_AMOUNT.SALES_PERCENTAGE, 0)"/>
+        <DBMapperTableEntries name="BNDL_PRDCT_CODE" expression="NVL(TO_CHAR(LND_PAX_FARE_AMOUNT.FIRST_BUNDLE_ID), '-1')"/>
+        <DBMapperTableEntries name="BYND_FARE_FLAG" expression="CASE WHEN LND_PAX_FARE_AMOUNT.IS_BEYOND = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="SHOW_FARE_FLAG" expression="CASE WHEN LND_PAX_FARE_AMOUNT.SHOW_FARE = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="MIN_PAX_CNT" expression="NVL(LND_PAX_FARE_AMOUNT.MIN_PAX_COUNT, 0)"/>
+        <DBMapperTableEntries name="SPECIAL_FARE_FLAG" expression="CASE WHEN LND_PAX_FARE_AMOUNT.IS_SPECIAL = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="SPECIAL_TAX_FLAG" expression="CASE WHEN LND_PAX_FARE_AMOUNT.IS_SPECIAL_TAX = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="FF_FLAG" expression="CASE WHEN LND_PAX_FARE_AMOUNT.IS_FF = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="AUTO_DEFINED_FLAG" expression="CASE WHEN LND_PAX_FARE_AMOUNT.IS_AUTO_DEFINED = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="SPLIT_FLAG" expression="CASE WHEN LND_PAX_FARE_AMOUNT.IS_SPLIT = 'T' THEN 1 ELSE 0 END"/>
+        <DBMapperTableEntries name="STATUS_CODE" expression="NVL(LND_PAX_FARE_AMOUNT.STATUS, '-1')"/>
+        <DBMapperTableEntries name="DEP_PORT_CODE" expression="NVL(TO_CHAR(LND_PAX_FARE_AMOUNT.ORIGIN_PORT), '-1')"/>
+        <DBMapperTableEntries name="ARR_PORT_CODE" expression="NVL(TO_CHAR(LND_PAX_FARE_AMOUNT.DESTINATION_PORT), '-1')"/>
+        <DBMapperTableEntries name="CREATED_DTTM" expression="NVL(LND_PAX_FARE_AMOUNT.CREATED_DATE, TO_DATE('01.01.1900', 'DD.MM.YYYY'))"/>
+        <FilterEntries name="where" expression="LND_PAX_FARE_AMOUNT.DELETED_DATE IS NULL AND LND_PAX_FARE_AMOUNT.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_FDL_PRD_TARIFF_FARE_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_FDL_PRD_TARIFF_FARE_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_FDL_PRD_TARIFF_FARE_LRY"/>
+    <metadata connector="TABLE" label="STG_T_FDL_PRD_TARIFF_FARE_LRY" name="tELTOracleOutput_1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="TARIFF_FARE_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="FARE_BASIS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="CURR_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="18" name="TARIFF_FARE_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="TOTAL_TARIFF_FARE_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="CHILD_FARE_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="18" name="INFNT_FARE_AMT" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="250" name="ENDORSEMENT_TEXT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="EFF_FROM_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="EFF_TO_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="9" name="SALES_PERCENTAGE" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="BNDL_PRDCT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="BYND_FARE_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SHOW_FARE_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="MIN_PAX_CNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SPECIAL_FARE_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SPECIAL_TAX_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="FF_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="AUTO_DEFINED_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SPLIT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="5" name="STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="DEP_PORT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="ARR_PORT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_FARE_AMOUNT" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_FDL_PRD_TARIFF_FARE_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_FDL_PRD_TARIFF_FARE_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>

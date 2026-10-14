@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter name="VAR_ETL_DATE" promptNeeded="false" type="id_String" value="01.01.2026"/>
+  </context>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE DW_STG.STG_T_FDL_FLT_LEG_HST_LRY&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_FzId0cMmEfGuM7c_OEd9ZA - LND_PAX_LEG"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;LND_PAX_LEG&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_LND&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_LND_PAX_LEG"/>
+    <metadata connector="TABLE" label="DW_LND.LND_PAX_LEG" name="table1">
+      <column key="false" length="-1" name="LANDING_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="LEG_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="SPL_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="PLN_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="PLN_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACT_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="ACT_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="3" name="AA_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="FLT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="LEG_NO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="3" name="DEP_CITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="DEP_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ARR_CITY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="ARR_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="AC_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="AC_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="INHIBIT_SALES" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="CI_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="BOARDING_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="30" name="BOARDING_GATE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SSM_SENT" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="TOUR_OPERATOR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="FLT_TYPE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="F_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="C_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="Y_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2000" name="CRC_COMMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="DAILY_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="DCS_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="DIV_PORT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="DIV_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="AB_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FL_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="DV_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PL_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="AC_AIRBORNE_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="AC_TOUCHDOWN_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1000" name="MSG_SPECIAL_INFO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="FC_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="FC_STATUS_COMMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_ROTATION_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="4" name="SCH_DURATION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SCH_SERVICE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_ACTIVATED_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="SCH_DEACTIVATED_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_PARENT_DAILY_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SCH_ACTION_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_CONNECTION_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_CONN_LEG_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="SCH_REMARKS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_HOR_SCH_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_DAILY_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="DL_CODE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="DL_CODE_2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="DL_D1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="DL_D2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="MVT_PAX" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="MVT_TECH_CHK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="MVT_DISP_CHK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="MVT_TECH_CHK_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="MVT_DISP_CHK_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="6" name="MVT_TTL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="MVT_TOF" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="SCH_ACTIVATED_BY" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_SCH_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_SCH_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_EST_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_EST_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_ACT_DEP_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_ACT_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_ACT_AB_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_ACT_TD_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="UTC_DIV_ARR_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="MVT_ATC_CHK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="MVT_ATC_CHK_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="1" name="MVT_NOTAM_CHK" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="MVT_NOTAM_CHK_DT" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="MVT_ATC_CHK_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="MVT_NOTAM_CHK_USER_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PAX_ADULT_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PAX_CHD_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="PAX_INF_COUNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTAL_PAYLOAD" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOW" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="PICKED_PAX" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_COMP" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_UPLIFT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_IN_TANKS_AFTER_UPLIFT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="BLOCK_FUEL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LANDING_FUEL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_ACTUAL_BURN_OFF" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TRIP_FUEL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="MVT_ARR_DL_CODE_1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="2" name="MVT_ARR_DL_CODE_2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MVT_ARR_DL_D1" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="MVT_ARR_DL_D2" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="LDM_MAIL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FC_AC_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="IS_PNL_SENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1000" name="VALIDITY_MESSAGE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="VALUES_LOCKED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4" name="SLOT_CTOT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SLOT_CTOT_WARNING" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="4000" name="FLIGHT_PLAN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="IMPORT_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="LOG_REPORT_NO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="LR_OFFBLOCK_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LR_TAKEOFF_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LR_LANDING_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="LR_ONBLOCK_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="4" name="DE_ICE_TYPE_LT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LR_CARGO_CNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LR_PAX_PAD_CNT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FUEL_REM_BEF_FLT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FLIGHT_PLAN_MIN_REQ_F" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="TOTALIZER_BURN_OFF" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ZWF_ESTIMATED" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ZWF_ACTUAL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="ZWF_MAC" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="FLIGHT_LEVEL" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LR_PAX_ADULT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LR_PAX_CHD" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LR_PAX_INF" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="CHK_FIRE_T" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CHK_GPU" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CHK_ASU" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="CHK_BRIDGE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SHOW_FLIGHT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="LOG_REPORT_NO_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="FLIGHT_GROUP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="REPORTING_GROUP_NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="REPORTING_GROUP_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="FLT_SUFFIX" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SERVICE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="FLIGHT_GROUP_ISN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="SUMMARY_REFRESH_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="SEG_LEG_SEQ" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="LEG_SEG_ISN" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="OPERATIONAL_SUFFIX" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_LND_PAX_LEG"/>
+    <metadata connector="TABLE" label="STG_T_FDL_FLT_LEG_HST_LRY" name="STG_T_FDL_FLT_LEG_HST_LRY">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="LEG_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="LEG_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SALES_INHIBIT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CHECKIN_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="BOARDING_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="F_SEAT_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="C_SEAT_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="Y_SEAT_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DW_LND.LND_PAX_LEG" tableName="DW_LND.LND_PAX_LEG" joinType="NO_JOIN" alias="LEG">
+        <DBMapperTableEntries name="LANDING_DT"/>
+        <DBMapperTableEntries name="SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID"/>
+        <DBMapperTableEntries name="LEG_ISN"/>
+        <DBMapperTableEntries name="SCH_DEP_DT"/>
+        <DBMapperTableEntries name="SPL_ISN"/>
+        <DBMapperTableEntries name="SCH_ARR_DT"/>
+        <DBMapperTableEntries name="PLN_DEP_DT"/>
+        <DBMapperTableEntries name="PLN_ARR_DT"/>
+        <DBMapperTableEntries name="ACT_DEP_DT"/>
+        <DBMapperTableEntries name="ACT_ARR_DT"/>
+        <DBMapperTableEntries name="AA_CODE"/>
+        <DBMapperTableEntries name="FLT_NO"/>
+        <DBMapperTableEntries name="LEG_NO"/>
+        <DBMapperTableEntries name="DEP_CITY"/>
+        <DBMapperTableEntries name="DEP_PORT"/>
+        <DBMapperTableEntries name="ARR_CITY"/>
+        <DBMapperTableEntries name="ARR_PORT"/>
+        <DBMapperTableEntries name="AC_TYPE"/>
+        <DBMapperTableEntries name="AC_ISN"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="INHIBIT_SALES"/>
+        <DBMapperTableEntries name="CI_SEQ"/>
+        <DBMapperTableEntries name="BOARDING_TIME"/>
+        <DBMapperTableEntries name="BOARDING_GATE"/>
+        <DBMapperTableEntries name="SSM_SENT"/>
+        <DBMapperTableEntries name="TOUR_OPERATOR"/>
+        <DBMapperTableEntries name="FLT_TYPE"/>
+        <DBMapperTableEntries name="F_CAP"/>
+        <DBMapperTableEntries name="C_CAP"/>
+        <DBMapperTableEntries name="Y_CAP"/>
+        <DBMapperTableEntries name="CRC_COMMENT"/>
+        <DBMapperTableEntries name="DAILY_ISN"/>
+        <DBMapperTableEntries name="DCS_STATUS"/>
+        <DBMapperTableEntries name="DIV_PORT"/>
+        <DBMapperTableEntries name="DIV_ARR_DT"/>
+        <DBMapperTableEntries name="AB_USER_ISN"/>
+        <DBMapperTableEntries name="FL_USER_ISN"/>
+        <DBMapperTableEntries name="DV_USER_ISN"/>
+        <DBMapperTableEntries name="PL_USER_ISN"/>
+        <DBMapperTableEntries name="AC_AIRBORNE_TIME"/>
+        <DBMapperTableEntries name="AC_TOUCHDOWN_TIME"/>
+        <DBMapperTableEntries name="MSG_SPECIAL_INFO"/>
+        <DBMapperTableEntries name="FC_STATUS"/>
+        <DBMapperTableEntries name="FC_STATUS_COMMENT"/>
+        <DBMapperTableEntries name="SCH_ROTATION_ISN"/>
+        <DBMapperTableEntries name="SCH_DURATION"/>
+        <DBMapperTableEntries name="SCH_SERVICE_TYPE"/>
+        <DBMapperTableEntries name="SCH_ACTIVATED_DATE"/>
+        <DBMapperTableEntries name="SCH_DEACTIVATED_DATE"/>
+        <DBMapperTableEntries name="SCH_PARENT_DAILY_ISN"/>
+        <DBMapperTableEntries name="SCH_ACTION_CODE"/>
+        <DBMapperTableEntries name="SCH_CONNECTION_ISN"/>
+        <DBMapperTableEntries name="SCH_CONN_LEG_SEQ"/>
+        <DBMapperTableEntries name="SCH_REMARKS"/>
+        <DBMapperTableEntries name="SCH_HOR_SCH_ISN"/>
+        <DBMapperTableEntries name="SCH_DAILY_ISN"/>
+        <DBMapperTableEntries name="DL_CODE_1"/>
+        <DBMapperTableEntries name="DL_CODE_2"/>
+        <DBMapperTableEntries name="DL_D1"/>
+        <DBMapperTableEntries name="DL_D2"/>
+        <DBMapperTableEntries name="MVT_PAX"/>
+        <DBMapperTableEntries name="MVT_TECH_CHK"/>
+        <DBMapperTableEntries name="MVT_DISP_CHK"/>
+        <DBMapperTableEntries name="MVT_TECH_CHK_DT"/>
+        <DBMapperTableEntries name="MVT_DISP_CHK_DT"/>
+        <DBMapperTableEntries name="MVT_TTL"/>
+        <DBMapperTableEntries name="MVT_TOF"/>
+        <DBMapperTableEntries name="SCH_ACTIVATED_BY"/>
+        <DBMapperTableEntries name="UTC_SCH_DEP_DT"/>
+        <DBMapperTableEntries name="UTC_SCH_ARR_DT"/>
+        <DBMapperTableEntries name="UTC_EST_DEP_DT"/>
+        <DBMapperTableEntries name="UTC_EST_ARR_DT"/>
+        <DBMapperTableEntries name="UTC_ACT_DEP_DT"/>
+        <DBMapperTableEntries name="UTC_ACT_ARR_DT"/>
+        <DBMapperTableEntries name="UTC_ACT_AB_DT"/>
+        <DBMapperTableEntries name="UTC_ACT_TD_DT"/>
+        <DBMapperTableEntries name="UTC_DIV_ARR_DT"/>
+        <DBMapperTableEntries name="MVT_ATC_CHK"/>
+        <DBMapperTableEntries name="MVT_ATC_CHK_DT"/>
+        <DBMapperTableEntries name="MVT_NOTAM_CHK"/>
+        <DBMapperTableEntries name="MVT_NOTAM_CHK_DT"/>
+        <DBMapperTableEntries name="MVT_ATC_CHK_USER_ISN"/>
+        <DBMapperTableEntries name="MVT_NOTAM_CHK_USER_ISN"/>
+        <DBMapperTableEntries name="PAX_ADULT_COUNT"/>
+        <DBMapperTableEntries name="PAX_CHD_COUNT"/>
+        <DBMapperTableEntries name="PAX_INF_COUNT"/>
+        <DBMapperTableEntries name="TOTAL_PAYLOAD"/>
+        <DBMapperTableEntries name="TOW"/>
+        <DBMapperTableEntries name="PICKED_PAX"/>
+        <DBMapperTableEntries name="FUEL_COMP"/>
+        <DBMapperTableEntries name="FUEL_UPLIFT"/>
+        <DBMapperTableEntries name="FUEL_IN_TANKS_AFTER_UPLIFT"/>
+        <DBMapperTableEntries name="BLOCK_FUEL"/>
+        <DBMapperTableEntries name="LANDING_FUEL"/>
+        <DBMapperTableEntries name="FUEL_ACTUAL_BURN_OFF"/>
+        <DBMapperTableEntries name="TRIP_FUEL"/>
+        <DBMapperTableEntries name="MVT_ARR_DL_CODE_1"/>
+        <DBMapperTableEntries name="MVT_ARR_DL_CODE_2"/>
+        <DBMapperTableEntries name="MVT_ARR_DL_D1"/>
+        <DBMapperTableEntries name="MVT_ARR_DL_D2"/>
+        <DBMapperTableEntries name="LDM_MAIL"/>
+        <DBMapperTableEntries name="FC_AC_ISN"/>
+        <DBMapperTableEntries name="IS_PNL_SENT"/>
+        <DBMapperTableEntries name="VALIDITY_MESSAGE"/>
+        <DBMapperTableEntries name="VALUES_LOCKED"/>
+        <DBMapperTableEntries name="SLOT_CTOT"/>
+        <DBMapperTableEntries name="SLOT_CTOT_WARNING"/>
+        <DBMapperTableEntries name="FLIGHT_PLAN"/>
+        <DBMapperTableEntries name="IMPORT_TYPE"/>
+        <DBMapperTableEntries name="LOG_REPORT_NO"/>
+        <DBMapperTableEntries name="LR_OFFBLOCK_DATE"/>
+        <DBMapperTableEntries name="LR_TAKEOFF_DATE"/>
+        <DBMapperTableEntries name="LR_LANDING_DATE"/>
+        <DBMapperTableEntries name="LR_ONBLOCK_DATE"/>
+        <DBMapperTableEntries name="DE_ICE_TYPE_LT"/>
+        <DBMapperTableEntries name="LR_CARGO_CNT"/>
+        <DBMapperTableEntries name="LR_PAX_PAD_CNT"/>
+        <DBMapperTableEntries name="FUEL_REM_BEF_FLT"/>
+        <DBMapperTableEntries name="FLIGHT_PLAN_MIN_REQ_F"/>
+        <DBMapperTableEntries name="TOTALIZER_BURN_OFF"/>
+        <DBMapperTableEntries name="ZWF_ESTIMATED"/>
+        <DBMapperTableEntries name="ZWF_ACTUAL"/>
+        <DBMapperTableEntries name="ZWF_MAC"/>
+        <DBMapperTableEntries name="FLIGHT_LEVEL"/>
+        <DBMapperTableEntries name="LR_PAX_ADULT"/>
+        <DBMapperTableEntries name="LR_PAX_CHD"/>
+        <DBMapperTableEntries name="LR_PAX_INF"/>
+        <DBMapperTableEntries name="CHK_FIRE_T"/>
+        <DBMapperTableEntries name="CHK_GPU"/>
+        <DBMapperTableEntries name="CHK_ASU"/>
+        <DBMapperTableEntries name="CHK_BRIDGE"/>
+        <DBMapperTableEntries name="SHOW_FLIGHT"/>
+        <DBMapperTableEntries name="LOG_REPORT_NO_SEQ"/>
+        <DBMapperTableEntries name="FLIGHT_GROUP_NAME"/>
+        <DBMapperTableEntries name="REPORTING_GROUP_NAME"/>
+        <DBMapperTableEntries name="REPORTING_GROUP_ISN"/>
+        <DBMapperTableEntries name="FLT_SUFFIX"/>
+        <DBMapperTableEntries name="SERVICE_TYPE"/>
+        <DBMapperTableEntries name="FLIGHT_GROUP_ISN"/>
+        <DBMapperTableEntries name="SUMMARY_REFRESH_DATE"/>
+        <DBMapperTableEntries name="SEG_LEG_SEQ"/>
+        <DBMapperTableEntries name="LEG_SEG_ISN"/>
+        <DBMapperTableEntries name="OPERATIONAL_SUFFIX"/>
+      </InputTables>
+      <OutputTables name="STG_T_FDL_FLT_LEG_HST_LRY" tableName="STG_T_FDL_FLT_LEG_HST_LRY">
+        <DBMapperTableEntries name="SYS_SRC_ID" expression="LEG.SYS_SRC_ID"/>
+        <DBMapperTableEntries name="INSERT_DTTM" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUN_ID" expression="NULL"/>
+        <DBMapperTableEntries name="LEG_ISN" expression="TO_CHAR(LEG.LEG_ISN)"/>
+        <DBMapperTableEntries name="LEG_STATUS_CODE" expression="NVL(LEG.STATUS, '-1')"/>
+        <DBMapperTableEntries name="SALES_INHIBIT_FLAG" expression="DECODE(LEG.INHIBIT_SALES, 'T', 1, 0)"/>
+        <DBMapperTableEntries name="CHECKIN_SEQ" expression="NVL(LEG.CI_SEQ, -1)"/>
+        <DBMapperTableEntries name="BOARDING_DTTM" expression="NVL(LEG.BOARDING_TIME, TO_DATE('01.01.1900', 'DD.MM.YYYY'))"/>
+        <DBMapperTableEntries name="F_SEAT_CAP" expression="NVL(LEG.F_CAP, 0)"/>
+        <DBMapperTableEntries name="C_SEAT_CAP" expression="NVL(LEG.C_CAP, 0)"/>
+        <DBMapperTableEntries name="Y_SEAT_CAP" expression="NVL(LEG.Y_CAP, 0)"/>
+        <FilterEntries name="where" expression="LEG.LANDING_DT = TO_DATE('&quot; + context.VAR_ETL_DATE + &quot;', 'DD.MM.YYYY')" filterKind="WHERE_CLAUSE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA - STG_T_FDL_FLT_LEG_HST_LRY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;STG_T_FDL_FLT_LEG_HST_LRY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DW_STG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_6V-v8cMjEfGuM7c_OEd9ZA"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_STG_T_FDL_FLT_LEG_HST_LRY"/>
+    <metadata connector="TABLE" label="STG_T_FDL_FLT_LEG_HST_LRY" name="tELTOracleOutput_1">
+      <column key="false" length="10" name="SYS_SRC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="INSERT_RUN_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="50" name="LEG_ISN" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="LEG_STATUS_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="SALES_INHIBIT_FLAG" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="CHECKIN_SEQ" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="BOARDING_DTTM" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="F_SEAT_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="C_SEAT_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="Y_SEAT_CAP" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DW_LND.LND_PAX_LEG" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="STG_T_FDL_FLT_LEG_HST_LRY" lineStyle="9" mergeOrder="0" metaname="STG_T_FDL_FLT_LEG_HST_LRY" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
