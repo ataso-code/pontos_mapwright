@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default"/>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_DdcHUMKuEfGino-ctUL65Q"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSHR.T_SHR_BUDGET_DETAIL_BRANCH&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_SHR_BUD_DET_BR_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_SHR_BUD_DET_BR_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_STG_SHR_BUD_DET_BR_TM1"/>
+    <metadata connector="TABLE" label="DGYTSTG.T_STG_SHR_BUD_DET_BR_TM1" name="table1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="-1" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="YEAR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="BRANCH_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="AFFILIATED_BRANCH_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="BRANCH_EMPLOYEE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="VALID_FIRST_MONTH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="VALID_LAST_MONTH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OPT_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_OPT_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LEV_FX_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_DER_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_DER_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DER_BRANCH_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BROKERAGE_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_COMM_GRS_DAYS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_REV_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GAR_SEC_SHARE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OPT_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_OPT_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LEV_FX_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_DER_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_DER_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DER_BRANCH_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BROKERAGE_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_COMM_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_REV_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TAX" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OPT_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_OPT_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LEV_FX_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_DER_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_DER_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DER_BRANCH_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BROKERAGE_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_COMM_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_REV_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CRDT_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BOR_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_DdcHUMKuEfGino-ctUL65Q"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_STG_SHR_BUD_DET_BR_TM1"/>
+    <metadata connector="TABLE" label="T_SHR_BUDGET_DETAIL_BRANCH" name="T_SHR_BUDGET_DETAIL_BRANCH">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="-1" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="YEAR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="BRANCH_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="AFFILIATED_BRANCH_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="BRANCH_EMPLOYEE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="VALID_FIRST_MONTH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="VALID_LAST_MONTH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OPT_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_OPT_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LEV_FX_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_DER_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_DER_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DER_BRANCH_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BROKERAGE_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_COMM_GRS_DAYS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_REV_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GAR_SEC_SHARE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OPT_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_OPT_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LEV_FX_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_DER_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_DER_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DER_BRANCH_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BROKERAGE_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_COMM_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_REV_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TAX" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OPT_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_OPT_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LEV_FX_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_DER_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_DER_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DER_BRANCH_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BROKERAGE_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_COMM_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_REV_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CRDT_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BOR_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTSTG.T_STG_SHR_BUD_DET_BR_TM1" tableName="DGYTSTG.T_STG_SHR_BUD_DET_BR_TM1" joinType="NO_JOIN" alias="T_STG_SHR_BUD_DET_BR_TM1">
+        <DBMapperTableEntries name="ETL_DATE"/>
+        <DBMapperTableEntries name="INSERT_RUNID"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="YEAR"/>
+        <DBMapperTableEntries name="BRANCH_CODE"/>
+        <DBMapperTableEntries name="AFFILIATED_BRANCH_CODE"/>
+        <DBMapperTableEntries name="BRANCH_EMPLOYEE"/>
+        <DBMapperTableEntries name="VALID_FIRST_MONTH"/>
+        <DBMapperTableEntries name="VALID_LAST_MONTH"/>
+        <DBMapperTableEntries name="EQ_GRS_DAY"/>
+        <DBMapperTableEntries name="FTR_GRS_DAY"/>
+        <DBMapperTableEntries name="OPT_GRS_DAY"/>
+        <DBMapperTableEntries name="FTR_OPT_GRS_DAY"/>
+        <DBMapperTableEntries name="LEV_FX_GRS_DAY"/>
+        <DBMapperTableEntries name="FRGN_EQ_GRS_DAY"/>
+        <DBMapperTableEntries name="FRGN_DER_GRS_DAY"/>
+        <DBMapperTableEntries name="FRGN_EQ_DER_GRS_DAY"/>
+        <DBMapperTableEntries name="DER_BRANCH_GRS_DAY"/>
+        <DBMapperTableEntries name="BROKERAGE_GRS_DAY"/>
+        <DBMapperTableEntries name="TOTAL_COMM_GRS_DAYS"/>
+        <DBMapperTableEntries name="TOTAL_REV_GRS_DAY"/>
+        <DBMapperTableEntries name="GAR_SEC_SHARE"/>
+        <DBMapperTableEntries name="EQ_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FTR_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="OPT_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FTR_OPT_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="LEV_FX_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FRGN_EQ_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FRGN_DER_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FRGN_EQ_DER_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="DER_BRANCH_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="BROKERAGE_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="TOTAL_COMM_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="TOTAL_REV_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="TAX"/>
+        <DBMapperTableEntries name="EQ_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FTR_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="OPT_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FTR_OPT_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="LEV_FX_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FRGN_EQ_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FRGN_DER_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FRGN_EQ_DER_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="DER_BRANCH_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="BROKERAGE_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="TOTAL_COMM_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="TOTAL_REV_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="CRDT_GRS_TARGET"/>
+        <DBMapperTableEntries name="BOR_GRS_TARGET"/>
+      </InputTables>
+      <OutputTables name="T_SHR_BUDGET_DETAIL_BRANCH" tableName="T_SHR_BUDGET_DETAIL_BRANCH">
+        <DBMapperTableEntries name="ETL_DATE" expression="T_STG_SHR_BUD_DET_BR_TM1.ETL_DATE"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="T_STG_SHR_BUD_DET_BR_TM1.DWH_SOURCE_CODE"/>
+        <DBMapperTableEntries name="REPORT_DATE" expression="T_STG_SHR_BUD_DET_BR_TM1.REPORT_DATE"/>
+        <DBMapperTableEntries name="MANUEL_FILE_ID" expression="T_STG_SHR_BUD_DET_BR_TM1.MANUEL_FILE_ID"/>
+        <DBMapperTableEntries name="YEAR" expression="T_STG_SHR_BUD_DET_BR_TM1.YEAR"/>
+        <DBMapperTableEntries name="BRANCH_CODE" expression="T_STG_SHR_BUD_DET_BR_TM1.BRANCH_CODE"/>
+        <DBMapperTableEntries name="AFFILIATED_BRANCH_CODE" expression="T_STG_SHR_BUD_DET_BR_TM1.AFFILIATED_BRANCH_CODE"/>
+        <DBMapperTableEntries name="BRANCH_EMPLOYEE" expression="T_STG_SHR_BUD_DET_BR_TM1.BRANCH_EMPLOYEE"/>
+        <DBMapperTableEntries name="VALID_FIRST_MONTH" expression="T_STG_SHR_BUD_DET_BR_TM1.VALID_FIRST_MONTH"/>
+        <DBMapperTableEntries name="VALID_LAST_MONTH" expression="T_STG_SHR_BUD_DET_BR_TM1.VALID_LAST_MONTH"/>
+        <DBMapperTableEntries name="EQ_GRS_DAY" expression="T_STG_SHR_BUD_DET_BR_TM1.EQ_GRS_DAY"/>
+        <DBMapperTableEntries name="FTR_GRS_DAY" expression="T_STG_SHR_BUD_DET_BR_TM1.FTR_GRS_DAY"/>
+        <DBMapperTableEntries name="OPT_GRS_DAY" expression="T_STG_SHR_BUD_DET_BR_TM1.OPT_GRS_DAY"/>
+        <DBMapperTableEntries name="FTR_OPT_GRS_DAY" expression="T_STG_SHR_BUD_DET_BR_TM1.FTR_OPT_GRS_DAY"/>
+        <DBMapperTableEntries name="LEV_FX_GRS_DAY" expression="T_STG_SHR_BUD_DET_BR_TM1.LEV_FX_GRS_DAY"/>
+        <DBMapperTableEntries name="FRGN_EQ_GRS_DAY" expression="T_STG_SHR_BUD_DET_BR_TM1.FRGN_EQ_GRS_DAY"/>
+        <DBMapperTableEntries name="FRGN_DER_GRS_DAY" expression="T_STG_SHR_BUD_DET_BR_TM1.FRGN_DER_GRS_DAY"/>
+        <DBMapperTableEntries name="FRGN_EQ_DER_GRS_DAY" expression="T_STG_SHR_BUD_DET_BR_TM1.FRGN_EQ_DER_GRS_DAY"/>
+        <DBMapperTableEntries name="DER_BRANCH_GRS_DAY" expression="T_STG_SHR_BUD_DET_BR_TM1.DER_BRANCH_GRS_DAY"/>
+        <DBMapperTableEntries name="BROKERAGE_GRS_DAY" expression="T_STG_SHR_BUD_DET_BR_TM1.BROKERAGE_GRS_DAY"/>
+        <DBMapperTableEntries name="TOTAL_COMM_GRS_DAYS" expression="T_STG_SHR_BUD_DET_BR_TM1.TOTAL_COMM_GRS_DAYS"/>
+        <DBMapperTableEntries name="TOTAL_REV_GRS_DAY" expression="T_STG_SHR_BUD_DET_BR_TM1.TOTAL_REV_GRS_DAY"/>
+        <DBMapperTableEntries name="GAR_SEC_SHARE" expression="T_STG_SHR_BUD_DET_BR_TM1.GAR_SEC_SHARE"/>
+        <DBMapperTableEntries name="EQ_GRS_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.EQ_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FTR_GRS_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.FTR_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="OPT_GRS_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.OPT_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FTR_OPT_GRS_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.FTR_OPT_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="LEV_FX_GRS_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.LEV_FX_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FRGN_EQ_GRS_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.FRGN_EQ_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FRGN_DER_GRS_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.FRGN_DER_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FRGN_EQ_DER_GRS_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.FRGN_EQ_DER_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="DER_BRANCH_GRS_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.DER_BRANCH_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="BROKERAGE_GRS_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.BROKERAGE_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="TOTAL_COMM_GRS_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.TOTAL_COMM_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="TOTAL_REV_GRS_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.TOTAL_REV_GRS_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="TAX" expression="T_STG_SHR_BUD_DET_BR_TM1.TAX"/>
+        <DBMapperTableEntries name="EQ_NET_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.EQ_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FTR_NET_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.FTR_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="OPT_NET_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.OPT_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FTR_OPT_NET_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.FTR_OPT_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="LEV_FX_NET_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.LEV_FX_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FRGN_EQ_NET_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.FRGN_EQ_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FRGN_DER_NET_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.FRGN_DER_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="FRGN_EQ_DER_NET_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.FRGN_EQ_DER_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="DER_BRANCH_NET_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.DER_BRANCH_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="BROKERAGE_NET_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.BROKERAGE_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="TOTAL_COMM_NET_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.TOTAL_COMM_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="TOTAL_REV_NET_DAY_GAR_SEC" expression="T_STG_SHR_BUD_DET_BR_TM1.TOTAL_REV_NET_DAY_GAR_SEC"/>
+        <DBMapperTableEntries name="CRDT_GRS_TARGET" expression="T_STG_SHR_BUD_DET_BR_TM1.CRDT_GRS_TARGET"/>
+        <DBMapperTableEntries name="BOR_GRS_TARGET" expression="T_STG_SHR_BUD_DET_BR_TM1.BOR_GRS_TARGET"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_DdcHUMKuEfGino-ctUL65Q - T_SHR_BUDGET_DETAIL_BRANCH"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_SHR_BUDGET_DETAIL_BRANCH&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSHR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_DdcHUMKuEfGino-ctUL65Q"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_SHR_BUDGET_DETAIL_BRANCH"/>
+    <metadata connector="TABLE" label="T_SHR_BUDGET_DETAIL_BRANCH" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="-1" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="REPORT_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="10" name="MANUEL_FILE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="YEAR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="BRANCH_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="AFFILIATED_BRANCH_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="BRANCH_EMPLOYEE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="VALID_FIRST_MONTH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="VALID_LAST_MONTH" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OPT_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_OPT_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LEV_FX_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_DER_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_DER_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DER_BRANCH_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BROKERAGE_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_COMM_GRS_DAYS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_REV_GRS_DAY" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GAR_SEC_SHARE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OPT_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_OPT_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LEV_FX_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_DER_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_DER_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DER_BRANCH_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BROKERAGE_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_COMM_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_REV_GRS_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TAX" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="EQ_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OPT_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FTR_OPT_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="LEV_FX_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_DER_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FRGN_EQ_DER_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="DER_BRANCH_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BROKERAGE_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_COMM_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="TOTAL_REV_NET_DAY_GAR_SEC" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CRDT_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="BOR_GRS_TARGET" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTSTG.T_STG_SHR_BUD_DET_BR_TM1" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_SHR_BUDGET_DETAIL_BRANCH" lineStyle="9" mergeOrder="0" metaname="T_SHR_BUDGET_DETAIL_BRANCH" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
