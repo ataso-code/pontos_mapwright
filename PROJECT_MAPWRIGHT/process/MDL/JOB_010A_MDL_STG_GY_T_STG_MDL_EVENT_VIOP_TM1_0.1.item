@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendDBMap="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+  <context confirmationNeeded="false" name="Default"/>
+  <parameters/>
+  <node componentName="tPrejob" posX="64" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1"/>
+    <elementParameter name="LABEL" value="PRE_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tOracleRow" posX="256" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleRow_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="QUERY" value="&quot;TRUNCATE TABLE MDL_GYTSTG.T_STG_MDL_EVENT_VIOP_TM1&quot;"/>
+    <elementParameter name="LABEL" value="SQL_TRUNCATE_TARGET"/>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_1"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_GTPBR_DT_FILLS"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_GTPBR_DT_FILLS&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_GTPBR_DT_FILLS"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_GTPBR_DT_FILLS" name="table1">
+      <column key="false" length="100" name="TRANSACTION_FILL_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="TRANSACTION_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="FILL_UNITS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="FILL_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="FILL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="28" name="FILL_SESSION" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="EXPENSE_TRANSACTION_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="BOOKING_CUR_FX_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="BOOKING_CUR_CONV_VALUE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="BOOKING_CUR_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="BOOKING_REF" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_UPD" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="LAST_UPD_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="CLOSING_UNITS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="CLOSING_COST" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="100" name="TD_TRANSACTION_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="ROLLOVER_UNITS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="SOURCE_TRANSACTION_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="FIXED_COMMISSION_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="OPERATION_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="EXTERNAL_REF_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="BASIS_PRICE" nullable="true" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="WAITING_FOR_ACCOUNTING" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="EXEC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_COUNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="25" name="EXPENSE_TRANS_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SIDE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="SYMBOL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="ORDER_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="WAITING_FOR_EXPENSE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="GROUP_CODE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="200" name="LAST_ERROR" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="TRADE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="FILL_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="ACCOUNT_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ACCOUNT_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="SCALE_RATIO" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="EXPENSE_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="EXPENSE_BSMV" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="CHANNEL_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="POSTN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="320" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_T_GTPBR_DT_FILLS"/>
+    <metadata connector="TABLE" label="T_STG_MDL_EVENT_VIOP_TM1" name="T_STG_MDL_EVENT_VIOP_TM1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_CLS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CNL_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_DATE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="UNIT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REALIZED_UNIT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="36" name="PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FILL_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="36" name="AVG_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_TAX_EXPENSE_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_TAX_EXPENSE_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARKET_COMM_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARKET_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTODIAN_COMM_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTODIAN_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_STATUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ORDER_SUB_TP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_IP_ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="REQUEST_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="ORDER_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="FILLED_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="REALIZED_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="ORDER_DATE_TP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_REF" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="GROSS_COMM_RATE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="36" name="POSITION_CLOSED_UNIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="ISE_ORDER_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="FIRST_SESSION" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SECOND_SESSION" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="ENDING_DATE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="SEND_USER_POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="CANCEL_EXPENSE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_EXPENSE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSOPR.T_GTPBR_DT_FILLS" tableName="DGYTODSOPR.T_GTPBR_DT_FILLS" joinType="NO_JOIN" alias="FILL">
+        <DBMapperTableEntries name="TRANSACTION_FILL_ID"/>
+        <DBMapperTableEntries name="TRANSACTION_ID"/>
+        <DBMapperTableEntries name="FILL_UNITS"/>
+        <DBMapperTableEntries name="FILL_PRICE"/>
+        <DBMapperTableEntries name="FILL_DATE"/>
+        <DBMapperTableEntries name="FILL_SESSION"/>
+        <DBMapperTableEntries name="EXPENSE_TRANSACTION_ID"/>
+        <DBMapperTableEntries name="BOOKING_CUR_FX_CODE"/>
+        <DBMapperTableEntries name="BOOKING_CUR_CONV_VALUE"/>
+        <DBMapperTableEntries name="BOOKING_CUR_AMOUNT"/>
+        <DBMapperTableEntries name="BOOKING_REF"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="LAST_UPD"/>
+        <DBMapperTableEntries name="LAST_UPD_BY"/>
+        <DBMapperTableEntries name="CLOSING_UNITS"/>
+        <DBMapperTableEntries name="CLOSING_COST"/>
+        <DBMapperTableEntries name="TD_TRANSACTION_NO"/>
+        <DBMapperTableEntries name="ROLLOVER_UNITS"/>
+        <DBMapperTableEntries name="SOURCE_TRANSACTION_ID"/>
+        <DBMapperTableEntries name="FIXED_COMMISSION_RATE"/>
+        <DBMapperTableEntries name="OPERATION_TYPE"/>
+        <DBMapperTableEntries name="EXTERNAL_REF_NO"/>
+        <DBMapperTableEntries name="BASIS_PRICE"/>
+        <DBMapperTableEntries name="WAITING_FOR_ACCOUNTING"/>
+        <DBMapperTableEntries name="EXEC_ID"/>
+        <DBMapperTableEntries name="UPDATE_COUNT"/>
+        <DBMapperTableEntries name="EXPENSE_TRANS_TYPE"/>
+        <DBMapperTableEntries name="SIDE"/>
+        <DBMapperTableEntries name="SYMBOL"/>
+        <DBMapperTableEntries name="ORDER_ID"/>
+        <DBMapperTableEntries name="WAITING_FOR_EXPENSE"/>
+        <DBMapperTableEntries name="GROUP_CODE"/>
+        <DBMapperTableEntries name="LAST_ERROR"/>
+        <DBMapperTableEntries name="TRADE_ID"/>
+        <DBMapperTableEntries name="FILL_TIME"/>
+        <DBMapperTableEntries name="ACCOUNT_NO"/>
+        <DBMapperTableEntries name="ACCOUNT_ID"/>
+        <DBMapperTableEntries name="SCALE_RATIO"/>
+        <DBMapperTableEntries name="EXPENSE_AMOUNT"/>
+        <DBMapperTableEntries name="EXPENSE_BSMV"/>
+        <DBMapperTableEntries name="CHANNEL_ID"/>
+        <DBMapperTableEntries name="POSTN_ID"/>
+      </InputTables>
+      <InputTables name="DGYTODSOPR.T_GTPBR_DT_TRANS_HISTORY" tableName="DGYTODSOPR.T_GTPBR_DT_TRANS_HISTORY" joinType="INNER_JOIN" alias="DTH">
+        <DBMapperTableEntries name="TRANSACTION_ID" expression="FILL.TRANSACTION_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="ORG_ID"/>
+        <DBMapperTableEntries name="TRANSACTION_EXT_ID"/>
+        <DBMapperTableEntries name="TRANSACTION_STATUS_ID"/>
+        <DBMapperTableEntries name="COLLATERAL_ID"/>
+        <DBMapperTableEntries name="CUSTOMER_ID"/>
+        <DBMapperTableEntries name="ACCOUNT_ID"/>
+        <DBMapperTableEntries name="TRANSACTION_TYPE_ID"/>
+        <DBMapperTableEntries name="DEBIT_CREDIT"/>
+        <DBMapperTableEntries name="FIN_INST_ID"/>
+        <DBMapperTableEntries name="UNITS"/>
+        <DBMapperTableEntries name="HIDDEN_UNITS"/>
+        <DBMapperTableEntries name="PRICE_TYPE_ID"/>
+        <DBMapperTableEntries name="PRICE"/>
+        <DBMapperTableEntries name="AMOUNT"/>
+        <DBMapperTableEntries name="PRICE_CONDITION"/>
+        <DBMapperTableEntries name="REALIZED_UNITS"/>
+        <DBMapperTableEntries name="TRANSACTION_DATE_TYPE_ID"/>
+        <DBMapperTableEntries name="INITIAL_MARKET_SESSION_DATE"/>
+        <DBMapperTableEntries name="INITIAL_MARKET_SESSION_SEL"/>
+        <DBMapperTableEntries name="ENDING_MARKET_SESSION_DATE"/>
+        <DBMapperTableEntries name="ENDING_MARKET_SESSION_SEL"/>
+        <DBMapperTableEntries name="HOLD_TYPE"/>
+        <DBMapperTableEntries name="ROUTE_TYPE_ID"/>
+        <DBMapperTableEntries name="ROUTE_INT_SYS_ID"/>
+        <DBMapperTableEntries name="ROUTE_COLL_POS_ID"/>
+        <DBMapperTableEntries name="DEST_RECON_POS_ID"/>
+        <DBMapperTableEntries name="PARENT_TRANSACTION_ID"/>
+        <DBMapperTableEntries name="MAX_LOT_PARENT_TRAN_ID"/>
+        <DBMapperTableEntries name="POSTN_ID"/>
+        <DBMapperTableEntries name="CHANNEL_ID"/>
+        <DBMapperTableEntries name="MARKET_PLACE_ID"/>
+        <DBMapperTableEntries name="SUB_MARKET_PLACE_ID"/>
+        <DBMapperTableEntries name="DESCRIPTION"/>
+        <DBMapperTableEntries name="SHORTFALL"/>
+        <DBMapperTableEntries name="COUNTER_PARTY"/>
+        <DBMapperTableEntries name="RECEIPT_NO"/>
+        <DBMapperTableEntries name="LOCKED_POSTN_ID"/>
+        <DBMapperTableEntries name="POSITION_CLOSED"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="LAST_UPD"/>
+        <DBMapperTableEntries name="LAST_UPD_BY"/>
+        <DBMapperTableEntries name="EXTERNAL_REF_NO"/>
+        <DBMapperTableEntries name="SENT_BY_API"/>
+        <DBMapperTableEntries name="SENT_TIME"/>
+        <DBMapperTableEntries name="EMP_ID"/>
+        <DBMapperTableEntries name="COMPLETED_BY_USER"/>
+        <DBMapperTableEntries name="TD_ORDER_NO"/>
+        <DBMapperTableEntries name="BLOCKED_COMMISSION_AMOUNT"/>
+        <DBMapperTableEntries name="TRANSACTION_DIV_EXT_ID"/>
+        <DBMapperTableEntries name="MAX_FLOOR"/>
+        <DBMapperTableEntries name="GLOBAL_ACCOUNT_ID"/>
+        <DBMapperTableEntries name="TRANSACTION_EXEC_ID"/>
+        <DBMapperTableEntries name="PEG_LIMIT_TYPE"/>
+        <DBMapperTableEntries name="TARGET_STRATEGY_ID"/>
+        <DBMapperTableEntries name="CLIP_SIZE"/>
+        <DBMapperTableEntries name="RANDOMISE"/>
+        <DBMapperTableEntries name="RELATED_ACCOUNT_ID"/>
+        <DBMapperTableEntries name="UPDATE_COUNT"/>
+        <DBMapperTableEntries name="RELATED_KON_ORDER"/>
+        <DBMapperTableEntries name="TRIGGER_TYPE"/>
+        <DBMapperTableEntries name="ORD_TYPE"/>
+        <DBMapperTableEntries name="TIME_IN_FORCE"/>
+        <DBMapperTableEntries name="TEXT_DESC"/>
+        <DBMapperTableEntries name="ORDER_UNIQUE_ID"/>
+        <DBMapperTableEntries name="DEPUTY"/>
+        <DBMapperTableEntries name="REQUEST_CHANNEL"/>
+        <DBMapperTableEntries name="TRANS_STATUS"/>
+        <DBMapperTableEntries name="TRIGGER_FIN_INST_ID"/>
+        <DBMapperTableEntries name="TRIGGER_PRICE_TYPE"/>
+        <DBMapperTableEntries name="IP_ADDRESS"/>
+        <DBMapperTableEntries name="TP_PRICE"/>
+        <DBMapperTableEntries name="SL_PRICE"/>
+        <DBMapperTableEntries name="LAST_SENT_TPSL_ORDER_TYPE"/>
+        <DBMapperTableEntries name="TPSL_ORDER_ID"/>
+        <DBMapperTableEntries name="TPSL_MARKET_PRICE"/>
+        <DBMapperTableEntries name="TARGET_IP_ADDRESS"/>
+        <DBMapperTableEntries name="FILL_NOTIFICATION_TYPE"/>
+        <DBMapperTableEntries name="FILL_AMOUNT"/>
+      </InputTables>
+      <InputTables name="DGYTODSOPR.T_GTPFSI_FIN_INSTRUMENTS" tableName="DGYTODSOPR.T_GTPFSI_FIN_INSTRUMENTS" joinType="INNER_JOIN" alias="FI">
+        <DBMapperTableEntries name="FIN_INST_ID" expression="DTH.FIN_INST_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="ORG_GROUP_ID"/>
+        <DBMapperTableEntries name="NAME"/>
+        <DBMapperTableEntries name="DESCRIPTION"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="LAST_UPD"/>
+        <DBMapperTableEntries name="LAST_UPD_BY"/>
+        <DBMapperTableEntries name="UNIT_NOMINAL"/>
+        <DBMapperTableEntries name="CURRENCY_ID"/>
+        <DBMapperTableEntries name="ROUNDING_COEFFICIENT"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="FIN_INST_TYPE_ID"/>
+        <DBMapperTableEntries name="REPORTING_CURRENCY_ID"/>
+        <DBMapperTableEntries name="CMB_RISK_CATEGORIZATION"/>
+      </InputTables>
+      <InputTables name="EXP_OPT" tableName="EXP_OPT" joinType="INNER_JOIN" alias="EXP_OPT">
+        <DBMapperTableEntries name="FIN_INST_ID" expression="DTH.FIN_INST_ID" join="true" operator="="/>
+        <DBMapperTableEntries name="PUT_CALL"/>
+        <DBMapperTableEntries name="STRIKE_PRICE"/>
+      </InputTables>
+      <OutputTables name="T_STG_MDL_EVENT_VIOP_TM1" tableName="T_STG_MDL_EVENT_VIOP_TM1">
+        <DBMapperTableEntries name="ETL_DATE" expression="TRUNC(FILL.FILL_DATE)"/>
+        <DBMapperTableEntries name="DWH_SOURCE_CODE" expression="'GTP'"/>
+        <DBMapperTableEntries name="INSERT_TIMESTAMP" expression="SYSTIMESTAMP"/>
+        <DBMapperTableEntries name="INSERT_RUNID" expression="NULL"/>
+        <DBMapperTableEntries name="EVENT_ID" expression="FILL.TRANSACTION_FILL_ID || '-' || DTH.TRANSACTION_ID || '~30019'"/>
+        <DBMapperTableEntries name="EVENT_CODE" expression="FILL.TRANSACTION_FILL_ID || '-' || DTH.TRANSACTION_ID"/>
+        <DBMapperTableEntries name="EVENT_CLS_ID" expression="(CASE WHEN EXP_OPT.PUT_CALL = 'P' THEN (CASE WHEN DTH.DEBIT_CREDIT = 'DEBIT' AND (DTH.REALIZED_UNITS > 0) THEN 'OPTPUTSHORT~40004' WHEN DTH.DEBIT_CREDIT = 'CREDIT' AND (DTH.REALIZED_UNITS > 0) THEN 'OPTPUTLONG~40004' END) ELSE (CASE WHEN DTH.DEBIT_CREDIT = 'DEBIT' AND (DTH.REALIZED_UNITS > 0) THEN 'OPTCALLSHORT~40004' WHEN DTH.DEBIT_CREDIT = 'CREDIT' AND (DTH.REALIZED_UNITS > 0) THEN 'OPTCALLLONG~40004' END) END)"/>
+        <DBMapperTableEntries name="ACC_ID" expression="CASE WHEN DTH.ACCOUNT_ID IS NULL THEN '-1' ELSE DTH.ACCOUNT_ID || '~30003' END"/>
+        <DBMapperTableEntries name="CNL_ID" expression="CASE WHEN DTH.CHANNEL_ID IS NULL THEN '-1' ELSE DTH.CHANNEL_ID || '~30005' END"/>
+        <DBMapperTableEntries name="PROD_ID" expression="CASE WHEN DTH.FIN_INST_ID IS NULL THEN '-1' ELSE DTH.FIN_INST_ID || '~30015' END"/>
+        <DBMapperTableEntries name="POS_ID" expression="CASE WHEN DTH.POSTN_ID IS NULL THEN '-1' ELSE DTH.POSTN_ID || '~30014' END"/>
+        <DBMapperTableEntries name="EVENT_DATE_ID" expression="TO_CHAR(DTH.INITIAL_MARKET_SESSION_DATE, 'YYYYMMDD') || '~20003'"/>
+        <DBMapperTableEntries name="UNIT" expression="DTH.UNITS"/>
+        <DBMapperTableEntries name="REALIZED_UNIT" expression="NVL(FILL.FILL_UNITS, 0)"/>
+        <DBMapperTableEntries name="PRICE" expression="NVL(DTH.PRICE, 0)"/>
+        <DBMapperTableEntries name="AMOUNT" expression="NVL(FILL.FILL_UNITS, 0) * NVL(CAST(EXP_OPT.STRIKE_PRICE AS NUMBER(38, 6)), 1) * NVL(FI.UNIT_NOMINAL, 1)"/>
+        <DBMapperTableEntries name="FILL_AMOUNT" expression="NVL(FILL.FILL_UNITS * FILL.FILL_PRICE * (FILL.BASIS_PRICE * NVL(FI.UNIT_NOMINAL, 1)), 0)"/>
+        <DBMapperTableEntries name="AVG_PRICE" expression="NVL(FILL.FILL_PRICE, 0)"/>
+        <DBMapperTableEntries name="GROSS_COMM_AMOUNT" expression="NVL(FILL.EXPENSE_AMOUNT, 0)"/>
+        <DBMapperTableEntries name="OTHER_TAX_EXPENSE_RATE" expression="0"/>
+        <DBMapperTableEntries name="OTHER_TAX_EXPENSE_AMOUNT" expression="NVL(FILL.EXPENSE_BSMV, 0)"/>
+        <DBMapperTableEntries name="MARKET_COMM_RATE" expression="0"/>
+        <DBMapperTableEntries name="MARKET_COMM_AMOUNT" expression="0"/>
+        <DBMapperTableEntries name="CUSTODIAN_COMM_RATE" expression="0"/>
+        <DBMapperTableEntries name="CUSTODIAN_COMM_AMOUNT" expression="0"/>
+        <DBMapperTableEntries name="EVENT_STATUS_ID" expression="CASE WHEN DTH.TRANSACTION_STATUS_ID IS NULL THEN '-1' ELSE DTH.TRANSACTION_STATUS_ID || '~30021' END"/>
+        <DBMapperTableEntries name="ORDER_SUB_TP_ID" expression="CASE WHEN DTH.TRANSACTION_TYPE_ID IS NULL THEN '-1' ELSE DTH.TRANSACTION_TYPE_ID || '~30020' END"/>
+        <DBMapperTableEntries name="EVENT_IP_ADDRESS" expression="NVL(DTH.IP_ADDRESS, '10.0.0.0')"/>
+        <DBMapperTableEntries name="REQUEST_DATETIME" expression="DTH.CREATED"/>
+        <DBMapperTableEntries name="ORDER_DATETIME" expression="CAST(DTH.CREATED AS TIMESTAMP)"/>
+        <DBMapperTableEntries name="FILLED_DATETIME" expression="CAST(FILL.FILL_TIME AS TIMESTAMP)"/>
+        <DBMapperTableEntries name="REALIZED_DATETIME" expression="CAST(FILL.FILL_TIME AS TIMESTAMP)"/>
+        <DBMapperTableEntries name="ORDER_DATE_TP_ID" expression="CASE WHEN DTH.TRANSACTION_DATE_TYPE_ID IS NULL THEN '-1' ELSE DTH.TRANSACTION_DATE_TYPE_ID || '~30022' END"/>
+        <DBMapperTableEntries name="EVENT_REF" expression="NVL(DTH.TRANSACTION_EXT_ID, '-99')"/>
+        <DBMapperTableEntries name="GROSS_COMM_RATE" expression="0"/>
+        <DBMapperTableEntries name="POSITION_CLOSED_UNIT" expression="NVL(FILL.CLOSING_UNITS, 0)"/>
+        <DBMapperTableEntries name="ISE_ORDER_NO" expression="NVL(DTH.TD_ORDER_NO, 0)"/>
+        <DBMapperTableEntries name="FIRST_SESSION" expression="NVL(DTH.INITIAL_MARKET_SESSION_SEL, 0)"/>
+        <DBMapperTableEntries name="SECOND_SESSION" expression="NVL(DTH.ENDING_MARKET_SESSION_SEL, 0)"/>
+        <DBMapperTableEntries name="ENDING_DATE_ID" expression="NVL(TO_CHAR(DTH.ENDING_MARKET_SESSION_DATE, 'YYYYMMDD') || '~20003', '-1')"/>
+        <DBMapperTableEntries name="SEND_USER_POS_ID" expression="CASE WHEN DTH.DEST_RECON_POS_ID IS NULL THEN '-1' ELSE DTH.DEST_RECON_POS_ID || '~30014' END"/>
+        <DBMapperTableEntries name="CANCEL_EXPENSE" expression="0"/>
+        <DBMapperTableEntries name="OTHER_EXPENSE" expression="0"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="208">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_GTPBR_DT_TRANS_HISTORY"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_GTPBR_DT_TRANS_HISTORY&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_GTPBR_DT_TRANS_HISTORY"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_GTPBR_DT_TRANS_HISTORY" name="table1">
+      <column key="false" length="50" name="TRANSACTION_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ORG_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="TRANSACTION_EXT_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="TRANSACTION_STATUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="COLLATERAL_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="CUSTOMER_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ACCOUNT_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="TRANSACTION_TYPE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="6" name="DEBIT_CREDIT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="FIN_INST_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="UNITS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="HIDDEN_UNITS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="PRICE_TYPE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="PRICE_CONDITION" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="REALIZED_UNITS" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="TRANSACTION_DATE_TYPE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INITIAL_MARKET_SESSION_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="28" name="INITIAL_MARKET_SESSION_SEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="ENDING_MARKET_SESSION_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="28" name="ENDING_MARKET_SESSION_SEL" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="HOLD_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ROUTE_TYPE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ROUTE_INT_SYS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="240" name="ROUTE_COLL_POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="DEST_RECON_POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="PARENT_TRANSACTION_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="100" name="MAX_LOT_PARENT_TRAN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="POSTN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="CHANNEL_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="MARKET_PLACE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="SUB_MARKET_PLACE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="200" name="DESCRIPTION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="SHORTFALL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="COUNTER_PARTY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="RECEIPT_NO" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="LOCKED_POSTN_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="POSITION_CLOSED" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_UPD" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="LAST_UPD_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="EXTERNAL_REF_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="SENT_BY_API" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="SENT_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="EMP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="COMPLETED_BY_USER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="TD_ORDER_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="BLOCKED_COMMISSION_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="30" name="TRANSACTION_DIV_EXT_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="MAX_FLOOR" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="GLOBAL_ACCOUNT_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="TRANSACTION_EXEC_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PEG_LIMIT_TYPE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="TARGET_STRATEGY_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="CLIP_SIZE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="RANDOMISE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="RELATED_ACCOUNT_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="UPDATE_COUNT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="RELATED_KON_ORDER" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="TRIGGER_TYPE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="ORD_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="TIME_IN_FORCE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="200" name="TEXT_DESC" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="ORDER_UNIQUE_ID" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="DEPUTY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="REQUEST_CHANNEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="TRANS_STATUS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="TRIGGER_FIN_INST_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="TRIGGER_PRICE_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="240" name="IP_ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="TP_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="SL_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="2" name="LAST_SENT_TPSL_ORDER_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="TPSL_ORDER_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="TPSL_MARKET_PRICE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="240" name="TARGET_IP_ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="FILL_NOTIFICATION_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="FILL_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="64" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_GTPFSI_FIN_INSTRUMENTS"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_GTPFSI_FIN_INSTRUMENTS&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_GTPFSI_FIN_INSTRUMENTS"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_GTPFSI_FIN_INSTRUMENTS" name="table1">
+      <column key="false" length="15" name="FIN_INST_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ORG_GROUP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="250" name="NAME" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="200" name="DESCRIPTION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_UPD" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="LAST_UPD_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="UNIT_NOMINAL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="CURRENCY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="ROUNDING_COEFFICIENT" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="FIN_INST_TYPE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="REPORTING_CURRENCY_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="CMB_RISK_CATEGORIZATION" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleInput" posX="-192" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_5"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_HKa0UMM7EfGTCJBqPxYoVg - T_GTPFSI_OPTION_CHTS"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_GTPFSI_OPTION_CHTS&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTODSOPR&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="SRC_T_GTPFSI_OPTION_CHTS"/>
+    <metadata connector="TABLE" label="DGYTODSOPR.T_GTPFSI_OPTION_CHTS" name="table1">
+      <column key="false" length="15" name="ORG_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="FIN_INST_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="CREATED" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="CREATED_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="LAST_UPD" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="15" name="LAST_UPD_BY" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="RESOURCE_FIN_GROUP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="RESOURCE_FIN_INST_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="REDEMPTION_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="30" name="STRIKE_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="PUT_CALL" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STRIKE_TYPE" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="MARKET_PLACE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SETTLEMENT_DAY" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="PREMIUM_FIN_INST_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="BANK_CUR_ACCOUNT_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="BANK_TL_ACCOUNT_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="SYMBOL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="SECURITY_ID_SOURCE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="INITIAL_MARGIN" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="TICK_INCREMENT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="9" name="SECURITY_TRADING_STATUS" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="TRANSACTION_TIME" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="16" name="STRUCTURED_PRODUCTS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="28" name="UNIT_NOMINAL" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="10" name="PRICE_LEN" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="-1" name="PREMIUM_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="3" name="OTC_EXC" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="ISIN_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="ISIN_CODE_SUFFIX" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="CORR_INST_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="TRANS_AIM" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="UNDERLYING_STATUS" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="SUB_MARKET_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="3" name="DECIMAL_PLACE" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="LOW_LIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="UP_LIMIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="PRICE_MARGIN" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="28" name="MAX_ORDER_SIZE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="15" name="OPTION_TYPE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="PRICING_MODEL" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="VERSION" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="REDEMPTION_DATE2" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="200" name="TIME_ZONE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="15" name="MARKET_FOR_SETTLEMENT" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tELTOracleMap" posX="64" posY="304">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="LABEL" value="MAP_EXP_OPT"/>
+    <metadata connector="TABLE" label="EXP_OPT" name="EXP_OPT">
+      <column key="false" length="15" name="FIN_INST_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="PUT_CALL" nullable="true" precision="-1" sourceType="CHAR" type="id_String" usefulColumn="true"/>
+      <column key="false" length="30" name="STRIKE_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendDBMap:DBMapData">
+      <InputTables name="DGYTODSOPR.T_GTPFSI_OPTION_CHTS" tableName="DGYTODSOPR.T_GTPFSI_OPTION_CHTS" joinType="NO_JOIN" alias="T_GTPFSI_OPTION_CHTS">
+        <DBMapperTableEntries name="ORG_ID"/>
+        <DBMapperTableEntries name="FIN_INST_ID"/>
+        <DBMapperTableEntries name="CREATED"/>
+        <DBMapperTableEntries name="CREATED_BY"/>
+        <DBMapperTableEntries name="LAST_UPD"/>
+        <DBMapperTableEntries name="LAST_UPD_BY"/>
+        <DBMapperTableEntries name="RESOURCE_FIN_GROUP_ID"/>
+        <DBMapperTableEntries name="RESOURCE_FIN_INST_ID"/>
+        <DBMapperTableEntries name="REDEMPTION_DATE"/>
+        <DBMapperTableEntries name="STRIKE_PRICE"/>
+        <DBMapperTableEntries name="PUT_CALL"/>
+        <DBMapperTableEntries name="TYPE"/>
+        <DBMapperTableEntries name="STRIKE_TYPE"/>
+        <DBMapperTableEntries name="MARKET_PLACE_ID"/>
+        <DBMapperTableEntries name="SETTLEMENT_DAY"/>
+        <DBMapperTableEntries name="PREMIUM_FIN_INST_ID"/>
+        <DBMapperTableEntries name="BANK_CUR_ACCOUNT_ID"/>
+        <DBMapperTableEntries name="BANK_TL_ACCOUNT_ID"/>
+        <DBMapperTableEntries name="SYMBOL"/>
+        <DBMapperTableEntries name="SECURITY_ID_SOURCE"/>
+        <DBMapperTableEntries name="INITIAL_MARGIN"/>
+        <DBMapperTableEntries name="TICK_INCREMENT"/>
+        <DBMapperTableEntries name="SECURITY_TRADING_STATUS"/>
+        <DBMapperTableEntries name="TRANSACTION_TIME"/>
+        <DBMapperTableEntries name="STRUCTURED_PRODUCTS"/>
+        <DBMapperTableEntries name="STATUS"/>
+        <DBMapperTableEntries name="UNIT_NOMINAL"/>
+        <DBMapperTableEntries name="PRICE_LEN"/>
+        <DBMapperTableEntries name="PREMIUM_DATE"/>
+        <DBMapperTableEntries name="OTC_EXC"/>
+        <DBMapperTableEntries name="ISIN_CODE"/>
+        <DBMapperTableEntries name="ISIN_CODE_SUFFIX"/>
+        <DBMapperTableEntries name="CORR_INST_ID"/>
+        <DBMapperTableEntries name="TRANS_AIM"/>
+        <DBMapperTableEntries name="UNDERLYING_STATUS"/>
+        <DBMapperTableEntries name="SUB_MARKET_CODE"/>
+        <DBMapperTableEntries name="DECIMAL_PLACE"/>
+        <DBMapperTableEntries name="LOW_LIMIT"/>
+        <DBMapperTableEntries name="UP_LIMIT"/>
+        <DBMapperTableEntries name="PRICE_MARGIN"/>
+        <DBMapperTableEntries name="MAX_ORDER_SIZE"/>
+        <DBMapperTableEntries name="OPTION_TYPE"/>
+        <DBMapperTableEntries name="PRICING_MODEL"/>
+        <DBMapperTableEntries name="VERSION"/>
+        <DBMapperTableEntries name="REDEMPTION_DATE2"/>
+        <DBMapperTableEntries name="TIME_ZONE"/>
+        <DBMapperTableEntries name="MARKET_FOR_SETTLEMENT"/>
+      </InputTables>
+      <OutputTables name="EXP_OPT" tableName="EXP_OPT">
+        <DBMapperTableEntries name="FIN_INST_ID" expression="T_GTPFSI_OPTION_CHTS.FIN_INST_ID"/>
+        <DBMapperTableEntries name="PUT_CALL" expression="T_GTPFSI_OPTION_CHTS.PUT_CALL"/>
+        <DBMapperTableEntries name="STRIKE_PRICE" expression="T_GTPFSI_OPTION_CHTS.STRIKE_PRICE"/>
+      </OutputTables>
+    </nodeData>
+  </node>
+  <node componentName="tELTOracleOutput" posX="576" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1"/>
+    <elementParameter name="DATA_ACTION" value="INSERT"/>
+    <elementParameter name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY"/>
+    <elementParameter name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ - T_STG_MDL_EVENT_VIOP_TM1"/>
+    <elementParameter name="ELT_TABLE_NAME" value="&quot;T_STG_MDL_EVENT_VIOP_TM1&quot;"/>
+    <elementParameter name="ELT_SCHEMA_NAME" value="&quot;DGYTSTG&quot;"/>
+    <elementParameter name="MAPPING" value="oracle_id"/>
+    <elementParameter name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_5KIPwMNCEfGqWeHGV4SpNQ"/>
+    <elementParameter name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter name="HOST" value="&quot;kronos&quot;"/>
+    <elementParameter name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter name="DBNAME" value="&quot;orcl&quot;"/>
+    <elementParameter name="USER" value="&quot;MAPWRIGHT&quot;"/>
+    <elementParameter name="LABEL" value="TGT_T_STG_MDL_EVENT_VIOP_TM1"/>
+    <metadata connector="TABLE" label="T_STG_MDL_EVENT_VIOP_TM1" name="tELTOracleOutput_1">
+      <column key="false" length="-1" name="ETL_DATE" nullable="true" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="DWH_SOURCE_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="INSERT_TIMESTAMP" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="INSERT_RUNID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_CODE" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_CLS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ACC_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="CNL_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="PROD_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_DATE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="UNIT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="20" name="REALIZED_UNIT" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="36" name="PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="FILL_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="36" name="AVG_PRICE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="GROSS_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_TAX_EXPENSE_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_TAX_EXPENSE_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARKET_COMM_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="MARKET_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTODIAN_COMM_RATE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="CUSTODIAN_COMM_AMOUNT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_STATUS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ORDER_SUB_TP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_IP_ADDRESS" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="-1" name="REQUEST_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="ORDER_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="FILLED_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="-1" name="REALIZED_DATETIME" nullable="true" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="255" name="ORDER_DATE_TP_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="EVENT_REF" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="20" name="GROSS_COMM_RATE" nullable="true" precision="10" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="36" name="POSITION_CLOSED_UNIT" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="ISE_ORDER_NO" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="1" name="FIRST_SESSION" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="1" name="SECOND_SESSION" nullable="true" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="255" name="ENDING_DATE_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="SEND_USER_POS_ID" nullable="true" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="38" name="CANCEL_EXPENSE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column key="false" length="38" name="OTHER_EXPENSE" nullable="true" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" mergeOrder="0" metaname="tPrejob_1" outputId="0" source="tPrejob_1" target="tOracleRow_1"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_GTPBR_DT_FILLS" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_1" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_GTPBR_DT_TRANS_HISTORY" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_GTPFSI_FIN_INSTRUMENTS" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_3" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="DGYTODSOPR.T_GTPFSI_OPTION_CHTS" lineStyle="9" mergeOrder="0" metaname="table1" outputId="0" source="tELTOracleInput_5" target="tELTOracleMap_2"/>
+  <connection connectorName="TABLE_REF" label="EXP_OPT" lineStyle="22" mergeOrder="0" metaname="EXP_OPT" outputId="0" source="tELTOracleMap_2" target="tELTOracleMap_1"/>
+  <connection connectorName="TABLE" label="T_STG_MDL_EVENT_VIOP_TM1" lineStyle="9" mergeOrder="0" metaname="T_STG_MDL_EVENT_VIOP_TM1" outputId="0" source="tELTOracleMap_1" target="tELTOracleOutput_1"/>
+</talendfile:ProcessType>
